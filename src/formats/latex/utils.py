@@ -16,6 +16,9 @@ import requests
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 from typing import List
+import shutil
+import platform
+import subprocess
 
 options = r"\[[^\[\]]*?\]"
 spaces = r"[ \t]*"
@@ -500,7 +503,7 @@ def if_has_appendix(folder_path):
         main_file_path = find_main_tex_file(project)
         if main_file_path is None:
             raise FileNotFoundError(f"File not found: {main_file_path}")
-        full_latex_code = merge_tex_files(main_file_path)
+        full_latex_code = merge_tex_from_inputs(main_file_path)
         if has_appendix(full_latex_code):
             project_app.append(project)
     return project_app
@@ -655,15 +658,17 @@ def get_captionof_pattern():
 
 def add_ctex_package(latex_code):
 
-    if "\\usepackage[UTF8]{ctex}" not in latex_code:
-        ctex_package = "\\usepackage[UTF8]{ctex}"
-        documentclass = r'documentclass'
-        documentclass_pattern = get_command_pattern(documentclass)
-        # documentclass_pattern = regex.compile(command, regex.DOTALL)
+    if "\\usepackage{ctex}" not in latex_code and "\\usepackage[UTF8]{ctex}" not in latex_code:
+        # 使用更可靠的正则表达式来匹配 \documentclass
+        documentclass_pattern = re.compile(r'\\documentclass(\[.*?\])?\{.*?\}')
         match = documentclass_pattern.search(latex_code)
+        
         if match:
+            # 在 \documentclass 命令之后插入 ctex 包
             position = match.end()
+            ctex_package = "\\usepackage{ctex}"
             latex_code = latex_code[:position] + "\n" + ctex_package + "\n" + latex_code[position:]
+            
     return latex_code
 
 def add_ja_package(latex_code):
@@ -679,20 +684,20 @@ def add_ja_package(latex_code):
             latex_code = latex_code[:position] + "\n" + ctex_package + "\n" + latex_code[position:]
     return latex_code
 
-def find_main_tex_file(dir): 
+def find_main_tex_file(directory: str):
     """
     Find the main LaTeX file in the given directory.
     """
-    readme_path = os.path.join(dir, '00README.json') 
+    readme_path = os.path.join(directory, '00README.json') 
     if os.path.exists(readme_path):
         config = read_json_file(readme_path)
         for source in config.get("sources", []):
             if source.get("usage") == "toplevel":
                 main_file_name = source.get("filename")
-                main_file_path = os.path.join(dir, main_file_name)
+                main_file_path = os.path.join(directory, main_file_name)
                 return main_file_path if os.path.exists(main_file_path) else None
 
-    tex_files = find_tex_files(dir)
+    tex_files = find_tex_files(directory)
     documentclass_pattern = re.compile(r"\\document(class|style)(\[.*?\])?\{.*?\}", re.DOTALL)
         
     for tex_file in tex_files:
@@ -897,6 +902,49 @@ def batch_download_arxiv_tex(arxiv_ids: List[str], save_dir: str = "./tex_source
             print(f"[SKIP] No TeX source found for {arxiv_id}. Please check the arXiv ID or the availability of the source.")
 
     return source_dirs
+
+def detect_tex_distributions():
+    """
+    Detects available LaTeX distributions (TeX Live and MiKTeX) on a Windows system.
+
+    Returns:
+        A dictionary mapping the distribution name to the full path of its latexmk executable.
+    """
+    distributions = {}
+    if platform.system() != "Windows":
+        # Check for latexmk in PATH on non-Windows systems
+        path = shutil.which("latexmk")
+        if path:
+            # Simple check, can be improved to differentiate linux distros
+            distributions["Default"] = path
+        return distributions
+
+    try:
+        # On Windows, 'where' command can find all executables in PATH.
+        result = subprocess.run(['where', 'latexmk.exe'], capture_output=True, text=True, check=True)
+        paths = result.stdout.strip().split('\n')
+        
+        for path in paths:
+            path = path.strip()
+            if not path:
+                continue
+            
+            lower_path = path.lower()
+            # Identify distribution by common path components
+            if 'texlive' in lower_path:
+                distributions['TeX Live'] = path
+            elif 'miktex' in lower_path:
+                distributions['MiKTeX'] = path
+            else:
+                # Fallback for unusually named paths
+                if 'TeX Live' not in distributions and 'MiKTeX' not in distributions:
+                     distributions['Unknown'] = path
+
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        # 'where' command not found or returned an error (e.g., no latexmk.exe found)
+        pass
+        
+    return distributions
 
 # get_texts_from_data(
 #     folder_path="D:\code\AutoLaTexTrans\data\cs",

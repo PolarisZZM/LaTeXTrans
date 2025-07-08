@@ -7,11 +7,47 @@ from .utils import *
 class LaTexCompiler:
     def __init__(self, output_latex_dir: str):
         self.output_latex_dir = output_latex_dir
+        self.latexmk_path = None
+
+    def _select_distribution(self, distributions: Dict[str, str]) -> str:
+        """Prompts the user to select a LaTeX distribution and returns the path to latexmk."""
+        print("\nMultiple LaTeX distributions found. Please choose which one to use for compilation:")
+        
+        # Create a numbered list of distributions
+        dist_list = list(distributions.items())
+        for i, (name, path) in enumerate(dist_list):
+            print(f"  [{i+1}] {name} ({path})")
+        
+        choice = -1
+        while choice < 1 or choice > len(dist_list):
+            try:
+                raw_choice = input(f"Enter your choice (1-{len(dist_list)}): ")
+                choice = int(raw_choice)
+                if not (1 <= choice <= len(dist_list)):
+                    print("Invalid choice. Please try again.")
+            except (ValueError, EOFError):
+                print("Invalid input. Please enter a number.")
+        
+        # Return the full path of the selected latexmk
+        return dist_list[choice-1][1]
 
     def compile(self):
         """
-        Compile the LaTeX document .
+        Compile the LaTeX document.
         """
+        distributions = detect_tex_distributions()
+        if not distributions:
+            print("❌ Error: No LaTeX distribution (like TeX Live or MiKTeX) with 'latexmk' was found on your system.")
+            print("Please install a LaTeX distribution and ensure it's in your system's PATH.")
+            return None
+
+        if len(distributions) > 1:
+            self.latexmk_path = self._select_distribution(distributions)
+        else:
+            # If only one distribution, use it automatically
+            self.latexmk_path = list(distributions.values())[0]
+            print(f"✅ Automatically selected LaTeX distribution: {list(distributions.keys())[0]}")
+
         tex_file_to_compile = find_main_tex_file(self.output_latex_dir)
         if not tex_file_to_compile:
             print("⚠️ Warning: There is no main tex file to compile in this directory.")
@@ -75,7 +111,7 @@ class LaTexCompiler:
         os.makedirs(out_dir, exist_ok=True)
         
         cmd = [
-            "latexmk",
+            self.latexmk_path,
             f"-{engine}",                
             "-interaction=nonstopmode",   # no stop on errors
             f"-outdir={out_dir}",  
@@ -95,6 +131,8 @@ class LaTexCompiler:
                 
         except subprocess.CalledProcessError as e:
             print("⚠️  Somthing went wrong during compiling with pdflatex.")
+            print(f"pdflatex stderr:\n{e.stderr.decode('utf-8', errors='ignore')}")
+            print(f"pdflatex stdout:\n{e.stdout.decode('utf-8', errors='ignore')}")
 
     def _compile_with_xelatex(self,
                               tex_file: str, 
@@ -104,7 +142,7 @@ class LaTexCompiler:
         os.makedirs(out_dir, exist_ok=True)
         
         cmd = [
-            "latexmk",
+            self.latexmk_path,
             f"-{engine}",                
             "-interaction=nonstopmode",   # no stop on errors
             f"-outdir={out_dir}",  
@@ -119,6 +157,8 @@ class LaTexCompiler:
             print("✅  Compilation successful!") #compile success!
         except subprocess.CalledProcessError as e:
             print("⚠️  Somthing went wrong during compiling with xelatex.")
+            print(f"xelatex stderr:\n{e.stderr.decode('utf-8', errors='ignore')}")
+            print(f"xelatex stdout:\n{e.stdout.decode('utf-8', errors='ignore')}")
 
 
     def _compile_with_lualatex(self,
@@ -129,7 +169,7 @@ class LaTexCompiler:
         os.makedirs(out_dir, exist_ok=True)
         
         cmd = [
-            "latexmk",
+            self.latexmk_path,
             f"-{engine}",                
             "-interaction=nonstopmode",   # no stop on errors
             f"-outdir={out_dir}",  
@@ -148,4 +188,6 @@ class LaTexCompiler:
                 f.write("Compilation successful\n")
                 
         except subprocess.CalledProcessError as e:
-            print(f"⚠️  Somthing went wrong during compiling with lualatex. \n {e}")
+            print(f"⚠️  Somthing went wrong during compiling with lualatex.")
+            print(f"lualatex stderr:\n{e.stderr.decode('utf-8', errors='ignore')}")
+            print(f"lualatex stdout:\n{e.stdout.decode('utf-8', errors='ignore')}")
