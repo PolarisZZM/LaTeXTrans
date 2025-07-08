@@ -1,7 +1,0 @@
-[
-    {
-        "part": "sec",
-        "num_or_ph": "2_2",
-        "command_error": "LaTeX command translation error or is missing:\n'\\cite' — expected 5, found 4"
-    }
-]
