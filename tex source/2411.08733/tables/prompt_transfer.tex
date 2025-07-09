@@ -1,0 +1,16 @@
+\begin{table}[!t]
+\begin{center}
+\begin{tabular}{ c c c c } 
+    \toprule
+    \multirow{2}{*}{\textbf{Model}} & \textbf{Mistral}  & \textbf{Llama}  & \textbf{Base} \\
+    & \textbf{Prompt} & \textbf{Prompt} & \textbf{Prompt} \\
+    \midrule
+    Mistral 7b & \textbf{4.06} & 4.03 & 4.04 \\
+    Llama 2 70$b^q$ & 4.19 & \textbf{4.23} & 4.17 \\
+    \bottomrule
+\end{tabular}
+\caption{Effect of prompt transfer on base LLMs. The best performance is achieved when using a prompt specifically optimized for the target base LLM.}
+\label{tab:prompt_transfer}
+\vspace{-17pt}
+\end{center}
+\end{table}

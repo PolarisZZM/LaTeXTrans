@@ -1,0 +1,25 @@
+\begin{table}[!t]
+\begin{center}
+\resizebox{0.9\linewidth}{!}{
+\begin{tabular}{ c c c c }
+    \toprule
+    \multirow{3}{*}{\textbf{模型}} & \textbf{动态} &  \textbf{动态}  &\multirow{3}{*}{\textbf{平均}} \\
+    & \textbf{奖励} &  \textbf{奖励 } \\
+    & \textbf{提示} & \textbf{ICL} \\
+
+    \midrule
+    Mistral 7b (指令) & \cmark  & \cmark & \textbf{4.06} \\
+    \midrule
+
+    Mistral 7b (指令) &  \xmark  & \cmark  & 4.02 \\
+    Mistral 7b (指令) & \cmark & \xmark & 3.86 \\
+
+    \bottomrule
+
+\end{tabular}}
+
+\caption{关于动态奖励的消融研究，检查其从系统提示和 ICL 示例优化中去除的影响。我们的方法，通过对提示和 ICL 示例使用动态奖励，始终优于两种消融变体。}
+\label{tab:ablation_method}
+\end{center}
+\vspace{-20pt}
+\end{table}

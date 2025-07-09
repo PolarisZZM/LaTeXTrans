@@ -1,0 +1,263 @@
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+
+\documentclass[11pt]{article}
+
+% Change "review" to "final" to generate the final (sometimes called camera-ready) version.
+% Change to "preprint" to generate a non-anonymous version with page numbers.
+\usepackage[final]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+%Including images in your LaTeX document requires adding
+%additional package(s)
+\usepackage{graphicx}
+
+% Allows for side by side images
+\usepackage{subcaption}
+
+
+% Defined tick and cross emojis
+\usepackage{pifont}
+
+\newcommand{\cmark}{\ding{51}}  % Define command for tick mark
+\newcommand{\xmark}{\ding{55}}  % Define command for cross mark
+
+% To move caption of tables to the top
+\usepackage{float}
+%\floatstyle{plaintop}
+%\restylefloat{table}
+
+% To allow for left aligned columns
+\usepackage{array}
+
+% To allow multirow in tables
+\usepackage{multirow}
+
+% To allow for math symbols
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% For prompt listings
+\usepackage{listings}
+\lstset{
+  backgroundcolor=\color{gray!8},
+  basicstyle=\ttfamily,
+  columns=fullflexible
+}
+
+% For algorithms 
+\usepackage[ruled,vlined]{algorithm2e}
+
+
+% \usepackage{hyperref}
+\usepackage{url}
+\usepackage{xspace}
+\usepackage{caption}
+\usepackage{wrapfig}
+%\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{wrapfig,lipsum,booktabs}
+\usepackage{makecell}
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage{color, colortbl}
+\usepackage{pifont}
+\usepackage{enumitem}
+% \usepackage[font=small,labelfont=bf]{caption}
+\usepackage{inconsolata}
+\usepackage{subcaption}
+% \usepackage[hidelinks,colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage{xcolor}
+% \usepackage{ulem}
+\usepackage[normalem]{ulem} % normalem avoids changing \emph{} to underlined
+\usepackage{soul}
+% \usepackage{soulutf8}
+% \usepackage{luacolor}
+% \usepackage[soul]{lua-ul}
+\newcommand{\ctext}[3][RGB]{%
+  \begingroup
+  \definecolor{hlcolor}{#1}{#2}\sethlcolor{hlcolor}%
+  \hl{#3}%
+  \endgroup
+}
+
+\usepackage{bm}
+
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{Dynamic Rewarding with Prompt Optimization Enables \\ Tuning-free Self-Alignment of Language Models}
+
+
+% Author information can be set in various styles:
+% For several authors from the same institution:
+% \author{Author 1 \and ... \and Author n \\
+%         Address line \\ ... \\ Address line}
+% if the names do not fit well on one line use
+%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
+% For authors from different institutions:
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \And  ... \And
+%         Author n \\ Address line \\ ... \\ Address line}
+% To start a separate ``row'' of authors use \AND, as in
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \AND
+%         Author 2 \\ Address line \\ ... \\ Address line \And
+%         Author 3 \\ Address line \\ ... \\ Address line}
+
+% \author{First Author \\
+%   Affiliation / Address line 1 \\
+%   Affiliation / Address line 2 \\
+%   Affiliation / Address line 3 \\
+%   \texttt{email@domain} \\\And
+%   Second Author \\
+%   Affiliation / Address line 1 \\
+%   Affiliation / Address line 2 \\
+%   Affiliation / Address line 3 \\
+%   \texttt{email@domain} \\
+%   }
+
+
+\author{%
+Somanshu Singla\textsuperscript{$*\clubsuit$} \ 
+Zhen Wang\thanks{Equal contribution}\textsuperscript{$\clubsuit$ $\spadesuit$} \
+Tianyang Liu\textsuperscript{$\clubsuit$}\  
+ \\ 
+\textbf{ Abdullah Ashfaq\textsuperscript{$\clubsuit$} \
+Zhiting Hu\textsuperscript{$\clubsuit$} \ 
+Eric P. Xing\textsuperscript{$\spadesuit$ $\diamondsuit$}}  
+\vspace{5pt} \\
+\textsuperscript{$\clubsuit$}UC San Diego \
+\textsuperscript{$\spadesuit$}MBZUAI \ \textsuperscript{$\diamondsuit$} CMU \\
+\texttt{\{ssingla, zhw085\}@ucsd.edu}  
+}
+
+
+%\author{
+%  \textbf{First Author\textsuperscript{1}},
+%  \textbf{Second Author\textsuperscript{1,2}},
+%  \textbf{Third T. Author\textsuperscript{1}},
+%  \textbf{Fourth Author\textsuperscript{1}},
+%\\
+%  \textbf{Fifth Author\textsuperscript{1,2}},
+%  \textbf{Sixth Author\textsuperscript{1}},
+%  \textbf{Seventh Author\textsuperscript{1}},
+%  \textbf{Eighth Author \textsuperscript{1,2,3,4}},
+%\\
+%  \textbf{Ninth Author\textsuperscript{1}},
+%  \textbf{Tenth Author\textsuperscript{1}},
+%  \textbf{Eleventh E. Author\textsuperscript{1,2,3,4,5}},
+%  \textbf{Twelfth Author\textsuperscript{1}},
+%\\
+%  \textbf{Thirteenth Author\textsuperscript{3}},
+%  \textbf{Fourteenth F. Author\textsuperscript{2,4}},
+%  \textbf{Fifteenth Author\textsuperscript{1}},
+%  \textbf{Sixteenth Author\textsuperscript{1}},
+%\\
+%  \textbf{Seventeenth S. Author\textsuperscript{4,5}},
+%  \textbf{Eighteenth Author\textsuperscript{3,4}},
+%  \textbf{Nineteenth N. Author\textsuperscript{2,5}},
+%  \textbf{Twentieth Author\textsuperscript{1}}
+%\\
+%\\
+%  \textsuperscript{1}Affiliation 1,
+%  \textsuperscript{2}Affiliation 2,
+%  \textsuperscript{3}Affiliation 3,
+%  \textsuperscript{4}Affiliation 4,
+%  \textsuperscript{5}Affiliation 5
+%\\
+%  \small{
+%    \textbf{Correspondence:} \href{mailto:email@domain}{email@domain}
+%  }
+%}
+
+\def\ours{\text{DRPO}\xspace}
+
+\definecolor{forest green}{RGB}{34, 139, 34}
+
+\renewcommand{\cmark}{\textcolor{forest green}{\ding{51}}}
+\renewcommand{\xmark}{\textcolor{red}{\ding{55}}}
+
+\newcommand{\zhen}[1]{\textcolor{red}{ZW: #1}}
+\newcommand{\somanshu}[1]{\textcolor{green}{SS: #1}}
+\newcommand{\tianyang}[1]{\textcolor{blue}{TL: #1}}
+
+
+\begin{document}
+\maketitle
+\input{sections/abstract}
+
+
+
+\input{sections/intro}
+\input{sections/related_works}
+\input{sections/method}
+\input{sections/exp}
+\input{sections/conclusion}
+
+
+% \section*{Acknowledgments}
+
+% This document has been adapted
+% by Steven Bethard, Ryan Cotterell and Rui Yan
+% from the instructions for earlier ACL and NAACL proceedings, including those for
+% ACL 2019 by Douwe Kiela and Ivan Vuli\'{c},
+% NAACL 2019 by Stephanie Lukin and Alla Roskovskaya,
+% ACL 2018 by Shay Cohen, Kevin Gimpel, and Wei Lu,
+% NAACL 2018 by Margaret Mitchell and Stephanie Lukin,
+% Bib\TeX{} suggestions for (NA)ACL 2017/2018 from Jason Eisner,
+% ACL 2017 by Dan Gildea and Min-Yen Kan,
+% NAACL 2017 by Margaret Mitchell,
+% ACL 2012 by Maggie Li and Michael White,
+% ACL 2010 by Jing-Shin Chang and Philipp Koehn,
+% ACL 2008 by Johanna D. Moore, Simone Teufel, James Allan, and Sadaoki Furui,
+% ACL 2005 by Hwee Tou Ng and Kemal Oflazer,
+% ACL 2002 by Eugene Charniak and Dekang Lin,
+% and earlier ACL and EACL formats written by several people, including
+% John Chen, Henry S. Thompson and Donald Walker.
+% Additional elements were taken from the formatting instructions of the \emph{International Joint Conference on Artificial Intelligence} and the \emph{Conference on Computer Vision and Pattern Recognition}.
+
+% Bibliography entries for the entire Anthology, followed by custom entries
+%\bibliography{anthology,custom}
+% Custom bibliography entries only
+\bibliography{main}
+
+\appendix
+
+\input{sections/appendix}
+
+\end{document}

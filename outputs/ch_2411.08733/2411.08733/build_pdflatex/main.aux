@@ -1,0 +1,74 @@
+\relax 
+\bibstyle{acl_natbib}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{brown2020language,chowdhery2023palm,touvron2023llama,achiam2023gpt}
+\citation{bai2022constitutional,ouyang2022training}
+\citation{lee2023rlaif}
+\citation{kim2023aligning,sun2024principle}
+\citation{bai2022constitutional}
+\citation{sun2024principle}
+\citation{li2023rain,wang2024inferaligner}
+\citation{han2023context,Lin2024ReAlign,zhao2024context}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}引言}{1}{section.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 与其他LLM对齐范式的对比。 \text  {DRPO}\xspace  结合了自我对齐和无需调优对齐的优点，能够实现自我改进和高效的成本效益，无需人工监督或额外的模型训练。}}{1}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:paradigm_comparison}{{1}{1}{与其他LLM对齐范式的对比。 \ours 结合了自我对齐和无需调优对齐的优点，能够实现自我改进和高效的成本效益，无需人工监督或额外的模型训练。}{figure.caption.1}{}}
+\citation{zhou2024lima}
+\citation{Lin2024ReAlign,zhao2024context}
+\citation{burns2023weak}
+\citation{pryzant2023automatic,hao2023reasoning,wang2023promptagent}
+\citation{Lin2024ReAlign}
+\citation{Lin2024ReAlign}
+\citation{ouyang2022training}
+\citation{lee2023rlaif,bai2022training,cao2024towards,wang2024step,guo2024human}
+\citation{wang2022self,kim2023aligning,sun2024principle}
+\citation{li2023self}
+\citation{bai2022constitutional,madaan2024self}
+\citation{han2023context,Lin2024ReAlign,zhao2024context}
+\citation{li2023rain,khanov2024args,huang2024deal}
+\citation{zou2023representation,wu2024reft}
+\citation{li2024inference,kong2024aligning,wang2024inferaligner}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 与其他对齐方法（包括RLHF和URIAL\hspace  {0.25em plus 0.125em minus 0.08em}\ignorespaces \citep  {Lin2024ReAlign}）的对比。 \text  {DRPO}\xspace  在多个LLM上始终优于这两种基线。 请注意，我们无法访问\texttt  {gpt-3.5-turbo}基本模型；因此，\text  {DRPO}\xspace  和URIAL直接应用于其RLHF调优版本。}}{2}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:overall_comparison_chart}{{2}{2}{与其他对齐方法（包括RLHF和URIAL~\cite {Lin2024ReAlign}）的对比。 \ours 在多个LLM上始终优于这两种基线。 请注意，我们无法访问\texttt {gpt-3.5-turbo}基本模型；因此，\ours 和URIAL直接应用于其RLHF调优版本。}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}相关工作}{2}{section.2}\protected@file@percent }
+\citation{rubin2021learning,dong2022survey}
+\citation{xu2022gps}
+\citation{fernando2023promptbreeder}
+\citation{wang2023promptagent}
+\citation{zhou2022large}
+\citation{fernando2023promptbreeder,yang2023large}
+\citation{pryzant2023automatic}
+\citation{wang2023promptagent}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 带有提示优化的动态奖励整体框架（\text  {DRPO}\xspace  ）。该优化问题被建模为一个马尔可夫决策过程（MDP），并通过束搜索（beam search）求解以优化对齐提示。动态奖励作为该框架中集成的一项新技术，允许灵活分配奖励，以检测并解决当前大语言模型中的对齐弱点，从而增强整体优化过程。}}{3}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:dynamic_rewarding}{{3}{3}{带有提示优化的动态奖励整体框架（\ours ）。该优化问题被建模为一个马尔可夫决策过程（MDP），并通过束搜索（beam search）求解以优化对齐提示。动态奖励作为该框架中集成的一项新技术，允许灵活分配奖励，以检测并解决当前大语言模型中的对齐弱点，从而增强整体优化过程。}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}方法论}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}问题表述}{3}{subsection.3.1}\protected@file@percent }
+\citation{hao2023reasoning,hao2024llm}
+\citation{bai2022constitutional,sun2024principle}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}动态奖励与提示优化 (\text  {DRPO}\xspace  )}{4}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}动态奖励用于对齐}{4}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}ICL 示例优化}{4}{subsubsection.3.2.2}\protected@file@percent }
+\citation{Lin2024ReAlign}
+\citation{Lin2024ReAlign}
+\citation{alpaca_eval}
+\citation{zhou2024lima}
+\citation{Ganguli2022RedTL}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}系统提示优化}{5}{subsubsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}实验}{5}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}实验设置}{5}{subsection.4.1}\protected@file@percent }
+\citation{Jiang2023Mistral7}
+\citation{lin2023awq}
+\citation{Touvron2023Llama2O}
+\citation{llama3modelcard}
+\citation{Lin2024ReAlign}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 在 \texttt  {just-eval-instruct} 基准上的表现。``调整过的'' 表示该模型已进行 SFT/RLHF 调整。模型在多个方面进行评估：``有帮助''（帮助程度）、``清晰''（清晰度）、``事实性''（事实性）、``深度''（深度）和``参与度''（参与度）。基础方法表示基本的对齐提示。我们的方法在多个方面和整体上持续优于基础方法。}}{6}{table.caption.4}\protected@file@percent }
+\newlabel{tab:main_table}{{1}{6}{在 \texttt {just-eval-instruct} 基准上的表现。``调整过的'' 表示该模型已进行 SFT/RLHF 调整。模型在多个方面进行评估：``有帮助''（帮助程度）、``清晰''（清晰度）、``事实性''（事实性）、``深度''（深度）和``参与度''（参与度）。基础方法表示基本的对齐提示。我们的方法在多个方面和整体上持续优于基础方法。}{table.caption.4}{}}
+\citation{Lin2024ReAlign}
+\citation{reimers-2019-sentence-bert}
+\citation{Lin2024ReAlign}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}结果}{7}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 提示迁移对基础 LLM 的影响。针对目标基础 LLM 优化的提示可获得最佳性能。}}{7}{table.caption.5}\protected@file@percent }
+\newlabel{tab:prompt_transfer}{{2}{7}{提示迁移对基础 LLM 的影响。针对目标基础 LLM 优化的提示可获得最佳性能。}{table.caption.5}{}}

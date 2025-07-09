@@ -1,0 +1,26 @@
+
+\begin{table}[!t]
+\begin{center}
+\resizebox{0.9\linewidth}{!}{%
+\begin{tabular}{ c c c c } 
+    \toprule
+    \multirow{3}{*}{\textbf{Model}} & \textbf{Dynamic} &  \textbf{Dynamic}  &\multirow{3}{*}{\textbf{Avg.}} \\
+    & \textbf{Reward} &  \textbf{Reward } \\
+    & \textbf{Prompt} & \textbf{ICL} \\
+    
+    \midrule
+    Mistral 7b (Instruct) & \cmark  & \cmark & \textbf{4.06} \\
+    \midrule 
+    
+    Mistral 7b (Instruct) &  \xmark  & \cmark  & 4.02 \\
+    Mistral 7b (Instruct) & \cmark & \xmark & 3.86 \\
+
+    \bottomrule
+    
+\end{tabular}}
+
+\caption{Ablation study on dynamic rewarding, examining its removal from system prompt and ICL example optimization. Our method, utilizing dynamic rewarding for both prompts and ICL examples, consistently outperforms both ablation variants.}
+\label{tab:ablation_method}
+\end{center}
+\vspace{-20pt}
+\end{table}

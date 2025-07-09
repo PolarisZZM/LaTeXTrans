@@ -1,0 +1,52 @@
+\vspace{-5pt}
+\section{Conclusion}
+\vspace{-5pt}
+
+% In this paper, we introduced Dynamic Rewarding with Prompt Optimization (\ours), a tuning-free approach for self-aligning LLMs that leverages dynamic rewarding with prompt optimization. Our approach leverages a search-based prompt optimization framework that enables LLMs to self-align and self-improve without the need for additional training or human supervision. Central to \ours is the dynamic rewarding mechanism, which identifies and rectifies alignment weaknesses, allowing models to adapt quickly and effectively to various alignment challenges. Empirical evaluations on eight recent LLMs have demonstrated the efficacy of \ours. Our results show that base models enhanced with \ours can outperform their SFT/RLHF-tuned counterparts, and our automatically optimized prompts surpass those curated by human experts. The adaptability and efficiency of \ours pave the way for more personalized and fine-grained aligned AI systems.
+
+This paper introduced Dynamic Rewarding with Prompt Optimization (\ours), a tuning-free approach for self-aligning LLMs. \ours integrates a novel dynamic rewarding mechanism into a search-based prompt optimization framework, enabling LLMs to self-improve model-specific alignment weaknesses adaptively. Experiments on eight LLMs show that \ours-enhanced base models outperform SFT/RLHF-tuned counterparts, and its optimized prompts surpass those by human experts. \ours's adaptability and efficiency offer a promising path toward more personalized AI systems.
+
+
+\newpage
+
+
+
+
+
+\section*{Limitations}
+
+While \ours demonstrates significant advancements in tuning-free self-alignment of LLMs, there are a few potential limitations to discuss. 
+
+
+\noindent \textbf{Optimization cost.}
+Tuning-free alignment does not come as a free lunch. Ideally, optimizing the alignment prompt for each query would probably be more effective, but its computational overhead is prohibitive. This concern is similar to the decoding-based alignment, where alignment-guided decoding needs to run per query. However, \ours requires only a one-time optimization for each LLM, allowing the optimized alignment prompt to be stored in the LLM memory for future use, significantly reducing the overhead. A detailed analysis of the cost of \ours can be found at \ref{sec:i_cost}.
+
+\noindent \textbf{Computational overhead.}
+Compared to SFT / RLHF-tuned models, the increase of input context for the optimized and complex prompt in \ours induces a marginal computational overhead. With advancements in modern LLMs, such as larger context windows, we believe this computational overhead is manageable. Moreover, once an optimized prompt is available with \ours, prompt compression techniques can further reduce the prompt length without sacrificing the performance, which future works can explore. 
+
+
+\noindent \textbf{Automatic rewarding}.
+Another potential limitation we noticed is the potential oversight of the internal rewarding process in \ours, which is fully automatic. For example, imprecise rewards might be assigned by dynamic rewarding, leading to undesirable behaviors. We acknowledge this potential issue and have manually reviewed the optimized prompt, finding no severe issues associated with this automatic optimization process. Future work should develop systematic methods to monitor and ensure the accuracy of the reward assignments and the resulting model behaviors. 
+
+\noindent \textbf{Self-correction ability of LLMs}. 
+The self-correction ability of LLMs may also be a potential limitation.
+When optimizing the system prompt and in-context examples, we rely on LLM-generated feedback, which may occasionally be inaccurate. Upon analyzing feedback traces, we observed that while some feedback was overly critical, it was predominantly constructive. Importantly, the search process mitigates the impact of such overly critical or incorrect feedback on the overall optimization quality. Future work may explore additional guardrails to further ensure the correctness and reliability of LLM-generated feedback throughout the process.
+
+
+\noindent \textbf{Combination with fine-tuning.}
+One may naturally wonder whether \ours can be used to synthesize alignment data and combined with fine-tuning methods to further boost the alignment performance. The answer is yes; however, as highlighted in the paper, one of \ours's unique advantages is its adaptivity, allowing quick adaptation to a new set of reward or user-specific requirements. We value such property and leave the combination of \ours with fine-tuning for future works. 
+
+\noindent \textbf{Capacity assumptions of models.} 
+There are certain assumptions on the models involved in \ours. First of all, \ours leverages a strong LLM, specifically GPT-4, as the optimizer to maximize the performance of dynamic rewarding and alignment feedback. Future research could explore other optimizer models, including open-source options, to democratize the application of \ours. Additionally, \ours imposes certain capacity requirements on the base models. Given the complexity of our optimized alignment prompt, smaller and less powerful LLMs, such as LLaMA-7b~\cite{touvron2023llama}, may not experience dramatic improvements through \ours, although some enhancement is still possible. Our assumption is that better pre-trained and instruction-following models have greater potential to be augmented by \ours. We leave such a meaningful question to future research, studying the alignment potential and threshold of LLMs. 
+
+
+Finally, future work may explore further enhancements to the dynamic rewarding mechanism and broader applications of \ours across different domains and tasks.
+
+
+\section*{Acknowledgment}
+
+We thank the anonymous reviewers for their constructive comments and suggestions. We are also grateful to Enze Ma for integrating \ours into \texttt{LLM Reasoners} and for the valuable discussions with members of MixLab. This work was supported by the OpenAI Agentic AI Research Grant Program. The views and conclusions expressed in this paper are those of the authors and do not necessarily reflect the views of the funding agencies.
+
+
+
+

@@ -1,0 +1,77 @@
+% main table comparing the baselines and our own methods
+
+\begin{table*}[t]
+\begin{center}
+\begin{tabular}{ >{\raggedright\arraybackslash}p{3.9cm} c c c c c c c c } 
+    \toprule
+
+    \textbf{[Tuned] Model} & \textbf{Method }& \bm{$K$} & \textbf{Helpful} & \textbf{Clear} & \textbf{Factual} & \textbf{Deep} & \textbf{Engage} & \textbf{Avg.} \\
+    \midrule
+
+    [\xmark] Mistral 7b  & Base & 0 & 2.20 & 2.51 & 2.29 & 1.69 & 1.80 & 2.10 \\
+    
+   [\xmark] Mistral 7b  & URIAL & 3 & 3.62 & 4.32 & 3.75 & 2.70 & 3.41 &  3.56\\
+    
+    [\xmark] Mistral 7b  & \ours & 2 & \textbf{4.23} & \textbf{4.56} & \textbf{3.97} & \textbf{3.68} & \textbf{3.84} &  \textbf{4.06}\\
+    
+    \hline
+    
+   [\cmark] Mistral 7b (Instruct) & Base & 0 & 3.98 & 4.44 & 3.64 & 2.97 & 3.26 &  3.66\\
+    
+   [\cmark] Mistral 7b (Instruct) & URIAL & 3 & 3.94 & 4.51 & 3.69 & 2.99 & 3.75 &  3.78\\
+    
+    [\cmark] Mistral 7b (Instruct) & \ours & 2 & \textbf{4.22} & \textbf{4.60} & \textbf{3.80} & \textbf{3.68} & \textbf{3.99} &  \textbf{4.06}\\
+
+   \hline
+
+    [\xmark] Llama 2 70b$^q$  & Base & 0 & 2.07 & 2.55 & 2.35 & 1.50 & 1.63 &  2.02 \\
+    
+    [\xmark] Llama 2 70b$^q$ & URIAL & 3 & 4.25 & 4.67 & 4.03 & 3.08 & 3.80 &  3.97 \\
+    
+    [\xmark] Llama 2 70b$^q$  & \ours & 2 & \textbf{4.42} & \textbf{4.72} & \textbf{4.23} & \textbf{3.81} & \textbf{3.98} &  \textbf{4.23}\\
+
+    \hline
+
+    [\cmark] Llama 2 70b$^q$ (chat) & Base & 0 & 4.36 & 4.71 & 3.95 & 3.56 & 3.76 &  4.07\\
+
+    [\cmark] Llama 2 70b$^q$ (chat) & URIAL & 3 & 4.32 & 4.72 & 4.08 & 3.50 & 4.25 &  4.17\\
+    
+    [\cmark] Llama 2 70b$^q$ (chat) & \ours & 2 & \textbf{4.46} & \textbf{4.75} & \textbf{4.10} & \textbf{4.11} & \textbf{4.37} &  \textbf{4.36}\\
+
+
+   \hline
+
+    [\xmark] Llama 3 8b  & Base & 0 & 1.82 & 2.27 & 2.20 & 1.38 & 1.48 &  1.83\\
+
+    [\xmark] Llama 3 8b  & URIAL & 3 & 3.94 & \textbf{4.51} & 3.69 & 2.99 & \textbf{3.75} & 3.78 \\
+    
+    [\xmark] Llama 3 8b  & \ours & 2 & \textbf{4.02} & 4.40 & \textbf{3.84} & \textbf{3.50} & 3.65 &  \textbf{3.88} \\
+
+   \hline
+
+    [\cmark] Llama 3 8b (Instruct) & Base & 0 & 4.43 & 4.72 & 3.98 & 3.45 & 3.76 &  4.07\\
+
+    [\cmark] Llama 3 8b (Instruct) & URIAL & 3 & 4.48 & 4.81 & \textbf{4.19} & 3.55 & 4.27 &  4.26\\
+    
+    [\cmark] Llama 3 8b (Instruct) & \ours & 2 & \textbf{4.54} & \textbf{4.81} & 4.16 & \textbf{4.08} & \textbf{4.40} & \textbf{4.40} \\
+
+    \hline
+
+    [\cmark] \texttt{gpt-3.5-turbo} & Base & 0 & 4.56 & 4.89 & 4.41 & 3.30 & 3.55 & 4.14 \\
+
+    [\cmark] \texttt{gpt-3.5-turbo} & URIAL & 3 & 4.30 & 4.77 & 4.41 & 3.44 & 4.11 &  4.21\\
+    
+    [\cmark] \texttt{gpt-3.5-turbo} & \ours & 2 & \textbf{4.67} & \textbf{4.92} & \textbf{4.53} & \textbf{4.07} & \textbf{4.58} &  \textbf{4.55}\\
+
+   \hline
+    [\cmark] \texttt{gpt-4-0613} & Base & 0 & \textbf{4.71} & \textbf{4.93} & \textbf{4.52} & 3.49 & 3.53 &  \textbf{4.24} \\
+
+    \bottomrule
+
+\end{tabular}
+
+\caption{Performance on \texttt{just-eval-instruct} benchmark. ``Tuned'' indicates whether the model has been SFT/RLHF tuned. Models are evaluated across multiple aspects: ``Helpful'' (Helpfulness), ``Clear'' (Clarity), ``Factual'' (Factuality), ``Deep'' (Depth), and ``Engage'' (Engagement). The base method indicates a basic alignment prompt. Our method consistently outperforms baseline methods across multiple aspects and overall.}
+\label{tab:main_table}
+\vspace{-17pt}
+\end{center}
+\end{table*}

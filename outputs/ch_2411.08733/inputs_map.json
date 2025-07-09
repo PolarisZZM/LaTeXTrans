@@ -1,0 +1,92 @@
+[
+    {
+        "command": "\\input{sections/abstract}",
+        "begin": "<PLACEHOLDER_sections/abstract_begin>",
+        "end": "<PLACEHOLDER_sections/abstract_end>",
+        "path": "sections/abstract"
+    },
+    {
+        "command": "\\input{sections/intro}",
+        "begin": "<PLACEHOLDER_sections/intro_begin>",
+        "end": "<PLACEHOLDER_sections/intro_end>",
+        "path": "sections/intro"
+    },
+    {
+        "command": "\\input{sections/related_works}",
+        "begin": "<PLACEHOLDER_sections/related_works_begin>",
+        "end": "<PLACEHOLDER_sections/related_works_end>",
+        "path": "sections/related_works"
+    },
+    {
+        "command": "\\input{sections/method}",
+        "begin": "<PLACEHOLDER_sections/method_begin>",
+        "end": "<PLACEHOLDER_sections/method_end>",
+        "path": "sections/method"
+    },
+    {
+        "command": "\\input{sections/exp}",
+        "begin": "<PLACEHOLDER_sections/exp_begin>",
+        "end": "<PLACEHOLDER_sections/exp_end>",
+        "path": "sections/exp"
+    },
+    {
+        "command": "\\input{tables/main_table}",
+        "begin": "<PLACEHOLDER_tables/main_table_begin>",
+        "end": "<PLACEHOLDER_tables/main_table_end>",
+        "path": "tables/main_table"
+    },
+    {
+        "command": "\\input{tables/prompt_transfer}",
+        "begin": "<PLACEHOLDER_tables/prompt_transfer_begin>",
+        "end": "<PLACEHOLDER_tables/prompt_transfer_end>",
+        "path": "tables/prompt_transfer"
+    },
+    {
+        "command": "\\input{tables/ablation_table_prompt_icl}",
+        "begin": "<PLACEHOLDER_tables/ablation_table_prompt_icl_begin>",
+        "end": "<PLACEHOLDER_tables/ablation_table_prompt_icl_end>",
+        "path": "tables/ablation_table_prompt_icl"
+    },
+    {
+        "command": "\\input{tables/ablation_search_algo}",
+        "begin": "<PLACEHOLDER_tables/ablation_search_algo_begin>",
+        "end": "<PLACEHOLDER_tables/ablation_search_algo_end>",
+        "path": "tables/ablation_search_algo"
+    },
+    {
+        "command": "\\input{tables/ablation_methodological}",
+        "begin": "<PLACEHOLDER_tables/ablation_methodological_begin>",
+        "end": "<PLACEHOLDER_tables/ablation_methodological_end>",
+        "path": "tables/ablation_methodological"
+    },
+    {
+        "command": "\\input{tables/gpt_prompt_analysis}",
+        "begin": "<PLACEHOLDER_tables/gpt_prompt_analysis_begin>",
+        "end": "<PLACEHOLDER_tables/gpt_prompt_analysis_end>",
+        "path": "tables/gpt_prompt_analysis"
+    },
+    {
+        "command": "\\input{sections/conclusion}",
+        "begin": "<PLACEHOLDER_sections/conclusion_begin>",
+        "end": "<PLACEHOLDER_sections/conclusion_end>",
+        "path": "sections/conclusion"
+    },
+    {
+        "command": "\\input{sections/appendix}",
+        "begin": "<PLACEHOLDER_sections/appendix_begin>",
+        "end": "<PLACEHOLDER_sections/appendix_end>",
+        "path": "sections/appendix"
+    },
+    {
+        "command": "\\input{tables/appendix_hyparparams_table}",
+        "begin": "<PLACEHOLDER_tables/appendix_hyparparams_table_begin>",
+        "end": "<PLACEHOLDER_tables/appendix_hyparparams_table_end>",
+        "path": "tables/appendix_hyparparams_table"
+    },
+    {
+        "command": "\\input{tables/optimized_prompt_case_study}",
+        "begin": "<PLACEHOLDER_tables/optimized_prompt_case_study_begin>",
+        "end": "<PLACEHOLDER_tables/optimized_prompt_case_study_end>",
+        "path": "tables/optimized_prompt_case_study"
+    }
+]

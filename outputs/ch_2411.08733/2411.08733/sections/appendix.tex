@@ -1,0 +1,870 @@
+\newpage
+
+
+\section{更多实现细节}
+\label{sec:impl_details}
+\subsection{ \ours 的超参数}
+\input{tables/appendix_hyparparams_table}
+\subsection{基准}
+
+\noindent \textbf{蒙特卡罗搜索}：蒙特卡罗搜索执行无方向的单步采样多次。采样方法与\ours相同；我们在该方法中采样了120个提示，以确保与\ours的成本相同，从而保证公平比较。
+
+\noindent \textbf{贪心搜索}：贪心搜索是束搜索的特例，其中束宽度$W$固定为1，采样方法、每个状态的动作样本数$M$与\ours保持一致，但由于该方法中的束宽度减少，整体成本较低。
+
+\noindent \textbf{静态奖励}：在此方法中，我们保持与\ours相同的搜索算法。不同的是，我们总是向优化器和评估器提供一组固定的评估方面，而不是选择动态方面。固定的评估方面包括有用性、清晰度、事实性、深度、参与度和安全性，即评估方面。这使得静态奖励方法在评估指标上表现最佳，并建立了一个强有力的基准。请注意，在评估此基准时，我们保持了2个上下文学习示例的数量。
+\subsection{种子样本}
+在采样数据集中，180个样本中，$47.8 \%$ 的样本来自 \texttt{AlpacaEval}，$28.9 \%$ 来自 LIMA，其余来自 \texttt{HH-RLHF-redteam}。我们通过仅采样那些不在评估数据集中的示例，确保了公平的评估。
+\subsection{基础 ICL 示例}  
+\label{sec:i_base}  
+$\mathcal{I}_{base}$ 中的示例被分为两类：“不道德的”，用于训练模型应对恶意查询；以及“信息性的”，用于训练模型以可接受的格式呈现相关信息。$\mathcal{I}_{base}$ 包含数量相等的“不道德”查询和“信息性”查询。
+\subsection{ \ours 的成本分析}
+\label{sec:i_cost}
+\noindent \textbf{系统提示优化}。
+我们的优化过程采用了束搜索策略，采样提示的数量由参数 $W$（束宽度）、$M$（每个状态的动作样本数）和 $D$（束深度）决定。具体来说，这些参数导致：
+
+    \begin{enumerate}
+        \item  $W \times M \times D$ 次 API 调用优化器 LLM $\mathcal{O}$ 进行提示采样。
+        \item $D$ 次 API 调用 LLM 进行种子样本的奖励选择。
+        \item $W \times M \times D$ 次 API 调用基础 LLM $\mathcal{B}$ 生成与每个采样提示对应的响应。
+        \item $W \times M \times D$ 次 API 调用评估器 LLM $\mathcal{E}$，使用种子样本评估采样提示。
+    \end{enumerate}
+
+因此，系统提示优化的总体成本（$C_{\text{system}}$），包括 API 调用和基础 LLM 推理，可以表示为：
+
+\begin{align*}
+    C_{\text{system}} = & \underbrace{W \times M \times D}_{\text{提示采样}}
+    + \underbrace{D}_{\text{奖励选择}} + \\
+    & \underbrace{W \times M \times D}_{\text{响应生成}}
+    + \underbrace{W \times M \times D}_{\text{提示评估}}
+\end{align*}
+
+值得注意的是，奖励选择成本仅发生一次，因为这些结果会被缓存并在所有模型中重复使用。此外，系统提示优化对于每个模型也是一次性过程；一旦优化完成，提示可以在不产生额外成本的情况下重复使用。这种方法确保了所产生的成本是有限的，并且不会随着后续使用次数的增加而扩大。
+
+\noindent \textbf{ICL 优化}。
+与系统提示优化类似，我们也可以使用束搜索进行 ICL 优化。优化一个 ICL 示例的成本如下：
+
+    \begin{enumerate}
+        \item 单次 API 调用 LLM 进行示例的奖励选择。
+        \item $W \times M \times D$ 次 API 调用评估器 LLM 评估 ICL 示例。（根据超参数，结果为 5）
+        \item $W \times M \times D$ 次 API 调用优化器 LLM，优化 ICL 示例。
+    \end{enumerate}
+
+因此，ICL 优化的总成本（$C_{\text{ICL}}$）可以表示为：
+
+\begin{align*}
+    C_{\text{ICL}} = \quad & (\underbrace{1}_{\text{奖励选择}} + \underbrace{W \times M \times D}_{\text{评估}} + \\
+    & \underbrace{W \times M \times D}_{\text{优化}} ) \times N
+\end{align*}
+
+其中 $N$ 表示我们希望优化的示例数量。
+
+ICL 示例是与模型无关的，可以在不同模型之间重复使用，因此使得优化成本对于每个示例来说是一次性支出。
+
+\newpage
+
+
+\section{分类性能}
+\label{sec:cat_perf}
+\subsection{Mistral 7b}
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{.5\textwidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{images/mistral_1.png}
+  \label{fig:cat_mistral_1}
+\end{subfigure}
+
+\vspace{1em}
+
+\begin{subfigure}[b]{.5\textwidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{images/mistral_2.png}
+  \label{fig:cat_mistral_2}
+\end{subfigure}
+\caption{Mistral 7b在各个领域的分类表现。使用\ours，我们可以看到在所有领域的表现都有显著提升。特别是，人文学科、推理、STEM等领域表现出了显著的提升。这凸显了基础模型可以从\ours中获益颇多的事实。}
+\label{fig:categorized_performance_mistral}
+\end{figure}
+
+\newpage
+\subsection{Llama 2 70b}
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{.5\textwidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{images/llama_1.png}
+  \label{fig:cat_llama_1}
+\end{subfigure}
+
+\vspace{1em}
+
+\begin{subfigure}[b]{.5\textwidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{images/llama_2.png}
+  \label{fig:cat_llama_2}
+\end{subfigure}
+\caption{Llama 2 70$b^q$ 在各个领域的分类性能表现。使用 \ours 后，我们观察到除数学外的所有领域性能均有所提升，而数学领域略有下降。使用 \ours 显著提升了诸如信息检索、编程和金融等领域的性能。}
+\label{fig:categorized_performance_llama}
+\end{figure}
+
+\newpage
+\subsection{\texttt{gpt-3.5-turbo}}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{.5\textwidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{images/gpt_1.png}
+  \label{fig:cat_gpt_1}
+\end{subfigure}
+
+\vspace{1em}
+
+\begin{subfigure}[b]{.5\textwidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{images/gpt_2.png}
+  \label{fig:cat_gpt_2}
+\end{subfigure}
+\caption{\texttt{gpt-3.5-turbo} 在不同领域的分类性能表现。由于使用了 \ours，该模型在所有领域的性能均有所提升，显示出令人满意的结果。\\
+注意：我们将 \ours 方法应用于 RLHF 微调的 \texttt{gpt-3.5-turbo}，因为我们无法获取其基础模型。
+}
+\label{fig:categorized_performance_gpt}
+\end{figure}
+
+\newpage
+
+\section{优化算法}
+\label{sec:opti_algo}
+\subsection{ICL 优化}
+
+\begin{algorithm}[h]
+\caption{ICL 优化}\label{alg:icl_opti}
+
+\KwIn{$\mathcal{I}_{base}$，$N$，$\mathcal{O}$，$\mathcal{E}$，$\mathcal{R}$，$D$，$W$，$M$，$\mathcal{T}$}
+\KwOut{$\mathcal{I}^{*}$}
+
+\SetKwBlock{Definitions}{定义}{}
+\Definitions{
+
+    $\mathcal{I}_{base}$：基础 ICL 示例\;
+    $N$：ICL 示例数量\;
+    $\mathcal{O}$：优化器\;
+    $\mathcal{E}$：评估器\;
+    $\mathcal{R}$：奖励函数\;
+    $D$：束搜索深度\;
+    $W$：束宽度\;
+    $M$：每个状态的动作采样次数\;
+
+    $\mathcal{T}: \mathcal{S} \times \mathcal{A} \rightarrow \mathcal{S}$：状态转移函数
+
+}
+
+\For{i $= 1$ 到 $N$}
+{
+        $(q_i, b_i)$ $ = \mathcal{I}_{\text{base}}[i]$\;
+        $s_0 = b_i$ \tcp*[r]{初始化状态}
+        使用 $s_0$ 初始化束\;
+        \For{t $= 1$ 到 $D$}
+        {
+            next\_beam = []\;
+            \For{j $= 1$ 到 min(len(beam), $W$)}
+            {
+                $s_{{t-1}_{j}}$ = beam[j]\;
+                $r_{{t-1}_j} = \mathcal{R}(s_{{t-1}_{j}} \mid \mathbb{R}_{q_i})$\;
+
+                \SetKwBlock{SampleMtimes}{重复采样 $M$ 次：}{结束}
+                \SampleMtimes{
+                    $a_{{t-1}_j} = \mathcal{E}(s_{{t-1}_j} \mid \mathbb{R}_{q_i})$\;
+                    $s_{t_j} = \mathcal{T}(s_{{t-1}_j}, a_{{t-1}_j})$\;
+                    将 $s_{t_j}$ 添加到 \textit{next\_beam}\;
+                }
+            }
+            beam = 从 next\_beam 中选取前 $W$ 个状态\;
+        }
+        $s^{*}_{\mathcal{D}}$ = 最终束中的最优状态\;
+        $\mathcal{I}^*[i] = (q_i, s^{*}_{\mathcal{D}})$\;
+}
+
+\Return $\mathcal{I}^*$
+\end{algorithm}
+
+\newpage
+\subsection{系统提示优化}
+\begin{algorithm}[h]
+\caption{系统提示优化}\label{alg:prompt_opti}
+
+\KwIn{$\mathcal{I}^*$, $\mathcal{B}$, $\mathcal{O}$, $\mathcal{E}$, $\mathcal{R}$,
+$\mathcal{X}$.
+$\mathcal{P}$, $D$, $W$, $M$, $\mathcal{T}$}
+\KwOut{$\mathcal{P}^{*}$}
+
+\SetKwBlock{Definitions}{定义}{}
+\Definitions{
+
+    $\mathcal{I}^*$: 优化后的ICL示例\;
+    $\mathcal{B}$: 基础LLM\;
+    $\mathcal{O}$: 优化器模型\;
+    $\mathcal{E}$: 评估模型\;
+    $\mathcal{R}$: 奖励函数\;
+    $\mathcal{X}$: 种子数据集\;
+    $\mathcal{P}$: 初始系统提示\;
+    $D$: 光束深度\;
+    $W$: 光束宽度\;
+    $M$: 每个状态的动作样本数\;
+
+    $\mathcal{T}: \mathcal{S} \times \mathcal{A} \rightarrow \mathcal{S}$: 转换函数
+
+}
+
+$s_0 = \mathcal{P}$ \tcp*[r]{初始化状态}
+初始化光束为 $s_0$\;
+\For{t $= 1$ 到 $D$}
+{
+    $x_{t-1} = \mathcal{X}$[$t-1$]\;
+    $\mathcal{I}_K^*$ = 从 $\mathcal{I}^*$ 中选择与 $x_{t-1}$ 最相似的 $K$ 个示例\;
+    next\_beam = []\;
+    \For{j $= 1$ 到 min(光束长度, $W$)}
+    {
+        $s_{{t-1}_{j}}$ = 光束[j]\;
+        $r_{{t-1}_j} = \mathcal{R}(\mathcal{B}(x_{t-1} \mid s_{{t-1}_{j}}, \mathcal{I}_K^*) \mid \mathbb{R}_{x_{t-1}})$\;
+
+        \SetKwBlock{SampleMtimes}{重复（采样）$M$次:}{结束}
+        \SampleMtimes{
+            $a_{{t-1}_j} = \mathcal{E}(\mathcal{B}(x_{t-1} \mid s_{{t-1}_{j}}, \mathcal{I}_K^*) \mid \mathbb{R}_{x_{t-1}})$\;
+            $s_{t_j} = \mathcal{T}(s_{{t-1}_j}, a_{{t-1}_j})$\;
+            将 $s_{t_j}$ 添加到 \textit{next\_beam}\;
+        }
+    }
+    光束 = 从 next\_beam 中选择前 $W$ 个状态\;
+}
+$s^{*}_{\mathcal{D}}$ = 光束中的最终状态\;
+$\mathcal{P}^* = s^{*}_{\mathcal{D}}$\;
+
+\Return $\mathcal{P}^*$
+\end{algorithm}
+
+\newpage
+\section{优化提示案例研究}
+\label{sec:prompt_case_study}
+
+\input{tables/optimized_prompt_case_study}
+
+我们通过颜色突出显示了优化提示的不同方面，包括\ctext[RGB]{233,252,232}{如无法访问实时数据的局限性}，\ctext[RGB]{255,230,230}{针对小模型如Mistral 7b的避免重复的指导}，\ctext[RGB]{230,246,255}{针对大模型如\texttt{gpt-3.5-turbo}的避免行话的指导}，\ctext[RGB]{255,230,200}{道德指导}，\ctext[RGB]{255,225,255}{AI助手的通用指导}，\ctext[RGB]{230, 230, 255}{提高回答参与度的提示}。
+
+\newpage
+
+\section{元提示}
+\label{sec:meta_prompts}
+\subsection{奖励提示}
+
+在本节中，我们介绍了用于计算总体奖励的提示。奖励提示使用了像 eval$\_$dict 和奖励选择提示等组件。我们首先使用奖励选择提示（如节 \ref{sec:reward_selection_prompt} 中所示）来选择适当的奖励，然后为所选奖励创建一个格式如节 \ref{sec:eval_dict} 中所示的 eval$\_$dict。最后，使用奖励列表和 eval$\_$dict，我们使用如下所示的奖励提示来计算动态奖励。
+
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+Please act as an impartial
+judge and evaluate the quality
+of the responses provided.
+You will rate the quality
+of the output based on
+several selected aspects.
+
+## Query:
+[QUERY]
+
+## Output:
+[OUTPUT]
+
+## Evaluate
+### Aspects
+
+Below is a list of
+aspects for evaluating
+the quality of the response:
+[ASPECT_LIST]
+
+These aspects are selected
+for the following reasons:
+[ASPECT_REASON]
+
+### Format
+
+Given the query, please rate the quality of the output by scoring it from 1 to 5 individually on **each aspect**.
+- 1: strongly disagree
+- 2: disagree
+- 3: neutral
+- 4: agree
+- 5: strongly agree
+
+Now, please output your scores and a short rationale below in a JSON format by filling in the placeholders in []:
+```
+[EVAL_DICT]
+```
+\end{lstlisting}
+\subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}  \subsubsection{评估字典}  
+\label{sec:eval_dict}  
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+
+{"Helpfulness": {
+        "rationale": "[your thoughts on the helpfulness of the response]",
+        "score": "[your helpfulness score]"
+    },
+    "Clarity": {
+        "rationale": "[your thoughts on the clarity of the response]",
+        "score": "[your clarity score]"
+    },
+    "Factuality": {
+        "rationale": "[your thoughts on the factuality of the response]",
+        "score": "[your factuality score]"
+    },
+    "Depth": {
+        "rationale": "[your thoughts on the depth of the response]",
+        "score": "[your depth score]"
+    },
+    ...... for all chosen rewards
+}
+
+\end{lstlisting}
+\subsubsection{奖励选择提示}
+\label{sec:reward_selection_prompt}
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+Please act as an impartial judge and select the most relevant aspects for providing a high-quality response to the given query. Choose at least 2 and at most 5 aspects from the list below, or propose new aspects if you believe they are important for crafting the best possible response.
+
+## Aspects
+- Helpfulness: 回复应直接回应用户的提问，并提供相关且实用的解决方案或指导。
+- Clarity: 回复应结构清晰、表达清楚，观点应以易于理解且连贯的方式呈现。
+- Factuality: 提供的信息必须准确、真实，并基于可靠来源，在适当情况下需承认存在的不确定性。
+- Depth: 回复应具有适当的细节和深入程度，能对主题提供全面理解。
+- Engagement: 对话应具有吸引力，以自然、对话式的语气维持用户兴趣，并在可能的情况下加入互动元素。
+- Conciseness: 信息传达应高效，避免不必要的复杂性或冗长，同时保持内容完整。
+- Safety: 回复必须遵循伦理规范，促进积极互动，避免有害、不当或敏感内容。
+- Compliance: 回复应符合问题中提供的指示，确保满足用户期望，除非存在伦理或安全方面的顾虑。
+- Limitations: 回复应认识并承认 AI 系统的局限性，例如缺乏最新信息、无法执行搜索或实际行动，或其他相关限制（如适用）。
+- Critical-Thinking: 回复应对用户提问中所呈现的信息和假设进行质疑和分析，而非盲目接受。
+- Creativity: 回复应展现原创性和创新性，在适当情况下提供独特的观点或解决方案。
+- Interactivity: 在适用时，AI 应采用提问、提示或可操作建议等互动元素，积极引导用户参与对话。
+- Empathy: AI 应识别并适当回应用户的情绪状态和背景，营造支持性和理解性的互动氛围。
+- Sensitivity: 回复应具有文化意识和敏感性，避免先入为主的假设和泛化，同时尊重多样性。
+
+## Query:
+[QUERY]
+
+## Aspect Selection
+Given the query, please analyze its content, intent, and potential challenges in providing a suitable response. Consider the following:
+
+1. What is the main topic or subject of the query?
+2. What is the user's intent or goal in asking this question?
+3. Are there any potential ambiguities, uncertainties, or missing/wrong information in the query?
+4. What type of information or response format would best satisfy the user's needs?
+5. Are there any potential challenges or limitations in providing a comprehensive response?
+
+Based on your analysis, select the most relevant aspects for providing a high-quality response. Provide your reasoning for choosing these aspects.
+
+Output your analysis and aspect selection in the following JSON format:
+```
+{
+    "query_analysis": {
+        "main_topic": "[main topic or subject of the query]",
+        "user_intent": "[user's intent or goal]",
+        "ambiguities": "[potential ambiguities, uncertainties, or missing information]",
+        "response_format": "[type of information or response format needed]",
+        "challenges": "[potential challenges or limitations in providing a response]"
+    },
+    "aspects_selection": {
+        "reasoning": "[your rationale for selecting the aspects based on the query analysis]",
+        "selected_aspects": ["aspect1", "aspect2", ...]
+    }
+}
+```
+Note: The "selected_aspects" array should contain at least 2 and at most 5 aspects.
+\end{lstlisting}
+\subsection{状态转换提示}
+
+本节描述了用于利用语言模型作为转换函数的提示。请注意，在提示中，我们提供了 `[CURRENT$\_$SYSTEM$\_$PROMPT]`，即当前状态，以及对齐反馈 `[OUTPUT$\_$EVALUATION]` 以生成下一个状态。
+
+\begin{lstlisting}[breaklines=true,breakatwhitespace=true]
+我正在为语言模型设计一个系统提示，以生成对用户查询的响应。目标是优化响应的多个方面的质量。
+
+当前的系统提示是：
+[CURRENT_SYSTEM_PROMPT]
+
+在使用此提示回答以下查询时：
+[QUERY]
+
+模型生成的输出如下：
+[OUTPUT]
+
+以下是对输出在多个方面的评估：
+[OUTPUT_EVALUATION]
+
+这里列出了包括当前在内的前几个系统提示，每个提示都是在前一个的基础上改进的：
+[FORMER_SYSTEM_PROMPTS]
+
+根据以上所有信息，您需要设计一个新的系统提示，遵循以下通用指南：
+1. 确保新系统提示比当前的更好。
+2. 可以修改现有的提示，整合新指令，或构思一个全新的提示。
+3. 在某一方面的评估得分为 5 表示最佳质量，而得分为 1 表示最差质量。
+4. 尝试使系统提示在所有方面的质量之间取得平衡。
+5. 提示必须是通用的，适用于各种查询，而非当前查询的特定内容。
+
+在设计系统提示时，确保其结构符合以下指令：
+1. 在开始时，写一些关于模型应做什么以及它的能力的通用说明。
+2. 使用项目符号列出一些限制，如无法访问互联网/实时数据，无法进行物理行动，避免回答恶意问题等。
+3. 尝试列出模型的能力，换句话说，最好拒绝回答自己无法回答的内容，而不是给出无关的回答。
+4. 尝试按以下结构生成提示：
+
+    关于作为一个有帮助、道德的助手的通用说明，帮助模型在所有评估方面表现更好。
+    - 包含重要且具体的指令的项目符号，提醒需要记住的事项。
+
+5. 尝试提供一些建议，指导模型如何使响应更具吸引力和人性化，例如避免听起来像机器人一样的陷阱。
+6. 尝试根据上述输出及其评估提供一些具体提示，可以列出需要遵循或避免的事项，以使响应更符合评估意见。
+7. 尝试使您设计的提示中的项目符号既简洁又富有信息。
+8. 开头提供的通用说明可以详细或较长，并应尽量涵盖尽可能多的方面/问题。
+9. 向系统提示添加项目符号时，请不要一次添加超过两个项目符号。
+10. 删除项目符号时，请不要移除与整体目标相关但与当前查询无关的项目符号，而应修改/合并这些项目符号。
+11. 不要超过 8 个项目符号，如果必要，添加/修改/合并项目符号。
+
+请按照以下格式输出您新的系统提示，填写 `[]` 中的占位符：
+```
+{
+    "analysis": "[仔细分析评估得分和当前系统提示，找出需要改进的领域]",
+    "thought": "[你对如何改进当前系统提示的想法]",
+    "new_system_prompt": "[你的新系统提示]"
+}
+```
+\end{lstlisting}

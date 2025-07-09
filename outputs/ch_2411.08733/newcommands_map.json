@@ -1,0 +1,47 @@
+[
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_0>",
+        "name": "cmark",
+        "content": "\\newcommand{\\cmark}{\\ding{51}}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_1>",
+        "name": "xmark",
+        "content": "\\newcommand{\\xmark}{\\ding{55}}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_2>",
+        "name": "ours",
+        "content": "\\def\\ours{\\text{DRPO}\\xspace}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_3>",
+        "name": "cmark",
+        "content": "\\renewcommand{\\cmark}{\\textcolor{forest green}{\\ding{51}}}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_4>",
+        "name": "xmark",
+        "content": "\\renewcommand{\\xmark}{\\textcolor{red}{\\ding{55}}}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_5>",
+        "name": "zhen",
+        "content": "\\newcommand{\\zhen}[1]{\\textcolor{red}{ZW: #1}}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_6>",
+        "name": "somanshu",
+        "content": "\\newcommand{\\somanshu}[1]{\\textcolor{green}{SS: #1}}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_7>",
+        "name": "tianyang",
+        "content": "\\newcommand{\\tianyang}[1]{\\textcolor{blue}{TL: #1}}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_8>",
+        "name": "reduline",
+        "content": "\\newcommand{\\reduline}[1]{{\\color{red}\\underline{{\\color{black}#1}}}}"
+    }
+]

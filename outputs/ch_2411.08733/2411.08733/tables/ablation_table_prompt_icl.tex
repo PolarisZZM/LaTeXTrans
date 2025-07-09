@@ -1,0 +1,36 @@
+\begin{table}[!t]
+\begin{center}
+\resizebox{0.9\linewidth}{!}{
+\begin{tabular}{ c c c c }
+ \toprule
+ \multirow{2}{*}{\textbf{模型}} & \textbf{系统} & \textbf{ICL} & \multirow{2}{*}{\textbf{平均}} \\
+ & \textbf{提示} & \textbf{（}\bm{$K = 2$}\textbf{）} &  \\
+ \midrule
+
+  Mistral 7b  & \cmark & \cmark & \textbf{4.06} \\
+ Mistral 7b (指令) & \cmark & \cmark & \textbf{4.06} \\
+ Llama 2 70$b^q$  & \cmark & \cmark & \textbf{4.23} \\
+ \texttt{gpt-3.5-turbo} & \cmark & \cmark & \textbf{4.55} \\
+
+ \midrule
+
+Mistral 7b & \xmark & \cmark & 4.04 \\
+ Mistral 7b (指令) & \xmark & \cmark & 4.04 \\
+ Llama 2 70$b^q$  & \xmark & \cmark & 4.17 \\
+ \texttt{gpt-3.5-turbo} & \xmark & \cmark & 4.42 \\
+
+  \midrule
+
+Mistral 7b (指令) & \cmark & \xmark & 3.67 \\
+ Llama 2 70$b^q$  & \cmark & \xmark & 3.63 \\
+ \texttt{gpt-3.5-turbo} & \cmark & \xmark & 4.34 \\
+
+  \bottomrule
+
+\end{tabular}
+}
+\caption{关于去除优化的系统提示和上下文学习（ICL）示例的消融研究。没有优化的系统提示时，提供了一个基本的系统提示。我们的研究方法在所有模型中一致地优于所有消融变体。}
+\label{tab:ablation_icl_prompt}
+\vspace{-20pt}
+\end{center}
+\end{table}

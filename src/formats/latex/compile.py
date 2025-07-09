@@ -121,8 +121,14 @@ class LaTexCompiler:
             tex_file
         ]
         cwd = os.path.dirname(tex_file)
+
+        # Create a new environment for the subprocess, prioritizing the selected distribution's path
+        env = os.environ.copy()
+        dist_bin_dir = os.path.dirname(self.latexmk_path)
+        env['PATH'] = f"{dist_bin_dir}{os.pathsep}{env.get('PATH', '')}"
+
         try:
-            subprocess.run(cmd, check=True, capture_output=True, cwd=cwd)
+            subprocess.run(cmd, check=True, capture_output=True, cwd=cwd, env=env)
             print("✅  Compilation successful!") #compile success!
 
             output_path = os.path.join(self.output_latex_dir, "success.txt")
@@ -152,8 +158,14 @@ class LaTexCompiler:
             tex_file
         ]
         cwd = os.path.dirname(tex_file)
+
+        # Create a new environment for the subprocess, prioritizing the selected distribution's path
+        env = os.environ.copy()
+        dist_bin_dir = os.path.dirname(self.latexmk_path)
+        env['PATH'] = f"{dist_bin_dir}{os.pathsep}{env.get('PATH', '')}"
+
         try:
-            subprocess.run(cmd, check=True, capture_output=True, cwd=cwd)
+            subprocess.run(cmd, check=True, capture_output=True, cwd=cwd, env=env)
             print("✅  Compilation successful!") #compile success!
         except subprocess.CalledProcessError as e:
             print("⚠️  Somthing went wrong during compiling with xelatex.")
@@ -179,8 +191,14 @@ class LaTexCompiler:
             tex_file
         ]
         cwd = os.path.dirname(tex_file)
+
+        # Create a new environment for the subprocess, prioritizing the selected distribution's path
+        env = os.environ.copy()
+        dist_bin_dir = os.path.dirname(self.latexmk_path)
+        env['PATH'] = f"{dist_bin_dir}{os.pathsep}{env.get('PATH', '')}"
+        
         try:
-            subprocess.run(cmd, check=True, capture_output=True, cwd=cwd)
+            subprocess.run(cmd, check=True, capture_output=True, cwd=cwd, env=env)
             print("✅  Compilation successful!") #compile success!
 
             output_path = os.path.join(self.output_latex_dir, "success.txt")

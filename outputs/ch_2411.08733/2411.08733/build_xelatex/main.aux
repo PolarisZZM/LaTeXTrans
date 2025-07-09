@@ -1,0 +1,226 @@
+\relax 
+\bibstyle{acl_natbib}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\citation{brown2020language,chowdhery2023palm,touvron2023llama,achiam2023gpt}
+\citation{bai2022constitutional,ouyang2022training}
+\citation{lee2023rlaif}
+\citation{kim2023aligning,sun2024principle}
+\citation{bai2022constitutional}
+\citation{sun2024principle}
+\citation{li2023rain,wang2024inferaligner}
+\citation{han2023context,Lin2024ReAlign,zhao2024context}
+\HyPL@Entry{0<</S/D /St 2>>}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}引言}{2}{section.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 与其他LLM对齐范式的对比。 ，能够实现自我改进和高效的成本效益，无需人工监督或额外的模型训练。}}{2}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:paradigm_comparison}{{1}{2}{与其他LLM对齐范式的对比。 \ours结合了自我对齐和无需调优对齐的优点 ，能够实现自我改进和高效的成本效益，无需人工监督或额外的模型训练。}{figure.caption.1}{}}
+\citation{zhou2024lima}
+\citation{Lin2024ReAlign,zhao2024context}
+\citation{burns2023weak}
+\citation{pryzant2023automatic,hao2023reasoning,wang2023promptagent}
+\citation{Lin2024ReAlign}
+\citation{Lin2024ReAlign}
+\citation{ouyang2022training}
+\citation{lee2023rlaif,bai2022training,cao2024towards,wang2024step,guo2024human}
+\citation{wang2022self,kim2023aligning,sun2024principle}
+\citation{li2023self}
+\citation{bai2022constitutional,madaan2024self}
+\citation{han2023context,Lin2024ReAlign,zhao2024context}
+\citation{li2023rain,khanov2024args,huang2024deal}
+\citation{zou2023representation,wu2024reft}
+\citation{li2024inference,kong2024aligning,wang2024inferaligner}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 与其他对齐方法（包括RLHF和URIAL~\citep  {Lin2024ReAlign}）的对比。 。 请注意，我们无法访问\texttt  {gpt-3.5-turbo}基本模型；因此，。}}{3}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:overall_comparison_chart}{{2}{3}{与其他对齐方法（包括RLHF和URIAL~\cite {Lin2024ReAlign}）的对比。 \ours在多个LLM上始终优于这两种基线 。 请注意，我们无法访问\texttt {gpt-3.5-turbo}基本模型；因此，\ours和URIAL直接应用于其RLHF调优版本 。}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}相关工作}{3}{section.2}\protected@file@percent }
+\citation{rubin2021learning,dong2022survey}
+\citation{xu2022gps}
+\citation{fernando2023promptbreeder}
+\citation{wang2023promptagent}
+\citation{zhou2022large}
+\citation{fernando2023promptbreeder,yang2023large}
+\citation{pryzant2023automatic}
+\citation{wang2023promptagent}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 带有提示优化的动态奖励整体框架（\text  {DRPO}\xspace  ）。该优化问题被建模为一个马尔可夫决策过程（MDP），并通过束搜索（beam search）求解以优化对齐提示。动态奖励作为该框架中集成的一项新技术，允许灵活分配奖励，以检测并解决当前大语言模型中的对齐弱点，从而增强整体优化过程。}}{4}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:dynamic_rewarding}{{3}{4}{带有提示优化的动态奖励整体框架（\ours ）。该优化问题被建模为一个马尔可夫决策过程（MDP），并通过束搜索（beam search）求解以优化对齐提示。动态奖励作为该框架中集成的一项新技术，允许灵活分配奖励，以检测并解决当前大语言模型中的对齐弱点，从而增强整体优化过程。}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}方法论}{4}{section.3}\protected@file@percent }
+\citation{hao2023reasoning,hao2024llm}
+\citation{bai2022constitutional,sun2024principle}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}问题表述}{5}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}动态奖励与提示优化 (\text  {DRPO}\xspace  )}{5}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}动态奖励用于对齐}{5}{subsubsection.3.2.1}\protected@file@percent }
+\citation{Lin2024ReAlign}
+\citation{Lin2024ReAlign}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}ICL 示例优化}{6}{subsubsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}系统提示优化}{6}{subsubsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}实验}{6}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}实验设置}{6}{subsection.4.1}\protected@file@percent }
+\citation{alpaca_eval}
+\citation{zhou2024lima}
+\citation{Ganguli2022RedTL}
+\citation{Jiang2023Mistral7}
+\citation{lin2023awq}
+\citation{Touvron2023Llama2O}
+\citation{llama3modelcard}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 在 \texttt  {just-eval-instruct} 基准上的表现。``调整过的'' 表示该模型已进行 SFT/RLHF 调整。模型在多个方面进行评估：``有帮助''（帮助程度）、``清晰''（清晰度）、``事实性''（事实性）、``深度''（深度）和``参与度''（参与度）。基础方法表示基本的对齐提示。我们的方法在多个方面和整体上持续优于基础方法。}}{7}{table.caption.4}\protected@file@percent }
+\newlabel{tab:main_table}{{1}{7}{在 \texttt {just-eval-instruct} 基准上的表现。``调整过的'' 表示该模型已进行 SFT/RLHF 调整。模型在多个方面进行评估：``有帮助''（帮助程度）、``清晰''（清晰度）、``事实性''（事实性）、``深度''（深度）和``参与度''（参与度）。基础方法表示基本的对齐提示。我们的方法在多个方面和整体上持续优于基础方法。}{table.caption.4}{}}
+\citation{Lin2024ReAlign}
+\citation{Lin2024ReAlign}
+\citation{reimers-2019-sentence-bert}
+\citation{Lin2024ReAlign}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}结果}{8}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 提示迁移对基础 LLM 的影响。针对目标基础 LLM 优化的提示可获得最佳性能。}}{8}{table.caption.5}\protected@file@percent }
+\newlabel{tab:prompt_transfer}{{2}{8}{提示迁移对基础 LLM 的影响。针对目标基础 LLM 优化的提示可获得最佳性能。}{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 关于去除优化的系统提示和上下文学习（ICL）示例的消融研究。没有优化的系统提示时，提供了一个基本的系统提示。我们的研究方法在所有模型中一致地优于所有消融变体。}}{9}{table.caption.6}\protected@file@percent }
+\newlabel{tab:ablation_icl_prompt}{{3}{9}{关于去除优化的系统提示和上下文学习（ICL）示例的消融研究。没有优化的系统提示时，提供了一个基本的系统提示。我们的研究方法在所有模型中一致地优于所有消融变体。}{table.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 关于搜索方法的消融研究。MC：蒙特卡洛搜索；贪心搜索：贪心搜索；束搜索：束搜索。我们的研究方法在所有其他测试的搜索算法中表现最优。}}{9}{table.caption.7}\protected@file@percent }
+\newlabel{tab:ablation_search_algo}{{4}{9}{关于搜索方法的消融研究。MC：蒙特卡洛搜索；贪心搜索：贪心搜索；束搜索：束搜索。我们的研究方法在所有其他测试的搜索算法中表现最优。}{table.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces 关于动态奖励的消融研究，检查其从系统提示和 ICL 示例优化中去除的影响。我们的方法，通过对提示和 ICL 示例使用动态奖励，始终优于两种消融变体。}}{9}{table.caption.8}\protected@file@percent }
+\newlabel{tab:ablation_method}{{5}{9}{关于动态奖励的消融研究，检查其从系统提示和 ICL 示例优化中去除的影响。我们的方法，通过对提示和 ICL 示例使用动态奖励，始终优于两种消融变体。}{table.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Mistral 7b (指令) 在变化的 ICL 示例数量上的表现。两个示例在较低的上下文长度成本下提供了最佳性能。}}{9}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:icl_variation_chart}{{4}{9}{Mistral 7b (指令) 在变化的 ICL 示例数量上的表现。两个示例在较低的上下文长度成本下提供了最佳性能。}{figure.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces 针对 \texttt  {gpt-3.5-turbo} 优化的系统提示片段。优化后的提示清晰地展示了改进的对齐，解决了模型的潜在弱点。}}{9}{table.caption.10}\protected@file@percent }
+\newlabel{tab:gpt_prompt}{{6}{9}{针对 \texttt {gpt-3.5-turbo} 优化的系统提示片段。优化后的提示清晰地展示了改进的对齐，解决了模型的潜在弱点。}{table.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}结论}{10}{section.5}\protected@file@percent }
+\citation{touvron2023llama}
+\bibdata{main}
+\bibcite{achiam2023gpt}{{1}{2023}{{Achiam et~al.}}{{Achiam, Adler, Agarwal, Ahmad, Akkaya, Aleman, Almeida, Altenschmidt, Altman, Anadkat et~al.}}}
+\bibcite{llama3modelcard}{{2}{2024}{{AI@Meta}}{{}}}
+\bibcite{bai2022training}{{3}{2022{a}}{{Bai et~al.}}{{Bai, Jones, Ndousse, Askell, Chen, DasSarma, Drain, Fort, Ganguli, Henighan et~al.}}}
+\bibcite{bai2022constitutional}{{4}{2022{b}}{{Bai et~al.}}{{Bai, Kadavath, Kundu, Askell, Kernion, Jones, Chen, Goldie, Mirhoseini, McKinnon et~al.}}}
+\bibcite{brown2020language}{{5}{2020}{{Brown et~al.}}{{Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal, Neelakantan, Shyam, Sastry, Askell et~al.}}}
+\bibcite{burns2023weak}{{6}{2023}{{Burns et~al.}}{{Burns, Izmailov, Kirchner, Baker, Gao, Aschenbrenner, Chen, Ecoffet, Joglekar, Leike et~al.}}}
+\bibcite{cao2024towards}{{7}{2024}{{Cao et~al.}}{{Cao, Lu, Lu, Chen, Ren, Xiang, Liu, Lu, He, Han et~al.}}}
+\bibcite{chowdhery2023palm}{{8}{2023}{{Chowdhery et~al.}}{{Chowdhery, Narang, Devlin, Bosma, Mishra, Roberts, Barham, Chung, Sutton, Gehrmann et~al.}}}
+\bibcite{dong2022survey}{{9}{2022}{{Dong et~al.}}{{Dong, Li, Dai, Zheng, Wu, Chang, Sun, Xu, and Sui}}}
+\bibcite{fernando2023promptbreeder}{{10}{2023}{{Fernando et~al.}}{{Fernando, Banarse, Michalewski, Osindero, and Rockt{\"a}schel}}}
+\bibcite{Ganguli2022RedTL}{{11}{2022}{{Ganguli et~al.}}{{Ganguli, Lovitt, Kernion, Askell, Bai, Kadavath, Mann, Perez, Schiefer, Ndousse, Jones, Bowman, Chen, Conerly, Dassarma, Drain, Elhage, El-Showk, Fort, Dodds, Henighan, Hernandez, Hume, Jacobson, Johnston, Kravec, Olsson, Ringer, Tran-Johnson, Amodei, Brown, Joseph, McCandlish, Olah, Kaplan, and Clark}}}
+\bibcite{guo2024human}{{12}{2024}{{Guo et~al.}}{{Guo, Yao, Shen, Wei, Zhang, Wang, and Liu}}}
+\bibcite{han2023context}{{13}{2023}{{Han}}{{}}}
+\bibcite{hao2024llm}{{14}{2024}{{Hao et~al.}}{{Hao, Gu, Luo, Liu, Shao, Wang, Xie, Ma, Samavedhi, Gao, Wang, and Hu}}}
+\bibcite{hao2023reasoning}{{15}{2023}{{Hao et~al.}}{{Hao, Gu, Ma, Hong, Wang, Wang, and Hu}}}
+\bibcite{huang2024deal}{{16}{2024}{{Huang et~al.}}{{Huang, Sengupta, Bonadiman, Lai, Gupta, Pappas, Mansour, Kirchoff, and Roth}}}
+\bibcite{Jiang2023Mistral7}{{17}{2023}{{Jiang et~al.}}{{Jiang, Sablayrolles, Mensch, Bamford, Chaplot, de~Las~Casas, Bressand, Lengyel, Lample, Saulnier, Lavaud, Lachaux, Stock, Scao, Lavril, Wang, Lacroix, and Sayed}}}
+\bibcite{khanov2024args}{{18}{2024}{{Khanov et~al.}}{{Khanov, Burapacheep, and Li}}}
+\bibcite{kim2023aligning}{{19}{2023}{{Kim et~al.}}{{Kim, Bae, Shin, Kang, Kwak, Yoo, and Seo}}}
+\bibcite{kong2024aligning}{{20}{2024}{{Kong et~al.}}{{Kong, Wang, Mu, Du, Zhuang, Zhou, Song, Zhang, Wang, and Zhang}}}
+\bibcite{lee2023rlaif}{{21}{2023}{{Lee et~al.}}{{Lee, Phatale, Mansoor, Lu, Mesnard, Bishop, Carbune, and Rastogi}}}
+\bibcite{li2024inference}{{22}{2024}{{Li et~al.}}{{Li, Patel, Vi{\'e}gas, Pfister, and Wattenberg}}}
+\bibcite{li2023self}{{23}{2023{a}}{{Li et~al.}}{{Li, Yu, Zhou, Schick, Zettlemoyer, Levy, Weston, and Lewis}}}
+\bibcite{alpaca_eval}{{24}{2023{b}}{{Li et~al.}}{{Li, Zhang, Dubois, Taori, Gulrajani, Guestrin, Liang, and Hashimoto}}}
+\bibcite{li2023rain}{{25}{2023{c}}{{Li et~al.}}{{Li, Wei, Zhao, Zhang, and Zhang}}}
+\bibcite{Lin2024ReAlign}{{26}{2024{a}}{{Lin et~al.}}{{Lin, Ravichander, Lu, Dziri, Sclar, Chandu, Bhagavatula, and Choi}}}
+\bibcite{lin2023awq}{{27}{2024{b}}{{Lin et~al.}}{{Lin, Tang, Tang, Yang, Chen, Wang, Xiao, Dang, Gan, and Han}}}
+\bibcite{madaan2024self}{{28}{2024}{{Madaan et~al.}}{{Madaan, Tandon, Gupta, Hallinan, Gao, Wiegreffe, Alon, Dziri, Prabhumoye, Yang et~al.}}}
+\bibcite{ouyang2022training}{{29}{2022}{{Ouyang et~al.}}{{Ouyang, Wu, Jiang, Almeida, Wainwright, Mishkin, Zhang, Agarwal, Slama, Ray, Schulman, Hilton, Kelton, Miller, Simens, Askell, Welinder, Christiano, Leike, and Lowe}}}
+\bibcite{pryzant2023automatic}{{30}{2023}{{Pryzant et~al.}}{{Pryzant, Iter, Li, Lee, Zhu, and Zeng}}}
+\bibcite{reimers-2019-sentence-bert}{{31}{2019}{{Reimers and Gurevych}}{{}}}
+\bibcite{rubin2021learning}{{32}{2021}{{Rubin et~al.}}{{Rubin, Herzig, and Berant}}}
+\bibcite{sun2024principle}{{33}{2024}{{Sun et~al.}}{{Sun, Shen, Zhou, Zhang, Chen, Cox, Yang, and Gan}}}
+\bibcite{touvron2023llama}{{34}{2023{a}}{{Touvron et~al.}}{{Touvron, Lavril, Izacard, Martinet, Lachaux, Lacroix, Rozi{\`e}re, Goyal, Hambro, Azhar et~al.}}}
+\bibcite{Touvron2023Llama2O}{{35}{2023{b}}{{Touvron et~al.}}{{Touvron, Martin, Stone, Albert, Almahairi, Babaei, Bashlykov, Batra, Bhargava, Bhosale, Bikel, Blecher, Ferrer, Chen, Cucurull, Esiobu, Fernandes, Fu, Fu, Fuller, Gao, Goswami, Goyal, Hartshorn, Hosseini, Hou, Inan, Kardas, Kerkez, Khabsa, Kloumann, Korenev, Koura, Lachaux, Lavril, Lee, Liskovich, Lu, Mao, Martinet, Mihaylov, Mishra, Molybog, Nie, Poulton, Reizenstein, Rungta, Saladi, Schelten, Silva, Smith, Subramanian, Tan, Tang, Taylor, Williams, Kuan, Xu, Yan, Zarov, Zhang, Fan, Kambadur, Narang, Rodriguez, Stojnic, Edunov, and Scialom}}}
+\bibcite{wang2024step}{{36}{2024{a}}{{Wang et~al.}}{{Wang, Ma, Meng, Qin, Shen, Zhang, Wu, Liu, Bian, Xu et~al.}}}
+\bibcite{wang2024inferaligner}{{37}{2024{b}}{{Wang et~al.}}{{Wang, Zhang, Li, Tan, Wang, Ren, Jiang, and Qiu}}}
+\bibcite{wang2023promptagent}{{38}{2023}{{Wang et~al.}}{{Wang, Li, Wang, Bai, Luo, Zhang, Jojic, Xing, and Hu}}}
+\bibcite{wang2022self}{{39}{2022}{{Wang et~al.}}{{Wang, Kordi, Mishra, Liu, Smith, Khashabi, and Hajishirzi}}}
+\bibcite{wu2024reft}{{40}{2024}{{Wu et~al.}}{{Wu, Arora, Wang, Geiger, Jurafsky, Manning, and Potts}}}
+\bibcite{xu2022gps}{{41}{2022}{{Xu et~al.}}{{Xu, Chen, Du, Shao, Wang, Li, and Yang}}}
+\bibcite{yang2023large}{{42}{2023}{{Yang et~al.}}{{Yang, Wang, Lu, Liu, Le, Zhou, and Chen}}}
+\bibcite{zhao2024context}{{43}{2024}{{Zhao et~al.}}{{Zhao, Andriushchenko, Croce, and Flammarion}}}
+\bibcite{zhou2024lima}{{44}{2024}{{Zhou et~al.}}{{Zhou, Liu, Xu, Iyer, Sun, Mao, Ma, Efrat, Yu, Yu et~al.}}}
+\bibcite{zhou2022large}{{45}{2022}{{Zhou et~al.}}{{Zhou, Muresanu, Han, Paster, Pitis, Chan, and Ba}}}
+\bibcite{zou2023representation}{{46}{2023}{{Zou et~al.}}{{Zou, Phan, Chen, Campbell, Guo, Ren, Pan, Yin, Mazeika, Dombrowski et~al.}}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}更多实现细节}{14}{appendix.A}\protected@file@percent }
+\newlabel{sec:impl_details}{{A}{14}{更多实现细节}{appendix.A}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1} \text  {DRPO}\xspace  的超参数}{14}{subsection.A.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \text  {DRPO}\xspace  在 ICL 优化和系统提示优化过程中使用的所有超参数。}}{14}{table.caption.14}\protected@file@percent }
+\newlabel{tab:hyper_params_beam}{{\caption@xref {tab:hyper_params_beam}{ on input line 13}}{14}{\ours 的超参数}{table.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}基准}{14}{subsection.A.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}种子样本}{14}{subsection.A.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}基础 ICL 示例}{14}{subsection.A.4}\protected@file@percent }
+\newlabel{sec:i_base}{{A.4}{14}{基础 ICL 示例}{subsection.A.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5} \text  {DRPO}\xspace  的成本分析}{14}{subsection.A.5}\protected@file@percent }
+\newlabel{sec:i_cost}{{A.5}{14}{\ours 的成本分析}{subsection.A.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}分类性能}{15}{appendix.B}\protected@file@percent }
+\newlabel{sec:cat_perf}{{B}{15}{分类性能}{appendix.B}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Mistral 7b}{15}{subsection.B.1}\protected@file@percent }
+\newlabel{fig:cat_mistral_1}{{\caption@xref {??}{ on input line 74}}{15}{Mistral 7b}{figure.caption.15}{}}
+\newlabel{sub@fig:cat_mistral_1}{{}{15}{Mistral 7b}{figure.caption.15}{}}
+\newlabel{fig:cat_mistral_2}{{\caption@xref {??}{ on input line 82}}{15}{Mistral 7b}{figure.caption.15}{}}
+\newlabel{sub@fig:cat_mistral_2}{{}{15}{Mistral 7b}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Mistral 7b在各个领域的分类表现。使用\text  {DRPO}\xspace  ，我们可以看到在所有领域的表现都有显著提升。特别是，人文学科、推理、STEM等领域表现出了显著的提升。这凸显了基础模型可以从。}}{15}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:categorized_performance_mistral}{{5}{15}{Mistral 7b在各个领域的分类表现。使用\ours ，我们可以看到在所有领域的表现都有显著提升。特别是，人文学科、推理、STEM等领域表现出了显著的提升。这凸显了基础模型可以从\ours中获益颇多的事实 。}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Llama 2 70b}{16}{subsection.B.2}\protected@file@percent }
+\newlabel{fig:cat_llama_1}{{\caption@xref {??}{ on input line 95}}{16}{Llama 2 70b}{figure.caption.16}{}}
+\newlabel{sub@fig:cat_llama_1}{{}{16}{Llama 2 70b}{figure.caption.16}{}}
+\newlabel{fig:cat_llama_2}{{\caption@xref {??}{ on input line 103}}{16}{Llama 2 70b}{figure.caption.16}{}}
+\newlabel{sub@fig:cat_llama_2}{{}{16}{Llama 2 70b}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Llama 2 70$b^q$ 在各个领域的分类性能表现。使用 \text  {DRPO}\xspace  后，我们观察到除数学外的所有领域性能均有所提升，而数学领域略有下降。使用 \text  {DRPO}\xspace  显著提升了诸如信息检索、编程和金融等领域的性能。}}{16}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:categorized_performance_llama}{{6}{16}{Llama 2 70$b^q$ 在各个领域的分类性能表现。使用 \ours 后，我们观察到除数学外的所有领域性能均有所提升，而数学领域略有下降。使用 \ours 显著提升了诸如信息检索、编程和金融等领域的性能。}{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}\texttt  {gpt-3.5-turbo}}{16}{subsection.B.3}\protected@file@percent }
+\newlabel{fig:cat_gpt_1}{{\caption@xref {??}{ on input line 117}}{16}{\texttt {gpt-3.5-turbo}}{figure.caption.17}{}}
+\newlabel{sub@fig:cat_gpt_1}{{}{16}{\texttt {gpt-3.5-turbo}}{figure.caption.17}{}}
+\newlabel{fig:cat_gpt_2}{{\caption@xref {??}{ on input line 125}}{16}{\texttt {gpt-3.5-turbo}}{figure.caption.17}{}}
+\newlabel{sub@fig:cat_gpt_2}{{}{16}{\texttt {gpt-3.5-turbo}}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \texttt  {gpt-3.5-turbo} 在不同领域的分类性能表现。由于使用了 \text  {DRPO}\xspace  ，该模型在所有领域的性能均有所提升，显示出令人满意的结果。  注意：我们将 \text  {DRPO}\xspace  方法应用于 RLHF 微调的 \texttt  {gpt-3.5-turbo}，因为我们无法获取其基础模型。 }}{16}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:categorized_performance_gpt}{{7}{16}{\texttt {gpt-3.5-turbo} 在不同领域的分类性能表现。由于使用了 \ours ，该模型在所有领域的性能均有所提升，显示出令人满意的结果。\\ 注意：我们将 \ours 方法应用于 RLHF 微调的 \texttt {gpt-3.5-turbo}，因为我们无法获取其基础模型。}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}优化算法}{17}{appendix.C}\protected@file@percent }
+\newlabel{sec:opti_algo}{{C}{17}{优化算法}{appendix.C}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}ICL 优化}{17}{subsection.C.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}系统提示优化}{17}{subsection.C.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {D}优化提示案例研究}{18}{appendix.D}\protected@file@percent }
+\newlabel{sec:prompt_case_study}{{D}{18}{优化提示案例研究}{appendix.D}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {E}元提示}{18}{appendix.E}\protected@file@percent }
+\newlabel{sec:meta_prompts}{{E}{18}{元提示}{appendix.E}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}奖励提示}{18}{subsection.E.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.1}评估字典}{19}{subsubsection.E.1.1}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.1}{19}{评估字典}{subsubsection.E.1.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.2}评估字典}{19}{subsubsection.E.1.2}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.2}{19}{评估字典}{subsubsection.E.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.3}评估字典}{19}{subsubsection.E.1.3}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.3}{19}{评估字典}{subsubsection.E.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.4}评估字典}{20}{subsubsection.E.1.4}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.4}{20}{评估字典}{subsubsection.E.1.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.5}评估字典}{20}{subsubsection.E.1.5}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.5}{20}{评估字典}{subsubsection.E.1.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.6}评估字典}{21}{subsubsection.E.1.6}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.6}{21}{评估字典}{subsubsection.E.1.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.7}评估字典}{21}{subsubsection.E.1.7}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.7}{21}{评估字典}{subsubsection.E.1.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.8}评估字典}{21}{subsubsection.E.1.8}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.8}{21}{评估字典}{subsubsection.E.1.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.9}评估字典}{22}{subsubsection.E.1.9}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.9}{22}{评估字典}{subsubsection.E.1.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.10}评估字典}{22}{subsubsection.E.1.10}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.10}{22}{评估字典}{subsubsection.E.1.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.11}评估字典}{23}{subsubsection.E.1.11}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.11}{23}{评估字典}{subsubsection.E.1.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.12}评估字典}{23}{subsubsection.E.1.12}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.12}{23}{评估字典}{subsubsection.E.1.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.13}评估字典}{23}{subsubsection.E.1.13}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.13}{23}{评估字典}{subsubsection.E.1.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.14}评估字典}{24}{subsubsection.E.1.14}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.14}{24}{评估字典}{subsubsection.E.1.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.15}评估字典}{24}{subsubsection.E.1.15}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.15}{24}{评估字典}{subsubsection.E.1.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.16}评估字典}{25}{subsubsection.E.1.16}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.16}{25}{评估字典}{subsubsection.E.1.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.17}评估字典}{25}{subsubsection.E.1.17}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.17}{25}{评估字典}{subsubsection.E.1.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.18}评估字典}{25}{subsubsection.E.1.18}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.18}{25}{评估字典}{subsubsection.E.1.18}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.19}评估字典}{26}{subsubsection.E.1.19}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.19}{26}{评估字典}{subsubsection.E.1.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.20}评估字典}{26}{subsubsection.E.1.20}\protected@file@percent }
+\newlabel{sec:eval_dict}{{E.1.20}{26}{评估字典}{subsubsection.E.1.20}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {E.1.21}奖励选择提示}{26}{subsubsection.E.1.21}\protected@file@percent }
+\newlabel{sec:reward_selection_prompt}{{E.1.21}{26}{奖励选择提示}{subsubsection.E.1.21}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.2}状态转换提示}{28}{subsection.E.2}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces ICL 优化}}{29}{algocf.1}\protected@file@percent }
+\newlabel{alg:icl_opti}{{1}{29}{ICL 优化}{algocf.1}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces 系统提示优化}}{30}{algocf.2}\protected@file@percent }
+\newlabel{alg:prompt_opti}{{2}{30}{系统提示优化}{algocf.2}{}}
+\newlabel{tab:opti_prompt_case_study}{{\caption@xref {tab:opti_prompt_case_study}{ on input line 28}}{30}{优化提示案例研究}{table.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces  7b和\texttt  {gpt-3.5-turbo}优化提示的对比。。（颜色标签的语义见下文。） }}{30}{table.caption.20}\protected@file@percent }
+\gdef \@abspage@last{30}

@@ -1,0 +1,38 @@
+\begin{table}[!t]
+\begin{center}
+\resizebox{0.9\linewidth}{!}{%
+\begin{tabular}{ c c c c } 
+ \toprule
+ \multirow{2}{*}{\textbf{Model}} & \textbf{System} & \textbf{ICL} & \multirow{2}{*}{\textbf{Avg.}} \\
+ & \textbf{Prompt} & \textbf{(}\bm{$K = 2$}\textbf{)} &  \\
+ \midrule
+
+  Mistral 7b  & \cmark & \cmark & \textbf{4.06} \\
+ Mistral 7b (Instruct) & \cmark & \cmark & \textbf{4.06} \\
+ Llama 2 70$b^q$  & \cmark & \cmark & \textbf{4.23} \\
+ \texttt{gpt-3.5-turbo} & \cmark & \cmark & \textbf{4.55} \\
+
+ \midrule
+
+
+  Mistral 7b & \xmark & \cmark & 4.04 \\
+ Mistral 7b (Instruct) & \xmark & \cmark & 4.04 \\
+ Llama 2 70$b^q$  & \xmark & \cmark & 4.17 \\
+ \texttt{gpt-3.5-turbo} & \xmark & \cmark & 4.42 \\
+
+  \midrule
+
+
+ Mistral 7b (Instruct) & \cmark & \xmark & 3.67 \\
+ Llama 2 70$b^q$  & \cmark & \xmark & 3.63 \\
+ \texttt{gpt-3.5-turbo} & \cmark & \xmark & 4.34 \\
+
+  \bottomrule
+
+\end{tabular}
+}
+\caption{Ablation study on the impact of removing the optimized system prompt and in-context learning (ICL) examples optimized using our method. In the absence of the optimized system prompt, a basic system prompt is provided. Our method consistently outperforms all ablation variants across all models.}
+\label{tab:ablation_icl_prompt}
+\vspace{-20pt}
+\end{center}
+\end{table}

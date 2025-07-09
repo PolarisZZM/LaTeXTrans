@@ -1,0 +1,23 @@
+\begin{table}[!t]
+\begin{center}
+
+\begin{tabular}{ c c c  }
+    \toprule
+    \textbf{模型} & \textbf{搜索} & \textbf{平均} \\
+
+    \midrule
+    Mistral 7b (指令) & 束搜索  & \textbf{4.06} \\
+    \midrule
+
+    Mistral 7b (指令) &  MC  & 4.02 \\
+    Mistral 7b (指令) & 贪心搜索 & 4.02 \\
+
+    \bottomrule
+
+\end{tabular}
+
+\caption{关于搜索方法的消融研究。MC：蒙特卡洛搜索；贪心搜索：贪心搜索；束搜索：束搜索。我们的研究方法在所有其他测试的搜索算法中表现最优。}
+\vspace{-10pt}
+\label{tab:ablation_search_algo}
+\end{center}
+\end{table}
