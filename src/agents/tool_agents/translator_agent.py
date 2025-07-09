@@ -1033,19 +1033,3 @@ class TranslatorAgent(BaseToolAgent):
             pass
 
         return "\n".join(merged_content)
-
-
-
-# import toml
-# import argparse
-
-# parser = argparse.ArgumentParser()
-# parser.add_argument("--config", type=str, default="config/default.toml")
-# args = parser.parse_args()
-
-# config = toml.load(args.config)
-
-# trans_agent = TranslatorAgent(config)
-# trans_agent.execute()
-
-    

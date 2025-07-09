@@ -7,12 +7,6 @@ base_dir = os.getcwd()
 sys.path.append(base_dir)
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--config", type=str, default="config/default.toml")
-args = parser.parse_args()
-config = toml.load(args.config)
-
-target_language = config.get("target_language", "ch")
 
 caption_system_prompt = """
 You are a professional academic translator specializing in LaTeX-based scientific writing. 

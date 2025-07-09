@@ -31,8 +31,8 @@ class ParserAgent(BaseToolAgent):
 
         from src.formats.latex.parser import LatexParser
         latex_parser = LatexParser(self.project_dir, self.output_dir)
-        # latex_parser.parse() 
-        latex_parser.parse_no_env_cap_ph()
+        latex_parser.parse() 
+        # latex_parser.parse_no_env_cap_ph()
 
         env_need_trans = []
         if latex_parser.envs_json:
@@ -130,15 +130,3 @@ class ParserAgent(BaseToolAgent):
                     print(f"⚠️ Failed to Set need trans, set True.")
                     return True
                 
-
-# import toml
-# import argparse
-
-# parser = argparse.ArgumentParser()
-# parser.add_argument("--config", type=str, default="config/default.toml")
-# args = parser.parse_args()
-
-# config = toml.load(args.config)
-
-# parser_agent = ParserAgent(config)
-# parser_agent.execute()
