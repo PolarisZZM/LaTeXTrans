@@ -142,9 +142,9 @@ class TranslatorAgent(BaseToolAgent):
         placeholders_cap = re.findall(placeholder_pattern_cap, section["content"])
         placeholders_env = re.findall(placeholder_pattern_env, section["content"])
 
-        # if section["section"] != "0" and section["section"] != "-1":
-        #     section = self._translate_section(section) # LaTexTrans
-        section = self._translate_section(section) # baseline
+        if section["section"] != "0" and section["section"] != "-1":
+            section = self._translate_section(section) # LaTexTrans
+        # section = self._translate_section(section) # baseline
 
         for placeholder in placeholders_env:
             for i, env in enumerate(envs):
