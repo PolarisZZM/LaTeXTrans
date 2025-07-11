@@ -1,0 +1,19 @@
+\begin{figure}[t!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.48\linewidth}
+        \input{graphs/early_late/early_vs_late_imageres_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\linewidth}
+        \input{graphs/early_late/early_vs_late_imageres_obelics}
+    \end{subfigure}
+    \vspace{-7pt}
+    \caption{\textbf{Early vs late fusion: training with different image
+    resolutions (isoFLOPs).} For the same training FLOPs we vary the image
+    resolution (and thus the number of image tokens) during training and report
+    the final training loss. Increasing resolution, hurts the performance on
+    text and interleaved documents, while helping image captioning. The gap
+    stays almost the same on text and interleaved data while slightly increase
+    on image captioning in favor of early fusion.}
+    \label{fig:early_vs_late_imageres}
+\end{figure}

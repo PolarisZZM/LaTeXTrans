@@ -1,0 +1,597 @@
+\section{实验设置}
+\label{app:implementation_details}
+
+在 \Cref{tab:scaling_laws_hparams} 中，我们展示了用于推导扩展规律的不同模型配置的预训练超参数。参数数量从 275M 到 3.7B 不等，随着模型宽度的增加而增长，而深度固定为 24 层。学习率随模型规模而变化，随着模型的扩大而降低。基于类似 \citep{mckinzie2025mm1} 的实证实验与估计，我们发现这些数值在我们的设置中是有效的。训练采用完全解耦的 AdamW 优化器进行优化，动量参数为 $\beta_1=0.9$、$\beta_2=0.95$，权重衰减为 $1\text{e}{-4}$。批量大小设置为 2k 个样本，在上下文长度为 1k 的情况下，相当于 2M 个 token。梯度裁剪设置为 1.0，最大预热时长为 5k 步，针对较短训练过程进行调整：对于训练步数在 1k–4k 和 5k–15k 之间的模型，分别使用 1k 和 2.5k 的预热步数。对于 MoE 模型，我们发现较长的预热期显著更优，因此对所有小于 20k 步的训练过程采用 2.5k 的预热。我们使用常数学习率调度策略，在训练后 20\% 阶段进行冷却，按照反平方根曲线逐渐降至零。在视觉处理方面，图像输入被划分为 $(14,14)$ 的 patch，采用的增强方法包括随机缩放裁剪（将图像缩放至 224px，比例范围为 [0.4, 1.0]）以及以 0.5 的概率进行的随机水平翻转。我们在交错混合的图像描述与纯文本数据上训练模型，见 \Cref{tab:pretraining_datasets}。
+
+对于后融合模型，我们发现对视觉编码器使用更小的学习率会显著提升性能 \Cref{tab:late_scaler_scratch}；当编码器与解码器均进行初始化时（见 \Cref{sec:app_init_early_late}），我们发现冻结视觉编码器效果最佳 \Cref{tab:late_scaler_init}。
+
+\begin{table}[htb]
+    \begin{center}
+        \centering
+        \setlength{\tabcolsep}{14pt}
+        \resizebox{\linewidth}{!}{
+        \begin{tabular}{l c c c c c c}
+            \toprule
+            \textbf{Early-fusion} \\
+            \midrule
+            Params &  275M & 468M & 932M  & 1.63B & 2.28B & 3.35B \\
+            width & 800 & 1088 & 1632 & 2208 & 2624 & 3232\\
+            depth & \multicolumn{6}{c}{24} \\
+            Learning rate & 1.5e-3 & 1.5e-3 & 5e-4 & 4.2e-4 & 4e-4 & 3.5e-4 \\
+            \midrule
+            \textbf{Late-fusion} \\
+            \midrule
+            Params &  289M & 494M & 1B  & 1.75B & 2.43B & 3.7B \\
+            vision encoder width & 384 & 512 & 768 & 1024 & 1184 & 1536 \\
+            vision encoder depth & \multicolumn{6}{c}{24} \\
+            width & 768 & 1024 & 1536 & 2048 & 2464 & 3072\\
+            depth & \multicolumn{6}{c}{24} \\
+            Learning rate & 1.5e-3 & 1.5e-3 & 5e-4 & 4.2e-4 & 3.8e-4 & 3.3e-4 \\
+            \midrule
+            \textbf{Early-fusion MoEs} \\
+            \midrule
+            Active Params &  275M & 468M & 932M  & 1.63B & 2.28B & 3.35B \\
+            width & 800 & 1088 & 1632 & 2208 & 2624 & 3232\\
+            depth & \multicolumn{6}{c}{24} \\
+            Learning rate & 1.5e-3 & 1.5e-3 & 5e-4 & 4.2e-4 & 4e-4 & 3.5e-4 \\
+            \midrule
+            Training tokens & \multicolumn{6}{c}{2.5B-600B} \\
+            Optimizer & \multicolumn{6}{c}{Fully decoupled AdamW~\citep{loshchilov2017decoupled}} \\
+            Optimizer Momentum & \multicolumn{6}{c}{$\beta_1=0.9 ,\beta_2=0.95$} \\
+            Minimum Learning rate & \multicolumn{6}{c}{0} \\
+            Weight decay & \multicolumn{6}{c}{1e-4} \\
+            Batch size & \multicolumn{6}{c}{2k} \\
+            Patch size & \multicolumn{6}{c}{(14, 14)} \\
+            Gradient clipping & \multicolumn{6}{c}{1.0} \\
+            MAximum Warmup iterations & \multicolumn{6}{c}{5k} \\
+            Augmentations: \\
+            \quad {\tt RandomResizedCrop} \\
+            \qquad {\tt size} & \multicolumn{6}{c}{224px} \\
+            \qquad {\tt scale} & \multicolumn{6}{c}{[0.4, 1.0]} \\
+            \quad {\tt RandomHorizontalFlip} & \multicolumn{6}{c}{$p=0.5$} \\
+            \bottomrule
+        \end{tabular}}
+    \end{center}
+    \caption{\textbf{预训练超参数} 我们详细介绍了用于预训练不同模型配置以推导缩放规律的超参数。}
+    \label{tab:scaling_laws_hparams}
+    \end{table}
+
+\begin{table}[htb]
+    \centering
+    \setlength{\tabcolsep}{16pt}
+    \renewcommand{\arraystretch}{1}
+    \resizebox{0.9\linewidth}{!}{
+    \begin{tabular}{lccccc}
+        Vision encoder & Interleaved & Image-Caption & Text  & AVG & AVG (SFT)  \\
+        lr scaler & (CE) & (CE) & (CE) & (CE) & (Acc) \\
+        \shline
+        1 & 2.521 & 2.15 & 2.867 &  2.513 & 43.49 \\
+        0.1 & 2.502 & 2.066 & 2.862 &  2.477 & 52.27\\
+        0.01 & 2.502 & 2.066 & 2.859 &  2.476 & 53.76\\
+        0.001 & 2.513 & 2.066 & 2.857 &  2.479 & -- \\
+        0 (frozen) & 2.504 & 2.061 & 2.856 & 2.474 & 54.14 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{\textbf{视觉编码器缩放器。} 当使用预训练模型初始化后融合模型时，冻结视觉编码器的效果最佳。}
+    \label{tab:late_scaler_init}
+\end{table}
+
+\begin{table}[htb]
+    \centering
+    \setlength{\tabcolsep}{16pt}
+    \renewcommand{\arraystretch}{1}
+    \resizebox{0.9\linewidth}{!}{
+    \begin{tabular}{lccccc}
+        Vision encoder & Interleaved & Image-Caption & Text  & AVG & AVG (SFT)  \\
+        lr scaler & (CE) & (CE) & (CE) & (CE) & (Acc) \\
+        \shline
+        0.1 & 2.674 & 2.219 & 3.072   & 2.655 & 34.84 \\
+        0.01 & 2.672 & 2.197 & 3.071  & 2.647 & 38.77 \\
+        0.001 & 2.674 & 2.218 & 3.073 & 2.655 & 38.46 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{\textbf{视觉编码器缩放器。} 当从头开始训练后融合模型时，降低视觉编码器的学习率效果更好。}
+    \label{tab:late_scaler_scratch}
+\end{table}
+
+\input{figs/late_vs_early_equal_tokens}
+
+\begin{figure*}[htp]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.33\linewidth}
+        \input{graphs/early_late/early_late_datatype_sameflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+         \input{graphs/early_late/early_late_datatype_sameflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+         \input{graphs/early_late/early_vs_late_datatype_sameflops_dclm}
+    \end{subfigure}
+
+    \vspace{0.3cm}
+    \caption{\textbf{早期融合与后期融合：改变训练混合方式。}我们改变训练混合方式，并绘制最终的训练损失。随着交错文档比例的增加，早期融合模型的性能有所提升。早期融合和后期融合分别具有 1.63B 和 1.75B 个参数。}
+    \label{fig:early_vs_late_datatype_sameflops}
+\end{figure*}
+\section{晚融合与早融合}
+\label{app:late_vs_early}
+本节提供了早融合和晚融合模型的额外比较。
+
+\subsection{FLOPs扩展} \Cref{fig:early_vs_late_scaledata_main} 比较了在扩展FLOPs时的早融合与晚融合模型。具体来说，对于每个模型大小，我们使用不同数量的训练标记训练多个模型。两种方法之间的性能差距主要是由于增加模型大小而非增加训练标记的数量所导致的。尽管差距在减小，但在我们训练的所有模型中，早融合始终优于晚融合。
+\subsection{改变训练数据混合} 我们分析了在训练数据混合变化的情况下，早期融合模型和晚期融合模型之间的性能差距如何变化。如\Cref{fig:early_vs_late_textratio}和\Cref{fig:early_vs_late_datatype_sameflops}所示，当固定模型大小时，增加文本和交错数据的比例有利于早期融合。有趣的是，对于其他数据类型，性能差距基本保持不变。我们还观察到不同数据类型之间的干扰效应。具体来说，增加交错数据的量会对图像描述的性能产生负面影响，反之亦然。此外，增加仅文本数据的比例会稍微提高交错数据的表现，但会增加图像描述的损失。总体来说，我们发现不同设置下，仅文本数据和交错数据是相关的。
+
+\begin{figure*}[htp]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.33\linewidth}
+        \input{graphs/early_late/early_vs_late_textratio_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_textratio_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_textratio_dclm}
+    \end{subfigure}
+
+    \vspace{0.3cm}
+    \caption{\textbf{早期融合与晚期融合：改变训练混合中的纯文本数据量（isoFLOPs）。} 我们改变纯文本数据的比例并绘制最终训练损失。随着文本数据比例的增加，早期融合模型的差距逐渐增大。早期融合模型有 1.63B 参数，晚期融合模型有 1.75B 参数。}
+    \label{fig:early_vs_late_textratio}
+\end{figure*}
+
+\input{figs/early_vs_late_imageres}
+\subsection{图像分辨率的缩放有利于早期融合}
+
+我们研究了在不同图像分辨率下，两种架构的表现。我们将模型参数数目固定为1.63B和1.75B，分别对应于早期融合和后期融合。所有模型都训练了100K步或200B个token。由于patch大小保持不变，增加分辨率会导致更多的视觉token。对于所有分辨率，我们保持相同数量的文本token。如\Cref{fig:early_vs_late_imageres}所示，早期融合模型在所有分辨率下始终优于后期融合模型，特别是在多模态数据中，性能差距在更高分辨率下扩大。此外，我们观察到，随着分辨率的提高，文本和交织数据的损失也增加。 
+
+\vspace{1cm}
+\subsection{在匹配 late-fusion 模型规模时，early-fusion 始终表现更佳}  
+\input{figs/early_vs_late_datatype_isoparams}  
+
+在本节中，我们将不同配置的 early-fusion 模型与 late-fusion 模型进行比较。具体而言，我们训练了与 late-fusion 模型在总参数量（Params）、文本模型大小（Text）和计算量（FLOPs）方面相匹配的 early-fusion 模型，假设训练混合比例为 45-45-10。如 \Cref{fig:early_vs_late_datatype_isoparams} 所示，在按总参数量归一化的情况下，early-fusion 的表现始终优于 late-fusion，其次是在按 FLOPs 归一化的情况下。当匹配文本模型规模时，在较高比例的交错数据下，early-fusion 的表现也更佳。
+\subsection{不同的晚融合配置}
+我们研究了在不同晚融合配置下，这种缩放是如何变化的。与主文中所做的将视觉和文本模型等比例缩放不同，我们将视觉编码器的大小固定为300M，仅缩放文本模型。 \Cref{fig:early_vs_late_scalellmdata_dclm} 显示，在较小的模型规模下，晚融合模型落后，而随着文本模型的缩放，差距显著缩小。这表明，将更多的参数分配给共享组件更为有利，进一步支持了选择早融合模型的做法。
+
+\begin{figure*}[htp]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.33\linewidth}
+        \input{graphs/early_late/early_vs_late_scalellmdata_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scalellmdata_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scalellmdata_dclm}
+    \end{subfigure}
+
+    \makebox[0.9\linewidth]{
+        \begin{tikzpicture}
+            \begin{axis}[
+                hide axis,
+                xmin=0, xmax=0.5, ymin=0, ymax=1,
+                legend columns=4,
+                legend style={
+                    at={(0.5, 1)},
+                    anchor=north,
+                    /tikz/every even column/.append style={column sep=0.2cm},
+                    scale=0.5,
+                    cells={align=left}, font=\footnotesize,
+                },
+            ]
+               \addlegendimage{legend late_0_2b style}
+                \addlegendentry{Late-0.555B}
+                \addlegendimage{legend late_0_4b style}
+                \addlegendentry{Late-1.14B}
+                \addlegendimage{LateGradStart!50!LateGradEnd, thick, solid, mark=*, mark size=1.5pt}
+                \addlegendentry{Late-2.320B}
+                \addlegendimage{LateGradStart!75!LateGradEnd, thick, solid, mark=*, mark size=1.5pt}
+                \addlegendentry{Late-3.33B}
+
+\addlegendimage{legend early_0_2b style}
+                \addlegendentry{Early-0.464B}
+                \addlegendimage{EarlyGradStart!25!EarlyGradEnd, thick, solid, mark=*, mark size=1.5pt}
+                \addlegendentry{Early-0.932B}
+                \addlegendimage{legend early style}
+                \addlegendentry{Early-1.627B}
+                \addlegendimage{legend early_2_2b style}
+                \addlegendentry{Early-3.354B}
+            \end{axis}
+        \end{tikzpicture}
+    }
+
+    \vspace{-4.2cm}
+    \caption{\textbf{早期融合与晚期融合：在固定视觉编码器规模的情况下扩展训练 FLOPs。}我们在扩展训练 token 数量和模型规模时，比较了早期融合模型和晚期融合模型。对于晚期融合模型，我们固定视觉编码器的规模（300M），并扩展文本模型（250M，834M，2B，3B）。随着文本模型规模的扩展，早期融合与晚期融合之间的差距逐渐缩小。}
+    \label{fig:early_vs_late_scalellmdata_dclm}
+\end{figure*}
+\subsection{从LLM和CLIP初始化}
+\label{sec:app_init_early_late}
+
+我们研究了一个案例，其中晚期和早期融合模型都从预训练模型初始化，特别是晚期融合使用DCLM-1B \citep{li2024datacomp}和CLIP-ViT-L \citep{radford2021learning}。有趣的是，\Cref{fig:early_vs_late_init_scaledata} 显示，对于文本和交错的多模态文档，经过更长时间训练后，早期融合可以与晚期融合的性能相匹配。然而，在图像描述数据上弥合差距仍然具有更大的挑战性。值得注意的是，考虑到整体训练成本，包括预训练模型的成本，早期融合需要显著更长的训练时间，以补偿视觉编码器的预训练成本。
+
+\input{figs/early_vs_late_init_scaledata}
+\section{尺度定律}
+\label{app:scaling_laws}
+
+\subsection{拟合 \(L = F(N, D)\)}
+根据 \citep{hoffmann2022training}，我们确定最小化以下目标的参数，目标是在所有实验运行 \(i\) 中最小化：
+\begin{equation}
+\footnotesize
+    \min_{a,b,e,\alpha,\beta} \sum_{i} \text{Huber}_\delta \left( \text{LSE} \left( a - \alpha \log N_i, b - \beta \log D_i, e \right) - \log L_i \right),
+\end{equation}
+我们在不同的初始化范围内执行此优化，并选择在所有初始化中实现最低损失的参数。具体来说，我们的网格搜索范围为：\(\{0, 0.5, 2.5\}\) 对于 \(\alpha\) 和 \(\beta\)，\(\{0, 5, 10, ..., 30\}\) 对于 \(a\) 和 \(b\)，\(\{-1, -0.5, 1, 0.5\}\) 对于 \(e\)。我们使用 L-BFGS 算法，\(\delta=1e-3\)。
+\subsection{拟合 \(N \propto C^a\), \(D \propto C^b\) 和 \(D \propto N^d\)}
+虽然这些方程对于早期融合模型有闭式解 \citep{hoffmann2022training}，该解可以从 \Cref{eq:scaling_laws} 推导出来，但对于没有指定视觉编码器或文本模型大小的晚期融合模型并非如此。为了确保公平比较，我们通过在对数空间中执行线性回归，推导这两种模型的方程。我们发现回归结果与闭式推导中找到的系数非常接近 \Cref{tab:scaling_laws_closed_form}。例如，为了推导 \(N = K_aC^a\)，给定一个FLOP预算 \(C\) 和一组线性间隔的标记 \(D_i\)，范围从10B到600B，我们为每个 \(D_i\) 计算模型大小，其中早期融合为 \(N_i = \frac{C}{6D}\)，而晚期融合为 \(N_i = \frac{C}{6D}+0.483*N_v\)（对于45-45-10混合模型，\(D_v=0.544D\)，因此 \(C=6D(0.544N_v+N_t)\)）。然后，我们应用 \Cref{eq:scaling_laws} 来获得每个模型大小的损失，并选择具有最小损失的 \(N\)。我们对所有与我们的运行相对应的FLOP值重复这一过程，得到一组点 \((C, N_{opt})\)，我们用这些点回归 \(a\) 和 \(K_a\)。我们遵循类似的过程来找到 \(b\) 和 \(d\)。对于晚期融合模型，我们回归一个线性模型来确定给定 \(N\) 的 \(N_v\)。值得注意的是，尽管我们为晚期融合模型保持固定的宽度比，但这种方法更为准确，因为嵌入层阻止了文本和视觉模型大小之间的严格固定比例。我们在 \Cref{fig:scaling_laws_closed_form_early_late} 中展示了回归结果。
+
+\begin{table}[htb]
+    \centering
+    \setlength{\tabcolsep}{16pt}
+    \renewcommand{\arraystretch}{1}
+    \resizebox{0.9\linewidth}{!}{
+    \begin{tabular}{lcccccccc}
+        Model & $a$ & $b$ & $d$ & $n$ & $dn$  \\
+        \midrule
+        Closed form  & 0.52649 & 0.47351 & 0.89938 &  1.11188 & -0.05298  \\
+        Regression & 0.52391 & 0.47534 & 0.90052 & 1.10224 & -0.04933  \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{\textbf{早期融合的缩放律参数。} 通过回归推导缩放律系数所得结果与使用闭式解所得结果非常接近。}
+    \label{tab:scaling_laws_closed_form}
+\end{table}
+\subsection{拟合 \(L \propto C^c\)}
+为了确定最终模型损失与计算预算 \(C\) 之间的关系，我们首先对对应于相同模型大小的点进行插值，并计算覆盖所有运行中每个 FLOP 最小损失的凸包。这将导致从 FLOP 到最低损失的连续映射。我们考虑一个 FLOP 范围，排除非常小的值（\(\leq 3e^{19}\)），并为线性间隔的计算 \(C\) 构建一个 \((C, L)\) 数据集。利用这些数据，我们在对数空间中找到 \(L\) 和 \(C\) 之间的线性关系，并推导出指数 \(c\)。我们在 \Cref{fig:scaling_laws_early_late_moe} 中可视化了结果。
+
+\begin{figure}[h!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{1\linewidth}
+
+\begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/early/early_scalinglaws_params_vs_flops_avg_ap3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/late/late_scalinglaws_params_vs_flops_avg_ap3}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/early/early_scalinglaws_tokens_vs_flops_avg_ap3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/late/late_scalinglaws_tokens_vs_flops_avg_ap3}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/early/early_scalinglaws_tokens_to_params_vs_flops_avg_ap3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/late/late_scalinglaws_tokens_to_params_vs_flops_avg_ap3}
+    \end{subfigure}
+
+\end{subfigure}
+    \caption{\textbf{缩放法则系数的回归结果。} 我们对缩放系数的估计接近封闭形式解。}
+    \label{fig:scaling_laws_closed_form_early_late}
+\end{figure}
+
+\begin{figure*}[h!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/pred_loss_vs_loss_early}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/late/pred_loss_vs_loss_late}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/moe/pred_loss_vs_loss_moe}
+    \end{subfigure}
+    \caption{\textbf{观察到的与预测的损失。} 我们可视化了通过我们的缩放法则 (\Cref{eq:scaling_laws}) 预测的损失与每次运行实际实现的损失。}
+    \label{fig:observed_vs_predicted_loss}
+\end{figure*}
+\subsection{不同目标数据类型的缩放规律}
+在 \Cref{fig:scaling_laws_early_late_moe_getty_obelics_dclm} 中，我们推导了不同目标数据类型的缩放规律。总体而言，我们观察到模型在图像标注任务上学习得比交织数据更快，如通过更高的缩放指数绝对值所示（例如，0.062 对比 0.046），尽管图像标注和交织数据使用相同的数据比例（各占 45\%）。此外，我们发现模型在仅文本数据上学习较慢，这可能是由于仅文本数据的数量较少（10\%）。在不同的模型配置中，我们发现早期融合在图像标注任务上的表现与晚期融合相似，但乘法常数较低（49.99 对比 47.97）。对于 MoE 模型，模型学习较快，但表现出更高的乘法常数。在文本和交织数据上，早期和晚期融合模型的缩放规律相似，且表现相当。然而，MoE 模型表现出更好的整体性能，尽管学习速度稍慢。
+\subsection{不同训练混合数据的尺度律}
+
+我们研究了在修改训练混合数据时尺度律的变化。具体来说，我们改变了图像描述、交错数据和仅文本数据的比例，并在\Cref{fig:app_early_scaleflops_data_mixtures}中报告了结果。总体而言，我们观察到相似的尺度变化趋势，只有在尺度系数上有轻微的变化。经过更详细的分析，我们发现，当某种数据类型在训练混合数据中的比例增加时，其对应的尺度指数也会随之增加。例如，将图像描述的比例从30\%增加到40\%时，指数的绝对值从0.056提高到0.061。然而，对于仅文本数据，当其在训练混合数据中的比例变化时，我们并没有观察到尺度系数的显著变化。
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+        \vspace{-4mm}
+        \centering
+        \captionsetup{type=figure}
+        \begin{subfigure}[t]{\linewidth}
+            \includegraphics[width=1.0\textwidth]{assets/moes/specialization/model1088/modality_specialization_1088_150_across_layers.pdf}
+        \end{subfigure}
+
+        \caption{\textbf{模态特定的专精。} 我们可视化了专家在文本和图像模态上的专精情况。模型在 Obelics 上进行评估。}
+        \label{fig:app_moes_specialization}
+\end{wrapfigure}
+\subsection{缩放规律评估与敏感性分析}
+
+对于每个模型大小和训练令牌数量，我们基于\Cref{eq:scaling_laws}中估计的函数形式计算损失，并将其与我们实验中实际获得的损失进行比较。我们在\Cref{fig:observed_vs_predicted_loss}中展示了这些数据点，证明我们的估计非常准确，尤其是在较低损失值时，因此对于较大的FLOPs也同样适用。此外，我们通过自助法进行敏感性分析。具体来说，我们以替代抽样的方式选取\( P \)个点（\( P \)等于训练模型的总数），并重新估计缩放规律的系数。这个过程重复进行100次，我们报告每个系数的平均值和标准差。\Cref{tab:scaling_laws_sensitivity}显示，相较于\(\alpha\)，我们的估计对于\(\beta\)更为精确，主要是因为模型大小的数量相对于用于推导缩放规律的不同令牌数量较少。 
+
+\begin{table}[htb]
+    \centering
+    \setlength{\tabcolsep}{16pt}
+    \renewcommand{\arraystretch}{1}
+    \resizebox{0.9\linewidth}{!}{
+    \begin{tabular}{lcccccccc}
+        Model & E & $\alpha$ & $\beta$ & a & b  & d\\
+        \midrule
+        Avg  & 1.80922 & 0.29842 & 0.33209 & 0.54302  & 0.48301 &  0.92375 \\
+        Std & 0.33811 & 0.10101 & 0.02892 & 0.08813 & 0.05787 & 0.23296 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{\textbf{规模规律的敏感性.} 我们报告了经过 100 次迭代的自助法后的均值和标准差.}
+    \label{tab:scaling_laws_sensitivity}
+\end{table}
+\subsection{\edit{稀疏NMM的缩放规律。}}
+\label{app:scaling_laws_moes}
+
+与密集模型类似，我们拟合一个参数化损失函数（\Cref{eq:scaling_laws}），根据参数数量和训练标记预测稀疏NMM的损失，替换总参数数目为活动参数的数量。虽然在推导MoE的缩放规律时，加入稀疏性是标准做法\citep{wangscalingmoe,krajewski2024scalingmoe,abnar2025parameters}，但我们着重于推导与我们MoE设置中使用的稀疏性水平相关的缩放规律。这会得到隐式依赖于稀疏配置的系数。
+
+我们还尝试了\citep{abnar2025parameters}提出的稀疏感知缩放规律公式，并观察到一致的趋势（\Cref{tab:moes_coeffs}）。特别地，与模型大小（$N$）相关的指数显著大于与训练标记（$\beta$）相关的指数，进一步强调了在稀疏架构中扩大模型大小的重要性。此外，我们还观察到，支配活动参数缩放的项分解为两个组成部分。
+
+\input{tables/scaling_laws_coeffs_moes}
+\section{专家混合与特定模态的专业化}
+\label{app:moes}
+
+我们研究了MoE架构中的多模态专业化。我们计算了一个专业化得分，即每个专家分配到的文本/图像标记与均匀分配（$1/E$）之间的平均差异。此外，我们还可视化了跨层次分配给每个专家的归一化文本和图像标记数量。 \Cref{fig:app_moes_specialization} 显示了明显的模态特定专家，特别是在早期层次中。此外，随着层数的增加，专业化得分有所下降，但在最后几层再次上升。这表明，早期层和最后层比中间层更需要模态专业化。此外，我们还观察到多个专家在文本和图像模态之间共享，这种现象在硬路由或预定义的模态特定专家中并不存在。
+
+\begin{figure*}[h!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/late/late_scaleflops_avg}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_avg}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/moe/moe_scaleflops_avg_big}
+    \end{subfigure}
+
+\makebox[0.9\linewidth]{
+        \begin{tikzpicture}
+            \begin{axis}[
+                hide axis,
+                xmin=0, xmax=0.5, ymin=0, ymax=1,
+                legend columns=6,
+                legend style={
+                    at={(0.5, 1)},
+                    anchor=north,
+                    /tikz/every even column/.append style={column sep=0.2cm},
+                    scale=0.5,
+                    cells={align=left}, font=\footnotesize,
+                },
+            ]
+
+            \addlegendimage{legend late_0_2b style}
+            \addlegendentry{0.289B}
+            \addlegendimage{legend late_0_4b style}
+            \addlegendentry{0.494B}
+            \addlegendimage{legend late_0_9b style}
+            \addlegendentry{1B}
+            \addlegendimage{legend late style}
+            \addlegendentry{1.748B}
+            \addlegendimage{legend late_2_2b style}
+            \addlegendentry{2.430B}
+            \addlegendimage{legend late_3_3b style}
+            \addlegendentry{3.714B}
+
+            \addlegendimage{legend early_0_2b style}
+            \addlegendentry{0.275B}
+            \addlegendimage{legend early_0_4b style}
+            \addlegendentry{0.464B}
+            \addlegendimage{legend early_0_9b style}
+            \addlegendentry{0.932B}
+            \addlegendimage{legend early style}
+            \addlegendentry{1.627B}
+            \addlegendimage{legend early_2_2b style}
+            \addlegendentry{2.280B}
+            \addlegendimage{legend early_3_3b style}
+            \addlegendentry{3.354B}
+
+            \addlegendimage{legend moe_0_2b style}
+            \addlegendentry{0.275B}
+            \addlegendimage{legend moe_0_4b style}
+            \addlegendentry{0.464B}
+            \addlegendimage{legend moe_0_9b style}
+            \addlegendentry{0.932B}
+            \addlegendimage{legend moe style}
+            \addlegendentry{1.627B}
+            \addlegendimage{legend moe_2_2b style}
+            \addlegendentry{2.280B}
+            \addlegendimage{legend moe_3_3b style}
+            \addlegendentry{3.354B}
+
+            \end{axis}
+        \end{tikzpicture}
+    }
+
+    \vspace{-4cm}
+
+    \caption{\textbf{本地多模态模型的缩放规律。} 从左到右：后期融合（密集型）、前期融合（密集型）和前期融合的混合专家（MoEs）。所有模型的缩放指数非常接近。然而，MoEs 导致总体较低的损失（较小的乘法常数）并且需要更长时间才能饱和。}
+    \label{fig:scaling_laws_early_late_moe}
+\end{figure*}
+
+\begin{figure*}[h!]
+    \centering
+    \captionsetup{type=figure}
+
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/late/late_scaleflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/late/late_scaleflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/late/late_scaleflops_dclm}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_dclm}
+    \end{subfigure}
+
+\begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/moe/moe_scaleflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/moe/moe_scaleflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/moe/moe_scaleflops_dclm}
+    \end{subfigure}
+
+\makebox[0.9\linewidth]{
+        \begin{tikzpicture}
+            \begin{axis}[
+                hide axis,
+                xmin=0, xmax=0.5, ymin=0, ymax=1,
+                legend columns=6,
+                legend style={
+                    at={(0.5, 1)},
+                    anchor=north,
+                    /tikz/every even column/.append style={column sep=0.2cm},
+                    scale=0.5,
+                    cells={align=left}, font=\footnotesize,
+                },
+            ]
+
+            \addlegendimage{legend late_0_2b style}
+            \addlegendentry{0.289B}
+            \addlegendimage{legend late_0_4b style}
+            \addlegendentry{0.494B}
+            \addlegendimage{legend late_0_9b style}
+            \addlegendentry{1B}
+            \addlegendimage{legend late style}
+            \addlegendentry{1.748B}
+            \addlegendimage{legend late_2_2b style}
+            \addlegendentry{2.430B}
+            \addlegendimage{legend late_3_3b style}
+            \addlegendentry{3.714B}
+
+            \addlegendimage{legend early_0_2b style}
+            \addlegendentry{0.275B}
+            \addlegendimage{legend early_0_4b style}
+            \addlegendentry{0.464B}
+            \addlegendimage{legend early_0_9b style}
+            \addlegendentry{0.932B}
+            \addlegendimage{legend early style}
+            \addlegendentry{1.627B}
+            \addlegendimage{legend early_2_2b style}
+            \addlegendentry{2.280B}
+            \addlegendimage{legend early_3_3b style}
+            \addlegendentry{3.354B}
+
+            \addlegendimage{legend moe_0_2b style}
+            \addlegendentry{0.275B}
+            \addlegendimage{legend moe_0_4b style}
+            \addlegendentry{0.464B}
+            \addlegendimage{legend moe_0_9b style}
+            \addlegendentry{0.932B}
+            \addlegendimage{legend moe style}
+            \addlegendentry{1.627B}
+            \addlegendimage{legend moe_2_2b style}
+            \addlegendentry{2.280B}
+            \addlegendimage{legend moe_3_3b style}
+            \addlegendentry{3.354B}
+
+            \end{axis}
+        \end{tikzpicture}
+    }
+
+    \vspace{-4cm}
+    \caption{\textbf{原生多模态模型的扩展规律。} 从上到下依次为：后融合（稠密）、前融合（稠密）和前融合 MoEs。 从左到右依次为：图文、交错以及纯文本数据的验证集交叉熵。}
+    \label{fig:scaling_laws_early_late_moe_getty_obelics_dclm}
+\end{figure*}
+
+\begin{figure*}[h!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_dclm}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_getty_40_20_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_obelics_40_20_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_dclm_40_20_40}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_getty_30_30_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_obelics_30_30_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_dclm_30_30_40}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_getty_20_40_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_obelics_20_40_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_dclm_20_40_40}
+    \end{subfigure}
+
+    \makebox[0.9\linewidth]{
+    \begin{tikzpicture}
+        \node[anchor=north] (legend) at (0\linewidth, 0) {
+            \begin{axis}[
+                        hide axis,
+                        xmin=0, xmax=0.5, ymin=0, ymax=1,
+                        legend columns=6,
+                        legend style={
+                            at={(-0.12, -0.025)},
+                            anchor=north,
+                            /tikz/every even column/.append style={column sep=0.2cm},
+                            scale=0.5,
+                            cells={align=left}, font=\footnotesize,
+                            anchor=center,
+                        },
+                    ]
+                \addlegendimage{legend early_0_2b style}
+                \addlegendentry{0.275B}
+                \addlegendimage{legend early_0_4b style}
+                \addlegendentry{0.464B}
+                \addlegendimage{legend early_0_9b style}
+                \addlegendentry{0.932B}
+                \addlegendimage{legend early style}
+                \addlegendentry{1.627B}
+                \addlegendimage{legend early_2_2b style}
+                \addlegendentry{2.280B}
+                \addlegendimage{legend early_3_3b style}
+                \addlegendentry{3.354B}
+            \end{axis}
+        };
+    \end{tikzpicture}
+    }
+    \vspace{0.5cm}
+
+\caption{\textbf{早期融合原生多模态模型的缩放定律。}我们在不同训练混合类型（Image-caption-Interleaved-Text）和 FLOPs 下的实验结果。我们可视化了在三种数据类型上的最终验证损失：HQITP（左）、Obelics（中）和 DCLM（右）。}
+    \label{fig:app_early_scaleflops_data_mixtures}
+\end{figure*}

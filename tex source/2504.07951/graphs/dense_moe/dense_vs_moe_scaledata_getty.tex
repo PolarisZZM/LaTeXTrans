@@ -1,0 +1,138 @@
+
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=north east,
+        grid=major, %
+        grid style={line width=.1pt, draw=gray!30}, %
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xtick={
+        0.1, 
+        0.2, 
+        0.3,
+        0.4
+        },
+        xticklabels={
+        \texttt{100B}, 
+        \texttt{200B}, 
+        \texttt{300B},
+        \texttt{400B}
+        },
+        xmin=0.1,
+        xmax=0.4,
+        height=1.7in,
+        width=1.1\linewidth,
+        ylabel style={align=center, font=\small},
+        xlabel style={font=\footnotesize},
+        ylabel={\footnotesize{Validation Loss}},
+        xlabel={\footnotesize{Tokens seen}},
+        title={\footnotesize{Image-Caption}},
+        ytick distance=0.2,
+        yticklabel style={font=\scriptsize, /pgf/number format/fixed, /pgf/number format/precision=1},
+        xticklabel style={font=\scriptsize},
+        mark options={solid},
+        legend style={cells={align=left}, font=\footnotesize, text=black}, %
+        legend columns=6, %
+        legend cell align={left},
+        legend to name=sharedlegend,
+    ]
+
+
+
+    
+
+    
+
+
+
+
+
+
+
+    \addplot[legend early_0_2b style,mark=pentagon, mark size=2pt] plot coordinates {
+        (0.05,2.95)
+        (0.1, 2.865)
+        (0.2, 2.781)
+        (0.3, 2.738)
+        (0.4, 2.715)
+
+
+    };
+    \addplot[legend early_0_4b style,mark=square, mark size=2pt] plot coordinates {
+        (0.05,2.852)
+        (0.1, 2.755)
+        (0.2, 2.663)
+        (0.3, 2.621)
+        (0.4, 2.596)
+
+
+
+    };
+    \addplot[legend early_0_9b style,mark=o, mark size=2pt] plot coordinates {
+    (0.05, 2.716)
+    (0.1, 2.598)
+    (0.2, 2.495)
+    (0.3, 2.448)
+    (0.4, 2.425)
+
+
+    };
+
+    \addplot[legend early style,mark=diamond, mark size=2pt] plot coordinates {
+        (0.05, 2.606)
+        (0.1, 2.499)
+        (0.2, 2.409)
+        (0.3, 2.359)
+        (0.4, 2.334)
+        
+    };
+    
+        
+        
+    
+
+
+    \addplot[legend moe_0_2b style,,mark=pentagon, mark size=2pt] plot coordinates {
+        (0.05, 2.809)
+        (0.1, 2.702)
+        (0.2, 2.628)
+        (0.3, 2.568)
+        (0.4, 2.551)
+
+    };
+
+    \addplot[legend moe_0_4b style,,mark=square, mark size=2pt] plot coordinates {
+        (0.05, 2.697)
+        (0.1, 2.591)
+        (0.2, 2.507)
+        (0.3, 2.472)
+        (0.4, 2.439)
+        
+    };
+
+    \addplot[legend moe_0_9b style,,mark=o, mark size=2pt] plot coordinates {
+        (0.05, 2.586)
+        (0.1, 2.462)
+        (0.2, 2.37)
+        (0.3, 2.317)
+        (0.4, 2.289)
+
+    };
+
+    \addplot[legend moe style,mark=diamond, mark size=2pt] plot coordinates {
+        (0.05, 2.537)
+        (0.1, 2.405)
+        (0.2, 2.302)
+        (0.3, 2.257)
+        (0.4, 2.216)
+
+    };
+
+
+
+
+
+    \end{axis}
+\end{tikzpicture}

@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        ybar,
+        bar width=20pt,
+        enlarge x limits=0.4,
+        legend pos=north east,
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        axis x line*=bottom,
+        axis y line*=left,
+        xtick={
+            2,
+            4,
+            6
+        },
+        height=1.7in,
+        width=1.2\linewidth,
+        ylabel style={align=center, font=\footnotesize, yshift=-1ex},
+        xlabel style={font=\footnotesize},
+        title={\footnotesize{Relative Memory Usage}},
+        ylabel={\footnotesize{GB per GPU}},
+        xlabel={\footnotesize{FLOPs ($\times10^{21}$)}},
+        yticklabel style={font=\footnotesize},
+        xticklabel style={font=\footnotesize},
+        legend style={cells={align=left}, font=\footnotesize, fill opacity=0.7, at={(0.6,0.25)}},
+        legend cell align={left},
+        ymin=-10,
+        ymax=2,
+        extra y ticks={0.03},
+        extra y tick labels={},
+        extra y tick style={grid=major, major grid style={line width=2pt, draw=LateColor, dashed}},
+    ]
+        \addplot[legend early bars style] coordinates {
+            (2,-3.05)
+            (4,-5.38)
+            (6,-7.59)
+        };
+        \addlegendentry{Early}
+        \node[anchor=west, font=\footnotesize, text=LateColor] at (axis cs:0.4,0.8) {Late};
+    \end{axis}
+    \end{tikzpicture}

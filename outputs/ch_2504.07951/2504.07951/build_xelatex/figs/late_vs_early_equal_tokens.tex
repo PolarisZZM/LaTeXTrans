@@ -1,0 +1,19 @@
+\begin{figure*}[htb]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scaledata_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scaledata_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scaledata_dclm}
+    \end{subfigure}
+    \vspace{-15pt}
+        \begin{center}
+            \ref{sharedlegend}
+        \end{center}
+    \caption{\textbf{早期融合与晚期融合：训练FLOP的扩展。} 我们比较了早期融合和晚期融合模型，在扩展模型大小和训练令牌数量时的表现。这个差距主要是由于模型大小的扩展而缩小的。}
+    \label{fig:early_vs_late_scaledata_main}
+\end{figure*}

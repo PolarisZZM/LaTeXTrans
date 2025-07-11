@@ -1,0 +1,230 @@
+[
+    {
+        "placeholder": "<PLACEHOLDER_CAP_1>",
+        "cap_type": "title",
+        "content": "\\title{Scaling Laws for Native Multimodal Models}",
+        "trans_content": "\\title{原生多模态模型的扩展规律}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_2>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling properties of Native Multimodal Models.} Based on\n    the scaling laws study in \\cref{sec:scaling_laws_early}, we observe: (1)\n    early and late fusion models provide on par validation loss $L$ when trained\n    using the same compute budget $C$ (in FLOPs); (2) This performance is\n    achieved via a different trade-off between parameters $N$ and number of\n    training tokens $D$, where early-fusion models requires fewer parameters.\n    \\edit{; (3) Sparse early-fusion models achieve lower loss and require more\n    training tokens for a given FLOP budget.}\n    }",
+        "trans_content": "\\caption{\\textbf{原生多模态模型的规模特性。} 基于 \\cref{sec:scaling_laws_early} 中的规模法则研究，我们观察到：（1）早期和后期融合模型在使用相同计算预算 $C$（以 FLOPs 为单位）进行训练时，提供相当的验证损失 $L$；（2）这一性能是通过在参数 $N$ 和训练标记数量 $D$ 之间的不同权衡实现的，其中早期融合模型需要更少的参数。 \\edit{；（3）稀疏的早期融合模型在给定 FLOP 预算的情况下，能够实现更低的损失，并且需要更多的训练标记。} }"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_3>",
+        "cap_type": "caption",
+        "content": "\\caption{Definitions of the expressions used throughout the paper.}",
+        "trans_content": "\\caption{本文中使用的表达式的定义。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_4>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws for \\fbox{\\colorbox{CustomC_Light1!20}{\\strut\n    early-fusion}} and \\fbox{\\colorbox{CustomD_Light1!20}{late-fusion\\strut}}\n    native multimodal models.} Each point represents a model (300M to 3B\n    parameters) trained on varying \\edit{number of} tokens (250M to 400B). We\n    report the average cross-entropy loss on the validation sets of\n    \\edit{interleaved (Obelics), Image-caption (HQITP), and text-only data\n    (DCLM).}}",
+        "trans_content": "\\caption{\\textbf{原生多模态模型中 \\fbox{\\colorbox{CustomC_Light1!20}{\\strut early-fusion}} 与 \\fbox{\\colorbox{CustomD_Light1!20}{late-fusion\\strut}} 的尺度规律。} 每个点表示一个在不同 \\edit{数量的} tokens（250M 到 400B）上训练的模型（300M 到 3B 参数）。我们报告了在 \\edit{交错数据（Obelics）、图像描述数据（HQITP）和纯文本数据（DCLM）} 的验证集上的平均交叉熵损失。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_5>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Pre-training data mixture.} Unless otherwise\n    specified, the training mixture contains 45\\%, 45\\% and 10\\% of image\n    captions, interleaved documents and text-only data.}",
+        "trans_content": "\\caption{\\textbf{预训练数据混合。}除非另有说明，训练数据混合中包含 45\\%、45\\% 和 10\\% 的图像标题、交错文档和纯文本数据。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_6>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws for native multimodal models}. We report the\n        scaling laws results for early and late fusion models. We fit the scaling laws for different target data types as well as their average loss (AVG).\n        }",
+        "trans_content": "\\caption{\\textbf{原生多模态模型的尺度法则}。我们报告了早期和晚期融合模型的尺度法则结果。我们拟合了不同目标数据类型的尺度法则以及它们的平均损失（AVG）。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_7>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early vs late fusion: scaling training FLOPs.} We compare\n    early and late fusion models when scaling both the number of model parameters and the number\n    of training tokens. Overall, early fusion shows a slight advantage, especially at smaller model sizes, and the gap decreases when scaling the number of parameters $N$.}",
+        "trans_content": "\\caption{\\textbf{早期融合与晚期融合：扩展训练FLOP数。} 我们比较了在扩展模型参数数量和训练令牌数量时，早期融合和晚期融合模型的表现。总体而言，早期融合在较小的模型规模下表现出轻微的优势，并且随着参数数量 $N$ 的增加，差距逐渐缩小。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_8>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws with different training mixtures.}\n    Early-fusion models follow similar scaling trends when changing the pretraining mixtures. However, increasing the image captions leads to a higher scaling exponent norm (see~\\cref{tab:scaling_laws_coeffs_data_mixtures}).\n    }",
+        "trans_content": "\\caption{\\textbf{不同训练混合的尺度定律。}\n    在改变预训练混合时，早期融合模型遵循类似的尺度变化趋势。然而，增加图像描述会导致更高的尺度指数范数（见~\\cref{tab:scaling_laws_coeffs_data_mixtures}）。\n    }"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_9>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early vs late: pretraining efficiency.} Early-fusion is faster to train and consumes less memory. Models are trained on 16 H100 GPUs for 160k steps (300B tokens).}",
+        "trans_content": "\\caption{\\textbf{早期与晚期：预训练效率。} 早期融合的训练速度更快，内存消耗更少。模型在 16 个 H100 GPU 上训练 160k 步（300B 个 tokens）。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_10>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early vs late fusion: changing the training mixture.} We vary the training mixtures and plot the final training loss. Early fusion models attain a favorable performance when increasing the proportion of interleaved documents and text-only data.}",
+        "trans_content": "\\caption{\\textbf{早期融合 vs 晚期融合：改变训练混合方式。}我们对训练混合方式进行调整，并绘制最终的训练损失。当增加交错文档与纯文本数据的比例时，早期融合模型表现更优。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_11>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws for different training mixtures}. Early-fusion models. C-I-T refer to image-caption, interleaved and text}",
+        "trans_content": "\\caption{\\textbf{不同训练混合的尺度法则}. 早期融合模型. C-I-T 指图像-标题、交错和文本}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_12>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Observed vs predicted loss.} We visualize the loss predicted by our scaling laws \\cref{eq:scaling_laws} and the actual loss achieved by each run. We can reliably predict the performance of models larger (8B params) than those used to fit the scaling laws.}",
+        "trans_content": "\\caption{\\textbf{观测损失与预测损失对比。} 我们可视化了由我们的缩放律 \\cref{eq:scaling_laws} 预测的损失，以及每次运行实际达到的损失。我们能够可靠地预测参数量更大（8B 参数）的模型的性能，即使这些模型未被用于拟合缩放律。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_13>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early native vs initializing from LLMs: initializing from\n    pre-trained models and scaling training tokens.} We compare training with and\n    without initializing from DCLM-1B.}",
+        "trans_content": "\\caption{\\textbf{本地初始化 vs 从LLM初始化：从预训练模型初始化和扩展训练令牌.} 我们比较了使用和不使用DCLM-1B初始化的训练.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_14>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{MoE vs Dense: scaling training FLOPs.} We compare MoE and\n    dense early-fusion models when scaling both the amount of training tokens\n    and model sizes. MoEs beat dense models when matching the\n    number of active parameters.}",
+        "trans_content": "\\caption{\\textbf{MoE 与 Dense：训练 FLOP 数的扩展。} 我们比较了 MoE 和密集早期融合模型，在扩展训练令牌数量和模型大小时的表现。当匹配激活参数数量时，MoE 优于密集模型。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_15>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws for sparse early-fusion NMMs.} We report the final validation loss averaged across interleaved,\n    image-captions and text data.}",
+        "trans_content": "\\caption{\\textbf{稀疏早期融合 NMM 的规模定律。} 我们报告了跨交错图像-标题和文本数据平均的最终验证损失。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_16>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Supervised finetuning on the LLaVA mixture.} All models are native at 1.5B scale and pre-trained on 300B tokens.}",
+        "trans_content": "\\caption{\\textbf{在 LLaVA 混合数据集上进行有监督微调。} 所有模型均为 1.5B 规模的原生模型，并在 300B 令牌上进行了预训练。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_17>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Modality-aware vs modality agnostic routing for sparse NMMs.} We compare\n    modality-agnostic routing with modality-aware routing\n    when scaling both the amount of training tokens and model sizes.}",
+        "trans_content": "\\caption{\\textbf{基于模态感知与无关模态路由的稀疏NMM比较。} 我们在扩大训练标记数量和模型规模时，比较了无关模态路由与基于模态感知路由的性能。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_18>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{MoE specialization.} Entropy-based image/text specialization (see~\\cref{sec:specialization}) across layers for two data sources: HQITP and Obelics.\n\\edit{Both sources exhibit a similar trend: the score decreases in the early layers\nbefore increasing again in the final layers.}}",
+        "trans_content": "\\caption{\\textbf{MoE 专门化.} 基于熵的图像/文本专门化（见~\\cref{sec:specialization}）在两个数据源的各层中的表现：HQITP 和 Obelics。\n\\edit{这两个数据源表现出相似的趋势：在早期层中得分下降，然后在最后几层再次上升.}}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_19>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{MoE specialization frequency.}\n    Percentage of text and image tokens routed to each expert on interleaved\n    data from Obelics. Experts are ordered for better visualization. The first\n    layer shows the highest amount of unimodal experts.}",
+        "trans_content": "\\caption{\\textbf{MoE 专业化频率。}\n    从 Obelics 中交错数据路由到每个专家的文本和图像令牌的百分比。为了更好的可视化，专家按照顺序排列。第一层显示了最多的单模态专家。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_20>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Pre-training hyperparameters} We detail the hyperaparmeters used for pre-training different model configurations to derive scaling laws.}",
+        "trans_content": "\\caption{\\textbf{预训练超参数} 我们详细介绍了用于预训练不同模型配置以推导缩放规律的超参数。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_21>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Vision encoder scaler.} Freezing the vision encoder works best when initializing late-fusion models with pre-trained models.}",
+        "trans_content": "\\caption{\\textbf{视觉编码器缩放器。} 当使用预训练模型初始化后融合模型时，冻结视觉编码器的效果最佳。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_22>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Vision encoder scaler.} Reducing the learning rate for the vision encoder is better when training late-fusion models from scratch.}",
+        "trans_content": "\\caption{\\textbf{视觉编码器缩放器。} 当从头开始训练后融合模型时，降低视觉编码器的学习率效果更好。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_23>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early vs late fusion: scaling training FLOPs.} We compare\n    early and late fusion models when scaling both the model size and the number\n    of training tokens. The gap decreases mainly due to scaling models size.}",
+        "trans_content": "\\caption{\\textbf{早期融合与晚期融合：训练FLOP的扩展。} 我们比较了早期融合和晚期融合模型，在扩展模型大小和训练令牌数量时的表现。这个差距主要是由于模型大小的扩展而缩小的。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_24>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early vs late fusion: changing the training mixture.} We vary the training mixtures and plot the final training loss. Early fusion models become better when increasing the proportion of interleaved documents. Early and late fusion has 1.63B and 1.75B parameters respectively.}",
+        "trans_content": "\\caption{\\textbf{早期融合与后期融合：改变训练混合方式。}我们改变训练混合方式，并绘制最终的训练损失。随着交错文档比例的增加，早期融合模型的性能有所提升。早期融合和后期融合分别具有 1.63B 和 1.75B 个参数。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_25>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early vs late fusion: changing the amount of text-only data in the training mixture (isoFLOPs).} We vary the ratio of text-only data and plot the final training loss. The gap increases with the text data ratio in favor of early fusion model. Early fusion has 1.63B parameters and late fusion 1.75B parameters.}",
+        "trans_content": "\\caption{\\textbf{早期融合与晚期融合：改变训练混合中的纯文本数据量（isoFLOPs）。} 我们改变纯文本数据的比例并绘制最终训练损失。随着文本数据比例的增加，早期融合模型的差距逐渐增大。早期融合模型有 1.63B 参数，晚期融合模型有 1.75B 参数。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_26>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early vs late fusion: training with different image\n    resolutions (isoFLOPs).} For the same training FLOPs we vary the image\n    resolution (and thus the number of image tokens) during training and report\n    the final training loss. Increasing resolution, hurts the performance on\n    text and interleaved documents, while helping image captioning. The gap\n    stays almost the same on text and interleaved data while slightly increase\n    on image captioning in favor of early fusion.}",
+        "trans_content": "\\caption{\\textbf{早期融合与晚期融合：使用不同图像分辨率进行训练（isoFLOPs）。} 在相同的训练FLOPs下，我们在训练过程中变化图像分辨率（从而改变图像标记的数量），并报告最终的训练损失。增加分辨率会影响文本和交错文档的性能，而有利于图像描述。文本和交错数据上的差距几乎保持不变，而在图像描述任务中，早期融合略微增加了这一差距。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_27>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early vs late fusion: changing the training mixture and early-fusion configuration.} We\n    vary the training mixtures and plot the final training loss for different\n    configuration of early fusion models. For the\n    same number of total parameters early fusion consistently outperform late\n    fusion.}",
+        "trans_content": "\\caption{\\textbf{早期融合与晚期融合：改变训练混合和早期融合配置。} 我们\n    变化训练混合，并绘制不同\n    早期融合模型配置的最终训练损失。对于\n    相同数量的总参数，早期融合始终优于晚期融合。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_28>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early vs late fusion: scaling training FLOPs while fixing the vision encoder size.} We compare early and late fusion models when scaling both the amount of training tokens and model sizes. For late fusion mdoels, we fix the vision encoder size (300M) and scale the text model (250M, 834M, 2B, 3B). The gap between early and late get tighter when scaling the text model.}",
+        "trans_content": "\\caption{\\textbf{早期融合与晚期融合：在固定视觉编码器规模的情况下扩展训练 FLOPs。}我们在扩展训练 token 数量和模型规模时，比较了早期融合模型和晚期融合模型。对于晚期融合模型，我们固定视觉编码器的规模（300M），并扩展文本模型（250M，834M，2B，3B）。随着文本模型规模的扩展，早期融合与晚期融合之间的差距逐渐缩小。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_29>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Early vs late fusion when initializing the encoder and decoder.} Early-fusion can match the performance of late-fusion models when trained for longer. However, the gap is bigger on image-caption data.}",
+        "trans_content": "\\caption{\\textbf{初始化编码器和解码器时的早期融合与晚期融合对比。} 经过更长时间的训练，早期融合可以与晚期融合模型的性能匹配。然而，在图像-标题数据集上，性能差距更大。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_30>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws parameters for early-fusion.} Doing regression to derive the scaling laws coefficients leads to very close results to using the closed-form solution.}",
+        "trans_content": "\\caption{\\textbf{早期融合的缩放律参数。} 通过回归推导缩放律系数所得结果与使用闭式解所得结果非常接近。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_31>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Regression results of the scaling laws coefficients.} our estimation of the scaling coefficients is close to the closed form solution.}",
+        "trans_content": "\\caption{\\textbf{缩放法则系数的回归结果。} 我们对缩放系数的估计接近封闭形式解。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_32>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Observed vs predicted loss.} We visualize the loss predicted by our scaling laws (\\Cref{eq:scaling_laws}) and the actual loss achieved by each run.}",
+        "trans_content": "\\caption{\\textbf{观察到的与预测的损失。} 我们可视化了通过我们的缩放法则 (\\Cref{eq:scaling_laws}) 预测的损失与每次运行实际实现的损失。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_33>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Modality-specific specialization.} We visualize the experts specialization to text and image modalities. Models are evaluated on Obelics.}",
+        "trans_content": "\\caption{\\textbf{模态特定的专精。} 我们可视化了专家在文本和图像模态上的专精情况。模型在 Obelics 上进行评估。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_34>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws sensitivity.} We report the mean and standard deviation after bootstrapping with 100 iterations.}",
+        "trans_content": "\\caption{\\textbf{规模规律的敏感性.} 我们报告了经过 100 次迭代的自助法后的均值和标准差.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_35>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws for sparse native multimodal models}. Higher exponent for active parameters.}",
+        "trans_content": "\\caption{\\textbf{稀疏本地多模态模型的尺度律}。活动参数的指数更高。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_36>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws for native multimodal models.} From left to right: late-fusion (dense), early-fusion (dense) and early-fusion MoEs. The scaling exponents are very close for all models. However, MoEs leads to overall lower loss (smaller multiplicative constant) and takes longer to saturate.}",
+        "trans_content": "\\caption{\\textbf{本地多模态模型的缩放规律。} 从左到右：后期融合（密集型）、前期融合（密集型）和前期融合的混合专家（MoEs）。所有模型的缩放指数非常接近。然而，MoEs 导致总体较低的损失（较小的乘法常数）并且需要更长时间才能饱和。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_37>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws for native multimodal models.} From top to bottom: late-fusion (dense), early-fusion (dense) and early-fusion MoEs. From left to right: cross-entropy on the validation set of image-caption, interleaved and text-only data.}",
+        "trans_content": "\\caption{\\textbf{原生多模态模型的扩展规律。} 从上到下依次为：后融合（稠密）、前融合（稠密）和前融合 MoEs。 从左到右依次为：图文、交错以及纯文本数据的验证集交叉熵。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_38>",
+        "cap_type": "caption",
+        "content": "\\caption{\\textbf{Scaling laws for early-fusion native multimodal models.} Our runs across different training mixtures (Image-caption-Interleaved-Text) and FLOPs. We visulize the final validation loss on 3 data types: HQITP (left), Obelics (middle) and DCLM (right).}",
+        "trans_content": "\\caption{\\textbf{早期融合原生多模态模型的缩放定律。}我们在不同训练混合类型（Image-caption-Interleaved-Text）和 FLOPs 下的实验结果。我们可视化了在三种数据类型上的最终验证损失：HQITP（左）、Obelics（中）和 DCLM（右）。}"
+    }
+]

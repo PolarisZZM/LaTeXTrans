@@ -656,9 +656,26 @@ def get_captionof_pattern():
     """, regex.VERBOSE | regex.DOTALL)
     return pattern
 
-def add_ctex_package(latex_code):
+def add_chinese_support_placeholder(latex_code):
+    """
+    在 LaTeX 文档的 \documentclass 之后添加一个占位符，用于后续动态插入中文支持包。
+    """
+    placeholder = "%%CHINESE_PACKAGE_PLACEHOLDER%%"
+    # 确保不重复添加
+    if placeholder not in latex_code:
+        # 使用更可靠的正则表达式来匹配 \documentclass（支持可选参数）
+        match = re.search(r"\\documentclass(\[.*?\])?\{[^}]*\}", latex_code)
+        if match:
+            position = match.end()
+            latex_code = latex_code[:position] + "\n" + placeholder + "\n" + latex_code[position:]
+    return latex_code
 
-    if "\\usepackage{ctex}" not in latex_code and "\\usepackage[UTF8]{ctex}" not in latex_code:
+def add_luatexja_package(latex_code):
+    """
+    在 LaTeX 文档的 \documentclass 之后添加 luatexja 包，以便支持日文。
+    """
+    # 检查是否已经包含了 ctex 包
+    if "\\usepackage{luatex-ja}" not in latex_code:
         # 使用更可靠的正则表达式来匹配 \documentclass
         documentclass_pattern = re.compile(r'\\documentclass(\[.*?\])?\{.*?\}')
         match = documentclass_pattern.search(latex_code)
@@ -666,22 +683,9 @@ def add_ctex_package(latex_code):
         if match:
             # 在 \documentclass 命令之后插入 ctex 包
             position = match.end()
-            ctex_package = "\\usepackage{ctex}"
+            ctex_package = "\\usepackage{luatexja}"
             latex_code = latex_code[:position] + "\n" + ctex_package + "\n" + latex_code[position:]
             
-    return latex_code
-
-def add_ja_package(latex_code):
-
-    if "\\usepackage{luatex-ja}" not in latex_code:
-        ctex_package = "\\usepackage{luatexja}"
-        documentclass = r'documentclass'
-        documentclass_pattern = get_command_pattern(documentclass)
-        # documentclass_pattern = regex.compile(command, regex.DOTALL)
-        match = documentclass_pattern.search(latex_code)
-        if match:
-            position = match.end()
-            latex_code = latex_code[:position] + "\n" + ctex_package + "\n" + latex_code[position:]
     return latex_code
 
 def find_main_tex_file(directory: str):

@@ -1,0 +1,123 @@
+
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=north east,
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xtick={
+        0.05,
+        0.1, 
+        0.2, 
+        0.3,
+        0.4
+        },
+        xticklabels={
+        0.05,
+        0.1, 
+        0.2, 
+        0.3,
+        0.4
+        },
+        xmin=0.05,
+        xmax=0.4,
+        width=1.1\linewidth,
+        ylabel style={align=center, font=\scriptsize, yshift=-1ex},
+        xlabel style={font=\scriptsize},
+        title={\scriptsize{Image-Caption CE}},
+        xlabel={\scriptsize{Tokens seen}},
+        yticklabel style={font=\scriptsize},
+        xticklabel style={font=\scriptsize},
+        legend style={cells={align=left}, font=\scriptsize, fill opacity=0.7}, %
+        legend cell align={left},
+        mark options={solid},
+    ]
+
+
+
+
+
+
+    
+
+    
+
+    \addplot[legend late_0_2b style] plot coordinates {
+        (0.1, 2.898)
+        (0.2, 2.794)
+        (0.3, 2.737)
+        (0.4, 2.699)
+        
+    };
+
+    \addplot[legend late_0_4b style] plot coordinates {
+        (0.1, 2.627)
+        (0.2, 2.534)
+        (0.3, 2.477)
+        (0.4, 2.439)
+        
+    };
+
+    \addplot[LateGradStart!50!LateGradEnd, thick, solid, mark=*, mark size=1.5pt] plot coordinates {
+        (0.1, 2.496)
+        (0.2, 2.4)
+        (0.3, 2.335)
+        (0.4, 2.295)
+        
+    };
+
+    \addplot[LateGradStart!75!LateGradEnd, thick, solid, mark=*, mark size=1.5pt] plot coordinates {
+        (0.1, 2.418)
+        (0.2, 2.319)
+        (0.3, 2.27)
+        (0.4, 2.239)
+        
+    };
+
+
+
+
+
+
+
+\addplot[legend early_0_2b style] plot coordinates {
+(0.1, 2.755)
+(0.2, 2.663)
+(0.3, 2.621)
+(0.4, 2.596)
+
+    };
+    \addplot[EarlyGradStart!25!EarlyGradEnd, thick, solid, mark=*, mark size=1.5pt] plot coordinates {
+    (0.1, 2.598)
+(0.2, 2.495)
+(0.3, 2.448)
+(0.4, 2.425)
+
+
+    };
+
+    \addplot[legend early style] plot coordinates {
+        (0.1, 2.499)
+        (0.2, 2.409)
+        (0.3, 2.359)
+        (0.4, 2.334)
+        
+    };
+        
+    
+    \addplot[legend early_2_2b style] plot coordinates {
+        (0.1, 2.416)
+        (0.2, 2.307)
+        (0.3, 2.263)
+        (0.4, 2.232)
+        
+        
+    };
+
+    
+
+    \end{axis}
+\end{tikzpicture}

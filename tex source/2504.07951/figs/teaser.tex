@@ -1,0 +1,23 @@
+
+\begin{figure}[t!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.48\linewidth}
+        \input{graphs/early_late/loss_vs_flops}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\linewidth}
+        \input{graphs/early_late/d_n_ratio_vs_flops}
+    \end{subfigure}
+    \vspace{-3mm}
+    \caption{\textbf{Scaling properties of Native Multimodal Models.} Based on
+    the scaling laws study in \cref{sec:scaling_laws_early}, we observe: (1)
+    early and late fusion models provide on par validation loss $L$ when trained
+    using the same compute budget $C$ (in FLOPs); (2) This performance is
+    achieved via a different trade-off between parameters $N$ and number of
+    training tokens $D$, where early-fusion models requires fewer parameters.
+    \edit{; (3) Sparse early-fusion models achieve lower loss and require more
+    training tokens for a given FLOP budget.} 
+    }
+    \label{fig:teaser}
+\end{figure}

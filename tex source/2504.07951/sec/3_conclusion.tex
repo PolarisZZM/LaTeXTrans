@@ -1,0 +1,54 @@
+
+
+\section{\edit{Discussion and }Limitations} 
+
+\cpar{\edit{Scaling laws for multimodal data mixtures.}} Our scaling laws study
+spans different model configurations and training mixtures. While results
+suggest that the scaling law coefficients remain largely consistent across
+mixtures, a broader exploration of mixture variations is needed to validate this
+observation and establish a unified scaling law that accounts for this factor.  
+
+\cpar{\edit{Scaling laws and performance on downstream tasks.}} Similar to
+previous scaling law studies, our analysis focuses on pretraining performance as
+measured by the validation loss. However, the extent to which these findings
+translate to downstream performance remains an open question and requires
+further investigation.
+
+\cpar{\edit{Extrapolation to larger scales.}} The accuracy of scaling law
+predictions improves with increasing FLOPs~\cref{app:scaling_laws}.
+\edit{Furthermore, we validate our laws when extrapolating to larger model sizes
+(\cref{sec:scaling_laws_evaluation}).} However, whether these laws can be reliably
+extrapolated to extremely large model sizes remains an open question. 
+
+\cpar{\edit{High resolution and early-fusion models.}} Training early-fusion
+models with high-resolution inputs leads to a significant increase in vision
+tokens. While pooling techniques have been widely adopted for late-fusion
+models, alternative approaches may be necessary for early fusion. \edit{Given
+the similarity of early-fusion models to LLMs, it appears that techniques for
+extending context length could be beneficial.}
+
+\cpar{\edit{Scaling laws for multimodal MoEs models.}} For MoEs, we consider
+only a single configuration (top-1 routing with 8 experts). \edit{We found this
+configuration to work reasonably well in our setup, and follow a standard MoEs
+implementation}. However, the findings may vary when optimizing \edit{more} the
+MoE architecture or exploring different load-balancing, routing strategies
+\edit{or different experts implementations}.
+
+\section{Conclusion} 
+We explore various strategies for compute-optimal pretraining of native
+multimodal models. We found the NMMs follow similar scaling laws to those of
+LLMs. Contrary to common belief, we find no inherent advantage in adopting
+late-fusion architectures over early-fusion ones. While both architectures
+exhibit similar scaling properties, early-fusion models are more efficient to
+train and outperform late-fusion models at lower compute budgets. Furthermore,
+we show that sparse architectures encourage modality-specific specialization,
+leading to performance improvements while maintaining the same inference cost.
+
+
+
+
+\section*{\edit{Acknowledgment}} We thank Philipp Dufter, Samira Abnar, Xiujun
+Li, Zhe Gan, Alexander Toshev, Yinfei Yang, Dan Busbridge, and Jason Ramapuram
+for many fruitful discussions. We thank Denise Hui, and Samy Bengio for infra
+and compute support. Finally, we thank, Louis Béthune, Pierre Ablin, Marco
+Cuturi, and the MLR team at Apple for their support throughout the project.

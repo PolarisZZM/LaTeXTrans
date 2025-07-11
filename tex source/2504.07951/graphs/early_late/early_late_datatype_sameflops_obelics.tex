@@ -1,0 +1,48 @@
+
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=north east,
+        grid=major, %
+        grid style={line width=.1pt, draw=gray!30}, %
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xmin=27,
+        xmax=90,
+        height=1.7in,
+        width=1.1\linewidth,
+        ylabel style={align=center, font=\footnotesize},
+        xlabel style={font=\footnotesize},
+        ylabel=\footnotesize{Cross-entropy},
+        xlabel={\footnotesize{\% of Interleaved}},
+        title=\footnotesize{Interleaved},
+        ytick distance=0.05,
+        yticklabel style={font=\footnotesize, /pgf/number format/fixed, /pgf/number format/precision=2},
+        xticklabel style={font=\footnotesize},
+        mark options={solid},
+        legend style={cells={align=left}, font=\footnotesize, fill opacity=0.7},%
+        legend cell align={left},
+    ]
+
+\addplot[legend late style, mark size=1.75pt] plot coordinates {
+    (27, 2.726) 
+    (45, 2.666) 
+    (63, 2.63) 
+    (72, 2.615) 
+    (90, 2.594)
+};
+\addlegendentry{Late}
+
+\addplot[legend early style, mark size=1.75pt] plot coordinates {
+    (27, 2.719) 
+    (45, 2.656) 
+    (63, 2.618) 
+    (72, 2.601) 
+    (90, 2.578)
+};
+\addlegendentry{Early}
+
+
+    \end{axis}
+\end{tikzpicture}

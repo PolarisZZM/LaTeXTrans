@@ -1,0 +1,26 @@
+\vspace{-0.5cm}
+\begin{abstract}
+
+Building general-purpose models that can effectively perceive the world through
+multimodal signals has been a long-standing goal. Current approaches involve
+integrating separately pre-trained components, such as connecting vision
+encoders to LLMs and \edit{continuing multimodal training}. While such
+approaches exhibit remarkable sample efficiency, it remains an open question
+whether such late-fusion architectures are inherently superior. In this work, we
+revisit the architectural design of native multimodal models (NMMs)—those
+trained from the ground up on all modalities—and conduct an extensive scaling
+laws study, spanning 457 trained models with different architectures and
+training mixtures. Our investigation reveals no inherent advantage to
+late-fusion architectures over early-fusion ones, which do not rely on image
+encoders. On the contrary, early-fusion exhibits stronger
+performance at lower parameter counts, is more efficient to train, and is easier
+to deploy. Motivated by the strong performance of the early-fusion
+architectures, we show that incorporating Mixture of Experts (MoEs) allows
+\edit{for models that learn modality-specific weights, significantly enhancing
+performance.}
+
+
+
+
+
+\end{abstract}

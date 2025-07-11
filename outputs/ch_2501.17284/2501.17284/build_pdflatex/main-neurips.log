@@ -1,0 +1,5071 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.9)  11 JUL 2025 15:10
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**./main-neurips.tex
+(main-neurips.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-06-09>
+(D:\apps\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\apps\miktex\tex/latex/base\size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+)
+(D:\apps\miktex\tex/latex/cjk\CJKutf8.sty
+Package: CJKutf8 2021/10/16 4.8.5
+
+(D:\apps\miktex\tex/generic/iftex\ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+
+(D:\apps\miktex\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+(D:\apps\miktex\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(D:\apps\miktex\tex/latex/cjk\CJK.sty
+Package: CJK 2021/10/16 4.8.5
+
+(D:\apps\miktex\tex/latex/cjk/mule\MULEenc.sty
+Package: MULEenc 2021/10/16 4.8.5
+)
+(D:\apps\miktex\tex/latex/cjk\CJK.enc
+File: CJK.enc 2021/10/16 4.8.5
+Now handling font encoding C00 ...
+... no UTF-8 mapping file for font encoding C00
+Now handling font encoding C05 ...
+... no UTF-8 mapping file for font encoding C05
+Now handling font encoding C09 ...
+... no UTF-8 mapping file for font encoding C09
+Now handling font encoding C10 ...
+... no UTF-8 mapping file for font encoding C10
+Now handling font encoding C20 ...
+... no UTF-8 mapping file for font encoding C20
+Now handling font encoding C19 ...
+... no UTF-8 mapping file for font encoding C19
+Now handling font encoding C40 ...
+... no UTF-8 mapping file for font encoding C40
+Now handling font encoding C42 ...
+... no UTF-8 mapping file for font encoding C42
+Now handling font encoding C43 ...
+... no UTF-8 mapping file for font encoding C43
+Now handling font encoding C50 ...
+... no UTF-8 mapping file for font encoding C50
+Now handling font encoding C52 ...
+... no UTF-8 mapping file for font encoding C52
+Now handling font encoding C49 ...
+... no UTF-8 mapping file for font encoding C49
+Now handling font encoding C60 ...
+... no UTF-8 mapping file for font encoding C60
+Now handling font encoding C61 ...
+... no UTF-8 mapping file for font encoding C61
+Now handling font encoding C63 ...
+... no UTF-8 mapping file for font encoding C63
+Now handling font encoding C64 ...
+... no UTF-8 mapping file for font encoding C64
+Now handling font encoding C65 ...
+... no UTF-8 mapping file for font encoding C65
+Now handling font encoding C70 ...
+... no UTF-8 mapping file for font encoding C70
+Now handling font encoding C31 ...
+... no UTF-8 mapping file for font encoding C31
+Now handling font encoding C32 ...
+... no UTF-8 mapping file for font encoding C32
+Now handling font encoding C33 ...
+... no UTF-8 mapping file for font encoding C33
+Now handling font encoding C34 ...
+... no UTF-8 mapping file for font encoding C34
+Now handling font encoding C35 ...
+... no UTF-8 mapping file for font encoding C35
+Now handling font encoding C36 ...
+... no UTF-8 mapping file for font encoding C36
+Now handling font encoding C37 ...
+... no UTF-8 mapping file for font encoding C37
+Now handling font encoding C80 ...
+... no UTF-8 mapping file for font encoding C80
+Now handling font encoding C81 ...
+... no UTF-8 mapping file for font encoding C81
+Now handling font encoding C01 ...
+... no UTF-8 mapping file for font encoding C01
+Now handling font encoding C11 ...
+... no UTF-8 mapping file for font encoding C11
+Now handling font encoding C21 ...
+... no UTF-8 mapping file for font encoding C21
+Now handling font encoding C41 ...
+... no UTF-8 mapping file for font encoding C41
+Now handling font encoding C62 ...
+... no UTF-8 mapping file for font encoding C62
+)
+\CJK@indent=\box53
+)
+(D:\apps\miktex\tex/latex/base\fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+)) (sty/neurips_2024.sty
+
+LaTeX Warning: You have requested package `sty/neurips_2024',
+               but the package provides `neurips_2024'.
+
+Package: neurips_2024 2024/03/31 NeurIPS 2024 submission/camera-ready style fil
+e
+(D:\apps\miktex\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(D:\apps\miktex\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks19
+)
+(D:\apps\miktex\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(D:\apps\miktex\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(D:\apps\miktex\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks21
+
+(D:\apps\miktex\tex/latex/geometry\geometry.cfg))
+\@neuripsabovecaptionskip=\skip51
+\@neuripsbelowcaptionskip=\skip52
+) (sty/mymath.sty
+(D:\apps\miktex\tex/latex/relsize\relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+(D:\apps\miktex\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/06/16 v2.17y AMS math features
+\@mathmargin=\skip53
+
+For additional information on amsmath, use the `?' option.
+(D:\apps\miktex\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(D:\apps\miktex\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen157
+))
+(D:\apps\miktex\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen158
+)
+(D:\apps\miktex\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count286
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count287
+\leftroot@=\count288
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count289
+\DOTSCASE@=\count290
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen159
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count291
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count292
+\dotsspace@=\muskip17
+\c@parentequation=\count293
+\dspbrk@lvl=\count294
+\tag@help=\toks23
+\row@=\count295
+\column@=\count296
+\maxfields@=\count297
+\andhelp@=\toks24
+\eqnshift@=\dimen160
+\alignsep@=\dimen161
+\tagshift@=\dimen162
+\tagwidth@=\dimen163
+\totwidth@=\dimen164
+\lineht@=\dimen165
+\@envbody=\toks25
+\multlinegap=\skip54
+\multlinetaggap=\skip55
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2949.
+LaTeX Info: Redefining \] on input line 2950.
+)
+(D:\apps\miktex\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(D:\apps\miktex\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(D:\apps\miktex\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks27
+\thm@bodyfont=\toks28
+\thm@headfont=\toks29
+\thm@notefont=\toks30
+\thm@headpunct=\toks31
+\thm@preskip=\skip56
+\thm@postskip=\skip57
+\thm@headsep=\skip58
+\dth@everypar=\toks32
+)
+(D:\apps\miktex\tex/latex/bbm\bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
+(D:\apps\miktex\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+
+(D:\apps\miktex\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count298
+\calc@Bcount=\count299
+\calc@Adimen=\dimen166
+\calc@Bdimen=\dimen167
+\calc@Askip=\skip59
+\calc@Bskip=\skip60
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count300
+\calc@Cskip=\skip61
+)
+(D:\apps\miktex\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count301
+\l_MT_multwidth_dim=\dimen168
+\origjot=\skip62
+\l_MT_shortvdotswithinadjustabove_dim=\dimen169
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen170
+\l_MT_above_intertext_sep=\dimen171
+\l_MT_below_intertext_sep=\dimen172
+\l_MT_above_shortintertext_sep=\dimen173
+\l_MT_below_shortintertext_sep=\dimen174
+\xmathstrut@box=\box56
+\xmathstrut@dim=\dimen175
+)
+(D:\apps\miktex\tex/latex/tools\bm.sty
+Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+)
+(D:\apps\miktex\tex/latex/tools\multicol.sty
+Package: multicol 2025/05/25 v2.0a multicolumn formatting (FMi)
+\c@tracingmulticols=\count302
+\mult@box=\box57
+\multicol@leftmargin=\dimen176
+\c@unbalance=\count303
+\c@collectmore=\count304
+\doublecol@number=\count305
+\multicoltolerance=\count306
+\multicolpretolerance=\count307
+\full@width=\dimen177
+\page@free=\dimen178
+\premulticols=\dimen179
+\postmulticols=\dimen180
+\multicolsep=\skip63
+\multicolbaselineskip=\skip64
+\partial@page=\box58
+\last@line=\box59
+\mc@boxedresult=\box60
+\maxbalancingoverflow=\dimen181
+\mult@rightbox=\box61
+\mult@grightbox=\box62
+\mult@firstbox=\box63
+\mult@gfirstbox=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\c@minrows=\count308
+\c@columnbadness=\count309
+\c@finalcolumnbadness=\count310
+\last@try=\dimen182
+\multicolovershoot=\dimen183
+\multicolundershoot=\dimen184
+\mult@nat@firstbox=\box101
+\colbreak@box=\box102
+\mc@col@check@num=\count311
+\g__mc_curr_col_int=\count312
+)
+(D:\apps\miktex\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2025-06-21 v7.01n Hypertext links for LaTeX
+
+(D:\apps\miktex\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(D:\apps\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(D:\apps\miktex\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(D:\apps\miktex\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(D:\apps\miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(D:\apps\miktex\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(D:\apps\miktex\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(D:\apps\miktex\tex/latex/hyperref\nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+
+(D:\apps\miktex\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(D:\apps\miktex\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(D:\apps\miktex\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count313
+)
+(D:\apps\miktex\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count314
+)
+(D:\apps\miktex\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen185
+\Hy@linkcounter=\count315
+\Hy@pagecounter=\count316
+
+(D:\apps\miktex\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2025-06-21 v7.01n Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(D:\apps\miktex\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count317
+
+(D:\apps\miktex\tex/latex/hyperref\puenc.def
+File: puenc.def 2025-06-21 v7.01n Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count318
+
+(D:\apps\miktex\tex/latex/url\url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4787.
+\XeTeXLinkMargin=\dimen186
+
+(D:\apps\miktex\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(D:\apps\miktex\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count319
+\Field@Width=\dimen187
+\Fld@charsize=\dimen188
+Package hyperref Info: Hyper figures OFF on input line 6066.
+Package hyperref Info: Link nesting OFF on input line 6071.
+Package hyperref Info: Hyper index ON on input line 6074.
+Package hyperref Info: backreferencing OFF on input line 6081.
+Package hyperref Info: Link coloring OFF on input line 6086.
+Package hyperref Info: Link coloring with OCG OFF on input line 6091.
+Package hyperref Info: PDF/A mode OFF on input line 6096.
+\Hy@abspage=\count320
+\c@Item=\count321
+\c@Hfootnote=\count322
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(D:\apps\miktex\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2025-06-21 v7.01n Hyperref driver for pdfTeX
+\Fld@listcount=\count323
+\c@bookmark@seq@number=\count324
+
+(D:\apps\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(D:\apps\miktex\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip65
+)
+(D:\apps\miktex\tex/latex/framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip66
+\fb@frw=\dimen189
+\fb@frh=\dimen190
+\FrameRule=\dimen191
+\FrameSep=\dimen192
+)
+(D:\apps\miktex\tex/latex/psnfss\pifont.sty
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+
+
+(D:\apps\miktex\tex/latex/psnfss\upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+
+
+(D:\apps\miktex\tex/latex/psnfss\upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+(D:\apps\miktex\tex/generic/soul\soul.sty
+Package: soul 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
+
+(D:\apps\miktex\tex/generic/soul\soul-ori.sty
+Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
+\SOUL@word=\toks33
+\SOUL@lasttoken=\toks34
+\SOUL@syllable=\toks35
+\SOUL@cmds=\toks36
+\SOUL@buffer=\toks37
+\SOUL@token=\toks38
+\SOUL@syllgoal=\dimen193
+\SOUL@syllwidth=\dimen194
+\SOUL@charkern=\dimen195
+\SOUL@hyphkern=\dimen196
+\SOUL@dimen=\dimen197
+\SOUL@dimeni=\dimen198
+\SOUL@minus=\count325
+\SOUL@comma=\count326
+\SOUL@apo=\count327
+\SOUL@grave=\count328
+\SOUL@spaceskip=\skip67
+\SOUL@ttwidth=\dimen199
+\SOUL@uldp=\dimen256
+\SOUL@ulht=\dimen257
+)
+(D:\apps\miktex\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+Package hyperref Info: Option `colorlinks' set `true' on input line 18.
+\c@theorem=\count329
+\c@fact=\count330
+\c@definition=\count331
+\c@example=\count332
+)
+(D:\apps\miktex\tex/latex/base\fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 11
+6.
+
+(D:\apps\miktex\tex/latex/psnfss\t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+))
+(D:\apps\miktex\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
+
+(D:\apps\miktex\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count333
+
+(D:\apps\miktex\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(D:\apps\miktex\tex/latex/base\ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count334
+\c@listtotal=\count335
+\c@listcount=\count336
+\c@liststart=\count337
+\c@liststop=\count338
+\c@citecount=\count339
+\c@citetotal=\count340
+\c@multicitecount=\count341
+\c@multicitetotal=\count342
+\c@instcount=\count343
+\c@maxnames=\count344
+\c@minnames=\count345
+\c@maxitems=\count346
+\c@minitems=\count347
+\c@citecounter=\count348
+\c@maxcitecounter=\count349
+\c@savedcitecounter=\count350
+\c@uniquelist=\count351
+\c@uniquename=\count352
+\c@refsection=\count353
+\c@refsegment=\count354
+\c@maxextratitle=\count355
+\c@maxextratitleyear=\count356
+\c@maxextraname=\count357
+\c@maxextradate=\count358
+\c@maxextraalpha=\count359
+\c@abbrvpenalty=\count360
+\c@highnamepenalty=\count361
+\c@lownamepenalty=\count362
+\c@maxparens=\count363
+\c@parenlevel=\count364
+\blx@tempcnta=\count365
+\blx@tempcntb=\count366
+\blx@tempcntc=\count367
+\c@blx@maxsection=\count368
+\blx@maxsegment@0=\count369
+\blx@notetype=\count370
+\blx@parenlevel@text=\count371
+\blx@parenlevel@foot=\count372
+\blx@sectionciteorder@0=\count373
+\blx@sectionciteorderinternal@0=\count374
+\blx@entrysetcounter=\count375
+\blx@biblioinstance=\count376
+\labelnumberwidth=\skip68
+\labelalphawidth=\skip69
+\biblabelsep=\skip70
+\bibitemsep=\skip71
+\bibnamesep=\skip72
+\bibinitsep=\skip73
+\bibparsep=\skip74
+\bibhang=\skip75
+\blx@bcfin=\read2
+\blx@bcfout=\write3
+\blx@langwohyphens=\language79
+\c@mincomprange=\count377
+\c@maxcomprange=\count378
+\c@mincompwidth=\count379
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(D:\apps\miktex\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'alphabetic.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count380
+\c@savedafterword=\count381
+\c@annotator=\count382
+\c@savedannotator=\count383
+\c@author=\count384
+\c@savedauthor=\count385
+\c@bookauthor=\count386
+\c@savedbookauthor=\count387
+\c@commentator=\count388
+\c@savedcommentator=\count389
+\c@editor=\count390
+\c@savededitor=\count391
+\c@editora=\count392
+\c@savededitora=\count393
+\c@editorb=\count394
+\c@savededitorb=\count395
+\c@editorc=\count396
+\c@savededitorc=\count397
+\c@foreword=\count398
+\c@savedforeword=\count399
+\c@holder=\count400
+\c@savedholder=\count401
+\c@introduction=\count402
+\c@savedintroduction=\count403
+\c@namea=\count404
+\c@savednamea=\count405
+\c@nameb=\count406
+\c@savednameb=\count407
+\c@namec=\count408
+\c@savednamec=\count409
+\c@translator=\count410
+\c@savedtranslator=\count411
+\c@shortauthor=\count412
+\c@savedshortauthor=\count413
+\c@shorteditor=\count414
+\c@savedshorteditor=\count415
+\c@labelname=\count416
+\c@savedlabelname=\count417
+\c@institution=\count418
+\c@savedinstitution=\count419
+\c@lista=\count420
+\c@savedlista=\count421
+\c@listb=\count422
+\c@savedlistb=\count423
+\c@listc=\count424
+\c@savedlistc=\count425
+\c@listd=\count426
+\c@savedlistd=\count427
+\c@liste=\count428
+\c@savedliste=\count429
+\c@listf=\count430
+\c@savedlistf=\count431
+\c@location=\count432
+\c@savedlocation=\count433
+\c@organization=\count434
+\c@savedorganization=\count435
+\c@origlocation=\count436
+\c@savedoriglocation=\count437
+\c@origpublisher=\count438
+\c@savedorigpublisher=\count439
+\c@publisher=\count440
+\c@savedpublisher=\count441
+\c@language=\count442
+\c@savedlanguage=\count443
+\c@origlanguage=\count444
+\c@savedoriglanguage=\count445
+\c@pageref=\count446
+\c@savedpageref=\count447
+\shorthandwidth=\skip76
+\shortjournalwidth=\skip77
+\shortserieswidth=\skip78
+\shorttitlewidth=\skip79
+\shortauthorwidth=\skip80
+\shorteditorwidth=\skip81
+\locallabelnumberwidth=\skip82
+\locallabelalphawidth=\skip83
+\localshorthandwidth=\skip84
+\localshortjournalwidth=\skip85
+\localshortserieswidth=\skip86
+\localshorttitlewidth=\skip87
+\localshortauthorwidth=\skip88
+\localshorteditorwidth=\skip89
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(D:\apps\miktex\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(D:\apps\miktex\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+\c@textcitecount=\count448
+\c@textcitetotal=\count449
+\c@textcitemaxnames=\count450
+\c@biburlbigbreakpenalty=\count451
+\c@biburlbreakpenalty=\count452
+\c@biburlnumpenalty=\count453
+\c@biburlucpenalty=\count454
+\c@biburllcpenalty=\count455
+\biburlbigskip=\muskip19
+\biburlnumskip=\muskip20
+\biburlucskip=\muskip21
+\biburllcskip=\muskip22
+\c@smartand=\count456
+)
+Package biblatex Info: Trying to load bibliography style 'alphabetic'...
+Package biblatex Info: ... file 'alphabetic.bbx' found.
+
+(D:\apps\miktex\tex/latex/biblatex/bbx\alphabetic.bbx
+File: alphabetic.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(D:\apps\miktex\tex/latex/biblatex/bbx\standard.bbx
+File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count457
+\c@bbx:relatedtotal=\count458
+))
+Package biblatex Info: Trying to load citation style 'alphabetic'...
+Package biblatex Info: ... file 'alphabetic.cbx' found.
+
+(D:\apps\miktex\tex/latex/biblatex/cbx\alphabetic.cbx
+File: alphabetic.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(D:\apps\miktex\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+
+(D:\apps\miktex\tex/latex/l3kernel\expl3.sty
+Package: expl3 2025-06-09 L3 programming layer (loader) 
+
+(D:\apps\miktex\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count459
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2025-06-09 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(D:\apps\miktex\tex/latex/biblatex\blx-case-expl3.sty
+(D:\apps\miktex\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
+))
+Package hyperref Info: Option `colorlinks' set `true' on input line 29.
+
+(D:\apps\miktex\tex/latex/jknappen\mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup9
+)
+(D:\apps\miktex\tex/latex/units\nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip90
+\L@UnitsRaiseTextstyle=\skip91
+\L@UnitsRaiseScriptstyle=\skip92
+)
+(D:\apps\miktex\tex/latex/xfrac\xfrac.sty
+(D:\apps\miktex\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\apps\miktex\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\apps\miktex\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(D:\apps\miktex\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(D:\apps\miktex\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen258
+\Gin@req@width=\dimen259
+)
+Package: xfrac 2024-06-04 Split-level fractions
+\l__xfrac_slash_box=\box103
+\l__xfrac_tmp_box=\box104
+\l__xfrac_denominator_bot_sep_dim=\dimen260
+\l__xfrac_numerator_bot_sep_dim=\dimen261
+\l__xfrac_numerator_top_sep_dim=\dimen262
+\l__xfrac_slash_left_sep_dim=\dimen263
+\l__xfrac_slash_right_sep_dim=\dimen264
+\l__xfrac_slash_left_muskip=\muskip23
+\l__xfrac_slash_right_muskip=\muskip24
+
+LaTeX template Info: Declaring template type 'xfrac' taking 3 argument(s) on
+(template)           line 100.
+
+
+LaTeX template Info: Declaring instance 'cmr' of type xfrac on line 392.
+
+
+LaTeX template Info: Declaring instance 'cmss' of type xfrac on line 392.
+
+
+LaTeX template Info: Declaring instance 'cmtt' of type xfrac on line 392.
+
+)
+(D:\apps\miktex\tex/latex/subdepth\subdepth.sty
+Package: subdepth 2007/09/02 v0.1 Unify subscript depths
+)
+(D:\apps\miktex\tex/latex/tools\array.sty
+Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+\col@sep=\dimen265
+\ar@mcellbox=\box105
+\extrarowheight=\dimen266
+\NC@list=\toks39
+\extratabsurround=\skip93
+\backup@length=\skip94
+\ar@cellbox=\box106
+)
+(D:\apps\miktex\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen267
+\lightrulewidth=\dimen268
+\cmidrulewidth=\dimen269
+\belowrulesep=\dimen270
+\belowbottomsep=\dimen271
+\aboverulesep=\dimen272
+\abovetopsep=\dimen273
+\cmidrulesep=\dimen274
+\cmidrulekern=\dimen275
+\defaultaddspace=\dimen276
+\@cmidla=\count460
+\@cmidlb=\count461
+\@aboverulesep=\dimen277
+\@belowrulesep=\dimen278
+\@thisruleclass=\count462
+\@lastruleclass=\count463
+\@thisrulewidth=\dimen279
+)
+(D:\apps\miktex\tex/latex/microtype\microtype.sty
+Package: microtype 2025/02/11 v3.2a Micro-typographical refinements (RS)
+\MT@toks=\toks40
+\MT@tempbox=\box107
+\MT@count=\count464
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
+LaTeX Info: Redefining \leftprotrusion on input line 1088.
+\MT@prot@toks=\toks41
+LaTeX Info: Redefining \rightprotrusion on input line 1107.
+LaTeX Info: Redefining \textls on input line 1449.
+\MT@outer@kern=\dimen280
+LaTeX Info: Redefining \microtypecontext on input line 2053.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
+\MT@listname@count=\count465
+
+(D:\apps\miktex\tex/latex/microtype\microtype-pdftex.def
+File: microtype-pdftex.def 2025/02/11 v3.2a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 944.
+LaTeX Info: Redefining \lslig on input line 944.
+\MT@outer@space=\skip95
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(D:\apps\miktex\tex/latex/microtype\microtype.cfg
+File: microtype.cfg 2025/02/11 v3.2a microtype main configuration file (RS)
+)
+LaTeX Info: Redefining \microtypesetup on input line 3065.
+)
+(D:\apps\miktex\tex/latex/cleveref\cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
+Package cleveref Info: always capitalise cross-reference names on input line 78
+25.
+Package cleveref Info: include cross-reference names in hyperlinks on input lin
+e 7836.
+Package cleveref Info: include cross-reference names in hyperlinks on input lin
+e 7852.
+Package cleveref Info: always capitalise cross-reference names on input line 78
+52.
+)
+==> First Aid for cleveref.sty applied!
+(D:\apps\miktex\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(D:\apps\miktex\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen281
+\captionmargin=\dimen282
+\caption@leftmargin=\dimen283
+\caption@rightmargin=\dimen284
+\caption@width=\dimen285
+\caption@indent=\dimen286
+\caption@parindent=\dimen287
+\caption@hangindent=\dimen288
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count466
+\c@continuedfloat=\count467
+Package caption Info: hyperref package is loaded.
+)
+(D:\apps\miktex\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count468
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count469
+)
+(D:\apps\miktex\tex/latex/adjustbox\adjustbox.sty
+Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
+
+(D:\apps\miktex\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(D:\apps\miktex\tex/generic/xkeyval\xkeyval.tex
+(D:\apps\miktex\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks42
+\XKV@tempa@toks=\toks43
+)
+\XKV@depth=\count470
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(D:\apps\miktex\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(D:\apps\miktex\tex/latex/adjustbox\trimclip.sty
+Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
+
+(D:\apps\miktex\tex/latex/collectbox\collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box108
+)
+\tc@llx=\dimen289
+\tc@lly=\dimen290
+\tc@urx=\dimen291
+\tc@ury=\dimen292
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(D:\apps\miktex\tex/latex/adjustbox\tc-pdftex.def
+File: tc-pdftex.def 2025/02/26 v2.3 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen293
+\adjbox@Height=\dimen294
+\adjbox@Depth=\dimen295
+\adjbox@Totalheight=\dimen296
+\adjbox@pwidth=\dimen297
+\adjbox@pheight=\dimen298
+\adjbox@pdepth=\dimen299
+\adjbox@ptotalheight=\dimen300
+
+(D:\apps\miktex\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count471
+)
+(D:\apps\miktex\tex/latex/varwidth\varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box109
+\sift@deathcycles=\count472
+\@vwid@loff=\dimen301
+\@vwid@roff=\dimen302
+)
+==> First Aid for varwidth.sty applied!
+) (D:\apps\miktex\tex/latex/graphics\color.sty
+Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
+
+(D:\apps\miktex\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(D:\apps\miktex\tex/latex/graphics\mathcolor.ltx))
+(D:\apps\miktex\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(D:\apps\miktex\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+LaTeX Info: Redefining \color on input line 762.
+
+(D:\apps\miktex\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(D:\apps\miktex\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen303
+\WF@size=\dimen304
+\c@WF@wrappedlines=\count473
+\WF@box=\box110
+\WF@everypar=\toks44
+Package: wrapfig 2003/01/31  v 3.6
+)
+(D:\apps\miktex\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip96
+\multirow@cntb=\count474
+\multirow@dima=\skip97
+\bigstrutjot=\dimen305
+)
+(D:\apps\miktex\tex/latex/sidecap\sidecap.sty
+Package: sidecap 2023/01/24 v1.7a SideCap Package (RN/HjG)
+\SC@BOXWD=\dimen306
+\SC@CAPWD=\dimen307
+\SC@tempdima=\dimen308
+\SC@tempdimb=\dimen309
+\c@SC@C=\count475
+\SC@BOX=\box111
+)
+(D:\apps\miktex\tex/latex/marginnote\marginnote.sty
+Package: marginnote 2018/08/09 1.4b non floating margin notes for LaTeX
+\c@mn@abspage=\count476
+)
+(D:\apps\miktex\tex/latex/tcolorbox\tcolorbox.sty
+Package: tcolorbox 2025/06/04 version 6.6.0 text color boxes
+
+(D:\apps\miktex\tex/latex/pgf/frontendlayer\tikz.sty
+(D:\apps\miktex\tex/latex/pgf/basiclayer\pgf.sty
+(D:\apps\miktex\tex/latex/pgf/utilities\pgfrcs.sty
+(D:\apps\miktex\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks45
+\pgfutil@tempdima=\dimen310
+\pgfutil@tempdimb=\dimen311
+)
+(D:\apps\miktex\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box112
+)
+(D:\apps\miktex\tex/generic/pgf/utilities\pgfrcs.code.tex
+(D:\apps\miktex\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(D:\apps\miktex\tex/latex/pgf/basiclayer\pgfcore.sty
+(D:\apps\miktex\tex/latex/pgf/systemlayer\pgfsys.sty
+(D:\apps\miktex\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(D:\apps\miktex\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks46
+\pgfkeys@temptoks=\toks47
+
+(D:\apps\miktex\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks48
+))
+\pgf@x=\dimen312
+\pgf@y=\dimen313
+\pgf@xa=\dimen314
+\pgf@ya=\dimen315
+\pgf@xb=\dimen316
+\pgf@yb=\dimen317
+\pgf@xc=\dimen318
+\pgf@yc=\dimen319
+\pgf@xd=\dimen320
+\pgf@yd=\dimen321
+\w@pgf@writea=\write4
+\r@pgf@reada=\read3
+\c@pgf@counta=\count477
+\c@pgf@countb=\count478
+\c@pgf@countc=\count479
+\c@pgf@countd=\count480
+\t@pgf@toka=\toks49
+\t@pgf@tokb=\toks50
+\t@pgf@tokc=\toks51
+\pgf@sys@id@count=\count481
+
+(D:\apps\miktex\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(D:\apps\miktex\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(D:\apps\miktex\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(D:\apps\miktex\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count482
+\pgfsyssoftpath@bigbuffer@items=\count483
+)
+(D:\apps\miktex\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(D:\apps\miktex\tex/generic/pgf/math\pgfmath.code.tex
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathutil.code.tex)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen322
+\pgfmath@count=\count484
+\pgfmath@box=\box113
+\pgfmath@toks=\toks52
+\pgfmath@stack@operand=\toks53
+\pgfmath@stack@operation=\toks54
+)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathfunctions.code.tex)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathfunctions.random.code.tex)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathfunctions.base.code.tex)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathfunctions.round.code.tex)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.t
+ex) (D:\apps\miktex\tex/generic/pgf/math\pgfmathcalc.code.tex)
+(D:\apps\miktex\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count485
+))
+(D:\apps\miktex\tex/generic/pgf/math\pgfint.code.tex)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen323
+\pgf@picmaxx=\dimen324
+\pgf@picminy=\dimen325
+\pgf@picmaxy=\dimen326
+\pgf@pathminx=\dimen327
+\pgf@pathmaxx=\dimen328
+\pgf@pathminy=\dimen329
+\pgf@pathmaxy=\dimen330
+\pgf@xx=\dimen331
+\pgf@xy=\dimen332
+\pgf@yx=\dimen333
+\pgf@yy=\dimen334
+\pgf@zx=\dimen335
+\pgf@zy=\dimen336
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen337
+\pgf@path@lasty=\dimen338
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen339
+\pgf@shorten@start@additional=\dimen340
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box114
+\pgf@hbox=\box115
+\pgf@layerbox@main=\box116
+\pgf@picture@serial@count=\count486
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen341
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen342
+\pgf@pt@y=\dimen343
+\pgf@pt@temp=\dimen344
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen345
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen346
+\pgf@sys@shading@range@num=\count487
+\pgf@shadingcount=\count488
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box117
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(D:\apps\miktex\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(D:\apps\miktex\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box118
+)
+(D:\apps\miktex\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(D:\apps\miktex\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen347
+\pgf@nodesepend=\dimen348
+)
+(D:\apps\miktex\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(D:\apps\miktex\tex/latex/pgf/utilities\pgffor.sty
+(D:\apps\miktex\tex/latex/pgf/utilities\pgfkeys.sty
+(D:\apps\miktex\tex/generic/pgf/utilities\pgfkeys.code.tex))
+(D:\apps\miktex\tex/latex/pgf/math\pgfmath.sty
+(D:\apps\miktex\tex/generic/pgf/math\pgfmath.code.tex))
+(D:\apps\miktex\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen349
+\pgffor@skip=\dimen350
+\pgffor@stack=\toks55
+\pgffor@toks=\toks56
+))
+(D:\apps\miktex\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(D:\apps\miktex\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count489
+\pgfplotmarksize=\dimen351
+)
+\tikz@lastx=\dimen352
+\tikz@lasty=\dimen353
+\tikz@lastxsaved=\dimen354
+\tikz@lastysaved=\dimen355
+\tikz@lastmovetox=\dimen356
+\tikz@lastmovetoy=\dimen357
+\tikzleveldistance=\dimen358
+\tikzsiblingdistance=\dimen359
+\tikz@figbox=\box119
+\tikz@figbox@bg=\box120
+\tikz@tempbox=\box121
+\tikz@tempbox@bg=\box122
+\tikztreelevel=\count490
+\tikznumberofchildren=\count491
+\tikznumberofcurrentchild=\count492
+\tikz@fig@count=\count493
+
+(D:\apps\miktex\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count494
+\pgfmatrixcurrentcolumn=\count495
+\pgf@matrix@numberofcolumns=\count496
+)
+\tikz@expandcount=\count497
+
+(D:\apps\miktex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths
+.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (D:\apps\miktex\tex/latex/tools\verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks57
+\verbatim@line=\toks58
+\verbatim@in@stream=\read4
+)
+\tcb@titlebox=\box123
+\tcb@upperbox=\box124
+\tcb@lowerbox=\box125
+\tcb@phantombox=\box126
+\c@tcbbreakpart=\count498
+\c@tcblayer=\count499
+\c@tcolorbox@number=\count500
+\l__tcobox_tmpa_box=\box127
+\l__tcobox_tmpa_dim=\dimen360
+\tcb@temp=\box128
+\tcb@temp=\box129
+\tcb@temp=\box130
+\tcb@temp=\box131
+)
+(D:\apps\miktex\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip98
+\enit@outerparindent=\dimen361
+\enit@toks=\toks59
+\enit@inbox=\box132
+\enit@count@id=\count501
+\enitdp@description=\count502
+)
+(D:\apps\miktex\tex/latex/tcolorbox\tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.6.0'
+) (D:\apps\miktex\tex/latex/tcolorbox\tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.6.0'
+(D:\apps\miktex\tex/latex/pdfcol\pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+)
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box133
+\tcb@totalupperbox=\box134
+\tcb@totallowerbox=\box135
+)
+(D:\apps\miktex\tex/latex/tcolorbox\tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.6.0'
+(D:\apps\miktex\tex/latex/tikzfill\tikzfill.image.sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+
+(D:\apps\miktex\tex/latex/tikzfill\tikzfill-common.sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+)
+(D:\apps\miktex\tex/latex/tikzfill\tikzlibraryfill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box136
+))
+(D:\apps\miktex\tex/latex/tcolorbox\tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.6.0'
+))
+\@quotelevel=\count503
+\@quotereset=\count504
+ (main-neurips.aux)
+\openout1 = `main-neurips.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 141.
+LaTeX Font Info:    ... okay on input line 141.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(108.405pt, 397.48499pt, 108.40501pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43pt, 72.27pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=397.48499pt
+* \textheight=650.43pt
+* \oddsidemargin=36.13501pt
+* \evensidemargin=36.13501pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring ON on input line 141.
+\@outlinefile=\write5
+\openout5 = `main-neurips.out'.
+
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(D:\apps\miktex\tex/latex/biblatex/lbx\english.lbx
+File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main-neurips.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+
+
+Package biblatex Warning: File 'main-neurips.bbl' is wrong format version - exp
+ected 3.3.
+
+Package biblatex Info: ... file 'main-neurips.bbl' found.
+(main-neurips.bbl)
+Package biblatex Info: Reference section=0 on input line 141.
+Package biblatex Info: Reference segment=0 on input line 141.
+ (D:\apps\miktex\tex/context/base/mkii\supp-pdf.mkii
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+[]\T1/ptm/m/n/10 author4hash=06d653779315b57ec4e3263e0205b740family=Bardet, fam
+-i-lyi=B., given=Jean-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 Marc, giveni=J.[]M.hash=b56d3f1bb6a728b76afa43443e8a0723family=D
+oukhan, fam-i-
+ []
+
+
+Underfull \hbox (badness 5637) in paragraph at lines 23--13
+\T1/ptm/m/n/10 lyi=D., given=Paul, giveni=P.hash=851a62835a5686aa647b45acf795bd
+57family=Lang, fam-i-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 lyi=L., given=Gabriel, giveni=G.hash=bb062f2d67d839cdc6d1cf2014d
+96644family=Ragache,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=R., given=Nicolas, giveni=N.                  au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor1hash=c3142f62d00a4293478163e1bb4cd6f8family=Barron, fam-i-l
+yi=B., given=Andrew
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=B., given=Richard C, giveni=R. C.               au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=dd92a8bfeb8130fb684071205825c10efamily=Bell, fam-i-lyi
+=B., given=Anthony
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 J., giveni=A. J.hash=2df660039cf6a702dffb22b64106829ffamily=Sejn
+owski, fam-
+ []
+
+
+Underfull \hbox (badness 5331) in paragraph at lines 23--13
+\T1/ptm/m/n/10 i-lyi=S., given=Terrence J., giveni=T. J.                       
+  au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor8hash=13a89d65847ba7dcece5b0af872c34ccfamily=Chan, fam-i-lyi
+=C., given=Stephanie
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 23--13
+\T1/ptm/m/n/10 C. Y., giveni=S. C. Y.hash=0b3e9682fc5db39420c22d4267683326famil
+y=Santoro, fam-i-lyi=S.,
+ []
+
+
+Overfull \hbox (29.46286pt too wide) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=R., given=Pierre H., giveni=P. H.hash=adbde6b40e7797b8
+98b46cc6ddbb13d8family=McClelland,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=M., given=Jay, giveni=J.hash=b0e56d87bc44e497c3ed1a254
+6f53283family=Hill,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=H., given=Felix, giveni=F.                        au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor4hash=b240c653612b8157a41dd4282347398afamily=Chen, fam-i-lyi
+=C., given=Ting,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=T.hash=7fc0edf04cce351dda404579ede3d0d1family=Kornblith, 
+fam-i-lyi=K.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Simon, giveni=S.hash=e34c5aa67281924804d54d88e58ca38afamil
+y=Norouzi, fam-i-
+ []
+
+
+Underfull \hbox (badness 7433) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=H., given=Geoffrey, giveni=G.                        a
+u-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor4hash=ca6c941c86001ebb91c9e4b414915f0afamily=Crochet, fam-i-
+lyi=C., given=Sylvain,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=Y.hash=f42bfb0bdf923131b118be853a7acc3cfamily=Petersen, f
+am-i-lyi=P., given=Carl
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=D., given=Dennis, giveni=D.hash=2354f845adac9718d71436
+5c5aec24c3family=Packer,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=D., given=Lisa, giveni=L.hash=9f4334f38373c87c5ad2fbad
+74fec962family=Brainard,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=P., given=Beth, giveni=B.hash=a79d2aa1f44a921180c87c9b
+9f6ca932family=Lee,
+ []
+
+
+Underfull \hbox (badness 8189) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=L., given=Barry, giveni=B.                         au-
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 pher, giveni=R. C.hash=3b3babd39aac168173d97e2fc7beee30family=Bl
+ake, fam-i-lyi=B.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=David T., giveni=D. T.hash=89ab8ae486d95bd4cc0bd1917913ef1
+0family=Merzenich,
+ []
+
+
+Underfull \hbox (badness 4024) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=M., given=Michael M., giveni=M. M.                    
+   au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor14hash=d838118ccebe8e7f74094dcce2b86eecfamily=Doi, fam-i-lyi
+=D., given=Eizaburo,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 D., giveni=G. D.hash=8f128e70084608a2c29c497ebd794f87family=Shle
+ns, fam-i-lyi=S.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Jonathon, giveni=J.hash=1eeca49c8f9c189b1456fab980e6f93ffa
+mily=Sher, fam-i-lyi=S.,
+ []
+
+
+Underfull \hbox (badness 5771) in paragraph at lines 23--13
+\T1/ptm/m/n/10 i-lyi=G., given=Martin, giveni=M.hash=4cc56638c7947818685bf166fa
+836bf5family=Machado,
+ []
+
+
+Overfull \hbox (16.63301pt too wide) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=M., given=Timothy A., giveni=T. A.hash=b8c7ef32a6c2c75
+93b748c2aa8a6c8fbfamily=Jepson,
+ []
+
+
+Overfull \hbox (25.45313pt too wide) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=J., given=Lauren H., giveni=L. H.hash=a114270c1e182b86
+67716fa93c3b900efamily=Mathieson,
+ []
+
+
+Overfull \hbox (10.44336pt too wide) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=G., given=Deborah E., giveni=D. E.hash=1041c9cbbb470dc
+a20847afc20f4cd4dfamily=Litke,
+ []
+
+
+Overfull \hbox (12.39319pt too wide) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=L., given=Alan M., giveni=A. M.hash=b5ff96deb16b77fe4a
+862b665ba9b0c9family=Paninski,
+ []
+
+
+Overfull \hbox (5.53194pt too wide) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=P., given=Liam, giveni=L.hash=d5479ad5d9db05dd76f5d0ad
+3123cbdafamily=Chichilnisky,
+ []
+
+
+Overfull \hbox (1.96286pt too wide) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=C., given=E. J., giveni=E. J.hash=027ac5801d4cec598c39
+3e1f9875c60bfamily=Simoncelli,
+ []
+
+
+Underfull \hbox (badness 5203) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=S., given=Eero P., giveni=E. P.                       
+  au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor3hash=d4cfcf2821c904a8f335f7fff81107bdfamily=DeWeese, fam-i-
+lyi=D., given=Michael
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 R., giveni=M. R.hash=8b580d9bffde73fcd18706f0f2592258family=Wehr
+, fam-i-lyi=W.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Michael, giveni=M.hash=fc3f9a649f752049831a98900c507a42fam
+ily=Zador,
+ []
+
+
+Underfull \hbox (badness 3088) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=Z., given=Anthony M., giveni=A. M.                    
+     au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=b76adbc3cd8a128db6e28b0c11e139e2family=Elkabetz, fam-i
+-lyi=E., given=Omer,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=O.hash=049bbc3640fa48f818ad49526f7efcf7family=Cohen, fam-
+i-lyi=C., given=Nadav,
+ []
+
+
+Underfull \hbox (badness 1342) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=N.                au-thor1hash=96fb35e5ec6261ac0ed319fdfd
+433c50family=Field,
+ []
+
+
+Underfull \hbox (badness 4072) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=F., given=D. J., giveni=D. J.                         
+   au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor1hash=98e72dce10800590c935dcab1939acebfamily=Frahm, fam-i-ly
+i=F., given=Gabriel,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Florent, giveni=F.hash=b04a2b73d4b5f3367d29287f6c75be19fam
+ily=MÈzard, fam-i-
+ []
+
+
+Underfull \hbox (badness 8113) in paragraph at lines 23--13
+\T1/ptm/m/n/10 lyi=M., given=Marc, giveni=M.hash=a6323e9260adef5ad1f6bd83180e3e
+6efamily=Zdeborov·,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=Z., given=Lenka, giveni=L.                      au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=559187c6e8cad5a03e2e2c57be738be0family=Geman, fam-i-ly
+i=G., given=Stuart,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=E., given=Tegan, giveni=T.hash=769efe7a5fbdc47af0a6a9d
+c06b229b0family=Kvinge,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=K., given=Henry, giveni=H.                       au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor5hash=ea04adf284afb4578bfd45d13af18cd6family=Goldt, fam-i-ly
+i=G., given=Sebastian,
+ []
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=S.hash=ab5a42d31519261c798baeb1babbcfcefamily=Advani, fam
+-i-lyi=A., given=Madhu,
+ []
+
+
+Underfull \hbox (badness 6032) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=M.hash=53616ee81ed88f0441878711fa47dd26family=Saxe, fam-i
+-lyi=S., given=Andrew
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 M, giveni=A. M.hash=cca9de0730a112186fce13057c1c6f07family=Krzak
+ala, fam-i-lyi=K.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Florent, giveni=F.hash=a6323e9260adef5ad1f6bd83180e3e6efam
+ily=Zdeborov·,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=Z., given=Lenka, giveni=L.                 au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor4hash=ea04adf284afb4578bfd45d13af18cd6family=Goldt, fam-i-ly
+i=G., given=Sebastian,
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=S.hash=b04a2b73d4b5f3367d29287f6c75be19family=MÈzard, fam
+-i-lyi=M., given=Marc,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=M.hash=cca9de0730a112186fce13057c1c6f07family=Krzakala, f
+am-i-lyi=K.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Florent, giveni=F.hash=a6323e9260adef5ad1f6bd83180e3e6efam
+ily=Zdeborov·,
+ []
+
+
+Underfull \hbox (badness 3872) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=Z., given=Lenka, giveni=L.                            
+  au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor6hash=ea04adf284afb4578bfd45d13af18cd6family=Goldt, fam-i-ly
+i=G., given=Sebastian,
+ []
+
+
+Underfull \hbox (badness 4242) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=S.hash=36883f6f2f0b3ff5cf270c3e099d768cfamily=Loureiro, f
+am-i-lyi=L., given=Bruno,
+ []
+
+
+Underfull \hbox (badness 4403) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=B.hash=99714c023ae60c3e186d9c7fd58c06ccfamily=Reeves, fam
+-i-lyi=R., given=Galen,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=G.hash=cca9de0730a112186fce13057c1c6f07family=Krzakala, f
+am-i-lyi=K.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Florent, giveni=F.hash=b04a2b73d4b5f3367d29287f6c75be19fam
+ily=MÈzard, fam-i-
+ []
+
+
+Underfull \hbox (badness 8113) in paragraph at lines 23--13
+\T1/ptm/m/n/10 lyi=M., given=Marc, giveni=M.hash=a6323e9260adef5ad1f6bd83180e3e
+6efamily=Zdeborov·,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=Z., given=Lenka, giveni=L.                   au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor4hash=090207362eb473d7218941104b5c098afamily=Harsh, fam-i-ly
+i=H., given=Moshir,
+ []
+
+
+Underfull \hbox (badness 2698) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=J.hash=ee559a3fa4799074d2a66198c55a606bfamily=Cocco, fam-
+i-lyi=C., given=Simona,
+ []
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=Z., given=Anthony M., giveni=A. M.                    
+      au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor3hash=9f23be03b80f7c25a1c0b2fe2f1fb001family=Hyv‰rinen, fam-
+i-lyi=H., given=Aapo,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=A.hash=3b98900e47298c8ee19eec5886e43117family=Hurri, fam-
+i-lyi=H.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Jarmo, giveni=J.hash=198d6e58844515dee7766cd2b34954e4famil
+y=Hoyer, fam-
+ []
+
+
+Underfull \hbox (badness 4940) in paragraph at lines 23--13
+\T1/ptm/m/n/10 i-lyi=H., given=Patrik O., giveni=P. O.                         
+ au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=180707fa9008b43831465424c3a94be5family=Hyv‰rinen, fam-
+i-lyi=H., given=A.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=A.hash=48133849896da3a35c6c57ab1455420dfamily=Oja, fam-i-
+lyi=O., given=E.,
+ []
+
+
+Underfull \hbox (badness 5519) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=W., given=T. N., giveni=T. N.                         
+au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=dd78b0965a1fbcb42a037804e3d7772efamily=Hubel, fam-i-ly
+i=H., given=D. H.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=H., given=A., giveni=A.                        au-
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=d0c7b6856f10ba53911f1d5ffbc4ca35family=Ingrosso, fam-i
+-lyi=I., given=Alessandro,
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 23--13
+\T1/ptm/m/n/10 i-lyi=K., given=Eric I, giveni=E. I.hash=8c6b9b68b7c5fd24f9830a0
+6b9fdf5a1family=Konishi,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=K., given=Masakazu, giveni=M.                    au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=081dfd55bfc5014a463a44f26b6b85adfamily=Karklin, fam-i-
+lyi=K., given=Yan,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=S., given=Ilya, giveni=I.hash=813bd95fe553e6079cd53a56
+7b238287family=Hinton,
+ []
+
+
+Underfull \hbox (badness 8094) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=H., given=Geoffrey E, giveni=G. E.                    
+au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor3hash=6807e3c00242c6bf6a3179905040471bfamily=Kolesnikov, fam
+-i-lyi=K.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Alexander, giveni=A.hash=00b950307c7d096765bb6df00c7c5c3af
+amily=Zhai, fam-i-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 lyi=Z., given=Xiaohua, giveni=X.hash=836254958eac09b30d45dd67a75
+ce4fafamily=Beyer,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=B., given=Lucas, giveni=L.                       au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor3hash=cc5c11663faf08824b3d16a108ad0eb5family=Mei, fam-i-lyi=
+M., given=Song,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=S.hash=484a542ca834affa98f81afbd90fba25family=Montanari, 
+fam-i-lyi=M.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Andrea, giveni=A.hash=da2e6880d9e911978ddb623ab9f54241fami
+ly=Nguyen,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=N., given=Phan-Minh, giveni=P.[]M.                    
+au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=3cfda89f09df13a0838b1c562f5b2d37family=Niell, fam-i-ly
+i=N., given=Cristopher
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 M., giveni=C. M.hash=c8b71e6305a019623088404ca30d39f7family=Stry
+ker, fam-
+ []
+
+
+Underfull \hbox (badness 5091) in paragraph at lines 23--13
+\T1/ptm/m/n/10 i-lyi=S., given=Michael P., giveni=M. P.                        
+ au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=278e76f0404aafaa82214e26727fc6eafamily=Olshausen, fam-
+i-lyi=O., given=Bruno
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 A., giveni=B. A.hash=acd7caf12cd1c2455057870c03684a51family=Fiel
+d, fam-i-
+ []
+
+
+Underfull \hbox (badness 5726) in paragraph at lines 23--13
+\T1/ptm/m/n/10 lyi=F., given=David J., giveni=D. J.                          au
+-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=P., given=F., giveni=F.hash=b99c2df2144dc5ee09317a7833
+dea42dfamily=Varoquaux,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=V., given=G., giveni=G.hash=955f19cea89ae97bb793607889
+8e6255family=Gramfort,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=G., given=A., giveni=A.hash=2787869c9954c1d4e989109899
+5feb75family=Michel,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=O., giveni=O.hash=8bd8ef25258dd2311f92df23fe71ecf7family=B
+londel, fam-i-lyi=B.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=M., giveni=M.hash=a5ee41fa92b9e425806e1773853f1932family=P
+rettenhofer, fam-i-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=R., giveni=R.hash=9662a6ea01596c6dd450817ccac81c4afamily=D
+ubourg, fam-i-lyi=D.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=V., giveni=V.hash=39e81a3e2193b954680a0ab847a0bb55family=V
+anderplas, fam-i-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=D., giveni=D.hash=67ec0e8add781665a43010c9559111e9family=B
+rucher, fam-i-lyi=B.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=M., giveni=M.hash=dcb3918f09eb8785e6b212a907cc37cffamily=P
+errot, fam-i-lyi=P.,
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=M., giveni=M.hash=ab20fcf381cd45daa82417c6fc595051family=D
+uchesnay, fam-i-lyi=D.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=P., given=Allan, giveni=A.                   au-
+ []
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor1hash=bc685130a720c723784d9b89ba8f1319family=Ringach, fam-i-
+lyi=R., given=Dario L.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=R., given=Murray, giveni=M.                    au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor3hash=bc685130a720c723784d9b89ba8f1319family=Ringach, fam-i-
+lyi=R., given=Dario
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 L., giveni=D. L.hash=e1ab9f98802fef214d32de4a4bd92731family=Shap
+ley, fam-i-lyi=S.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Robert M., giveni=R. M.hash=13bcd413df4fdca1f7014ec543010b
+dafamily=Hawken,
+ []
+
+
+Underfull \hbox (badness 3219) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=H., given=Michael J., giveni=M. J.                    
+      au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=b309faa381f5c4ca56ce4a84fd4ba1aafamily=Rolls, fam-i-ly
+i=R., given=E. T.,
+ []
+
+
+Underfull \hbox (badness 3907) in paragraph at lines 23--13
+\T1/ptm/m/n/10 i-lyi=B., given=Maneesh, giveni=M.hash=4bbc94cba5516b42596a428ed
+c491c76family=Mudur,
+ []
+
+
+Underfull \hbox (badness 1348) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=M., given=Ritvik, giveni=R.hash=ed0ad1592e5919e607675e
+157c273edcfamily=Suresh,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=S., given=Bipin, giveni=B.hash=bdb4d740fc9548d1c32a621
+03c30169dfamily=Ng,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=N., given=Andrew, giveni=A.                    au-
+ []
+
+
+Underfull \hbox (badness 6741) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor5hash=99b5a8e1ea66b60b2b403f1c124fb2defamily=Sengupta, fam-i
+-lyi=S., given=Anirvan,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=A.hash=f8d7471842890c47437cf5f9e1196a59family=Pehlevan, f
+am-i-lyi=P.,
+ []
+
+
+Underfull \hbox (badness 2119) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Cengiz, giveni=C.hash=5518bfe3d418a035f24a7ee96b4d647dfami
+ly=Tepper, fam-i-lyi=T.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Alexander, giveni=A.hash=b03dce145d48ea344c41b52cbeadecb3f
+amily=Chklovskii,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=C., given=Dmitri, giveni=D.                    au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor6hash=5370a85e6486c6deda427f04bac8b0fbfamily=Singer, fam-i-l
+yi=S., given=Yosef,
+ []
+
+
+Underfull \hbox (badness 5388) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=Y.hash=a14a723056ef90d508bd0faacd9a38defamily=Willmore, f
+am-i-lyi=W., given=Ben
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 DB, giveni=B. D.hash=8a8cbf404ec598c9aa00c86bd3deb309family=Schn
+upp, fam-i-lyi=S.,
+ []
+
+
+Underfull \hbox (badness 6608) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Jan WH, giveni=J. W.hash=5bebdadef6ad12d7772a2172344d6a1af
+amily=King, fam-i-
+ []
+
+
+Underfull \hbox (badness 3098) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=H., given=Nicol S, giveni=N. S.                       
+     au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=762aeb3cb7b7f16f52f3e7f0dc312cd2family=Saad, fam-i-lyi
+=S., given=David,
+ []
+
+
+Underfull \hbox (badness 5331) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=D.hash=d49f26d4f42c7abfc9e0c793d822ad47family=Solla, fam-
+i-lyi=S., given=Sara A,
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 23--13
+\T1/ptm/m/n/10 i-lyi=K., given=Florent, giveni=F.hash=a6323e9260adef5ad1f6bd831
+80e3e6efamily=Zdeborov·,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=Z., given=Lenka, giveni=L.                        au-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2useprefix=true,hash=db1ec78cebbe03a58ff12cfb82965860family=
+Hateren, fam-i-lyi=H.,
+ []
+
+
+Overfull \hbox (87.5528pt too wide) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=J. H., giveni=J. H., pre-fix=van, pre-fixi=v.useprefix=tru
+e,hash=8ba96f6d6897a1fa55c5fa9060d642f9family=Schaaf,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor3hash=a14a723056ef90d508bd0faacd9a38defamily=Willmore, fam-i
+-lyi=W., given=Ben
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 D. B., giveni=B. D. B.hash=2b2034a539b002b67081ae63b865d774famil
+y=Mazer, fam-i-
+ []
+
+
+Underfull \hbox (badness 4366) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=G., given=Jack L., giveni=J. L.                       
+   au-
+ []
+
+
+Underfull \hbox (badness 4229) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor8hash=b2aaf462ebb6eaede0ea55107eb076e5family=Woodworth, fam-
+i-lyi=W., given=Blake,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=S.hash=f62754c1d0d862b8ab5ca448259623bafamily=Lee, fam-i-
+lyi=L., given=Jason
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 D., giveni=J. D.hash=609ace7cd4540190d711798fdf8b4d3dfamily=Moro
+shko, fam-i-lyi=M.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Edward, giveni=E.hash=f134a417323419d25620c665207e87c9fami
+ly=Savarese, fam-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 i-lyi=S., given=Pedro, giveni=P.hash=6a7762e3c43a89027a7633a4c41
+572a0family=Golan,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=G., given=Itay, giveni=I.hash=07b30cf03223931cc6e46fff
+4b5b42e4family=Soudry,
+ []
+
+
+Underfull \hbox (badness 3049) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=S., given=Daniel, giveni=D.hash=4a4fc057d8331655775a21
+a8994f3339family=Srebro,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=S., given=Nathan, giveni=N.                        au-
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor5hash=9f400712248e594ce887c5cd06d9767bfamily=Yosinski, fam-i
+-lyi=Y., given=Jason,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=J.hash=ec864655608cdb84e55422b0797b6419family=Clune, fam-
+i-lyi=C., given=Jeff,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 giveni=J.hash=f480ed206a30d0a24ab31eb69169599cfamily=Nguyen, fam
+-i-lyi=N.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 given=Anh, giveni=A.hash=569d4c062eb4bbd99244081aab5fe4ccfamily=
+Fuchs, fam-i-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 lyi=F., given=Thomas, giveni=T.hash=475bdf26aafc86ddd3f62a8ff926
+7f8afamily=Lipson,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--13
+\T1/ptm/m/n/10 fam-i-lyi=L., given=Hod, giveni=H.                       au-
+ []
+
+
+Underfull \hbox (badness 1348) in paragraph at lines 23--13
+\T1/ptm/m/n/10 thor2hash=90d345b65e166a9cfc0c6ddec4ddc3d6family=Zeiler, fam-i-l
+yi=Z., given=Matthew D.,
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+D:\apps\miktex\tex/context/base/mkii\supp-pdf.mkii:13: Undefined control sequen
+ce.
+\set@color ...\@pdfcolorstack push{\current@color 
+                                                  }\aftergroup \reset@color 
+l.13 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+D:\apps\miktex\tex/context/base/mkii\supp-pdf.mkii:13: Undefined control sequen
+ce.
+\set@color ...\@pdfcolorstack push{\current@color 
+                                                  }\aftergroup \reset@color 
+l.13 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[1
+
+
+{C:/Users/xhs/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/apps/miktex/
+fonts/enc/dvips/base/8r.enc}]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+D:\apps\miktex\tex/context/base/mkii\supp-pdf.mkii:13: Undefined control sequen
+ce.
+\set@color ...\@pdfcolorstack push{\current@color 
+                                                  }\aftergroup \reset@color 
+l.13 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+D:\apps\miktex\tex/context/base/mkii\supp-pdf.mkii:13: Undefined control sequen
+ce.
+\set@color ...\@pdfcolorstack push{\current@color 
+                                                  }\aftergroup \reset@color 
+l.13 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+D:\apps\miktex\tex/context/base/mkii\supp-pdf.mkii:13: Undefined control sequen
+ce.
+\set@color ...\@pdfcolorstack push{\current@color 
+                                                  }\aftergroup \reset@color 
+l.13 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+D:\apps\miktex\tex/context/base/mkii\supp-pdf.mkii:13: Undefined control sequen
+ce.
+\set@color ...\@pdfcolorstack push{\current@color 
+                                                  }\aftergroup \reset@color 
+l.13 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[3]
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count505
+\scratchdimen=\dimen362
+\scratchbox=\box137
+\nofMPsegments=\count506
+\nofMParguments=\count507
+\everyMPshowfont=\toks60
+\MPscratchCnt=\count508
+\MPscratchDim=\dimen363
+\MPnumerator=\count509
+\makeMPintoPDFobject=\count510
+\everyMPtoPDFconversion=\toks61
+) (D:\apps\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(D:\apps\miktex\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package microtype Info: Patching varwidth to enable character protrusion.
+\MT@vwid@leftmargin=\dimen364
+\MT@vwid@rightmargin=\dimen365
+LaTeX Info: Redefining \microtypecontext on input line 141.
+Package microtype Info: Applying patch `item' on input line 141.
+Package microtype Info: Applying patch `toc' on input line 141.
+Package microtype Info: Applying patch `eqnum' on input line 141.
+Package microtype Info: Applying patch `footnote' on input line 141.
+Package microtype Info: Applying patch `verbatim' on input line 141.
+LaTeX Info: Redefining \microtypesetup on input line 141.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+
+
+LaTeX Warning: Command \showhyphens   has changed.
+               Check if current package is valid.
+
+LaTeX Info: Redefining \showhyphens on input line 141.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+(D:\apps\miktex\tex/latex/microtype\mt-ptm.cfg
+File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: sidecap package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+(D:\apps\miktex\tex/latex/ragged2e\ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip99
+\RaggedLeftLeftskip=\skip100
+\RaggedRightLeftskip=\skip101
+\CenteringRightskip=\skip102
+\RaggedLeftRightskip=\skip103
+\RaggedRightRightskip=\skip104
+\CenteringParfillskip=\skip105
+\RaggedLeftParfillskip=\skip106
+\RaggedRightParfillskip=\skip107
+\JustifyingParfillskip=\skip108
+\CenteringParindent=\skip109
+\RaggedLeftParindent=\skip110
+\RaggedRightParindent=\skip111
+\JustifyingParindent=\skip112
+)
+(D:\apps\miktex\tex/latex/cjk/UTF8\UTF8.bdg
+File: UTF8.bdg 2021/10/16 4.8.5
+)
+(D:\apps\miktex\tex/latex/cjk/UTF8\UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+)
+(D:\apps\miktex\tex/latex/cjk/UTF8\UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+LaTeX Font Info:    Trying to load font information for C70+gbsn on input line 
+145.
+
+(D:\apps\miktex\tex/latex/cjk/UTF8\c70gbsn.fd
+File: c70gbsn.fd 2021/10/16 4.8.5
+)
+(D:\apps\miktex\tex/latex/cjk/UTF8\c70gbsn.fdx
+File: c70gbsn.fdx 2021/10/16 4.8.5
+)
+
+LaTeX Font Warning: Font shape `C70/gbsn/b/n' undefined
+(Font)              using `C70/gbsn/m/n' instead on input line 145.
+
+(D:\apps\miktex\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 145
+.
+
+(D:\apps\miktex\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(D:\apps\miktex\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 145
+.
+
+(D:\apps\miktex\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(D:\apps\miktex\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 14
+5.
+
+(D:\apps\miktex\tex/latex/jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+
+
+[4]
+Package marginnote Info: Using workaround for absolute page number on input lin
+e 146.
+ (paratext/abstract.tex) (sections/01-introduction.tex
+
+LaTeX Font Warning: Font shape `C70/gbsn/m/it' undefined
+(Font)              using `C70/gbsn/m/n' instead on input line 4.
+
+
+LaTeX Warning: Citation 'dacey2000center' on page 5 undefined on input line 5.
+
+
+LaTeX Warning: Citation 'doi2012efficient' on page 5 undefined on input line 5.
+
+
+
+LaTeX Warning: Citation 'knudsen1978space' on page 5 undefined on input line 5.
+
+
+
+LaTeX Warning: Citation 'hubel1959receptive' on page 5 undefined on input line 
+6.
+
+
+LaTeX Warning: Citation 'hubel1968receptive' on page 5 undefined on input line 
+6.
+
+
+LaTeX Warning: Citation 'rolls1995sparseness' on page 5 undefined on input line
+ 6.
+
+
+LaTeX Warning: Citation 'niell2008highly' on page 5 undefined on input line 6.
+
+
+LaTeX Warning: Citation 'willmore2011sparse' on page 5 undefined on input line 
+6.
+
+
+LaTeX Warning: Citation 'ringach2002orientation' on page 5 undefined on input l
+ine 6.
+
+
+LaTeX Warning: Citation 'ringach2002spatial' on page 5 undefined on input line 
+6.
+
+
+LaTeX Warning: Citation 'crochet2011synaptic' on page 5 undefined on input line
+ 7.
+
+
+LaTeX Warning: Citation 'deweese2003binary' on page 5 undefined on input line 8
+.
+
+
+LaTeX Warning: Citation 'hromadka2008sparse' on page 5 undefined on input line 
+8.
+
+
+LaTeX Warning: Reference `fig:sim-real-gabors' on page 1 undefined on input lin
+e 9.
+
+
+LaTeX Warning: Citation 'saxe2011unsupervised' on page 5 undefined on input lin
+e 12.
+
+
+LaTeX Warning: Citation 'olshausen1996emergence' on page 5 undefined on input l
+ine 13.
+
+
+LaTeX Warning: Citation 'olshausen1997sparse' on page 5 undefined on input line
+ 13.
+
+
+LaTeX Warning: Citation 'bell1997independent' on page 5 undefined on input line
+ 13.
+
+
+LaTeX Warning: Citation 'vanhateren1998independent' on page 5 undefined on inpu
+t line 13.
+
+
+LaTeX Warning: Citation 'field1999wavelets' on page 5 undefined on input line 1
+4.
+
+
+LaTeX Warning: Citation 'saxe2011unsupervised' on page 5 undefined on input lin
+e 14.
+
+
+LaTeX Warning: Citation 'krizhevsky2012imagenet' on page 5 undefined on input l
+ine 16.
+
+
+LaTeX Warning: Citation 'zeiler2013visualizing' on page 5 undefined on input li
+ne 16.
+
+
+LaTeX Warning: Citation 'yosinski2015understanding' on page 5 undefined on inpu
+t line 16.
+
+
+LaTeX Warning: Citation 'sengupta2018manifoldtiling' on page 5 undefined on inp
+ut line 16.
+
+
+LaTeX Warning: Reference `fig:sim-real-gabors' on page 1 undefined on input lin
+e 17.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 5 undefined on input line 18
+.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 5 undefined on input line 20
+.
+
+
+Underfull \hbox (badness 3679) in paragraph at lines 16--21
+[]\C70/gbsn/m/n/10/5c = \C70/gbsn/m/n/10/7b ° \C70/gbsn/m/n/10/7a ^^@ \C70/gbsn
+/m/n/10/75 è \C70/gbsn/m/n/10/60 ' \C70/gbsn/m/n/10/4f \ \C70/gbsn/m/n/10/4e : 
+\C70/gbsn/m/n/10/5c @ \C70/gbsn/m/it/10/90 Ë \C70/gbsn/m/it/10/53 ^^V \C70/gbsn
+/m/n/10/76 Ñ \C70/gbsn/m/n/10/6f \ \C70/gbsn/m/n/10/57 ( \C70/gbsn/m/n/10/7e ﬂ 
+\C70/gbsn/m/n/10/4e ^^@ \C70/gbsn/m/n/10/89 „ \C70/gbsn/m/n/10/91   \C70/gbsn/m
+/n/10/51 w \C70/gbsn/m/n/10/67 	 \C70/gbsn/m/n/10/54 8 \C70/gbsn/m/n/10/5f ^^U 
+\C70/gbsn/m/n/10/52 õ \C70/gbsn/m/n/10/ff ^^L \C70/gbsn/m/n/10/4f F \C70/gbsn/m
+/n/10/5c @ \C70/gbsn/m/it/10/90 Ë \C70/gbsn/m/it/10/53 ^^V \C70/gbsn/m/n/10/4e 
+_ \C70/gbsn/m/n/10/4f ^^Z \C70/gbsn/m/n/10/81 Í \C70/gbsn/m/n/10/71 6
+ []
+
+
+Underfull \hbox (badness 3679) in paragraph at lines 16--21
+\C70/gbsn/m/n/10/57 0 \C70/gbsn/m/n/10/51 ˙ \C70/gbsn/m/n/10/73 ∞ \C70/gbsn/m/n
+/10/57 ( \C70/gbsn/m/n/10/8b ≠ \C70/gbsn/m/n/10/7e √ \C70/gbsn/m/n/10/75 ( \C70
+/gbsn/m/n/10/4e é \C70/gbsn/m/n/10/52 ^^F \C70/gbsn/m/n/10/7c { \C70/gbsn/m/n/1
+0/4e ˚ \C70/gbsn/m/n/10/52 ° \C70/gbsn/m/n/10/76 Ñ \C70/gbsn/m/n/10/7f Q \C70/g
+bsn/m/n/10/7e ‹ \C70/gbsn/m/n/10/4e - \C70/gbsn/m/n/10/ff ^^L \C70/gbsn/m/it/10
+/53 s \C70/gbsn/m/n/10/4f ^^? \C70/gbsn/m/n/10/8f Ÿ \C70/gbsn/m/n/10/4e õ \C70/
+gbsn/m/n/10/7f Q \C70/gbsn/m/n/10/7e ‹ \C70/gbsn/m/n/10/5e v \C70/gbsn/m/n/10/6
+7 * \C70/gbsn/m/n/10/66 > \C70/gbsn/m/n/10/5f ^^O \C70/gbsn/m/n/10/4f ^^? \C70/
+gbsn/m/n/10/75 ( \C70/gbsn/m/n/10/7a ^^@ \C70/gbsn/m/n/10/75 è
+ []
+
+
+Underfull \hbox (badness 3536) in paragraph at lines 16--21
+\C70/gbsn/m/n/10/60 ' \C70/gbsn/m/n/10/6b c \C70/gbsn/m/n/10/52 ^^Y \C70/gbsn/m
+/n/10/98 y \T1/ptm/m/n/10 (+20) [[]; []; [];
+ []
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 5 undefined on input line 22
+.
+
+
+LaTeX Warning: Citation 'goldt2020modelling' on page 5 undefined on input line 
+23.
+
+
+LaTeX Warning: Reference `fig:sim-real-gabors' on page 1 undefined on input lin
+e 26.
+
+) (figures/sim-real-gabors/fig.tex
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/ringach/1-real.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/ringach/1-real.pdf, id=112, 104.47531pt x 103.43242pt>
+
+File: figures/sim-real-gabors/ringach/1-real.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ringach/1-real.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ringach/1-real.pdf  used on in
+put line 7.
+(pdftex.def)             Requested size: 22.0pt x 21.77983pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/ringach/5-real.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/ringach/5-real.pdf, id=113, 104.45825pt x 102.38953pt>
+
+File: figures/sim-real-gabors/ringach/5-real.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ringach/5-real.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ringach/5-real.pdf  used on in
+put line 8.
+(pdftex.def)             Requested size: 22.0pt x 21.56335pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/ringach/2-real.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/ringach/2-real.pdf, id=114, 104.15913pt x 102.50897pt>
+
+File: figures/sim-real-gabors/ringach/2-real.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ringach/2-real.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ringach/2-real.pdf  used on in
+put line 9.
+(pdftex.def)             Requested size: 22.0pt x 21.65108pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/ringach/6-real.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/ringach/6-real.pdf, id=115, 102.3825pt x 102.517pt>
+File: figures/sim-real-gabors/ringach/6-real.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ringach/6-real.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ringach/6-real.pdf  used on in
+put line 10.
+(pdftex.def)             Requested size: 22.0pt x 22.0282pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/ringach/3-real.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/ringach/3-real.pdf, id=116, 104.59175pt x 102.4116pt>
+File: figures/sim-real-gabors/ringach/3-real.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ringach/3-real.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ringach/3-real.pdf  used on in
+put line 11.
+(pdftex.def)             Requested size: 22.0pt x 21.54144pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/ringach/7-real.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/ringach/7-real.pdf, id=117, 104.05174pt x 103.38625pt>
+
+File: figures/sim-real-gabors/ringach/7-real.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ringach/7-real.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ringach/7-real.pdf  used on in
+put line 12.
+(pdftex.def)             Requested size: 22.0pt x 21.85846pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/ringach/4-real.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/ringach/4-real.pdf, id=118, 104.59074pt x 103.6683pt>
+File: figures/sim-real-gabors/ringach/4-real.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ringach/4-real.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ringach/4-real.pdf  used on in
+put line 13.
+(pdftex.def)             Requested size: 22.0pt x 21.80579pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/ringach/8-real.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/ringach/8-real.pdf, id=119, 102.3825pt x 101.38376pt>
+File: figures/sim-real-gabors/ringach/8-real.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ringach/8-real.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ringach/8-real.pdf  used on in
+put line 14.
+(pdftex.def)             Requested size: 22.0pt x 21.7847pt.
+
+LaTeX Warning: Citation 'ringach2002spatial' on page 5 undefined on input line 
+15.
+
+
+Overfull \hbox (5.82506pt too wide) in paragraph at lines 6--17
+[][] 
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/decharms/fig2-d.pdf): 
+PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/decharms/fig2-d.pdf, id=120, 144.7528pt x 144.7528pt>
+File: figures/sim-real-gabors/decharms/fig2-d.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/decharms/fig2-d.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/decharms/fig2-d.pdf  used on i
+nput line 21.
+(pdftex.def)             Requested size: 22.0pt x 21.99911pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/decharms/fig2-e.pdf): 
+PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/decharms/fig2-e.pdf, id=121, 144.7528pt x 144.7528pt>
+File: figures/sim-real-gabors/decharms/fig2-e.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/decharms/fig2-e.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/decharms/fig2-e.pdf  used on i
+nput line 22.
+(pdftex.def)             Requested size: 22.0pt x 21.99911pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/decharms/fig2-f.pdf): 
+PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/decharms/fig2-f.pdf, id=122, 144.7528pt x 144.7528pt>
+File: figures/sim-real-gabors/decharms/fig2-f.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/decharms/fig2-f.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/decharms/fig2-f.pdf  used on i
+nput line 23.
+(pdftex.def)             Requested size: 22.0pt x 21.99911pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/decharms/fig2-h.pdf): 
+PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/decharms/fig2-h.pdf, id=123, 144.7528pt x 145.29883pt>
+
+File: figures/sim-real-gabors/decharms/fig2-h.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/decharms/fig2-h.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/decharms/fig2-h.pdf  used on i
+nput line 24.
+(pdftex.def)             Requested size: 22.0pt x 22.08209pt.
+
+LaTeX Warning: Citation 'decharms1998optimizing' on page 5 undefined on input l
+ine 25.
+
+
+Overfull \hbox (47.94298pt too wide) in paragraph at lines 20--27
+[][] 
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/singer/fig2-a1.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/singer/fig2-a1.pdf, id=124, 112.42pt x 112.42pt>
+File: figures/sim-real-gabors/singer/fig2-a1.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/singer/fig2-a1.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/singer/fig2-a1.pdf  used on in
+put line 31.
+(pdftex.def)             Requested size: 22.0pt x 21.99985pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/singer/fig2-a2.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/singer/fig2-a2.pdf, id=125, 112.42pt x 113.42375pt>
+File: figures/sim-real-gabors/singer/fig2-a2.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/singer/fig2-a2.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/singer/fig2-a2.pdf  used on in
+put line 32.
+(pdftex.def)             Requested size: 22.0pt x 22.19627pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/singer/fig2-a4.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/singer/fig2-a4.pdf, id=126, 113.42375pt x 113.42375pt>
+
+File: figures/sim-real-gabors/singer/fig2-a4.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/singer/fig2-a4.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/singer/fig2-a4.pdf  used on in
+put line 33.
+(pdftex.def)             Requested size: 22.0pt x 21.99898pt.
+
+
+pdfTeX warning: pdflatex (file ./figures/sim-real-gabors/singer/fig2-a5.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<figures/sim-real-gabors/singer/fig2-a5.pdf, id=127, 112.42pt x 112.42pt>
+File: figures/sim-real-gabors/singer/fig2-a5.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/singer/fig2-a5.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/singer/fig2-a5.pdf  used on in
+put line 34.
+(pdftex.def)             Requested size: 22.0pt x 21.99985pt.
+
+LaTeX Warning: Citation 'singer2018sensory' on page 5 undefined on input line 3
+5.
+
+
+Overfull \hbox (27.7202pt too wide) in paragraph at lines 30--37
+[][] 
+ []
+
+<figures/sim-real-gabors/alexnet.png, id=128, 88.1475pt x 113.60625pt>
+File: figures/sim-real-gabors/alexnet.png Graphic file (type png)
+<use figures/sim-real-gabors/alexnet.png>
+Package pdftex.def Info: figures/sim-real-gabors/alexnet.png  used on input lin
+e 47.
+(pdftex.def)             Requested size: 79.0pt x 101.82343pt.
+
+LaTeX Warning: Citation 'krizhevsky2012imagenet' on page 5 undefined on input l
+ine 48.
+
+<figures/sim-real-gabors/ica/1-2d-blob.pdf, id=130, 281.56392pt x 281.56392pt>
+File: figures/sim-real-gabors/ica/1-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ica/1-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ica/1-2d-blob.pdf  used on inp
+ut line 61.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/ica/2-2d-blob.pdf, id=131, 281.56392pt x 281.56392pt>
+File: figures/sim-real-gabors/ica/2-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ica/2-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ica/2-2d-blob.pdf  used on inp
+ut line 62.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/ica/3-2d-blob.pdf, id=132, 281.56392pt x 281.56392pt>
+File: figures/sim-real-gabors/ica/3-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ica/3-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ica/3-2d-blob.pdf  used on inp
+ut line 63.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/ica/4-2d-blob.pdf, id=133, 281.56392pt x 281.56392pt>
+File: figures/sim-real-gabors/ica/4-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ica/4-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ica/4-2d-blob.pdf  used on inp
+ut line 64.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/ica/5-2d-blob.pdf, id=134, 281.56392pt x 281.56392pt>
+File: figures/sim-real-gabors/ica/5-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ica/5-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ica/5-2d-blob.pdf  used on inp
+ut line 65.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/ica/6-2d-blob.pdf, id=135, 281.56392pt x 281.56392pt>
+File: figures/sim-real-gabors/ica/6-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ica/6-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ica/6-2d-blob.pdf  used on inp
+ut line 66.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/ica/7-2d-blob.pdf, id=136, 281.56392pt x 281.56392pt>
+File: figures/sim-real-gabors/ica/7-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ica/7-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ica/7-2d-blob.pdf  used on inp
+ut line 67.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/ica/8-2d-blob.pdf, id=137, 281.56392pt x 281.56392pt>
+File: figures/sim-real-gabors/ica/8-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/ica/8-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/ica/8-2d-blob.pdf  used on inp
+ut line 68.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+
+LaTeX Warning: Citation 'hyvarinen2000independent' on page 5 undefined on input
+ line 69.
+
+
+Overfull \hbox (26.17813pt too wide) in paragraph at lines 60--71
+[][] 
+ []
+
+<figures/sim-real-gabors/2d-blobs/1-2d-blob.pdf, id=138, 281.56392pt x 281.5639
+2pt>
+File: figures/sim-real-gabors/2d-blobs/1-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/2d-blobs/1-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/2d-blobs/1-2d-blob.pdf  used o
+n input line 75.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/2d-blobs/2-2d-blob.pdf, id=139, 281.56392pt x 281.5639
+2pt>
+File: figures/sim-real-gabors/2d-blobs/2-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/2d-blobs/2-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/2d-blobs/2-2d-blob.pdf  used o
+n input line 76.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/2d-blobs/3-2d-blob.pdf, id=140, 281.56392pt x 281.5639
+2pt>
+File: figures/sim-real-gabors/2d-blobs/3-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/2d-blobs/3-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/2d-blobs/3-2d-blob.pdf  used o
+n input line 77.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/2d-blobs/4-2d-blob.pdf, id=141, 281.56392pt x 281.5639
+2pt>
+File: figures/sim-real-gabors/2d-blobs/4-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/2d-blobs/4-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/2d-blobs/4-2d-blob.pdf  used o
+n input line 78.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/2d-blobs/5-2d-blob.pdf, id=142, 281.56392pt x 281.5639
+2pt>
+File: figures/sim-real-gabors/2d-blobs/5-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/2d-blobs/5-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/2d-blobs/5-2d-blob.pdf  used o
+n input line 79.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/2d-blobs/6-2d-blob.pdf, id=143, 281.56392pt x 281.5639
+2pt>
+File: figures/sim-real-gabors/2d-blobs/6-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/2d-blobs/6-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/2d-blobs/6-2d-blob.pdf  used o
+n input line 80.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/2d-blobs/7-2d-blob.pdf, id=144, 281.56392pt x 281.5639
+2pt>
+File: figures/sim-real-gabors/2d-blobs/7-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/2d-blobs/7-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/2d-blobs/7-2d-blob.pdf  used o
+n input line 81.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+<figures/sim-real-gabors/2d-blobs/8-2d-blob.pdf, id=145, 281.56392pt x 281.5639
+2pt>
+File: figures/sim-real-gabors/2d-blobs/8-2d-blob.pdf Graphic file (type pdf)
+<use figures/sim-real-gabors/2d-blobs/8-2d-blob.pdf>
+Package pdftex.def Info: figures/sim-real-gabors/2d-blobs/8-2d-blob.pdf  used o
+n input line 82.
+(pdftex.def)             Requested size: 22.0pt x 21.99712pt.
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 83.
+
+
+LaTeX Warning: Citation 'ringach2002spatial' on page 5 undefined on input line 
+98.
+
+
+LaTeX Warning: Citation 'decharms1998optimizing' on page 5 undefined on input l
+ine 98.
+
+
+LaTeX Warning: Citation 'singer2018sensory' on page 5 undefined on input line 9
+8.
+
+
+LaTeX Warning: Citation 'krizhevsky2012imagenet' on page 5 undefined on input l
+ine 98.
+
+
+LaTeX Warning: Reference `sec:task' on page 1 undefined on input line 98.
+
+
+LaTeX Warning: Citation 'hyvarinen2000independent' on page 5 undefined on input
+ line 98.
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 98.
+
+
+LaTeX Warning: Reference `sec:model' on page 1 undefined on input line 98.
+
+
+LaTeX Warning: Citation 'ringach2002spatial' on page 5 undefined on input line 
+98.
+
+
+LaTeX Warning: Citation 'decharms1998optimizing' on page 5 undefined on input l
+ine 98.
+
+
+LaTeX Warning: Citation 'singer2018sensory' on page 5 undefined on input line 9
+8.
+
+
+LaTeX Warning: Citation 'krizhevsky2012imagenet' on page 5 undefined on input l
+ine 98.
+
+
+LaTeX Warning: Reference `sec:task' on page 1 undefined on input line 98.
+
+
+LaTeX Warning: Citation 'hyvarinen2000independent' on page 5 undefined on input
+ line 98.
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 98.
+
+
+LaTeX Warning: Reference `sec:model' on page 1 undefined on input line 98.
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 98--98
+[]\T1/ptm/b/n/9 (+20) Figure 1: |(\C70/gbsn/m/it/9/5d Ê\T1/ptm/b/n/9 (+20) ) \C
+70/gbsn/m/it/9/67 e \C70/gbsn/m/n/9/81 Í \C70/gbsn/m/n/9/97 ^ \C70/gbsn/m/it/9/
+4e ∫ \C70/gbsn/m/n/9/70 u \C70/gbsn/m/it/9/95 ^^? \C70/gbsn/m/it/9/7c { \C70/gb
+sn/m/n/9/52 ® \C70/gbsn/m/it/9/72 i \C70/gbsn/m/it/9/ff ^^H\T1/ptm/m/n/9 (+20) 
+NHP\C70/gbsn/m/it/9/ff 	 \C70/gbsn/m/n/9/52 ^^] \C70/gbsn/m/it/9/7e ß \C70/gbsn
+/m/n/9/89 ∆ … \C70/gbsn/m/it/9/76 Æ \C70/gbsn/m/it/9/5c B \C70/gbsn/m/it/9/76 Ñ
+ \C70/gbsn/m/it/9/7a z \C70/gbsn/m/it/9/95 Ù \C70/gbsn/m/n/9/61 ^^_ \C70/gbsn/m
+/it/9/53 ◊ \C70/gbsn/m/n/9/91 Œ \C70/gbsn/m/it/9/ff ^^H\T1/ptm/m/n/9 (+20) RFs\
+C70/gbsn/m/it/9/ff 	 \C70/gbsn/m/it/9/5c @ \C70/gbsn/m/it/9/90 Ë
+ []
+
+) (sections/02-model.tex
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 5 undefined on input line 4.
+
+
+
+LaTeX Warning: Reference `sec:theory' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Reference `sec:experiments' on page 1 undefined on input line 7.
+
+
+
+Underfull \vbox (badness 2762) has occurred while \output is active []
+
+
+
+[5]
+
+LaTeX Warning: Citation 'barron1993universal' on page 6 undefined on input line
+ 11.
+
+
+LaTeX Warning: Citation 'pinkus1999approximation' on page 6 undefined on input 
+line 11.
+
+
+LaTeX Warning: Citation 'woodworth2020kernel' on page 6 undefined on input line
+ 11.
+
+
+LaTeX Warning: Citation 'mei2018mean' on page 6 undefined on input line 11.
+
+
+LaTeX Warning: Citation 'goldt2019dynamics' on page 6 undefined on input line 1
+1.
+
+
+LaTeX Warning: Citation 'veiga2022phase' on page 6 undefined on input line 11.
+
+\c@modelenumi=\count511
+
+LaTeX Warning: Citation 'saad1995line' on page 6 undefined on input line 25.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 6 undefined on input line 26
+.
+
+
+LaTeX Warning: Reference `sec:experiments' on page 1 undefined on input line 27
+.
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 27.
+
+
+LaTeX Warning: Reference `sec:theory' on page 1 undefined on input line 29.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 6 undefined on input line 40
+.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 40.
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 40.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 41.
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 41.
+
+
+LaTeX Warning: Reference `sec:task' on page 1 undefined on input line 43.
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 11--44
+\C70/gbsn/m/n/10/62 ^^Q \C70/gbsn/b/n/10/4e Ï \C70/gbsn/m/n/10/5c ^^F \C70/gbsn
+/b/n/10/4e ^^@ * \C70/gbsn/m/it/10/8f ì \C70/gbsn/m/it/10/51 e \C70/gbsn/m/it/1
+0/7e Ù \C70/gbsn/m/n/10/5e ¶ \C70/gbsn/b/n/10/4e :$\OML/cmm/m/it/10 N$\C70/gbsn
+/m/n/10/30 ^^A \C70/gbsn/m/n/10/96 ê \C70/gbsn/m/n/10/85 œ \C70/gbsn/m/it/10/53
+ U \C70/gbsn/m/it/10/51 C \C70/gbsn/m/n/10/65 p \C70/gbsn/b/n/10/4e :$\OML/cmm/
+m/it/10 M$\C70/gbsn/m/n/10/30 ^^A \C70/gbsn/m/it/10/8f ì \C70/gbsn/m/it/10/51 ˙
+ \C70/gbsn/b/n/10/4e : ^^@ \C70/gbsn/m/it/10/7e Ù \C70/gbsn/m/n/10/68 ^^G \C70/
+gbsn/m/n/10/91 œ \C70/gbsn/m/n/10/76 Ñ \C70/gbsn/b/n/10/4e $ \C70/gbsn/m/n/10/5
+c B \C70/gbsn/b/n/10/7f Q \C70/gbsn/m/it/10/7e ‹ \C70/gbsn/m/n/10/88 h \C70/gbs
+n/m/it/10/79 :
+ []
+
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 11--44
+\C70/gbsn/b/n/10/4e :[]
+ []
+
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 11--44
+\C70/gbsn/b/n/10/4e :[]
+ []
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 6 undefined on input line 47
+.
+
+
+LaTeX Warning: Reference `sec:theory' on page 1 undefined on input line 48.
+
+\c@propenumi=\count512
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 56.
+
+(D:\apps\miktex\tex/latex/bbm\ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+Overfull \hbox (6.22293pt too wide) detected at line 56
+\OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 N\OT1/cmr/m/n/10 ) \U/msa/m
+/n/10 , [] \OMS/cmsy/m/n/10 j []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X[] \OMS/cmsy
+/m/n/10 2 \OML/cmm/m/it/10 A; X[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 B\OT1/cmr
+/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X[] \OMS/cms
+y/m/n/10 2 \OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10 X[] \OMS/cms
+y/m/n/10 2 \OML/cmm/m/it/10 B\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j ! \OT1/cmr/m/n
+/10 0 \OML/cmm/m/it/10 ;
+ []
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 61.
+
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 61.
+
+
+LaTeX Warning: Citation 'hyvarinen2009natural' on page 6 undefined on input lin
+e 62.
+
+
+LaTeX Warning: Reference `item:sign-symmetry' on page 1 undefined on input line
+ 63.
+
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 66.
+
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 72.
+
+
+LaTeX Warning: Citation 'rosenblatt1956central' on page 6 undefined on input li
+ne 72.
+
+
+LaTeX Warning: Citation 'bardet2008dependent' on page 6 undefined on input line
+ 72.
+
+
+Underfull \hbox (badness 5175) in paragraph at lines 47--73
+[] \C70/gbsn/m/it/10/76 Ñ \C70/gbsn/m/n/10/65 p \C70/gbsn/m/n/10/63 n \C70/gbsn
+/b/n/10/6a ! \C70/gbsn/b/n/10/57 ã \C70/gbsn/m/it/10/53 Ô \C70/gbsn/b/n/10/4e Â
+ \C70/gbsn/m/n/10/8b ¡ \C70/gbsn/m/n/10/66 ^^N \C70/gbsn/m/n/10/6e · \C70/gbsn/
+m/n/10/8d ≥ \C70/gbsn/b/n/10/4e 	 * \C70/gbsn/m/it/10/67 a \C70/gbsn/b/n/10/4e 
+ˆ \C70/gbsn/m/n/10/ff ^^L \C70/gbsn/m/it/10/8f Ÿ \C70/gbsn/b/n/10/4e õ \C70/gbs
+n/m/it/10/67 a \C70/gbsn/b/n/10/4e ˆ \C70/gbsn/m/it/10/4f ^^? \C70/gbsn/m/n/10/
+62 ^^Q \C70/gbsn/b/n/10/4e Ï \C70/gbsn/m/n/10/80 ˝
+ []
+
+
+Underfull \hbox (badness 5374) in paragraph at lines 47--73
+\C70/gbsn/m/it/10/59 ^^_ \C70/gbsn/b/n/10/57 ([] \C70/gbsn/b/n/10/4e - \C70/gbs
+n/m/it/10/8f € \C70/gbsn/m/n/10/88 L \C70/gbsn/b/n/10/52 ^^F \C70/gbsn/m/it/10/
+67 ê \C70/gbsn/m/n/10/30 ^^B \C70/gbsn/m/n/10/62 ^^Q \C70/gbsn/b/n/10/4e Ï \C70
+/gbsn/m/n/10/80 ^^C \C70/gbsn/m/n/10/86 Q \C70/gbsn/b/n/10/4e Ü \C70/gbsn/m/it/
+10/51 ‡ \C70/gbsn/b/n/10/4e * \C70/gbsn/m/it/10/51 v \C70/gbsn/b/n/10/4e ÷ \C70
+/gbsn/m/it/10/76 Ñ \C70/gbsn/m/n/10/65 p \C70/gbsn/m/n/10/63 n \C70/gbsn/b/n/10
+/6a ! \C70/gbsn/b/n/10/57 ã \C70/gbsn/m/n/10/ff ^^L \C70/gbsn/m/it/10/8f Ÿ \C70
+/gbsn/b/n/10/4e õ \C70/gbsn/b/n/10/6a ! \C70/gbsn/b/n/10/57 ã \C70/gbsn/m/it/10
+/51 w \C70/gbsn/m/it/10/67 	
+ []
+
+
+Underfull \hbox (badness 5637) in paragraph at lines 47--73
+\C70/gbsn/b/n/10/4e Â  \C70/gbsn/b/n/10/72 y \C70/gbsn/m/it/10/60 ' \C70/gbsn/
+m/n/10/ff ^^L \C70/gbsn/m/it/10/4f F \C70/gbsn/b/n/10/57 ( \C70/gbsn/m/n/10/75 
+^^_ \C70/gbsn/m/n/10/62 ^^P \C70/gbsn/m/it/10/67 : \C70/gbsn/b/n/10/52 6 \C70/g
+bsn/b/n/10/4e 
+ \C70/gbsn/m/it/10/67 	 \C70/gbsn/m/n/10/62 @ \C70/gbsn/b/n/10/4e ^^M \C70/gbsn
+/m/it/10/54 ^^L \C70/gbsn/m/n/10/ff ^^L \C70/gbsn/m/it/10/76 Ó Ñ \C70/gbsn/m/n/
+10/66 / \C70/gbsn/m/n/10/63 ¢ \C70/gbsn/m/n/10/8b ® \C70/gbsn/m/it/10/8f Ÿ \C70
+/gbsn/b/n/10/4e õ \C70/gbsn/b/n/10/72 y \C70/gbsn/m/it/10/60 ' \C70/gbsn/b/n/10
+/5b ˘ ö \C70/gbsn/m/it/10/4f M \C70/gbsn/m/it/10/76 Ñ
+ []
+
+
+Underfull \hbox (badness 6675) in paragraph at lines 47--73
+\C70/gbsn/m/n/10/5f q \C70/gbsn/m/it/10/54 Õ \C70/gbsn/m/n/10/30 ^^B \C70/gbsn/
+b/n/10/72 y \C70/gbsn/b/n/10/52 + \C70/gbsn/b/n/10/57 0 \C70/gbsn/m/n/10/ff ^^L
+ \C70/gbsn/m/n/10/62 ^^Q \C70/gbsn/b/n/10/4e Ï \C70/gbsn/m/n/10/80 ^^C \C70/gbs
+n/m/n/10/86 Q \C70/gbsn/b/n/10/4e Œ$[][]$ 
+ \C70/gbsn/b/n/10/52 ^^F \C70/gbsn/m/n/10/5e ^^C$\OML/cmm/m/it/10 p$ \C70/gbsn/
+b/n/10/4e - \C70/gbsn/m/n/10/91 « \C70/gbsn/m/n/10/68 7 \C70/gbsn/m/it/10/76 Ñ 
+\C70/gbsn/m/n/10/65 p \C70/gbsn/m/n/10/63 n$\OT1/cmr/bx/n/10 X$\C70/gbsn/m/n/10
+/ff ^^L \C70/gbsn/m/n/10/6e · \C70/gbsn/m/n/10/8d ≥ \C70/gbsn/b/n/10/4e Â  \C7
+0/gbsn/m/it/10/67 a
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 47--73
+\C70/gbsn/b/n/10/4e ˆ \C70/gbsn/m/n/10/ff ^^Z[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[6 <./figures/sim-real-gabors/ringach/1-real.pdf> <./figures/sim-real-gabors/ri
+ngach/5-real.pdf> <./figures/sim-real-gabors/ringach/2-real.pdf> <./figures/sim
+-real-gabors/ringach/6-real.pdf> <./figures/sim-real-gabors/ringach/3-real.pdf>
+ <./figures/sim-real-gabors/ringach/7-real.pdf> <./figures/sim-real-gabors/ring
+ach/4-real.pdf> <./figures/sim-real-gabors/ringach/8-real.pdf> <./figures/sim-r
+eal-gabors/decharms/fig2-d.pdf> <./figures/sim-real-gabors/decharms/fig2-e.pdf>
+ <./figures/sim-real-gabors/decharms/fig2-f.pdf> <./figures/sim-real-gabors/dec
+harms/fig2-h.pdf> <./figures/sim-real-gabors/singer/fig2-a1.pdf> <./figures/sim
+-real-gabors/singer/fig2-a2.pdf> <./figures/sim-real-gabors/singer/fig2-a4.pdf>
+ <./figures/sim-real-gabors/singer/fig2-a5.pdf> <./figures/sim-real-gabors/alex
+net.png> <./figures/sim-real-gabors/ica/1-2d-blob.pdf> <./figures/sim-real-gabo
+rs/ica/2-2d-blob.pdf> <./figures/sim-real-gabors/ica/3-2d-blob.pdf> <./figures/
+sim-real-gabors/ica/4-2d-blob.pdf> <./figures/sim-real-gabors/ica/5-2d-blob.pdf
+> <./figures/sim-real-gabors/ica/6-2d-blob.pdf> <./figures/sim-real-gabors/ica/
+7-2d-blob.pdf> <./figures/sim-real-gabors/ica/8-2d-blob.pdf> <./figures/sim-rea
+l-gabors/2d-blobs/1-2d-blob.pdf> <./figures/sim-real-gabors/2d-blobs/2-2d-blob.
+pdf> <./figures/sim-real-gabors/2d-blobs/3-2d-blob.pdf> <./figures/sim-real-gab
+ors/2d-blobs/4-2d-blob.pdf> <./figures/sim-real-gabors/2d-blobs/5-2d-blob.pdf> 
+<./figures/sim-real-gabors/2d-blobs/6-2d-blob.pdf> <./figures/sim-real-gabors/2
+d-blobs/7-2d-blob.pdf> <./figures/sim-real-gabors/2d-blobs/8-2d-blob.pdf>]
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 77.
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 78.
+
+
+LaTeX Warning: Reference `fig:task' on page 1 undefined on input line 79.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 7 undefined on input line 83
+.
+
+
+LaTeX Warning: Citation 'kolesnikov2019revisiting' on page 7 undefined on input
+ line 84.
+
+
+LaTeX Warning: Citation 'chen2020simple' on page 7 undefined on input line 84.
+
+
+LaTeX Warning: Citation 'olshausen1996emergence' on page 7 undefined on input l
+ine 84.
+
+
+LaTeX Warning: Citation 'bell1997independent' on page 7 undefined on input line
+ 84.
+
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 93.
+
+LaTeX Warning: Reference `item:sign-symmetry' on page 1 undefined on input line
+ 95.
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 95.
+
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 95.
+
+
+LaTeX Warning: Reference `sec:theory' on page 1 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'geman1984stochastic' on page 7 undefined on input line
+ 104.
+
+
+LaTeX Warning: Reference `sec:experiments' on page 1 undefined on input line 10
+6.
+
+(figures/task/fig.tex
+Overfull \hbox (3.36688pt too wide) in paragraph at lines 49--49
+[]|[]| 
+ []
+
+<figures/task/samples_long/ising.pdf, id=362, 269.88956pt x 126.58794pt>
+File: figures/task/samples_long/ising.pdf Graphic file (type pdf)
+<use figures/task/samples_long/ising.pdf>
+Package pdftex.def Info: figures/task/samples_long/ising.pdf  used on input lin
+e 49.
+(pdftex.def)             Requested size: 89.54565pt x 42.0pt.
+<figures/task/samples_short/ising.pdf, id=363, 269.88956pt x 126.58794pt>
+File: figures/task/samples_short/ising.pdf Graphic file (type pdf)
+<use figures/task/samples_short/ising.pdf>
+Package pdftex.def Info: figures/task/samples_short/ising.pdf  used on input li
+ne 49.
+(pdftex.def)             Requested size: 89.54565pt x 42.0pt.
+
+Overfull \hbox (3.36688pt too wide) in paragraph at lines 49--49
+[]|[]| 
+ []
+
+<figures/task/cov/ising.pdf, id=364, 237.04561pt x 237.04561pt>
+File: figures/task/cov/ising.pdf Graphic file (type pdf)
+<use figures/task/cov/ising.pdf>
+Package pdftex.def Info: figures/task/cov/ising.pdf  used on input line 49.
+(pdftex.def)             Requested size: 45.99763pt x 46.0pt.
+
+Overfull \hbox (4.23839pt too wide) in paragraph at lines 49--49
+[]|[]| 
+ []
+
+<figures/task/marginal/ising.pdf, id=365, 261.48315pt x 146.2953pt>
+File: figures/task/marginal/ising.pdf Graphic file (type pdf)
+<use figures/task/marginal/ising.pdf>
+Package pdftex.def Info: figures/task/marginal/ising.pdf  used on input line 49
+.
+(pdftex.def)             Requested size: 89.3659pt x 50.0pt.
+
+Overfull \hbox (3.36688pt too wide) in paragraph at lines 49--49
+[]|[]| 
+ []
+
+<figures/task/samples_long/gaussian.pdf, id=366, 260.30688pt x 126.38351pt>
+File: figures/task/samples_long/gaussian.pdf Graphic file (type pdf)
+<use figures/task/samples_long/gaussian.pdf>
+Package pdftex.def Info: figures/task/samples_long/gaussian.pdf  used on input 
+line 49.
+(pdftex.def)             Requested size: 86.50526pt x 42.0pt.
+<figures/task/samples_short/gaussian.pdf, id=367, 260.30688pt x 125.7498pt>
+File: figures/task/samples_short/gaussian.pdf Graphic file (type pdf)
+<use figures/task/samples_short/gaussian.pdf>
+Package pdftex.def Info: figures/task/samples_short/gaussian.pdf  used on input
+ line 49.
+(pdftex.def)             Requested size: 86.94218pt x 42.0pt.
+
+Overfull \hbox (3.36688pt too wide) in paragraph at lines 49--49
+[]|[]| 
+ []
+
+<figures/task/cov/gaussian.pdf, id=368, 237.04561pt x 237.04561pt>
+File: figures/task/cov/gaussian.pdf Graphic file (type pdf)
+<use figures/task/cov/gaussian.pdf>
+Package pdftex.def Info: figures/task/cov/gaussian.pdf  used on input line 49.
+(pdftex.def)             Requested size: 45.99763pt x 46.0pt.
+
+Overfull \hbox (4.23839pt too wide) in paragraph at lines 49--49
+[]|[]| 
+ []
+
+<figures/task/marginal/gaussian.pdf, id=369, 267.86638pt x 142.48419pt>
+File: figures/task/marginal/gaussian.pdf Graphic file (type pdf)
+<use figures/task/marginal/gaussian.pdf>
+Package pdftex.def Info: figures/task/marginal/gaussian.pdf  used on input line
+ 49.
+(pdftex.def)             Requested size: 93.99986pt x 50.0pt.
+
+Overfull \hbox (3.36688pt too wide) in paragraph at lines 49--49
+[]|[]| 
+ []
+
+<figures/task/samples_long/alg5.pdf, id=370, 260.30688pt x 130.0243pt>
+File: figures/task/samples_long/alg5.pdf Graphic file (type pdf)
+<use figures/task/samples_long/alg5.pdf>
+Package pdftex.def Info: figures/task/samples_long/alg5.pdf  used on input line
+ 49.
+(pdftex.def)             Requested size: 84.08237pt x 42.0pt.
+<figures/task/samples_short/alg5.pdf, id=371, 251.90048pt x 125.7498pt>
+File: figures/task/samples_short/alg5.pdf Graphic file (type pdf)
+<use figures/task/samples_short/alg5.pdf>
+Package pdftex.def Info: figures/task/samples_short/alg5.pdf  used on input lin
+e 49.
+(pdftex.def)             Requested size: 84.13445pt x 42.0pt.
+
+Overfull \hbox (3.36688pt too wide) in paragraph at lines 49--49
+[]|[]| 
+ []
+
+<figures/task/cov/alg5.pdf, id=372, 237.04561pt x 237.04561pt>
+File: figures/task/cov/alg5.pdf Graphic file (type pdf)
+<use figures/task/cov/alg5.pdf>
+Package pdftex.def Info: figures/task/cov/alg5.pdf  used on input line 49.
+(pdftex.def)             Requested size: 45.99763pt x 46.0pt.
+
+Overfull \hbox (4.23839pt too wide) in paragraph at lines 49--49
+[]|[]| 
+ []
+
+<figures/task/marginal/alg5.pdf, id=373, 267.86638pt x 146.2953pt>
+File: figures/task/marginal/alg5.pdf Graphic file (type pdf)
+<use figures/task/marginal/alg5.pdf>
+Package pdftex.def Info: figures/task/marginal/alg5.pdf  used on input line 49.
+
+(pdftex.def)             Requested size: 91.54749pt x 50.0pt.
+
+Overfull \hbox (10.29222pt too wide) in paragraph at lines 7--63
+ [] 
+ []
+
+
+LaTeX Warning: Reference `sec:task' on page 1 undefined on input line 63.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 7 undefined on input line 63
+.
+
+
+LaTeX Warning: Reference `sec:task' on page 1 undefined on input line 63.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 7 undefined on input line 63
+.
+
+)
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 7 undefined on input line 11
+2.
+
+
+
+[7]
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 8 undefined on input line 11
+7.
+
+
+LaTeX Warning: Reference `sec:algebraic-sigmoid' on page 1 undefined on input l
+ine 132.
+
+
+LaTeX Warning: Reference `eq:alg' on page 1 undefined on input line 132.
+
+) (sections/03-theoretical-results.tex
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 4.
+
+
+LaTeX Warning: Reference `item:sign-symmetry' on page 1 undefined on input line
+ 5.
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 5.
+
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 5.
+
+
+LaTeX Warning: Reference `sec:experiments' on page 1 undefined on input line 6.
+
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 6.
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 6.
+
+
+LaTeX Warning: Citation 'hyvarinen2000independent' on page 8 undefined on input
+ line 7.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 8 undefined on input line 7.
+
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 10.
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 10.
+
+
+LaTeX Warning: Citation 'goldt2020modelling' on page 8 undefined on input line 
+10.
+
+
+LaTeX Warning: Citation 'gerace2020generalisation' on page 8 undefined on input
+ line 10.
+
+
+LaTeX Warning: Citation 'goldt2022gaussian' on page 8 undefined on input line 1
+0.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 8 undefined on input line 10
+.
+
+
+LaTeX Warning: Reference `item:sign-symmetry' on page 1 undefined on input line
+ 10.
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 10.
+
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 10.
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 10.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 10.
+
+
+
+[8 <./figures/task/samples_long/ising.pdf> <./figures/task/samples_short/ising.
+pdf> <./figures/task/cov/ising.pdf> <./figures/task/marginal/ising.pdf> <./figu
+res/task/samples_long/gaussian.pdf> <./figures/task/samples_short/gaussian.pdf>
+ <./figures/task/cov/gaussian.pdf> <./figures/task/marginal/gaussian.pdf> <./fi
+gures/task/samples_long/alg5.pdf> <./figures/task/samples_short/alg5.pdf> <./fi
+gures/task/cov/alg5.pdf> <./figures/task/marginal/alg5.pdf>]
+\c@assumenumi=\count513
+
+
+LaTeX Warning: Reference `item:lindeberg-condition' on page 1 undefined on inpu
+t line 23.
+
+
+LaTeX Warning: Reference `item:covariance-assumption' on page 1 undefined on in
+put line 23.
+
+
+LaTeX Warning: Reference `item:mean-assumption' on page 1 undefined on input li
+ne 23.
+
+
+LaTeX Warning: Reference `lem:gradient_flow' on page 1 undefined on input line 
+25.
+
+
+LaTeX Warning: Reference `item:lindeberg-condition' on page 1 undefined on inpu
+t line 25.
+
+
+LaTeX Warning: Reference `subsec:pf_of_gradient_flow' on page 1 undefined on in
+put line 25.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 9 undefined on input line 25
+.
+
+
+LaTeX Warning: Reference `lem:gradient_flow' on page 1 undefined on input line 
+25.
+
+
+LaTeX Warning: Reference `item:covariance-assumption' on page 1 undefined on in
+put line 28.
+
+
+LaTeX Warning: Reference `item:mean-assumption' on page 1 undefined on input li
+ne 28.
+
+
+LaTeX Warning: Reference `lem:gradient_flow' on page 1 undefined on input line 
+40.
+
+
+LaTeX Warning: Reference `lem:gradient_flow' on page 1 undefined on input line 
+40.
+
+
+LaTeX Warning: Reference `item:lindeberg-condition' on page 1 undefined on inpu
+t line 40.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 40.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 40.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 40.
+
+
+LaTeX Warning: Reference `sec:peak-prediction' on page 1 undefined on input lin
+e 40.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 40.
+
+
+LaTeX Warning: Reference `fig:theory' on page 1 undefined on input line 40.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 44.
+
+
+LaTeX Warning: Reference `sec:pde-limit' on page 1 undefined on input line 46.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 47.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 49.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 50.
+
+(figures/theory/fig.tex
+File: figures/task/marginal/ising.pdf Graphic file (type pdf)
+<use figures/task/marginal/ising.pdf>
+Package pdftex.def Info: figures/task/marginal/ising.pdf  used on input line 14
+.
+(pdftex.def)             Requested size: 44.68295pt x 25.0pt.
+
+Overfull \hbox (11.68297pt too wide) in paragraph at lines 8--14
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 15--15
+[]|[]| 
+ []
+
+<figures/theory/varphi/ising.pdf, id=512, 240.49365pt x 125.7498pt>
+File: figures/theory/varphi/ising.pdf Graphic file (type pdf)
+<use figures/theory/varphi/ising.pdf>
+Package pdftex.def Info: figures/theory/varphi/ising.pdf  used on input line 16
+.
+(pdftex.def)             Requested size: 72.6734pt x 38.0pt.
+
+Overfull \hbox (4.80632pt too wide) in paragraph at lines 17--17
+[]|[]| 
+ []
+
+<figures/theory/rf_evol/ising_neurips.pdf, id=513, 285.22511pt x 140.68512pt>
+File: figures/theory/rf_evol/ising_neurips.pdf Graphic file (type pdf)
+<use figures/theory/rf_evol/ising_neurips.pdf>
+Package pdftex.def Info: figures/theory/rf_evol/ising_neurips.pdf  used on inpu
+t line 18.
+(pdftex.def)             Requested size: 97.31471pt x 48.0pt.
+
+Overfull \hbox (4.80632pt too wide) in paragraph at lines 19--19
+[]|[]| 
+ []
+
+<figures/theory/rf_sim/ising_kurtosis_neurips.pdf, id=514, 285.22511pt x 140.68
+512pt>
+File: figures/theory/rf_sim/ising_kurtosis_neurips.pdf Graphic file (type pdf)
+<use figures/theory/rf_sim/ising_kurtosis_neurips.pdf>
+Package pdftex.def Info: figures/theory/rf_sim/ising_kurtosis_neurips.pdf  used
+ on input line 20.
+(pdftex.def)             Requested size: 97.31471pt x 48.0pt.
+File: figures/task/marginal/gaussian.pdf Graphic file (type pdf)
+<use figures/task/marginal/gaussian.pdf>
+Package pdftex.def Info: figures/task/marginal/gaussian.pdf  used on input line
+ 27.
+(pdftex.def)             Requested size: 46.99583pt x 25.0pt.
+
+Overfull \hbox (12.99585pt too wide) in paragraph at lines 22--27
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 28--28
+[]|[]| 
+ []
+
+<figures/theory/varphi/gaussian.pdf, id=515, 240.49365pt x 125.7498pt>
+File: figures/theory/varphi/gaussian.pdf Graphic file (type pdf)
+<use figures/theory/varphi/gaussian.pdf>
+Package pdftex.def Info: figures/theory/varphi/gaussian.pdf  used on input line
+ 29.
+(pdftex.def)             Requested size: 72.6734pt x 38.0pt.
+
+Overfull \hbox (4.80632pt too wide) in paragraph at lines 30--30
+[]|[]| 
+ []
+
+<figures/theory/rf_evol/gaussian_neurips.pdf, id=516, 285.22511pt x 140.68512pt
+>
+File: figures/theory/rf_evol/gaussian_neurips.pdf Graphic file (type pdf)
+<use figures/theory/rf_evol/gaussian_neurips.pdf>
+Package pdftex.def Info: figures/theory/rf_evol/gaussian_neurips.pdf  used on i
+nput line 31.
+(pdftex.def)             Requested size: 97.31471pt x 48.0pt.
+
+Overfull \hbox (4.80632pt too wide) in paragraph at lines 32--32
+[]|[]| 
+ []
+
+<figures/theory/rf_sim/gaussian_kurtosis_neurips.pdf, id=517, 285.22511pt x 140
+.69608pt>
+File: figures/theory/rf_sim/gaussian_kurtosis_neurips.pdf Graphic file (type pd
+f)
+<use figures/theory/rf_sim/gaussian_kurtosis_neurips.pdf>
+Package pdftex.def Info: figures/theory/rf_sim/gaussian_kurtosis_neurips.pdf  u
+sed on input line 33.
+(pdftex.def)             Requested size: 97.30602pt x 48.0pt.
+File: figures/task/marginal/alg5.pdf Graphic file (type pdf)
+<use figures/task/marginal/alg5.pdf>
+Package pdftex.def Info: figures/task/marginal/alg5.pdf  used on input line 40.
+
+(pdftex.def)             Requested size: 45.77374pt x 25.0pt.
+
+Overfull \hbox (11.7737pt too wide) in paragraph at lines 35--40
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 41--41
+[]|[]| 
+ []
+
+<figures/theory/varphi/alg5.pdf, id=518, 240.49365pt x 125.7498pt>
+File: figures/theory/varphi/alg5.pdf Graphic file (type pdf)
+<use figures/theory/varphi/alg5.pdf>
+Package pdftex.def Info: figures/theory/varphi/alg5.pdf  used on input line 44.
+
+(pdftex.def)             Requested size: 72.6734pt x 38.0pt.
+
+Overfull \hbox (4.80632pt too wide) in paragraph at lines 45--45
+[]|[]| 
+ []
+
+<figures/theory/rf_evol/alg5_neurips.pdf, id=519, 285.22511pt x 140.68028pt>
+File: figures/theory/rf_evol/alg5_neurips.pdf Graphic file (type pdf)
+<use figures/theory/rf_evol/alg5_neurips.pdf>
+Package pdftex.def Info: figures/theory/rf_evol/alg5_neurips.pdf  used on input
+ line 46.
+(pdftex.def)             Requested size: 97.31471pt x 48.0pt.
+
+Overfull \hbox (4.80632pt too wide) in paragraph at lines 47--47
+[]|[]| 
+ []
+
+<figures/theory/rf_sim/alg5_kurtosis_neurips.pdf, id=520, 285.22511pt x 140.684
+08pt>
+File: figures/theory/rf_sim/alg5_kurtosis_neurips.pdf Graphic file (type pdf)
+<use figures/theory/rf_sim/alg5_kurtosis_neurips.pdf>
+Package pdftex.def Info: figures/theory/rf_sim/alg5_kurtosis_neurips.pdf  used 
+on input line 48.
+(pdftex.def)             Requested size: 97.31471pt x 48.0pt.
+
+LaTeX Warning: Reference `fig:task' on page 1 undefined on input line 63.
+
+
+LaTeX Warning: Reference `lem:gradient_flow' on page 1 undefined on input line 
+63.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 63.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 63.
+
+
+LaTeX Warning: Reference `sec:theory-validation' on page 1 undefined on input l
+ine 63.
+
+
+LaTeX Warning: Reference `fig:task' on page 1 undefined on input line 63.
+
+
+LaTeX Warning: Reference `lem:gradient_flow' on page 1 undefined on input line 
+63.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 63.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 63.
+
+
+LaTeX Warning: Reference `sec:theory-validation' on page 1 undefined on input l
+ine 63.
+
+)
+
+LaTeX Warning: Reference `sec:varphi-analysis' on page 1 undefined on input lin
+e 56.
+
+
+LaTeX Warning: Reference `fig:theory' on page 1 undefined on input line 61.
+
+
+LaTeX Warning: Reference `fig:theory' on page 1 undefined on input line 62.
+
+
+LaTeX Warning: Reference `sec:varphi-analysis' on page 1 undefined on input lin
+e 63.
+
+
+LaTeX Warning: Reference `sec:experiments' on page 1 undefined on input line 64
+.
+
+
+
+[9]
+
+LaTeX Warning: Reference `item:sign-symmetry' on page 1 undefined on input line
+ 66.
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 66.
+
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 66.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 66.
+
+
+LaTeX Warning: Reference `item:covariance-assumption' on page 1 undefined on in
+put line 72.
+
+
+LaTeX Warning: Reference `item:mean-assumption' on page 1 undefined on input li
+ne 72.
+
+
+LaTeX Warning: Reference `thm:localization' on page 1 undefined on input line 7
+3.
+
+
+LaTeX Warning: Reference `item:sign-symmetry' on page 1 undefined on input line
+ 73.
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 73.
+
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 73.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 73.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 10 undefined on input line 7
+4.
+
+
+LaTeX Warning: Citation 'harsh2020placecell' on page 10 undefined on input line
+ 75.
+
+
+LaTeX Warning: Reference `fig:theory' on page 1 undefined on input line 76.
+
+
+LaTeX Warning: Reference `sec:experiments' on page 1 undefined on input line 76
+.
+
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 80.
+
+
+LaTeX Warning: Citation 'frahm2004generalized' on page 10 undefined on input li
+ne 82.
+
+
+LaTeX Warning: Reference `thm:elliptical' on page 1 undefined on input line 92.
+
+
+
+LaTeX Warning: Reference `item:sign-symmetry' on page 1 undefined on input line
+ 95.
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 96.
+
+
+LaTeX Warning: Reference `sec:task' on page 1 undefined on input line 97.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 98.
+
+
+
+[10 <./figures/theory/varphi/ising.pdf> <./figures/theory/rf_evol/ising_neurips
+.pdf> <./figures/theory/rf_sim/ising_kurtosis_neurips.pdf> <./figures/theory/va
+rphi/gaussian.pdf> <./figures/theory/rf_evol/gaussian_neurips.pdf> <./figures/t
+heory/rf_sim/gaussian_kurtosis_neurips.pdf> <./figures/theory/varphi/alg5.pdf> 
+<./figures/theory/rf_evol/alg5_neurips.pdf> <./figures/theory/rf_sim/alg5_kurto
+sis_neurips.pdf>]
+
+LaTeX Warning: Reference `sec:elliptical-experiments' on page 1 undefined on in
+put line 108.
+
+
+LaTeX Warning: Citation 'godfrey2023symmetries' on page 11 undefined on input l
+ine 109.
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 109.
+
+) (sections/04-experimental-results.tex
+
+LaTeX Warning: Reference `sec:theory' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Reference `thm:localization' on page 1 undefined on input line 8
+.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 8.
+
+(figures/elliptical/fig.tex
+Overfull \hbox (4.80632pt too wide) in paragraph at lines 6--6
+[]|[]| 
+ []
+
+<rebuttal-figures/elliptical/t3.pdf, id=661, 277.69481pt x 142.48419pt>
+File: rebuttal-figures/elliptical/t3.pdf Graphic file (type pdf)
+<use rebuttal-figures/elliptical/t3.pdf>
+Package pdftex.def Info: rebuttal-figures/elliptical/t3.pdf  used on input line
+ 7.
+(pdftex.def)             Requested size: 93.55057pt x 48.0pt.
+
+Overfull \hbox (4.80632pt too wide) in paragraph at lines 8--8
+[]|[]| 
+ []
+
+<rebuttal-figures/elliptical/shell.pdf, id=662, 277.69481pt x 142.48419pt>
+File: rebuttal-figures/elliptical/shell.pdf Graphic file (type pdf)
+<use rebuttal-figures/elliptical/shell.pdf>
+Package pdftex.def Info: rebuttal-figures/elliptical/shell.pdf  used on input l
+ine 9.
+(pdftex.def)             Requested size: 93.55057pt x 48.0pt.
+
+Overfull \hbox (4.80632pt too wide) in paragraph at lines 10--10
+[]|[]| 
+ []
+
+<rebuttal-figures/elliptical/extreme.pdf, id=663, 277.69481pt x 142.48419pt>
+File: rebuttal-figures/elliptical/extreme.pdf Graphic file (type pdf)
+<use rebuttal-figures/elliptical/extreme.pdf>
+Package pdftex.def Info: rebuttal-figures/elliptical/extreme.pdf  used on input
+ line 11.
+(pdftex.def)             Requested size: 93.55057pt x 48.0pt.
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 23.
+
+
+LaTeX Warning: Reference `thm:elliptical' on page 11 undefined on input line 23
+.
+
+
+LaTeX Warning: Reference `sec:elliptical-experiments' on page 1 undefined on in
+put line 23.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 23.
+
+
+LaTeX Warning: Reference `thm:elliptical' on page 11 undefined on input line 23
+.
+
+
+LaTeX Warning: Reference `sec:elliptical-experiments' on page 1 undefined on in
+put line 23.
+
+)
+
+LaTeX Warning: Reference `fig:replications' on page 1 undefined on input line 1
+2.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 12.
+
+
+LaTeX Warning: Reference `thm:localization' on page 1 undefined on input line 1
+2.
+
+
+LaTeX Warning: Reference `app:IPR' on page 1 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 11 undefined on input line 1
+4.
+
+(figures/replications/fig.tex
+<rebuttal-figures/replications/kurtosis_vs_ipr_40.pdf, id=664, 281.58952pt x 15
+6.20734pt>
+File: rebuttal-figures/replications/kurtosis_vs_ipr_40.pdf Graphic file (type p
+df)
+<use rebuttal-figures/replications/kurtosis_vs_ipr_40.pdf>
+Package pdftex.def Info: rebuttal-figures/replications/kurtosis_vs_ipr_40.pdf  
+used on input line 3.
+(pdftex.def)             Requested size: 170.0pt x 94.30669pt.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 7.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 7.
+
+)
+
+LaTeX Warning: Reference `fig:theory' on page 1 undefined on input line 20.
+
+
+LaTeX Warning: Reference `thm:localization' on page 1 undefined on input line 2
+0.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 23.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 24.
+
+
+Underfull \hbox (badness 1168) in paragraph at lines 20--25
+[][] \C70/gbsn/b/n/10/8f € \C70/gbsn/m/it/10/4e ^^@ \C70/gbsn/b/n/10/6b e \C70/
+gbsn/b/n/10/90 ^^Z \C70/gbsn/b/n/10/8f « \C70/gbsn/b/n/10/51 w \C70/gbsn/b/n/10
+/4f S \C70/gbsn/m/it/10/79 : \C70/gbsn/b/n/10/4f ã \C70/gbsn/b/n/10/9a å \C70/g
+bsn/b/n/10/8b ¡ \C70/gbsn/m/it/10/4e Ü\T1/ptm/m/n/10 (+20) Claim []\C70/gbsn/m/
+it/10/30 ^^B
+ []
+
+
+Underfull \hbox (badness 2088) in paragraph at lines 20--25
+\C70/gbsn/m/it/10/62 ^^Q \C70/gbsn/m/it/10/4e Ï \C70/gbsn/m/it/10/57 ( \C70/gbs
+n/m/it/10/6a ! \C70/gbsn/m/it/10/57 ã \C70/gbsn/m/it/10/4e - \C70/gbsn/b/n/10/4
+f › \C70/gbsn/m/it/10/63 ^^A \C70/gbsn/b/n/10/76 ¯ \C70/gbsn/b/n/10/54 ^^L \C70
+/gbsn/b/n/10/76 Ñ \C70/gbsn/m/it/10/52 ^^] \C70/gbsn/m/it/10/59 À \C70/gbsn/m/i
+t/10/67 a \C70/gbsn/m/it/10/4e ˆ \C70/gbsn/b/n/10/ff ^^L \C70/gbsn/m/it/10/5e v
+
+ []
+
+
+
+[11 <./rebuttal-figures/elliptical/t3.pdf> <./rebuttal-figures/elliptical/shell
+.pdf> <./rebuttal-figures/elliptical/extreme.pdf> <./rebuttal-figures/replicati
+ons/kurtosis_vs_ipr_40.pdf>]
+
+LaTeX Warning: Reference `thm:localization' on page 1 undefined on input line 2
+6.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 28.
+
+(figures/extensions/fig.tex
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 17.
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 17.
+
+
+Overfull \hbox (4.80632pt too wide) in paragraph at lines 17--17
+[]|[]| 
+ []
+
+<figures/extensions/10erf_alg10.pdf, id=746, 574.30515pt x 285.2163pt>
+File: figures/extensions/10erf_alg10.pdf Graphic file (type pdf)
+<use figures/extensions/10erf_alg10.pdf>
+Package pdftex.def Info: figures/extensions/10erf_alg10.pdf  used on input line
+ 17.
+(pdftex.def)             Requested size: 131.17076pt x 65.14139pt.
+<figures/extensions/10erf_alg4.pdf, id=747, 574.30515pt x 285.22511pt>
+File: figures/extensions/10erf_alg4.pdf Graphic file (type pdf)
+<use figures/extensions/10erf_alg4.pdf>
+Package pdftex.def Info: figures/extensions/10erf_alg4.pdf  used on input line 
+17.
+(pdftex.def)             Requested size: 131.17076pt x 65.1434pt.
+<figures/extensions/ica_alg3.pdf, id=748, 484.34387pt x 237.04561pt>
+File: figures/extensions/ica_alg3.pdf Graphic file (type pdf)
+<use figures/extensions/ica_alg3.pdf>
+Package pdftex.def Info: figures/extensions/ica_alg3.pdf  used on input line 17
+.
+(pdftex.def)             Requested size: 131.17076pt x 64.19847pt.
+
+Overfull \hbox (3.18555pt too wide) in paragraph at lines 17--23
+[][] 
+ []
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 23.
+
+
+LaTeX Warning: Reference `sec:extensions' on page 1 undefined on input line 23.
+
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 23.
+
+
+LaTeX Warning: Reference `sec:extensions' on page 1 undefined on input line 23.
+
+
+)
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 32.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 32.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 32.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 32.
+
+
+LaTeX Warning: Reference `fig:theory' on page 1 undefined on input line 34.
+
+
+LaTeX Warning: Reference `fig:theory' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `fig:time' on page 1 undefined on input line 37.
+
+
+LaTeX Warning: Reference `thm:elliptical' on page 12 undefined on input line 38
+.
+
+
+LaTeX Warning: Reference `thm:elliptical' on page 12 undefined on input line 40
+.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 40.
+
+
+LaTeX Warning: Reference `fig:elliptical' on page 1 undefined on input line 40.
+
+
+
+LaTeX Warning: Reference `fig:elliptical' on page 1 undefined on input line 42.
+
+
+
+LaTeX Warning: Reference `def:elliptical' on page 1 undefined on input line 44.
+
+
+
+LaTeX Warning: Reference `fig:elliptical' on page 1 undefined on input line 46.
+
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 53.
+
+
+LaTeX Warning: Reference `fig:extensions' on page 1 undefined on input line 54.
+
+
+
+LaTeX Warning: Reference `fig:extensions' on page 1 undefined on input line 56.
+
+
+(figures/multi-neuron/fig.tex
+Overfull \vbox (16.74396pt too high) detected at line 16
+ []
+
+
+Overfull \hbox (9.80632pt too wide) in paragraph at lines 16--16
+[]|[]
+ []
+
+<figures/multi-neuron/10erf_alg4_subset4.pdf, id=749, 429.75607pt x 82.86911pt>
+
+File: figures/multi-neuron/10erf_alg4_subset4.pdf Graphic file (type pdf)
+<use figures/multi-neuron/10erf_alg4_subset4.pdf>
+Package pdftex.def Info: figures/multi-neuron/10erf_alg4_subset4.pdf  used on i
+nput line 16.
+(pdftex.def)             Requested size: 178.86702pt x 34.48993pt.
+<figures/multi-neuron/10erf_alg30_subset4.pdf, id=750, 429.75607pt x 82.86911pt
+>
+File: figures/multi-neuron/10erf_alg30_subset4.pdf Graphic file (type pdf)
+<use figures/multi-neuron/10erf_alg30_subset4.pdf>
+Package pdftex.def Info: figures/multi-neuron/10erf_alg30_subset4.pdf  used on 
+input line 16.
+(pdftex.def)             Requested size: 178.86702pt x 34.48993pt.
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 28.
+
+
+LaTeX Warning: Reference `thm:localization' on page 1 undefined on input line 2
+8.
+
+
+LaTeX Warning: Reference `sec:extensions' on page 1 undefined on input line 28.
+
+
+
+LaTeX Warning: Reference `item:many-neuron-model' on page 1 undefined on input 
+line 28.
+
+
+LaTeX Warning: Reference `thm:localization' on page 1 undefined on input line 2
+8.
+
+
+LaTeX Warning: Reference `sec:extensions' on page 1 undefined on input line 28.
+
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 28--28
+\C70/gbsn/m/it/9/8b ≠ \C70/gbsn/m/it/9/7e √ \C70/gbsn/m/it/9/ff ^^H \C70/gbsn/m
+/it/9/6b c \C70/gbsn/m/it/9/76 Ñ \C70/gbsn/m/n/9/8d Ö \C70/gbsn/m/n/9/98 ù \C70
+/gbsn/m/it/9/5c  \C70/gbsn/m/n/9/5e ¶ \C70/gbsn/m/it/9/4e :$\OT1/cmr/m/n/9 3\O
+ML/cmm/m/it/9 :\OT1/cmr/m/n/9 28$\C70/gbsn/m/it/9/ff 	 \C70/gbsn/m/it/9/30 ^^B 
+\C70/gbsn/m/it/9/6b c \C70/gbsn/m/it/9/59 Ç \C70/gbsn/m/it/9/54 }
+ []
+
+)
+
+[12 <./figures/extensions/10erf_alg10.pdf> <./figures/extensions/10erf_alg4.pdf
+> <./figures/extensions/ica_alg3.pdf>]
+
+LaTeX Warning: Reference `fig:multi-neuron' on page 1 undefined on input line 5
+9.
+
+
+LaTeX Warning: Reference `lem:varphi' on page 1 undefined on input line 65.
+
+
+LaTeX Warning: Citation 'hyvarinen2000independent' on page 13 undefined on inpu
+t line 68.
+
+
+LaTeX Warning: Citation 'scikit-learn' on page 13 undefined on input line 68.
+
+
+LaTeX Warning: Reference `fig:extensions' on page 1 undefined on input line 69.
+
+
+) (sections/05-conclusions.tex
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 13 undefined on input line 4
+.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 13 undefined on input line 5
+.
+
+
+LaTeX Warning: Citation 'chan2022data' on page 13 undefined on input line 8.
+
+
+LaTeX Warning: Citation 'harsh2020placecell' on page 13 undefined on input line
+ 10.
+
+
+LaTeX Warning: Reference `fig:sim-real-gabors' on page 1 undefined on input lin
+e 13.
+
+
+LaTeX Warning: Citation 'karklin2011efficient' on page 13 undefined on input li
+ne 14.
+
+
+LaTeX Warning: Citation 'saxe2011unsupervised' on page 13 undefined on input li
+ne 16.
+
+)
+
+[13 <./figures/multi-neuron/10erf_alg4_subset4.pdf> <./figures/multi-neuron/10e
+rf_alg30_subset4.pdf>] (paratext/acks.tex)
+Underfull \hbox (badness 1527) in paragraph at lines 2--159
+\C70/gbsn/m/it/10/67 , \C70/gbsn/b/n/10/78 ^^T \C70/gbsn/m/it/10/7a v \C70/gbsn
+/b/n/10/5f ó \C70/gbsn/m/it/10/52 0 \C70/gbsn/m/it/10/4e Ü\T1/ptm/m/n/10 (+20) 
+A.S. \C70/gbsn/b/n/10/62 @ \C70/gbsn/m/n/10/83 ∑ \C70/gbsn/b/n/10/5f ó \C70/gbs
+n/b/n/10/76 Ñ \C70/gbsn/b/n/10/65 Ω \C70/gbsn/m/it/10/5b ∆ \C70/gbsn/m/it/10/72
+ y \C70/gbsn/m/it/10/79 — \C70/gbsn/m/it/10/5b f \C70/gbsn/b/n/10/59 ^^Z \C70/g
+bsn/b/n/10/62 M \C70/gbsn/b/n/10/59 V \C70/gbsn/b/n/10/76 Ñ \C70/gbsn/b/n/10/8d
+ D \C70/gbsn/m/it/10/52 © \C70/gbsn/b/n/10/ff ^^L \C70/gbsn/m/it/10/4e Â \C70/g
+bsn/b/n/10/53   \C70/gbsn/m/it/10/67 e \C70/gbsn/m/it/10/81 Í \C70/gbsn/m/it/10
+/60 ‡ \C70/gbsn/m/it/10/5e ∑ \C70/gbsn/m/it/10/57 ˙ \C70/gbsn/m/it/10/91 — \C70
+/gbsn/b/n/10/4f ^^Z
+ []
+
+
+LaTeX Warning: Empty bibliography on input line 160.
+
+
+
+[14
+
+] (sections/a1-proofs.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 20.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\varphi' on input line 20.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 20.
+
+
+LaTeX Warning: Reference `lem:varphi' on page 1 undefined on input line 23.
+
+
+LaTeX Warning: Reference `eq:varphi' on page 1 undefined on input line 26.
+
+
+LaTeX Warning: Reference `lem:varphi' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `lem:varphi' on page 1 undefined on input line 37.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 41.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 45.
+
+
+LaTeX Warning: Reference `thm:elliptical' on page 15 undefined on input line 48
+.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 55.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 55.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 55.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 55.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 58.
+
+
+
+[15
+
+]
+
+LaTeX Warning: Reference `eq:gradient_flow_early' on page 1 undefined on input 
+line 64.
+
+
+LaTeX Warning: Reference `item:covariance-assumption' on page 1 undefined on in
+put line 65.
+
+
+LaTeX Warning: Reference `item:mean-assumption' on page 1 undefined on input li
+ne 65.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 65.
+
+
+LaTeX Warning: Reference `item:covariance-assumption' on page 1 undefined on in
+put line 67.
+
+
+LaTeX Warning: Reference `item:mean-assumption' on page 1 undefined on input li
+ne 67.
+
+
+LaTeX Warning: Citation 'goldt2020modelling' on page 16 undefined on input line
+ 68.
+
+
+LaTeX Warning: Citation 'gerace2020generalisation' on page 16 undefined on inpu
+t line 68.
+
+
+LaTeX Warning: Citation 'goldt2022gaussian' on page 16 undefined on input line 
+68.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 16 undefined on input line 7
+3.
+
+
+LaTeX Warning: Reference `lem:gradient_flow' on page 1 undefined on input line 
+74.
+
+
+LaTeX Warning: Reference `item:translation-invariance' on page 1 undefined on i
+nput line 75.
+
+
+LaTeX Warning: Reference `item:sign-symmetry' on page 1 undefined on input line
+ 86.
+
+
+
+[16]
+
+LaTeX Warning: Citation 'elkabetz2024continuous' on page 17 undefined on input 
+line 109.
+
+
+LaTeX Warning: Reference `lem:gradient_flow' on page 17 undefined on input line
+ 115.
+
+
+LaTeX Warning: Reference `eq:gradient_flow_two' on page 17 undefined on input l
+ine 116.
+
+
+LaTeX Warning: Reference `item:lindeberg-condition' on page 1 undefined on inpu
+t line 129.
+
+
+LaTeX Warning: Reference `item:weak-dependence' on page 1 undefined on input li
+ne 137.
+
+
+LaTeX Warning: Citation 'bradley2007introduction' on page 17 undefined on input
+ line 137.
+
+
+LaTeX Warning: Reference `item:covariance-assumption' on page 1 undefined on in
+put line 152.
+
+
+LaTeX Warning: Reference `item:mean-assumption' on page 1 undefined on input li
+ne 152.
+
+
+
+[17]
+
+LaTeX Warning: Reference `lem:varphi' on page 18 undefined on input line 185.
+
+
+LaTeX Warning: Reference `eq:varphi' on page 1 undefined on input line 188.
+
+
+Overfull \hbox (62.05836pt too wide) detected at line 203
+[]
+ []
+
+
+LaTeX Warning: Reference `thm:elliptical' on page 18 undefined on input line 21
+1.
+
+
+
+[18]
+
+LaTeX Warning: Citation 'frahm2004generalized' on page 19 undefined on input li
+ne 216.
+
+
+LaTeX Warning: Reference `eq:loss_2relu_neuron' on page 1 undefined on input li
+ne 226.
+
+
+LaTeX Warning: Reference `eq:loss_2relu_neuron' on page 1 undefined on input li
+ne 242.
+
+
+LaTeX Warning: Reference `eq:loss_2relu_neuron' on page 1 undefined on input li
+ne 244.
+
+
+LaTeX Warning: Reference `eq:loss_2relu_neuron' on page 1 undefined on input li
+ne 245.
+
+
+LaTeX Warning: Reference `eq:elliptical_gradient_flow' on page 1 undefined on i
+nput line 254.
+
+) (sections/a2-experiments.tex
+
+LaTeX Warning: Reference `item:lindeberg-condition' on page 1 undefined on inpu
+t line 3.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 3.
+
+
+LaTeX Warning: Reference `fig:time' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Reference `item:single-neuron-model' on page 1 undefined on inpu
+t line 5.
+
+
+LaTeX Warning: Reference `thm:localization' on page 1 undefined on input line 7
+.
+
+
+LaTeX Warning: Reference `item:lindeberg-condition' on page 1 undefined on inpu
+t line 11.
+
+
+LaTeX Warning: Citation 'ingrosso2022data' on page 19 undefined on input line 1
+2.
+
+
+
+[19]
+
+LaTeX Warning: Reference `fig:time' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `item:lindeberg-condition' on page 1 undefined on inpu
+t line 17.
+
+
+LaTeX Warning: Reference `fig:time' on page 1 undefined on input line 21.
+
+
+LaTeX Warning: Reference `thm:localization' on page 1 undefined on input line 2
+2.
+
+
+LaTeX Warning: Reference `item:lindeberg-condition' on page 1 undefined on inpu
+t line 24.
+
+(figures/time/fig.tex
+<rebuttal-figures/time/seed=0/ipr_mse_zoomed_in.pdf, id=859, 729.66351pt x 171.
+38905pt>
+File: rebuttal-figures/time/seed=0/ipr_mse_zoomed_in.pdf Graphic file (type pdf
+)
+<use rebuttal-figures/time/seed=0/ipr_mse_zoomed_in.pdf>
+Package pdftex.def Info: rebuttal-figures/time/seed=0/ipr_mse_zoomed_in.pdf  us
+ed on input line 14.
+(pdftex.def)             Requested size: 212.86624pt x 50.0pt.
+<rebuttal-figures/time/seed=0/timeshot.pdf, id=860, 574.23935pt x 172.72217pt>
+File: rebuttal-figures/time/seed=0/timeshot.pdf Graphic file (type pdf)
+<use rebuttal-figures/time/seed=0/timeshot.pdf>
+Package pdftex.def Info: rebuttal-figures/time/seed=0/timeshot.pdf  used on inp
+ut line 14.
+(pdftex.def)             Requested size: 166.22723pt x 50.0pt.
+<rebuttal-figures/time/seed=1/ipr_mse_zoomed_in.pdf, id=861, 729.66351pt x 171.
+38905pt>
+File: rebuttal-figures/time/seed=1/ipr_mse_zoomed_in.pdf Graphic file (type pdf
+)
+<use rebuttal-figures/time/seed=1/ipr_mse_zoomed_in.pdf>
+Package pdftex.def Info: rebuttal-figures/time/seed=1/ipr_mse_zoomed_in.pdf  us
+ed on input line 14.
+(pdftex.def)             Requested size: 212.86624pt x 50.0pt.
+<rebuttal-figures/time/seed=1/timeshot.pdf, id=862, 559.44972pt x 172.72217pt>
+File: rebuttal-figures/time/seed=1/timeshot.pdf Graphic file (type pdf)
+<use rebuttal-figures/time/seed=1/timeshot.pdf>
+Package pdftex.def Info: rebuttal-figures/time/seed=1/timeshot.pdf  used on inp
+ut line 14.
+(pdftex.def)             Requested size: 161.94601pt x 50.0pt.
+<rebuttal-figures/time/seed=2/ipr_mse_zoomed_in.pdf, id=863, 730.63258pt x 171.
+38905pt>
+File: rebuttal-figures/time/seed=2/ipr_mse_zoomed_in.pdf Graphic file (type pdf
+)
+<use rebuttal-figures/time/seed=2/ipr_mse_zoomed_in.pdf>
+Package pdftex.def Info: rebuttal-figures/time/seed=2/ipr_mse_zoomed_in.pdf  us
+ed on input line 14.
+(pdftex.def)             Requested size: 213.14896pt x 50.0pt.
+<rebuttal-figures/time/seed=2/timeshot.pdf, id=864, 574.23935pt x 172.72217pt>
+File: rebuttal-figures/time/seed=2/timeshot.pdf Graphic file (type pdf)
+<use rebuttal-figures/time/seed=2/timeshot.pdf>
+Package pdftex.def Info: rebuttal-figures/time/seed=2/timeshot.pdf  used on inp
+ut line 14.
+(pdftex.def)             Requested size: 166.22723pt x 50.0pt.
+<rebuttal-figures/time/seed=3/ipr_mse_zoomed_in.pdf, id=865, 730.63258pt x 171.
+38905pt>
+File: rebuttal-figures/time/seed=3/ipr_mse_zoomed_in.pdf Graphic file (type pdf
+)
+<use rebuttal-figures/time/seed=3/ipr_mse_zoomed_in.pdf>
+Package pdftex.def Info: rebuttal-figures/time/seed=3/ipr_mse_zoomed_in.pdf  us
+ed on input line 14.
+(pdftex.def)             Requested size: 213.14896pt x 50.0pt.
+<rebuttal-figures/time/seed=3/timeshot.pdf, id=866, 567.85612pt x 172.72217pt>
+File: rebuttal-figures/time/seed=3/timeshot.pdf Graphic file (type pdf)
+<use rebuttal-figures/time/seed=3/timeshot.pdf>
+Package pdftex.def Info: rebuttal-figures/time/seed=3/timeshot.pdf  used on inp
+ut line 14.
+(pdftex.def)             Requested size: 164.37946pt x 50.0pt.
+<rebuttal-figures/time/seed=0_gaussian/ipr_mse.pdf, id=867, 443.90065pt x 171.3
+8905pt>
+File: rebuttal-figures/time/seed=0_gaussian/ipr_mse.pdf Graphic file (type pdf)
+
+<use rebuttal-figures/time/seed=0_gaussian/ipr_mse.pdf>
+Package pdftex.def Info: rebuttal-figures/time/seed=0_gaussian/ipr_mse.pdf  use
+d on input line 21.
+(pdftex.def)             Requested size: 155.40141pt x 60.0pt.
+<rebuttal-figures/time/seed=0_gaussian/timeshot.pdf, id=868, 565.83295pt x 172.
+72217pt>
+File: rebuttal-figures/time/seed=0_gaussian/timeshot.pdf Graphic file (type pdf
+)
+<use rebuttal-figures/time/seed=0_gaussian/timeshot.pdf>
+Package pdftex.def Info: rebuttal-figures/time/seed=0_gaussian/timeshot.pdf  us
+ed on input line 21.
+(pdftex.def)             Requested size: 196.55946pt x 60.0pt.
+))
+
+[20]
+
+[21 <./rebuttal-figures/time/seed=0/ipr_mse_zoomed_in.pdf> <./rebuttal-figures/
+time/seed=0/timeshot.pdf> <./rebuttal-figures/time/seed=1/ipr_mse_zoomed_in.pdf
+> <./rebuttal-figures/time/seed=1/timeshot.pdf> <./rebuttal-figures/time/seed=2
+/ipr_mse_zoomed_in.pdf> <./rebuttal-figures/time/seed=2/timeshot.pdf> <./rebutt
+al-figures/time/seed=3/ipr_mse_zoomed_in.pdf> <./rebuttal-figures/time/seed=3/t
+imeshot.pdf> <./rebuttal-figures/time/seed=0_gaussian/ipr_mse.pdf> <./rebuttal-
+figures/time/seed=0_gaussian/timeshot.pdf>] (main-neurips.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-06-09>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main-neurips.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main-neurips.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  E9782DE8FF730514030432A9E90C87E5;4342.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main-neurips
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'main-neurips.run.xml'.
+\openout1 = `main-neurips.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 46220 strings out of 468221
+ 903823 string characters out of 5447328
+ 1767045 words of memory out of 5000000
+ 73359 multiletter control sequences out of 15000+600000
+ 739159 words of font info for 377 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 102i,21n,106p,1418b,2767s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\xhs\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi525\ectt08
+00.pk> <C:\Users\xhs\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm
+10.pk> <C:\Users\xhs\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ec
+tt0900.pk> <C:\Users\xhs\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ectt1000.pk><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/app
+s/miktex/fonts/type1/public/amsfonts/cm/cmbx6.pfb><D:/apps/miktex/fonts/type1/p
+ublic/amsfonts/cm/cmbx7.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmbx
+9.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/apps/miktex
+/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><D:/apps/miktex/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmmi5.
+pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/apps/miktex/fo
+nts/type1/public/amsfonts/cm/cmmi7.pfb><D:/apps/miktex/fonts/type1/public/amsfo
+nts/cm/cmmi9.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/a
+pps/miktex/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/apps/miktex/fonts/type1/
+public/amsfonts/cm/cmr6.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmr7
+.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/apps/miktex/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb><D:/apps/miktex/fonts/type1/public/amsf
+onts/cm/cmsy5.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/
+apps/miktex/fonts/type1/public/amsfonts/cm/cmsy9.pfb><D:/apps/miktex/fonts/type
+1/arphic/gbsnu/gbsnu30.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu4e.pfb
+><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu4f.pfb><D:/apps/miktex/fonts/typ
+e1/arphic/gbsnu/gbsnu50.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu51.pf
+b><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu52.pfb><D:/apps/miktex/fonts/ty
+pe1/arphic/gbsnu/gbsnu53.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu54.p
+fb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu55.pfb><D:/apps/miktex/fonts/t
+ype1/arphic/gbsnu/gbsnu56.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu57.
+pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu58.pfb><D:/apps/miktex/fonts/
+type1/arphic/gbsnu/gbsnu59.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu5b
+.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu5c.pfb><D:/apps/miktex/fonts
+/type1/arphic/gbsnu/gbsnu5d.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu5
+e.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu5f.pfb><D:/apps/miktex/font
+s/type1/arphic/gbsnu/gbsnu60.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu
+61.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu62.pfb><D:/apps/miktex/fon
+ts/type1/arphic/gbsnu/gbsnu63.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsn
+u64.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu65.pfb><D:/apps/miktex/fo
+nts/type1/arphic/gbsnu/gbsnu66.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbs
+nu67.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu68.pfb><D:/apps/miktex/f
+onts/type1/arphic/gbsnu/gbsnu69.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gb
+snu6a.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu6b.pfb><D:/apps/miktex/
+fonts/type1/arphic/gbsnu/gbsnu6c.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/g
+bsnu6d.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu6e.pfb><D:/apps/miktex
+/fonts/type1/arphic/gbsnu/gbsnu6f.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/
+gbsnu70.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu71.pfb><D:/apps/mikte
+x/fonts/type1/arphic/gbsnu/gbsnu72.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu
+/gbsnu73.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu74.pfb><D:/apps/mikt
+ex/fonts/type1/arphic/gbsnu/gbsnu75.pfb><D:/apps/miktex/fonts/type1/arphic/gbsn
+u/gbsnu76.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu77.pfb><D:/apps/mik
+tex/fonts/type1/arphic/gbsnu/gbsnu78.pfb><D:/apps/miktex/fonts/type1/arphic/gbs
+nu/gbsnu79.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu7a.pfb><D:/apps/mi
+ktex/fonts/type1/arphic/gbsnu/gbsnu7b.pfb><D:/apps/miktex/fonts/type1/arphic/gb
+snu/gbsnu7c.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu7d.pfb><D:/apps/m
+iktex/fonts/type1/arphic/gbsnu/gbsnu7e.pfb><D:/apps/miktex/fonts/type1/arphic/g
+bsnu/gbsnu7f.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu80.pfb><D:/apps/
+miktex/fonts/type1/arphic/gbsnu/gbsnu81.pfb><D:/apps/miktex/fonts/type1/arphic/
+gbsnu/gbsnu82.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu83.pfb><D:/apps
+/miktex/fonts/type1/arphic/gbsnu/gbsnu84.pfb><D:/apps/miktex/fonts/type1/arphic
+/gbsnu/gbsnu85.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu86.pfb><D:/app
+s/miktex/fonts/type1/arphic/gbsnu/gbsnu88.pfb><D:/apps/miktex/fonts/type1/arphi
+c/gbsnu/gbsnu89.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu8a.pfb><D:/ap
+ps/miktex/fonts/type1/arphic/gbsnu/gbsnu8b.pfb><D:/apps/miktex/fonts/type1/arph
+ic/gbsnu/gbsnu8c.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu8d.pfb><D:/a
+pps/miktex/fonts/type1/arphic/gbsnu/gbsnu8e.pfb><D:/apps/miktex/fonts/type1/arp
+hic/gbsnu/gbsnu8f.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu90.pfb><D:/
+apps/miktex/fonts/type1/arphic/gbsnu/gbsnu91.pfb><D:/apps/miktex/fonts/type1/ar
+phic/gbsnu/gbsnu94.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu95.pfb><D:
+/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu96.pfb><D:/apps/miktex/fonts/type1/a
+rphic/gbsnu/gbsnu97.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu98.pfb><D
+:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu99.pfb><D:/apps/miktex/fonts/type1/
+arphic/gbsnu/gbsnu9a.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu9e.pfb><
+D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu9f.pfb><D:/apps/miktex/fonts/type1
+/arphic/gbsnu/gbsnuff.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/symbols/msam7.pfb><D:/app
+s/miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/apps/miktex/fonts/t
+ype1/public/amsfonts/symbols/msbm7.pfb><D:/apps/miktex/fonts/type1/urw/times/ut
+mb8a.pfb><D:/apps/miktex/fonts/type1/urw/times/utmbi8a.pfb><D:/apps/miktex/font
+s/type1/urw/times/utmr8a.pfb><D:/apps/miktex/fonts/type1/urw/times/utmri8a.pfb>
+
+Output written on main-neurips.pdf (21 pages, 4856421 bytes).
+PDF statistics:
+ 1845 PDF objects out of 2073 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
+ 65710 words of extra memory for PDF output out of 74296 (max. 10000000)
+

@@ -1,0 +1,19 @@
+\begin{figure*}[t!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.33\linewidth}
+        \input{graphs/early_late/early_vs_late_scaleflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scaleflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+    \input{graphs/early_late/early_vs_late_scaleflops_dclm}
+    \end{subfigure}
+    \begin{center}
+        \ref{sharedlegend}
+    \end{center}
+    \caption{\textbf{早期融合与晚期融合：扩展训练FLOP数。} 我们比较了在扩展模型参数数量和训练令牌数量时，早期融合和晚期融合模型的表现。总体而言，早期融合在较小的模型规模下表现出轻微的优势，并且随着参数数量 $N$ 的增加，差距逐渐缩小。}
+    \label{fig:early_vs_late_scaleflops}
+    \vspace{3mm}
+\end{figure*}

@@ -134,7 +134,7 @@ class LatexConstructor:
             print(f"⚠️ Warning: Residual placeholders found and removed: {residual_matches}")
             tex = re.sub(r"<PLACEHOLDER_[^>]*>", "", tex)
 
-        tex = add_ctex_package(tex) # zh
+        tex = add_chinese_support_placeholder(tex) # zh
         # tex = add_ja_package(tex)  # ja
 
         main_file_path = find_main_tex_file(self.output_latex_dir)

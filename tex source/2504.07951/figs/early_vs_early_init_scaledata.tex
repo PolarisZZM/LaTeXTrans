@@ -1,0 +1,22 @@
+
+\begin{figure}[t!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_vs_early_init_scaledata_getty}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.31\linewidth}
+        \input{graphs/early/early_vs_early_init_scaledata_obelics}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.31\linewidth}
+        \input{graphs/early/early_vs_early_init_scaledata_dclm}
+    \end{subfigure}
+    \vspace{-7pt}
+    \caption{\textbf{Early native vs initializing from LLMs: initializing from
+    pre-trained models and scaling training tokens.} We compare training with and
+    without initializing from DCLM-1B.}
+    \label{fig:early_vs_early_init_scaledata}
+    \vspace{7pt}
+\end{figure}

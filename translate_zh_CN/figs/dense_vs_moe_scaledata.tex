@@ -1,0 +1,14 @@
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.49\linewidth}
+        \input{graphs/dense_moe/dense_vs_moe_scaledata_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\linewidth}
+        \input{graphs/dense_moe/dense_vs_moe_scaledata_obelics}
+    \end{subfigure}
+    \vspace{-15pt}
+    \begin{center}
+        \ref{sharedlegend}
+    \end{center}
+    \caption{\textbf{MoE 与 稠密: 训练 FLOPs 的缩放。} 当同时扩展训练词元的数量和模型的大小时，我们比较了 MoE 和早期融合的稠密 模型。在匹配活跃参数数量时，MoE 超过了稠密模型。}
+    \label{fig:dense_vs_moe_scaledata}

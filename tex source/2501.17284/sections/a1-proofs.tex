@@ -1,0 +1,300 @@
+\section{Definitions and Notation}
+
+\subsection{Notation}
+We use $[n]$ to refer to the set $\{ i \in \N : 1 \leq i \leq n \}$.
+
+\subsection{Algebraic sigmoid}
+\label{sec:algebraic-sigmoid}
+For $k > 0$, the generalized algebraic sigmoid function is defined as
+\begin{equation}
+    \operatorname{alg}_k(x) \triangleq \frac{1}{2} \left( 1  + \frac{x}{(1+|x|^k)^{1/k}} \right)~.
+\end{equation}
+Following the main text, we drop the subscript when $k = 2$.
+
+\subsection{Inverse participation ratio (IPR)}
+\label{app:IPR}
+The IPR is defined as:
+$$ \operatorname{IPR}(\mathbf{w}) \triangleq \left(\sum_{i=1}^D w_i^4\right)/\left(\sum_{i=1}^D w_i^2\right)^2, $$
+where $w_i$ is the magnitude of dimension $i$ of weight $\mathbf{w}$.
+
+\section{Extensions beyond the scope of the main text}
+
+\subsection{Analytical properties of the amplifier $\varphi$}
+\label{sec:varphi-analysis}
+
+We present several properties of the amplifying function $\varphi$
+defined in Lemma~\labelcref{lem:varphi}.
+
+\begin{lemma} \label{lem:varphi}
+    The localization amplifier $\varphi$ in \cref{eq:varphi} satisfies $\varphi(-a) = -\varphi(a)$, for all $a \in (-1,1)$.
+    Moreover, its derivatives satisfy, where $\sigma^2$ and $\kappa$ denote the variance and kurtosis of $X_1$, respectively:
+    \vspace{-10pt}
+    \begin{align*}
+      \varphi'(0) &= \sqrt{\frac{2}{\pi}} \sigma^2~, &&\text { and }&&
+      \varphi'''(0) = -\sqrt{\frac{2}{\pi}} (\kappa^4 \sigma^4 - 3 \sigma^2)~.
+    \end{align*}
+    \end{lemma}
+\vspace{-6pt}
+
+To gain some understanding of how the marginal distributions of $\mathbf{X}$ impact localization, we use the derivatives in Lemma~\labelcref{lem:varphi} 
+to construct a third-order Taylor approximation of $\varphi$ about 0.
+The derivatives in Lemma~\labelcref{lem:varphi} reveal that every distribution for $X_1$ with constant variance will look like the same linear function near 0.
+$\varphi$ only looks nonlinear once we move sufficiently far away from zero when the third-order term becomes relevant.
+For the case of $\sigma^2 = 1$ (where the variance of $X_1$ is equal to the value of the larger target $y=1$) the third order term suggests that $\varphi$ is super-linear when $\kappa < 3$, \ie the excess kurtosis is positive, and sub-linear otherwise.
+
+A super-linear $\varphi$ will encourage entries where $\Sigma_1 \mathbf{w}$ is large to grow at a faster rate than other entries, which are all subject to the same \emph{linear} norm constraint through the second term in \cref{eq:gradient_flow_early}.
+The covariance $\Sigma_1$, as a circulant matrix, acts as the convolution operator between some vector and $\sigma_1^1$ (the first row in $\Sigma_1$).
+Since $y=1$ corresponds to the class with a larger length-scale correlation, $\sigma_1^1$ will decay relatively slowly and act like a weight local average.
+Thus, $\Sigma_1 \mathbf{w}$ is the weighted local average for each entry in $\mathbf{w}$.
+So, entries where $\mathbf{w}$ is large within some neighborhood will be encouraged to grow faster than those which are smaller, an effect that compounds as \cref{eq:gradient_flow_early} is integrated.
+Thus, super-linearity encourages localization.
+
+As we will see in \cref{thm:elliptical} for the setting of elliptical data, if $\varphi$ is linear, $\mathbf{w}$ learns to be sinusoidal, and thus not localized.
+In the case of sub-linearity, we expect suppression of larger values, rather than promotion, as in the super-linear setting.
+Thus, to a first approximation, the sign of the excess kurtosis, $\kappa - 3$ (for $\sigma^2 = 1$), indicates whether $\mathbf{w}$ localizes.
+
+However, simply studying $\varphi'''(0)$ is not sufficient to fully characterize how the marginals impact localization.
+A function can be sub-linear for small $a$ and super-linear for larger $a$, making it unclear whether it will yield localization.
+For marginal distributions where $\kappa \approx 3$ that do not exhibit strict super- or sub-linearity, this condition is no longer precise enough to determine whether we see localization.
+
+
+\subsection{PDE limit of \cref{eq:gradient_flow_early}}
+\label{sec:pde-limit}
+
+By taking $N$ to be large and treating $w$ as a continuous function with respect to position, \ie $w \equiv w(x, t)$, one can treat \cref{eq:gradient_flow_early} as a partial differential equation (PDE). 
+Finding its steady state then amounts to solving
+\begin{equation}
+    \varphi\left( \frac{\sigma^1 \star w}{\sqrt{ \langle \sigma^1 \star w, w \rangle}} \right) - \frac{1}{2} (\sigma^0 + \sigma^1) \star w \equiv 0~,
+\end{equation}
+where $w : [0,1] \to \R$ is periodic and $\sigma^y$ is the convolution corresponding to the limiting case of the matrix $\Sigma_y$.
+This equation does not appear to have an explicit solution for non-identity $\Sigma_1$,
+and thus, it may not be possible to solve the steady states of \cref{eq:gradient_flow_early} exactly in this PDE limit or for finite $N$.
+
+\subsection{Assumptions~\labelcref{item:mean-assumption,item:covariance-assumption}
+\vs Gaussian equivalence}
+
+Assumptions~\labelcref{item:mean-assumption,item:covariance-assumption} are equivalent to approximating $\langle \mathbf{w}, \mathbf{X} \rangle \mid X_i$ as Gaussian early in training.
+Similar ideas have been used to derive gradient flow dynamics for neural networks, including in developing the Gaussian equivalence property of \cite{goldt2020modelling,gerace2020generalisation,goldt2022gaussian}.
+However, these works model the unconditional preactivation $\langle \mathbf{w}, \mathbf{X} \rangle$ as a Gaussian, rather than first conditioning on $X_i$.
+How this arises is that these previous works assert the Gaussian approximation \emph{prior} to differentiating the loss function for the gradient flow dynamics.
+However, an approximation at that stage neglects the presence of a multiplicative factor $\mathbf{X}$ that appears as a result of the chain rule applied to $\langle \mathbf{w}, \mathbf{X} \rangle$.
+Abstractly, this approach assumes that $\LL_\text{exact} \to \LL_\text{Gauss}$ implies $\nabla_\mathbf{w} \LL_\text{exact} \to \nabla_\mathbf{w} \LL_\text{Gauss}$, but, in general, this does not follow, and here in particular this assumption does not capture the interplay of learning and higher-order input statistics. %\nb{Can I say more?}
+This contributes to the failure of Gaussian equivalence in \cite{ingrosso2022data}.
+In contrast, we can account for the additional $\mathbf{X}$ term in the derivation of 
+Lemma~\labelcref{lem:gradient_flow} by assuming that $\langle \mathbf{w}, \mathbf{X} \rangle \mid X_i$ rather than $\langle \mathbf{w}, \mathbf{X} \rangle$ is Gaussian.
+This conditioning approach, along with the translation invariance of the data (Property~\labelcref{item:translation-invariance}), also motivates considering the marginal distributions $X_i$ as the object of study to obtain gradient flows for neural networks trained on non-Gaussian inputs.
+
+\section{Proofs of theoretical results}
+\label{app:proofs}
+
+\subsection{Gradient flow for mean-squared error (MSE) loss}
+The loss is given by:
+\begin{align}
+    \LL 
+    &= \E_{\mathbf{X},Y}\left[ (Y - \operatorname{ReLU}(\langle \mathbf{w}, \mathbf{X} \rangle) )^2 \right] \notag \\
+    &= \E_{\mathbf{X},Y}\left[ Y^2 \right] - 2 \underbrace{ \E_{\mathbf{X},Y}\left[ Y \operatorname{ReLU}(\langle \mathbf{w}, \mathbf{X} \rangle) \right] }_{\triangleq (I)} + \underbrace{ \E_{\mathbf{X},Y}\left[ \operatorname{ReLU}^2(\langle \mathbf{w}, \mathbf{X} \rangle) \right] }_{\triangleq (II)}. \label{eq:loss_2relu_neuron}
+\end{align}
+The assumption of sign symmetry (\labelcref{item:sign-symmetry}) gives that 
+$\langle \mathbf{w}, \mathbf{X} \rangle$ is also sign-symmetric.
+First, this implies that $\PR( \langle \mathbf{w}, \mathbf{X} \rangle > 0 ) = \frac{1}{2}$, so:
+\begin{align*}
+    (II)
+    &= \frac{1}{2} \E_{\mathbf{X},Y \mid \langle \mathbf{w}, \mathbf{X} \rangle \geq 0}\left[ \operatorname{ReLU}^2(\langle \mathbf{w}, \mathbf{X} \rangle) \right]
+    = \frac{1}{2} \E_{\mathbf{X},Y \mid \langle \mathbf{w}, \mathbf{X} \rangle \geq 0}\left[ (\langle \mathbf{w}, \mathbf{X} \rangle)^2 \right].
+\end{align*}
+Second, sign-symmetry of $\langle \mathbf{w}, \mathbf{X} \rangle$ 
+implies that we can drop the conditioning on $\langle \mathbf{w}, \mathbf{X} \rangle \geq 0$, since $\langle \mathbf{w}, \mathbf{X} \rangle \overset{d}{=} -\langle \mathbf{w}, \mathbf{X} \rangle$.
+Thus,
+\begin{align*}
+    (II)
+    &= \frac{1}{2} \E_{\mathbf{X},Y}\left[ (\langle \mathbf{w}, \mathbf{X} \rangle)^2 \right] \\
+    &= \frac{1}{2} \mathbf{w}^\top \E_{\mathbf{X},Y} \left[ \mathbf{X} \mathbf{X}^\top \right] \mathbf{w} \\
+    &= \frac{1}{2} \mathbf{w}^\top \left( \frac{1}{K} \sum_{y=0}^{K-1} \Sigma_y \right) \mathbf{w}  \\
+    &= \frac{1}{2K} \sum_{y=0}^{K-1} \mathbf{w}^\top \Sigma_y \mathbf{w}~,
+\end{align*}
+where $K$ is the number of values (classes) of discrete $y$.
+Finally, we differentiate $\LL$ with respect to $\mathbf{w}$:
+\begin{align*}
+  \nabla_\mathbf{w} \LL &= 2 \E_{\mathbf{X},Y}\left[ Y \mathbbm{1}( \langle \mathbf{w}, \mathbf{X} \rangle \geq 0) \mathbf{X} \right] + \frac{1}{K} \sum_{y=0}^{K-1} \Sigma_y \mathbf{w}~.
+\end{align*}
+The gradient flow~\cite{elkabetz2024continuous} is given by $\frac{\mathrm{d}\mathbf{w}}{\mathrm{d}t} = -\tau \nabla_\mathbf{w} \LL$, where $\tau$ is the learning rate.
+Thus,
+\begin{equation}
+  \frac{1}{\tau} \frac{\mathrm{d}\mathbf{w}}{\mathrm{d}t}
+    = 2 \E_{\mathbf{X},Y}\left[ Y \mathbbm{1}( \langle \mathbf{w}, \mathbf{X} \rangle \geq 0) \mathbf{X} \right] - \frac{1}{K} \sum_{y=1}^{K} \Sigma_y \mathbf{w}~. \label{eq:gradient_flow_two}
+\end{equation}
+
+
+\subsection{Proof of lemma \ref{lem:gradient_flow}} \label{subsec:pf_of_gradient_flow}
+Setting $K = 2$ in equation \eqref{eq:gradient_flow_two}, we have
+\begin{align*}
+  \frac{1}{\tau} \frac{\mathrm{d}\mathbf{w}}{\mathrm{d}t} 
+  &= \E_{\mathbf{X} \mid Y=1}[ \mathbbm{1}( \langle \mathbf{w}, \mathbf{X} \rangle \geq 0 ) \mathbf{X} ] - \frac{1}{2} \left( \Sigma_0 + \Sigma_1 \right) \mathbf{w}~.
+\end{align*}
+We wish to express the first term explicitly.
+Note that the first term is a vector in $\R^N$.
+We consider each of its entries separately by
+using the law of total expectation to write the $i$-th entry as:
+\begin{align*}
+    \E_{\mathbf{X} \mid Y=1}[ \mathbbm{1}( \langle \mathbf{w}, \mathbf{X} \rangle \geq 0 ) X_i ] 
+    &= \E_{ X_i \mid Y=1 } \left[ X_i \PR_{\mathbf{X} \mid X_i=x_i, Y = 1} \left[  \langle \mathbf{w}, \mathbf{X} \rangle \geq 0 \right] \right]~.
+\end{align*}
+
+By Assumption~\labelcref{item:lindeberg-condition}, $\{ w_i X_i \mid 1 \leq i \leq N \}$ satisfies Lindeberg's condition as $N\to\infty$.
+This is also known as a \emph{uniform integrability} requirement.
+Before formally stating it, let us introduce two variables: $S_N \triangleq \sum_{j=1}^{N} w_j (X_j - \mu_{j\mid x_i})$, the partial sums, and their variance, $\sigma_N^2 \triangleq \E[ S_N^2 ]$, where $\mu_{j \mid x_i} \triangleq \E[X_j \mid X_i = x_i]$ is the conditional mean of the $j$-entry given that $i$-th entry has value $x_i$.
+Then, Lindeberg's condition is formally stated as
+\begin{equation*}
+  \sup_N \E_{S_N \mid X_i = x_i} \left[ \left| \tfrac{S_N^2}{\sigma_N^2} \right| \mathbbm{1} \left( \left| \tfrac{S_N^2}{\sigma_N^2} \right| > x \right) \right] \to 0 \quad \text{as} \quad x\to\infty~.
+\end{equation*}
+This condition effectively states that no term in the partial sum $w_i X_i$ will dominate.
+Under this condition, along with weak dependence (Property~\labelcref{item:weak-dependence}), we conclude from \cite[Theorems 1.19, 10.2]{bradley2007introduction} that $S_N / \sigma_N \overset{d}{\to} \NN(0,1)$.
+Note that
+\begin{equation*}
+    S_N = \langle \mathbf{w}, \mathbf{X} \rangle - \langle \mathbf{w}, \mathbf{\mu}_{\mid x_i} \rangle \qquad  \text{and} \qquad \sigma_N = \sqrt{\mathbf{w}^\top \Sigma_{\mid x_i}^{1} \mathbf{w}}~,
+\end{equation*}
+where $\mathbf{w}, \mathbf{X}$ are $N$-dimensional vectors, $\mathbf{\mu}_{\mid x_i} = \E[\mathbf{X} \mid X_i = x_i]$ is the vector of conditional means, and $\Sigma_{\mid x_i}^{1} \triangleq \text{Cov}[\mathbf{X} \mid X_i = x_i, Y = 1] = \Sigma_1 - \sigma_i^1 \sigma_i^{1\top}$.
+Since $\sigma_N$ and $\mathbf{\mu}_{\mid x_i}$ are constant, we can write
+\begin{align*}
+    \PR_{\mathbf{X} \mid X_i = x_i, Y = 1} \left[  \langle \mathbf{w}, \mathbf{X} \rangle \geq 0 \right]
+    &= \PR_{\mathbf{X} \mid X_i, Y = 1} \left[ \frac{ \langle \mathbf{w}, \mathbf{X} \rangle - \langle \mathbf{w}, \mathbf{\mu}_{j \mid x_i} \rangle }{ \sigma_N } \geq -\frac{\langle \mathbf{w}, \mathbf{\mu}_{j \mid x_i} \rangle }{ \sigma_N } \right] \\
+    &= \PR_{Z \sim \NN(0,1)} \left[ Z \geq -\frac{\langle \mathbf{w}, \mathbf{\mu}_{j \mid x_i} \rangle }{ \sigma_N } \right] + o_N(1) \\
+    &= 1 - \frac{1}{2} \left[ 1 + \operatorname{erf}\left( -\frac{\langle \mathbf{w}, \mathbf{\mu}_{j \mid x_i} \rangle }{ \sqrt{2} \sigma_N } \right) \right] + o_N(1) \\
+    &= \frac{1}{2} + \frac{1}{2} \operatorname{erf}\left(\frac{\langle \mathbf{w}, \mathbf{\mu}_{j \mid x_i} \rangle }{ \sqrt{2} \sigma_N } \right) + o_N(1)~,
+\end{align*}
+where the second step, in which we acquire $o_N(1)$, follows from the definition of convergence in distribution.
+Under Assumptions \labelcref{item:mean-assumption,item:covariance-assumption}, we may express this as
+\begin{align*}
+    \PR_{\mathbf{X} \mid X_i = x_i, Y = 1} \left[  \langle \mathbf{w}, \mathbf{X} \rangle \geq 0 \right]
+    &= \frac{1}{2} + \frac{1}{2} \operatorname{erf}\left( \frac{\langle \mathbf{w}, x_i \sigma_i^y \rangle }{ \sqrt{2} \sqrt{ \mathbf{w}^\top \Sigma_1 \mathbf{w} - (\langle \mathbf{w}, \sigma_i^y \rangle)^2 } } \right) + o_N(1)~.
+\end{align*}
+Therefore,
+\begin{align*}
+    &\E_{\mathbf{X} \mid Y=1}[ \mathbbm{1}( \langle \mathbf{w}, \mathbf{X} \rangle \geq 0 ) X_i ] \\
+    &= \E_{ X_i \mid Y=1 } \left[ X_i \left( \frac{1}{2} + \frac{1}{2} \operatorname{erf}\left( \frac{X_i}{\sqrt{2}} \cdot \frac{\langle \mathbf{w}, \sigma_i^y \rangle }{ \sqrt{ \mathbf{w}^\top \Sigma_1 \mathbf{w} - (\langle \mathbf{w}, \sigma_i^y \rangle)^2 } } \right) + o_N(1) \right) \right] \\
+    &= \frac{1}{2} \E_{ X_i \mid Y=1 } \left[ X_i \operatorname{erf}\left( \frac{X_i}{\sqrt{2}} \cdot \frac{\langle \mathbf{w}, \sigma_i^y \rangle / \sqrt{\mathbf{w}^\top \Sigma_1 \mathbf{w}} }{ \sqrt{ 1 - (\langle \mathbf{w}, \sigma_i^y \rangle / \sqrt{\mathbf{w}^\top \Sigma_1 \mathbf{w}})^2 } } \right) \right] + \E_{X_i}[|X_i|] o_N(1) \\
+    &= \frac{1}{2} \E_{ X_i \mid Y=1 } \left[ X_i \operatorname{erf}\left( \frac{X_i}{\sqrt{2}} \cdot \operatorname{alg}^{-1} \left( \frac{ \langle \mathbf{w}, \sigma_i^y \rangle }{ \sqrt{\mathbf{w}^\top \Sigma_1 \mathbf{w}} } \right) \right) \right] + \E_{X_i}[|X_i|] o_N(1)~.
+\end{align*}
+Defining $\varphi_i(a) \triangleq \E_{X_i \mid Y=1}[ X_i \operatorname{erf}(X_i \operatorname{alg}^{-1}(a) / \sqrt{2}) ]$ we can write
+\begin{align*}
+    \E_{\mathbf{X} \mid Y=1}[ \mathbbm{1}( \langle \mathbf{w}, \mathbf{X} \rangle \geq 0 ) X_i ]
+    &= \frac{1}{2} \varphi_i \left( \frac{ \langle \mathbf{w}, \sigma_i^y \rangle }{ \sqrt{\mathbf{w}^\top \Sigma_1 \mathbf{w}} } \right) + \E_{X_i}[|X_i|] o_N(1)~.
+\end{align*}
+Note that $\E_{X_i}[|X_i|] \leq \sqrt{ \E_{X_i}[X_i^2] } = \sigma$ by Cauchy-Schwarz.
+So, $\E_{X_i}[|X_i|] o_N(1) = o_N(1)$.
+Moreover, by translation-invariance, all $X_i$ have the same marginal, so $\varphi_i \equiv \varphi_1 \triangleq \varphi$.
+Thus,
+\begin{align*}
+    \E_{\mathbf{X} \mid Y=1}[ \mathbbm{1}( \langle \mathbf{w}, \mathbf{X} \rangle \geq 0 ) X_i ]
+    &= \frac{1}{2} \varphi \left( \frac{ \langle \mathbf{w}, \sigma_i^y \rangle }{ \sqrt{\mathbf{w}^\top \Sigma_1 \mathbf{w}} } \right) + o_N(1)~.
+\end{align*}
+This form holds for all entries $i$.
+Concatenating them, we obtain
+\begin{align*}
+    \E_{\mathbf{X} \mid Y=1}[ \mathbbm{1}( \langle \mathbf{w}, \mathbf{X} \rangle \geq 0 ) \mathbf{X} ]
+    &= \frac{1}{2} \varphi \left( \frac{ \Sigma_1 \mathbf{w} }{ \sqrt{\mathbf{w}^\top \Sigma_1 \mathbf{w}} } \right) + o_N(1)~,
+\end{align*}
+which gives the desired result.
+\qed
+
+\subsection{Proof of lemma \ref{lem:varphi}} \label{subsec:pf_of_varphi}
+Property 1 follows from the fact that $\operatorname{alg}$ and $\operatorname{erf}$ are odd functions.
+This implies Property 4 since an odd function must have zero for even Taylor coefficients.
+
+Properties 2 and 3 follow from differentiating \cref{eq:varphi}.
+The first derivative is given by
+\begin{align*}
+    \varphi'(a) &= \frac{\sqrt{2}}{{\sqrt{{\pi}}}(1-a^2)^\frac{3}{2}} \E_{X_1}\left[ X_1^2\mathrm{e}^{-\frac{X_1^2a^2}{2(1-a^2)}} \right].
+\end{align*}
+Setting $a = 0$, we get
+\begin{align*}
+    \varphi'(0) 
+    &= \sqrt{\frac{2}{\pi}} \E\left[ X_1^2 \right]
+    = \sqrt{\frac{2}{\pi}} \sigma^2.
+\end{align*}
+The third derivative is given by
+\begin{align*}
+    \varphi'''(a) &= \frac{\sqrt{2}}{\sqrt{{\pi}}(1-a^2)^\frac{7}{2}(a^2-1)^2} \E_{X_1} \left[
+    X_1^2(12a^6+(9X_1^2-21)a^4+(X_1^4-8X_1^2+6)a^2-X_1^2+3)\mathrm{e}^{-\frac{X_1^2a^2}{2(1-a^2)}}
+    \right].
+\end{align*}
+Again setting $a = 0$ gives
+\begin{align*}
+    \varphi'''(0) &= \sqrt{\frac{2}{\pi}} \E_{X_1} \left[ X_1^2(-X_1^2+3) \right]
+    = \sqrt{\frac{2}{\pi}} \left( 3 \E_{X_1}[X_1^2] - \E_{X_1}[X_1^4] \right) 
+    = -\sqrt{\frac{2}{\pi}} (\kappa^4 \sigma^4 - 3 \sigma^2)~.
+\end{align*}
+\qed
+
+
+\subsection{Proof of Proposition~\ref{thm:elliptical}}
+The pdf of $X \sim \EE_N(\mu, \Sigma, \phi)$ is
+\begin{align*}
+    p_X(x) &= \frac{1}{\sqrt{\det(\Sigma)}} g( (x-\mu)^\top \Sigma^{-1} (x-\mu) )~,
+\end{align*}
+for some function $g : \R_{\geq 0} \to \R_{\geq 0}$ \cite{frahm2004generalized}.
+A key property of elliptical distributions is that if $X \sim \EE_N(\mu, \Sigma, \phi)$, then its affine transformation is also elliptical: $\langle \mathbf{w}, \mathbf{X} \rangle \sim \EE_1(\langle \mathbf{w}, \mu \rangle, \mathbf{w}^\top \Sigma \mathbf{w}, \phi)$ for any $\mathbf{w} \in \R^N$.
+Thus,
+\begin{align*}
+  p_{\langle \mathbf{w}, \mathbf{X} \rangle}(s) &= \frac{1}{\sqrt{\mathbf{w}^\top \Sigma \mathbf{w}}} \tilde{g}\left( \frac{(s-\langle \mathbf{w}, \mu \rangle)^2}{\mathbf{w}^\top \Sigma \mathbf{w}} \right),
+\end{align*}
+for some other function $\tilde{g} : \R_{\geq 0} \to \R_{\geq 0}$.
+
+From our assumption of sign-symmetry, we have $\mu = 0$.
+For brevity, we define $\sigma^2 \triangleq \mathbf{w}^\top \Sigma \mathbf{w}$ and $S \triangleq \langle \mathbf{w}, \mathbf{X} \rangle$.
+We begin by computing (I) in \cref{eq:loss_2relu_neuron}.
+Recall that we have $y = 0,1$ (\ie $K = 2$).
+So,
+\begin{align*}
+    2 \times (I) 
+    &= \E_{S \mid Y=1}[ \operatorname{ReLU}( S ) ]
+    = \int_0^{\infty} \frac{1}{\sigma} \tilde{g}\left( \frac{s^2}{\sigma^2} \right) s \ \mathrm{d}s.
+\end{align*}
+At this point, we apply a $u$-substitution with $u = s^2 / \sigma^2$, and thus $\mathrm{d}u = 2 s \ \mathrm{d}s / \sigma^2 \iff \sigma \mathrm{d}u / 2 = s\ \mathrm{d}s / \sigma$.
+This yields
+\begin{align*}
+    2 \times (I) 
+    &= \frac{\sigma}{2} \underbrace{\int_0^{\infty} \tilde{g}(u)\ \mathrm{d}u}_{\triangleq C}
+    = \frac{C}{2} \sqrt{\mathbf{w}^\top \Sigma_1 \mathbf{w}}.
+\end{align*}
+Recall that we assume the MSE loss $\LL$ is finite.
+The first term in \cref{eq:loss_2relu_neuron} is clearly finite for $y = 0,1$.
+The term $(II)$ is also easily seen to be finite, since it evaluates to $\mathbf{w}^\top (\Sigma_0 + \Sigma_1) \mathbf{w} / 4$.
+Thus, $\LL$ being finite implies $(I)$ in \cref{eq:loss_2relu_neuron} is finite,  which implies $C < \infty$.
+We computed (II) from \cref{eq:loss_2relu_neuron} above as
+\begin{align*}
+  \frac{1}{4} \mathbf{w}^\top \left( \Sigma_0 + \Sigma_1 \right) \mathbf{w}
+\end{align*}
+for $K = 2$.
+Plugging in (I) and (II) and differentiating with respect to $\mathbf{w}$, we get
+\begin{equation}
+  \frac{1}{\tau} \frac{\mathrm{d}\mathbf{w}}{\mathrm{d}t} = \frac{\Sigma_1 \mathbf{w}}{\sqrt{\mathbf{w}^\top \Sigma_1 \mathbf{w}}} - \frac{1}{2} \left( \Sigma_0 + \Sigma_1 \right) \mathbf{w}~. \label{eq:elliptical_gradient_flow}
+\end{equation}
+The steady states of \cref{eq:elliptical_gradient_flow} thus satisfy
+\begin{align*}
+  C \frac{\Sigma_1 \mathbf{w}}{\sqrt{\mathbf{w}^\top \Sigma_1 \mathbf{w}}} 
+  &= \frac{1}{2} \left( \Sigma_0 + \Sigma_1 \right) \mathbf{w}~.
+\end{align*}
+Recall that translation-invariance implies that $\Sigma_0$ and $\Sigma_1$ are circulant, and since they are covariance matrices, they are symmetric.
+Then, they diagonalize in the basis given by the real and imaginary parts of the first $n/2$ Fourier components in the discrete Fourier transform, which we denote by the $n \times n$ real matrix $\FF$.
+Note that $\FF$ is orthogonal.
+Define $\mathbf{v} = \FF^\top \mathbf{w}$ and $\Lambda_y = \FF^\top \Sigma_y \FF$ for $y = 0,1$.
+Thus, the steady states satisfy
+\begin{align*}
+  C \frac{\Lambda_1 \mathbf{v}}{\sqrt{\mathbf{v}^\top \Lambda_1 \mathbf{v}}} &= \frac{1}{2} \left( \Lambda_0 + \Lambda_1 \right) \mathbf{v}~.
+\end{align*}
+This holds iff for all $i \in [n]$,
+\begin{align*}
+  C (\Lambda_1)_{ii} (\mathbf{v}^\top \Lambda_1 \mathbf{v})^{-\frac{1}{2}} v_i &= \frac{1}{2} ( (\Lambda_0)_{ii} + (\Lambda_1)_{ii} ) v_i~.
+\end{align*}
+Thus, if $v_i \neq 0$, we must have that
+\begin{align*}
+  \frac{(\Lambda_0)_{ii}}{(\Lambda_1)_{ii}} &= 2 C (\mathbf{v}^\top \Lambda_1 \mathbf{v})^{-\frac{1}{2}} - 1~.
+\end{align*}
+That is, the ratio of the $i$-th eigenvalues of $\Sigma_0$ and $\Sigma_1$ must be constant for all $i$ s.t. $v_i \neq 0$.
+The eigenvalues of these matrices always come in pairs because of how we defined $\FF$ using both the real and imaginary parts of the discrete Fourier transform.
+In general, we observe that each pair assumes a unique value.
+So, since $C$ is finite, the condition above can hold for at most two distinct values of $i$.
+Therefore, $v_i = 0$ for all but at most two $i \in [n]$, implying that the steady state $w$ is of the form $a \cos(2\pi k x) + b \sin(2 \pi k x)$, \ie it is oscillatory.
+As such, it is \emph{not} localized. 
+\qed

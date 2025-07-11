@@ -1,0 +1,282 @@
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+\section{对原生多模态模型进行缩放}
+
+
+
+
+
+
+
+
+在本节中，我们研究了原生多模态模型的缩放规律，检查了各种架构选择~\cref{sec:scaling_laws_early}，探索了不同的数据混合~\cref{sec:scaling_data_mix}，分析了晚期融合和早期融合NMMs之间的实际权衡，并比较了原生预训练和连续预训练NMMs的性能~\cref{sec:native_vs_continual}。  
+
+\cpar{设置。} 我们训练的模型从0.3B到4B个活跃参数，同时保持深度不变，仅缩放宽度。对于较小的训练词元预算，我们将预热阶段减少到1K步，而对于较大的预算则保持为5K步。  
+遵循~\citet{hagele2024scaling}，模型以恒定学习率进行训练，随后使用逆平方根调度器进入冷却阶段。冷却阶段占总恒定学习率步骤的20\%。为了估计\Cref{eq:scaling_laws}中的缩放系数，我们应用了L-BFGS算法~\citep{lbfgs} 和Huber损失~\citep{Huber1992}（带$\delta =
+10^{-3}$），并在初始化值域范围内执行网格搜索。  
+
+
+
+
+
+
+
+\input{tables/scaling_laws_coeffs}       
+
+\input{figs/latr_vs_early_equal_flops}
+
+
+
+
+\vspace{-0.5cm}
+\subsection{NMMs的缩放律}
+\label{sec:scaling_laws_early}
+
+\cpar{早融合和晚融合模型的缩放规律。}  
+\Cref{fig:early_vs_late_scaleflops_3d}~（左）展示了早期融合NMMs在交错、图像-标题和文本数据集上的平均最终损失。最低损失前沿随着FLOPs的变化遵循幂律。拟合幂律得到表达式$L \propto C^{-0.049}$，表明了计算增加时改进的速度。当按数据类型（如图像-标题、交错、文本）分析缩放规律时，我们观察到指数有所不同（\cref{tab:early_vs_late_coeffs}）。例如，与处理交错文档相比，该模型对图像-标题数据表现出更高的改进速度（$(L \propto C^{-0.061})$ 和 $(L \propto C^{-0.046}$）。  
+
+将损失建模为训练词元数量 $D$ 和模型 参数 $N$ 的函数，我们拟合了 \cref{eq:scaling_laws} 中的参数化 函数，得到缩放指数 $\alpha = 0.301$ 和 $\beta = 0.335$ 。它们分别描述了当扩展模型参数和训练词元的数量时改进的速率。
+假设计算能力 $N$ 和 $D$ 之间存在线性 关系（即 $C \propto ND$ ），我们推导出描述模型参数与计算预算之间关系的公式（详见 \cref{app:scaling_laws} ）。具体而言，对于给定的计算预算 $C$ ，我们在对数间距 $D$ 的值上计算相应的模型 大小 $N$ ，并确定 $N_{opt}$ ，即最小化损失的参数计数。
+在不同的浮点运算值上重复此过程，生成一个 $(C,
+N_{opt})$ 的数据集，并拟合一个幂律公式来预测计算最优的模型大小作为计算的函数：$N^* \propto C^{0.526}.$ 
+
+同样，我们拟合了幂律来估计计算优化的训练数据集大小与计算和模型大小的关系：  
+\[
+D_{opt} \propto C^{0.473}, \quad D_{opt} \propto N^{0.899}.
+\]  
+这些关系允许从业者在计算预算固定的情况下确定最佳模型和数据集大小。当按数据类型进行分析时，我们发现交织数据（$a=0.532$）相比图像-标题数据（$a=0.520$）从更大的模型中获益更多，而训练标记则呈现出相反的趋势。  
+
+
+
+
+
+\input{figs/data_mixtures_scaling}
+
+我们对~\cref{fig:early_vs_late_scaleflops_3d}~（右侧）中的晚期融合模型进行了一项类似的研究，并观察到了可比的缩放行为。特别是，损失缩放指数（$c = -0.0494$）几乎与早期融合（$c = -0.0492$）相同。这一趋势在\cref{fig:early_vs_late_scaleflops}中很明显，在该图中，早期融合在较小的模型规模下表现优于晚期融合，而两种架构在较大的模型规模下表现出相似的性能。我们还观察到，当改变晚期融合的配置时（例如，使用较小的视觉编码器和较大的文本解码器~\cref{app:late_vs_early}），也会出现类似的趋势。
+
+
+\begin{figure}[t!]
+    \begin{minipage}[t]{0.48\textwidth}
+        \input{figs/late_vs_early_efficiency}
+    \end{minipage}        
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \input{figs/training_mixtures}
+    \end{minipage}
+\end{figure}
+
+
+
+\cpar{NMMs与LLMs的缩放规律对比。}
+通过将我们NMMs的缩放律系数与报告中的文本专用LLMs（如GPT-3、Chinchilla）的系数进行比较，我们发现它们处于相似的范围内。特别是，在预测计算量与损失的关系时，GPT-3~\citep{brown2020language} 遵循 $L \propto C^{-0.048}$ ，而我们的模型遵循 $L \propto C^{-0.049}$ ，这表明NMMs的表现遵循与LLMs类似的缩放规律。
+同样地，我们在 \cref{eq:scaling_laws} （$\alpha=0.301$ ，$\beta=0.335$ ）中估计的 $\alpha$ 和 $\beta$ 参数值与~\citet{hoffmann2022training} 报告的值（$\alpha=0.339$ ，$\beta=0.285$ ）紧密匹配。
+同样地，我们计算出的 $a=0.526$ 和 $b=0.473$ 值与~\citet{hoffmann2022training} 中的 $a=0.46$ 和 $b=0.54$ 高度一致，进一步支持了这样的观点：对于原生多模态模型，训练词元的数量和模型参数的数量应成比例地缩放。
+然而，由于 $a$ 和 $b$ 的差距比在LLMs中更小，这一原则对NMMs更为适用。此外，由于在我们的情况下 $a=0.526$ 大于 $b=0.473$ ，在给定计算预算的前提下，NMMs的最佳模型大小大于LLMs，而最佳的训练词元数量则小于LLMs。 
+
+
+
+\cpar{为早期融合和晚期融合神经模块化模型（NMMs）计算最优权衡。}  
+虽然晚期融合和早期融合模型在FLOPs增加时以相似的速率减少损失，但我们观察到它们在计算最优模型中有不同的权衡。具体来说，$N_{opt}$ 对于晚期融合模型更大，而$D_{opt}$ 对于早期融合模型更大。这表明，给定一个固定的计算预算，晚期融合模型需要更多的参数，而早期融合模型从更多的训练词元中获益更多。  
+这种趋势也反映在早期融合较低的$\frac{N_{opt}}{D_{opt}} \propto
+C^{0.053}$ 中，与晚期融合的$\frac{N_{opt}}{D_{opt}} \propto
+C^{0.076}$ 相比。如\cref{fig:teaser}~（右图）所示，当扩展FLOPs时，早期融合模型的参数数量显著降低，这对于减少推理成本以及部署后的服务成本至关重要。  
+
+
+\input{tables/scaling_laws_coeffs_datamixture}
+
+\cpar{早期融合训练更高效。}  
+我们比较了晚期融合和早期融合架构的训练效率。如\cref{fig:early_vs_late_efficiency}所示，在相同的计算预算下，早期融合模型消耗更少的内存并且训练得更快。随着计算能力的增加，这一优势变得更加明显，突显了早期融合在训练效率方面的优越性，同时在规模上仍能保持与晚期融合相当的性能。值得注意的是，对于相同的浮点运算（FLOPs），晚期融合模型的参数数量更多，并且有效深度更高（即，除了解码器层外，还包括额外的视觉编码器层），而早期融合模型则较少。
+
+
+
+
+\begin{figure*}[h!]
+    \centering
+    \captionsetup{type=figure}
+    
+    \begin{minipage}[t]{0.55\linewidth}
+        \centering
+        \input{graphs/early_late/pred_loss_vs_loss_early_extrapolation}
+        \caption{\textbf{观测值与预测损失。} 我们可视化了由我们的缩放定律 \cref{eq:scaling_laws} 预测的损失以及每个运行实际达到的损失。我们可以可靠地预测比用于拟合缩放定律的模型更大的模型（8B 参数）的性能。}
+        \label{fig:observed_vs_predicted_loss_extrapolation}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.4\linewidth}
+        \begin{minipage}[t]{\linewidth}
+            \centering
+            \vspace{-5.5cm}
+            \setlength{\tabcolsep}{8pt} %
+            \renewcommand{\arraystretch}{1} %
+            \resizebox{1.0\linewidth}{!}{
+            \begin{tabular}{lccc}
+                Parameter & MSE & R2 & MAE (\%) \\
+                \shline
+                Held-in      & 0.0029  & 0.9807 & 0.8608 \\
+                Held-out     & 0.0004 & 0.9682 & 0.5530 \\
+            \end{tabular}%
+            }
+            \captionof{table}{\textbf{Scaling laws prediction errors.} We report the mean square error, R2 and mean absolute error for the loss prediction for held-in and held-out (8B model) data.}
+            \label{tab:scaling_laws_errors_main}
+        \end{minipage}
+        
+        \begin{minipage}[t]{\linewidth}
+            \centering
+            \vspace{-2.8cm}
+            \setlength{\tabcolsep}{12pt} %
+            \renewcommand{\arraystretch}{1} %
+            \resizebox{\linewidth}{!}{
+            \begin{tabular}{lcc}
+                Parameter & Avg & Std \\
+                \shline
+                $E$      & 1.80922  & 0.33811  \\
+                $\alpha$ & 0.29842  & 0.10101  \\
+                $\beta$  & 0.33209  & 0.02892  \\
+                $a$      & 0.54302  & 0.08813  \\
+                $b$      & 0.48301  & 0.05787  \\
+                $d$      & 0.92375  & 0.23296  \\
+            \end{tabular}%
+            }
+            \captionof{table}{\textbf{Scaling laws sensitivity.} We report the mean and standard deviation after bootstrapping with 100 iterations.}
+            \label{tab:scaling_laws_sensitivity_main}
+        \end{minipage}
+    \end{minipage}
+\end{figure*}
+
+
+    
+
+\subsection{\edit{评估缩放律}}
+\label{sec:scaling_laws_evaluation}
+对于每种模型大小和训练词元数量，我们使用\cref{eq:scaling_laws}中的估计泛函形式计算损失，并将其与实际观察到的损失进行比较。\Cref{fig:observed_vs_predicted_loss_extrapolation} 和 \Cref{tab:scaling_laws_errors_main} 可视化了这些比较，显示我们的估计在较低损失值和较大FLOPs时特别准确。我们还在外推情景中评估了我们的缩放律，预测了超出用于拟合的模型大小之外的表现。值得注意的是，我们的方法合理地估计了8B模型的性能。  
+
+此外，我们使用自举法进行灵敏度分析。具体来说，我们用带有替换的方式采样\( P \)个点（\( P \)是训练模型的总数），并重新估计缩放律系数。这个过程重复100次，我们报告每个系数的均值和标准差。\Cref{tab:scaling_laws_sensitivity_main}显示我们的估计在\(\beta\)上比在\(\alpha\)上更精确，主要是由于用于推导缩放律的不同模型大小数量相对于不同词元计数的数量较少。
+
+
+
+
+
+\subsection{不同数据混合的缩放定律}
+\label{sec:scaling_data_mix}
+我们研究了训练混合物的变化如何影响本地多模态模型的缩放定律。为此，我们研究了四种不同的混合物，反映了社区的通用做法~\citep{laurenccon2024obelics,mckinzie2025mm1,zhang2024mm1_5,lin2024vila},
+其 Image Caption-Interleaved-Text 比例为 \colorbox{blue!10}{45-45-10}（我们的默认设置）、\colorbox{red!10}{30-30-40}、\colorbox{green!10}{40-20-40} 和 \colorbox{orange!10}{20-40-40}。
+对于每种混合物，我们按照\cref{sec:scaling_laws_early}中的设置训练了76个不同的模型，进行了单独的缩放研究。总体上，
+\cref{fig:early_scaleflops_data_mixtures}显示不同的混合物遵循相似的缩放趋势；然而，缩放系数因混合物而异（\cref{tab:scaling_laws_coeffs_data_mixtures}）。有趣的是，
+增加图像标题数据的比例（混合物1和2）会导致较低的$a$ 和较高的$b$，而增加交错和文本数据的比例（混合物3和4）则有相反的效果。
+值得注意的是，图像标题数据包含比文本数据更多的图像标记；因此，增加其比例会增加更多的图像标记，而增加交错和文本数据则会增加文本标记的数量。这表明，当图像标记占主导时，延长训练时间比增加模型大小更快地降低损失。
+我们还发现，在固定模型大小的情况下，增加仅文本和交错数据的比例有利于早期融合\cref{fig:early_vs_late_datatype_interleaved_text_main}。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{原生多模态预训练 \textbf{\vs} 持续训练 LLMs}
+\label{sec:native_vs_continual}
+在本节中，我们将从头开始的训练与从预训练的大型语言模型初始化后的连续训练进行比较。我们从DCLM-1B~\citep{fang2023data}初始化模型，该模型在超过2万亿个词元上进行了训练。
+\Cref{fig:early_vs_early_init_scaledata} 显示，当训练时间更长时，本地多模态模型可以缩小与初始化模型之间的差距。具体而言，在图像描述数据上，模型需要少于1000亿个多模态词元即可达到可比性能。然而，在交错和文本数据上，模型可能需要更长的训练时间——最多达1万亿个词元。
+考虑到预训练的成本，这些结果表明，在多模态基准上实现相同性能时，从头开始训练可能是一种更高效的方法。
+
+\input{figs/early_vs_early_init_scaledata}
+
+
+
+
+\section{\edit{迈向多模态特化}}
+此前，我们证明了在固定的计算预算下，早期融合模型的表现可与晚期融合模型相媲美。然而，多模态数据本质上是异构的，训练一个统一的模型来拟合如此多样化的分布可能是次优的。在这里，我们认为在一个统一的架构中需要多模态特化。理想情况下，该模型应隐式地适应每种模态，例如，通过学习模态特定的权重或专门的专家。MoE是这种方法的一个有力候选者，在大型语言模型（LLMs）中已证明其有效性。在本节中，我们将强调稀疏早期融合模型相较于密集模型的优势。
+
+
+
+\cpar{设置。} 我们的稀疏模型基于~\citet{gale2023megablocks} 提供的无丢弃 MoE 实现，消除了训练过程中因专家容量约束导致的词元丢弃问题。我们采用 top-$k$ 专家选择路由机制，其中每个词元在其 $E$ 个可用专家中选择其 top-$k$ 个专家。具体来说，我们将 $k=1$ 和 $E=8$ 设置为该配置有效工作。  
+此外，我们引入了一个辅助负载平衡损失~\citep{shazeer2017outrageously}，权重为 0.01，以确保专家利用率均衡。遵循~\citet{abnar2025parameters}，我们将训练 FLOPs 计算为 $6ND$，其中 $N$ 表示激活参数的数量。  
+
+
+
+\subsection{稀疏与稠密神经网络模型在浮点运算次数缩放时的比较}  
+我们将稀疏MoE模型与它们的稠密版本进行比较，通过训练具有不同数量的激活参数和不同数量的训练词元的模型。\cref{fig:dense_vs_moe_scaledata}表明，在相同的推理代价（或相同数量的激活参数）下，MoE显著优于稠密模型。  
+有趣的是，这种性能差距在较小的模型尺寸下更为明显。这表明MoE使模型能够更有效地处理异构数据并在不同的模态上实现专业化。然而，当稠密模型变得足够大时，两种架构之间的差距逐渐缩小。
+
+
+\vspace{15pt}
+\subsection{稀疏早期融合模型的缩放定律}
+我们对不同规模的模型（从300M到3.4B个活跃参数）进行训练，处理的词元数量范围从250M到600B，并在\cref{fig:early_scaleflops_moe_avg}报告最终的损失。我们将最低损失作为计算量（FLOPs）函数的凸包拟合为幂律。有趣的是，指数（$-0.047$）接近于稠密NMMs的（$-0.049$），表明两种架构具有相似的缩放特性。然而，与稠密模型（$29.574$）相比，MoEs（$26.287$）的乘法常数更小，显示出更低的损失。此外，与稠密模型相比，MoEs需要更长的训练时间才能达到饱和（详见\cref{app:scaling_laws}）。\edit{我们还通过将$N$视为活跃参数的数量来预测\cref{eq:scaling_laws}的系数。\Cref{tab:early_vs_late_coeffs}显示显著更高的$\alpha$，相比稠密模型。有趣的是，$b$显著高于$a$，揭示了当训练稀疏NMMs时，训练词元应以比参数数量更高的速率进行缩放。我们还实验了一种考虑稀疏性~\citep{abnar2025parameters}的缩放法则，并得出了类似的结论\Cref{app:scaling_laws_moes}。}
+
+
+\subsection{模态感知 \vs 模态无关路由}
+
+另一种MoE的替代方法是模态感知路由，其中多模态词元根据其模态分配给专家，类似于先前的工作~\citep{bao2021vlmo,wang2022image}。我们以FFN的形式训练具有不同图像和文本专家的模型，其中图像词元仅由图像FFN处理，文本词元仅由文本FFN处理。与模态感知路由相比，如~\cref{fig:hard_vs_moe_scaledata}所示，MoE在图像标题和交错数据上表现出显著更好的性能。
+
+
+\begin{figure}[t!]
+    \begin{minipage}[t]{0.58\textwidth}
+        \input{figs/dense_vs_moe_scaledata}            
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.38\textwidth}
+        \input{figs/scaling_laws_moes}
+    \end{minipage}
+\end{figure}
+
+
+\subsection{专家特化与共享的出现}
+\label{sec:specialization}
+我们研究了MoE架构中的多模态特化。在~\cref{fig:tokens_assignment}中，我们将文本和图像词元的归一化数量分配给每层中的每个专家进行可视化。为了量化这种特化，我们计算了一个特化得分，定义为在一层内所有专家的平均值，其中$1-H(p)$ 是每个专家的文本/图像词元分布的二进制熵$H$ 的函数。我们在~\cref{fig:tokens_specialization} 中绘制了这个特化得分。更高的特化得分表明专家倾向于专注于文本或图像词元，而较低的得分则表明行为共享。这些可视化清楚地提供了模态特定专家的证据，特别是在早期层中。此外，随着层数增加，特化得分会下降，但在最后几层又会上升。这表明早期和最后的层表现出比中间层更高的模态特化。这种行为是直观的，因为中间层预计会持有可能跨模态泛化的高级特征，\edit{与\citep{shukor2024implicit} 显示的跨层模态间对齐增加的结果一致}。我们在无模态意识的MoE中观察到专家特化和跨模态共享的出现，这表明它可能是优于模态感知稀疏性的方法。这里显示的所有数据均来自一个具有10亿活跃参数的早期融合MoE模型，在300B个令牌上训练。 
+
+
+
+
+
+\input{tables/sft_results}
+
+\vspace{-1cm}
+\section{使用SFT在下游任务上进行评估} 
+遵循缩放定律的先前工作，我们主要依赖验证损失。然而，我们通常发现这种评估与下游任务的表现密切相关。为了验证这一点，我们在LLaVA混合物上进行了一个多模态指令调整阶段（SFT）\citep{liu2024improvedllava}，并在几个VQA和字幕任务中报告了准确率和CIDEr分数。
+\cref{tab:sft} 确认了不同模型配置的排名。具体来说，早期融合的表现优于晚期融合，MoE的表现优于稠密模型。然而，由于这些模型相对较小（1.5B规模），从头开始训练，并在一个小数据集上微调，总体分数低于当前的最先进水平。进一步的实现细节可以在~\Cref{app:implementation_details} 中找到。  
+
+
+\begin{figure}[t!]
+    \begin{minipage}[t]{0.58\textwidth}
+        \input{figs/soft_vs_hard_routing}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.38\textwidth}
+        \input{figs/moe_entropy}
+    \end{minipage}
+    \vspace{3mm}
+\end{figure}
+

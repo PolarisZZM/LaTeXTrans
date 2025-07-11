@@ -1,0 +1,29 @@
+\begin{table}[h!]
+    \begin{minipage}[b]{1\linewidth}
+        \centering
+        \setlength{\tabcolsep}{24pt}
+        \renewcommand{\arraystretch}{1}
+        \resizebox{1\linewidth}{!}{
+        \begin{tabular}{ccc}
+             \grayrow $L(N, D) = E+\frac{A}{N^{\alpha}}+\frac{B}{D^{\beta}}$ &vs&  $L(N, D, S) = \frac{A}{N^\alpha} + \frac{B}{D^\beta} + \frac{C}{(1 - S)^\lambda} + \frac{d}{(1 - S)^\delta N^\gamma} + E$ \\
+        \end{tabular}
+        }
+      \label{tab:power_laws}
+    \end{minipage}
+    \begin{minipage}[b]{1\linewidth}
+        \centering
+        \setlength{\tabcolsep}{8pt}
+        \renewcommand{\arraystretch}{1.1}
+        \resizebox{1\linewidth}{!}{
+        \begin{tabular}{lcccccccccc}
+            Model & E & A & B & $\alpha$ & $\beta$ & $\lambda$ & $\delta$  & $\gamma$ & C & d  \\ %
+            \shline
+            
+            $L(N, D)$ \Cref{eq:scaling_laws} & 2.158  & 381773 & 4659 & 0.710 & 0.372 & --  & -- & -- & -- & -- \\%& 46.19\\
+            $L(N, D, S)$ \citep{abnar2025parameters} &  1.0788 & 1 & 4660 & 0.5890 & 0.3720 & 0.2 & 0.2 & 0.70956 & 1.0788 & 381475
+        \end{tabular}%
+        } 
+        \caption{\textbf{Scaling laws for sparse native multimodal models}. Higher exponent for active parameters.}
+        \label{tab:moes_coeffs}
+    \end{minipage}    
+\end{table}

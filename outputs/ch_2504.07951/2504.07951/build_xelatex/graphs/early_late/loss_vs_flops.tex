@@ -1,0 +1,39 @@
+\begin{tikzpicture}[
+    spy using outlines={rectangle, magnification=2, size=0.5in, connect spies}
+]
+    \begin{axis}[
+        legend pos=south west,
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xmode=log,
+        log basis x=10,
+        height=2.5in,
+        width=1.1\linewidth,
+        xtick distance=1e02,
+        ylabel={\footnotesize{Validation Loss ($L$)}},
+        ytick distance=0.5,
+        yticklabel style={font=\footnotesize, /pgf/number format/fixed, /pgf/number format/precision=2},
+        xlabel={\footnotesize{FLOPs ($C$)}},
+        xticklabel style={font=\footnotesize},
+        legend style={cells={align=left}, font=\footnotesize, fill opacity=0.7},
+        mark options={solid},
+    ]
+
+\addplot[line width=1.5pt, dashdotdotted, color=EarlyGradStart!50!EarlyGradEnd, samples=50, domain=5e18:5e23] {29.57440597247478*x^-0.04919003913934263};
+    \addlegendentry{\scalebox{0.9}{Early: $L \propto C^{-0.0492}$}};
+    \addplot[line width=1.5pt, dashdotdotted, color=LateGradStart!50!LateGradEnd, samples=50, domain=5e18:5e23] {30.038509408784137*x^-0.049424801983112776};
+    \addlegendentry{\scalebox{0.9}{Late: $L \propto C^{-0.0494}$}};
+
+    \addplot[line width=1.5pt, dashdotdotted, color=MOEGradStart!50!MOEGradEnd, samples=50, domain=5e18:5e23] {26.287135104499598*x^-0.04742807363789748};
+    \addlegendentry{\scalebox{0.9}{MoE: $L \propto C^{-0.0474}$}};
+
+    \begin{scope}
+        \spy on (1.5,3.2) in node [right] at (3.8,3.5);
+    \end{scope}
+
+    \end{axis}
+\end{tikzpicture}

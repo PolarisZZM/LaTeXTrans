@@ -1,0 +1,132 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xmode=log, %
+        log basis x=10, %
+        ymode=log, %
+        log basis y=10, %
+        xtick={
+            1E+19,
+            1E+20,
+            1E+21,
+            1E+22
+        },
+        ytick={
+            1E+08,
+            1E+09,
+            1E+10
+        },
+        yticklabels={
+            \scalebox{0.8}{100M},
+            \scalebox{0.8}{1B},
+            \scalebox{0.8}{10B},
+        },
+        xmin=2E+19,
+        xmax=2E+22,
+        height=1.5in,
+        width=1\linewidth,
+        ylabel style={align=center, font=\scriptsize},
+        xlabel style={font=\scriptsize},
+        ylabel={\scriptsize{$N$}},
+        xlabel={\scriptsize{$C$}},
+        yticklabel style={font=\scriptsize},
+        xticklabel style={font=\scriptsize},
+        legend style={cells={align=left}, font=\scriptsize, fill opacity=0.7, fill=none,at={(0.05,0.95)}, anchor=west, draw=none}, %
+        legend cell align={left},
+        mark options={solid},
+    ]
+
+
+    \addplot[color=black, thick, samples=50, domain=5e18:10e21] {0.014865648561846032*x^(0.5261677592751576)};
+    \addlegendentry{$N \propto C^{0.526}$};
+
+    \addplot[legend early_noconnect style] plot coordinates {
+        (4.13E+19, 3.44E+08)
+        (6.19E+19, 4.13E+08)
+        (8.25E+19, 4.58E+08)
+        (1.65E+20, 6.11E+08)
+        (3.30E+20, 9.17E+08)
+        (4.95E+20, 1.18E+09)
+        (6.60E+20, 1.38E+09)
+        (3.48E+19, 2.90E+08)
+        (6.96E+19, 3.87E+08)
+        (1.04E+20, 4.95E+08)
+        (1.39E+20, 5.79E+08)
+        (2.78E+20, 8.42E+08)
+        (5.57E+20, 1.24E+09)
+        (8.35E+20, 1.55E+09)
+        (1.11E+21, 1.76E+09)
+        (1.39E+21, 2.01E+09)
+        (1.67E+21, 2.14E+09)
+        (4.19E+19, 3.49E+08)
+        (6.99E+19, 3.88E+08)
+        (1.40E+20, 5.83E+08)
+        (2.10E+20, 7.00E+08)
+        (2.80E+20, 8.48E+08)
+        (5.59E+20, 1.24E+09)
+        (1.12E+21, 1.78E+09)
+        (1.68E+21, 2.15E+09)
+        (2.24E+21, 2.57E+09)
+        (2.80E+21, 2.83E+09)
+        (3.36E+21, 3.11E+09)
+        (4.88E+19, 3.25E+08)
+        (7.32E+19, 4.07E+08)
+        (1.22E+20, 5.81E+08)
+        (2.44E+20, 8.13E+08)
+        (3.66E+20, 1.02E+09)
+        (4.88E+20, 1.16E+09)
+        (9.76E+20, 1.63E+09)
+        (1.95E+21, 2.41E+09)
+        (2.93E+21, 2.96E+09)
+        (3.90E+21, 3.42E+09)
+        (4.88E+21, 3.87E+09)
+        (5.86E+21, 4.25E+09)
+        (3.42E+19, 2.85E+08)
+        (6.84E+19, 3.80E+08)
+        (1.03E+20, 4.90E+08)
+        (1.71E+20, 6.33E+08)
+        (3.42E+20, 9.50E+08)
+        (5.13E+20, 1.14E+09)
+        (6.84E+20, 1.34E+09)
+        (1.37E+21, 1.99E+09)
+        (2.74E+21, 2.85E+09)
+        (4.10E+21, 3.50E+09)
+        (5.47E+21, 4.05E+09)
+        (6.84E+21, 4.56E+09)
+        (8.21E+21, 5.07E+09)
+        (5.03E+19, 3.35E+08)
+        (1.01E+20, 4.81E+08)
+        (1.51E+20, 6.29E+08)
+        (2.52E+20, 8.40E+08)
+        (5.03E+20, 1.20E+09)
+        (7.55E+20, 1.40E+09)
+        (1.01E+21, 1.68E+09)
+        (2.01E+21, 2.39E+09)
+        (4.02E+21, 3.44E+09)
+        (6.04E+21, 4.28E+09)
+        (8.05E+21, 4.97E+09)
+        (1.01E+22, 5.61E+09)
+        (1.21E+22, 6.21E+09)
+    };
+
+
+    \end{axis}
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+

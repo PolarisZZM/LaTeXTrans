@@ -1,0 +1,46 @@
+
+\begin{tikzpicture}
+    \begin{axis}[
+        ybar, %
+        bar width=16pt, %
+        enlarge x limits=0.4, %
+        legend pos=north east,
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        axis x line*=bottom,
+        axis y line*=left,
+        xtick={
+            2,
+            4,
+            6
+        },
+        height=1.7in,
+        width=1.2\linewidth,
+        ylabel style={align=center, font=\footnotesize, yshift=-1ex},
+        xlabel style={font=\footnotesize},
+        title={\footnotesize{Relative Train time}},
+        ylabel={\footnotesize{Hours}},
+        xlabel={\footnotesize{FLOPs ($\times10^{21}$)}},
+        yticklabel style={font=\footnotesize},
+        xticklabel style={font=\footnotesize},
+        legend style={cells={align=left}, font=\footnotesize, fill opacity=0.7, at={(0.6, 0.25)}},
+        legend cell align={left},
+        ymin=-160,               %
+        ymax=32,
+        extra y ticks={1},
+        extra y tick labels={},
+        extra y tick style={grid=major, major grid style={line width=2pt, draw=LateColor, dashed}},
+    ]
+
+    \addplot[legend early bars style] coordinates {
+        (2, -26)
+        (4, -106)
+        (6, -123)
+    };
+    \addlegendentry{Early}
+
+    \node[anchor=west, font=\footnotesize, text=LateColor] at (axis cs:0.1,13) {Late};
+
+    \end{axis}
+\end{tikzpicture}

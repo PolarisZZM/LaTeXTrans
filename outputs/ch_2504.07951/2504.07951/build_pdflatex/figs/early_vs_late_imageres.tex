@@ -1,0 +1,13 @@
+\begin{figure}[t!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.48\linewidth}
+        \input{graphs/early_late/early_vs_late_imageres_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\linewidth}
+        \input{graphs/early_late/early_vs_late_imageres_obelics}
+    \end{subfigure}
+    \vspace{-7pt}
+    \caption{\textbf{早期融合与晚期融合：使用不同图像分辨率进行训练（isoFLOPs）。} 在相同的训练FLOPs下，我们在训练过程中变化图像分辨率（从而改变图像标记的数量），并报告最终的训练损失。增加分辨率会影响文本和交错文档的性能，而有利于图像描述。文本和交错数据上的差距几乎保持不变，而在图像描述任务中，早期融合略微增加了这一差距。}
+    \label{fig:early_vs_late_imageres}
+\end{figure}

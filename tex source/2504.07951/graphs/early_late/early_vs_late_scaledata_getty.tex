@@ -1,0 +1,123 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=north east,
+        grid=major, %
+        grid style={line width=.1pt, draw=gray!30}, %
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xtick={
+        0.1, 
+        0.2, 
+        0.3,
+        0.4
+        },
+        xticklabels={
+        \texttt{100B}, 
+        \texttt{200B}, 
+        \texttt{300B},
+        \texttt{400B}
+        },
+        xmin=0.1,
+        xmax=0.4,
+        height=1.7in,
+        width=1.05\linewidth,
+        ylabel style={align=center, font=\small},
+        xlabel style={font=\footnotesize},
+        ylabel={\footnotesize{Validation Loss}},
+        xlabel={\footnotesize{Tokens seen}},
+        title=\footnotesize{Image-Caption},
+        ytick distance=0.2,
+        yticklabel style={font=\scriptsize, /pgf/number format/fixed, /pgf/number format/precision=1},
+        xticklabel style={font=\scriptsize},
+        mark options={solid},
+        legend style={cells={align=left}, font=\footnotesize, text=black}, %
+        legend columns=6, %
+        legend cell align={left},
+        legend to name=sharedlegend,
+    ]
+
+
+
+
+    
+
+
+    
+
+    
+    
+
+
+
+
+
+\addplot[legend late_0_2b style] plot coordinates {
+    (0.05,2.734)
+    (0.1, 2.629)
+    (0.2, 2.541)
+    (0.3, 2.495)
+    (0.4, 2.467)
+
+    };
+    \addlegendentry{Late-1B}
+
+
+
+\addplot[LateGradStart!30!LateGradEnd, thick, solid, mark=*, mark size=1.5pt] plot coordinates {
+    (0.05, 2.582)
+        (0.1, 2.466)
+        (0.2, 2.367)
+        (0.3, 2.319)
+        (0.4, 2.287)
+        
+    };
+    \addlegendentry{Late-2.4B}
+
+    \addplot[legend late_2_2b style] plot coordinates {
+        (0.05, 2.54)
+        (0.1, 2.416)
+        (0.2, 2.319)
+        (0.3, 2.27)
+        (0.4, 2.239)
+    };
+    \addlegendentry{Late-3.7B}
+
+
+
+
+
+
+
+    \addplot[legend early_0_2b style] plot coordinates {
+    (0.05, 2.716)
+    (0.1, 2.598)
+    (0.2, 2.495)
+    (0.3, 2.448)
+    (0.4, 2.425)
+    };
+    \addlegendentry{Early-0.9B}
+
+        
+    \addplot[EarlyGradStart!25!EarlyGradEnd, thick, solid, mark=*, mark size=1.5pt] plot coordinates {
+        (0.05, 2.576)
+        (0.1, 2.455)
+        (0.2, 2.352)
+        (0.3, 2.306)
+        (0.4, 2.279)
+        
+    };
+    \addlegendentry{Early-2.2B}
+
+    \addplot[legend early_2_2b style] plot coordinates {
+        (0.05, 2.543)
+        (0.1, 2.416)
+        (0.2, 2.307)
+        (0.3, 2.263)
+        (0.4, 2.232)       
+    };
+    \addlegendentry{Early-3.3B}
+
+    \end{axis}
+\end{tikzpicture}

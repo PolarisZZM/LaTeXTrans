@@ -1,0 +1,113 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=north east,
+        grid=major,
+        grid style={line width=.1pt, draw=gray!30},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xtick={
+        0.1,
+        0.2,
+        0.3,
+        0.4
+        },
+        xticklabels={
+        \texttt{100B},
+        \texttt{200B},
+        \texttt{300B},
+        \texttt{400B}
+        },
+        xmin=0.1,
+        xmax=0.4,
+        height=1.7in,
+        width=1.1\linewidth,
+        ylabel style={align=center, font=\small},
+        xlabel style={font=\footnotesize},
+        xlabel={\footnotesize{Tokens seen}},
+        title={\footnotesize{Interleaved}},
+        ytick distance=0.2,
+        yticklabel style={font=\scriptsize, /pgf/number format/fixed, /pgf/number format/precision=1},
+        xticklabel style={font=\scriptsize},
+        mark options={solid},
+        legend style={cells={align=left}, font=\scriptsize, text=black},
+        legend columns=4,
+        legend cell align={left},
+        legend to name=sharedlegend,
+    ]
+
+\addplot[legend early_0_2b style,mark=pentagon, mark size=2pt] plot coordinates {
+        (0.05, 3.094)
+        (0.1, 3.022)
+        (0.2, 2.967)
+        (0.3, 2.939)
+        (0.4, 2.921)
+    };
+    \addlegendentry{\scalebox{0.85}{Dense-275M}}
+
+    \addplot[legend early_0_4b style,mark=square, mark size=2pt] plot coordinates {
+        (0.05, 2.998)
+        (0.1, 2.927)
+        (0.2, 2.866)
+        (0.3, 2.836)
+        (0.4, 2.817)
+    };
+    \addlegendentry{\scalebox{0.85}{Dense-464M}}
+
+\addplot[legend early_0_9b style,mark=o, mark size=2pt] plot coordinates {
+        (0.05, 2.885)
+        (0.1, 2.795)
+        (0.2, 2.726)
+        (0.3, 2.691)
+        (0.4, 2.669)
+    };
+    \addlegendentry{\scalebox{0.85}{Dense-932M}}
+
+\addplot[legend early style,mark=diamond, mark size=2pt] plot coordinates {
+        (0.05, 2.811)
+        (0.1, 2.72)
+        (0.2, 2.648)
+        (0.3, 2.612)
+        (0.4, 2.59)
+    };
+    \addlegendentry{\scalebox{0.85}{Dense-1.6B}}
+
+\addplot[legend moe_0_2b style,mark=pentagon, mark size=2pt] plot coordinates {
+        (0.05, 2.981)
+        (0.1, 2.901)
+        (0.2, 2.839)
+        (0.3, 2.806)
+        (0.4, 2.783)
+    };
+    \addlegendentry{\scalebox{0.85}{MoE-275M}}
+
+\addplot[legend moe_0_4b style,mark=square, mark size=2pt] plot coordinates {
+        (0.05, 2.895)
+        (0.1, 2.814)
+        (0.2, 2.75)
+        (0.3, 2.718)
+        (0.4, 2.693)
+    };
+    \addlegendentry{\scalebox{0.85}{MoE-464M}}
+
+    \addplot[legend moe_0_9b style,mark=o, mark size=2pt] plot coordinates {
+        (0.05, 2.812)
+        (0.1, 2.714)
+        (0.2, 2.636)
+        (0.3, 2.597)
+        (0.4, 2.559)
+    };
+    \addlegendentry{\scalebox{0.85}{MoE-932M}}
+
+    \addplot[legend moe style,mark=diamond, mark size=2pt] plot coordinates {
+        (0.05, 2.77)
+        (0.1, 2.667)
+        (0.2, 2.583)
+        (0.3, 2.541)
+        (0.4, 2.519)
+    };
+    \addlegendentry{\scalebox{0.85}{MoE-1.63B}}
+
+\end{axis}
+\end{tikzpicture}

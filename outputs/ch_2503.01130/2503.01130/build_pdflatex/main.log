@@ -1,0 +1,1730 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.9)  11 JUL 2025 15:23
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**./main.tex
+(main.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-06-09>
+(D:\apps\miktex\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\apps\miktex\tex/latex/base\size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+)
+(D:\apps\miktex\tex/latex/cjk\CJKutf8.sty
+Package: CJKutf8 2021/10/16 4.8.5
+
+(D:\apps\miktex\tex/generic/iftex\ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+
+(D:\apps\miktex\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+(D:\apps\miktex\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(D:\apps\miktex\tex/latex/cjk\CJK.sty
+Package: CJK 2021/10/16 4.8.5
+
+(D:\apps\miktex\tex/latex/cjk/mule\MULEenc.sty
+Package: MULEenc 2021/10/16 4.8.5
+)
+(D:\apps\miktex\tex/latex/cjk\CJK.enc
+File: CJK.enc 2021/10/16 4.8.5
+Now handling font encoding C00 ...
+... no UTF-8 mapping file for font encoding C00
+Now handling font encoding C05 ...
+... no UTF-8 mapping file for font encoding C05
+Now handling font encoding C09 ...
+... no UTF-8 mapping file for font encoding C09
+Now handling font encoding C10 ...
+... no UTF-8 mapping file for font encoding C10
+Now handling font encoding C20 ...
+... no UTF-8 mapping file for font encoding C20
+Now handling font encoding C19 ...
+... no UTF-8 mapping file for font encoding C19
+Now handling font encoding C40 ...
+... no UTF-8 mapping file for font encoding C40
+Now handling font encoding C42 ...
+... no UTF-8 mapping file for font encoding C42
+Now handling font encoding C43 ...
+... no UTF-8 mapping file for font encoding C43
+Now handling font encoding C50 ...
+... no UTF-8 mapping file for font encoding C50
+Now handling font encoding C52 ...
+... no UTF-8 mapping file for font encoding C52
+Now handling font encoding C49 ...
+... no UTF-8 mapping file for font encoding C49
+Now handling font encoding C60 ...
+... no UTF-8 mapping file for font encoding C60
+Now handling font encoding C61 ...
+... no UTF-8 mapping file for font encoding C61
+Now handling font encoding C63 ...
+... no UTF-8 mapping file for font encoding C63
+Now handling font encoding C64 ...
+... no UTF-8 mapping file for font encoding C64
+Now handling font encoding C65 ...
+... no UTF-8 mapping file for font encoding C65
+Now handling font encoding C70 ...
+... no UTF-8 mapping file for font encoding C70
+Now handling font encoding C31 ...
+... no UTF-8 mapping file for font encoding C31
+Now handling font encoding C32 ...
+... no UTF-8 mapping file for font encoding C32
+Now handling font encoding C33 ...
+... no UTF-8 mapping file for font encoding C33
+Now handling font encoding C34 ...
+... no UTF-8 mapping file for font encoding C34
+Now handling font encoding C35 ...
+... no UTF-8 mapping file for font encoding C35
+Now handling font encoding C36 ...
+... no UTF-8 mapping file for font encoding C36
+Now handling font encoding C37 ...
+... no UTF-8 mapping file for font encoding C37
+Now handling font encoding C80 ...
+... no UTF-8 mapping file for font encoding C80
+Now handling font encoding C81 ...
+... no UTF-8 mapping file for font encoding C81
+Now handling font encoding C01 ...
+... no UTF-8 mapping file for font encoding C01
+Now handling font encoding C11 ...
+... no UTF-8 mapping file for font encoding C11
+Now handling font encoding C21 ...
+... no UTF-8 mapping file for font encoding C21
+Now handling font encoding C41 ...
+... no UTF-8 mapping file for font encoding C41
+Now handling font encoding C62 ...
+... no UTF-8 mapping file for font encoding C62
+)
+\CJK@indent=\box53
+)
+(D:\apps\miktex\tex/latex/base\fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+)) (cvpr.sty
+Package: cvpr 2025 LaTeX class for IEEE CVPR
+
+(D:\apps\miktex\tex/latex/psnfss\times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+)
+(D:\apps\miktex\tex/latex/tools\xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(D:\apps\miktex\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(D:\apps\miktex\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(D:\apps\miktex\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+)
+(D:\apps\miktex\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(D:\apps\miktex\tex/latex/graphics\dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)
+(D:\apps\miktex\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+
+(D:\apps\miktex\tex/latex/tools\array.sty
+Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+\col@sep=\dimen149
+\ar@mcellbox=\box54
+\extrarowheight=\dimen150
+\NC@list=\toks19
+\extratabsurround=\skip51
+\backup@length=\skip52
+\ar@cellbox=\box55
+)
+\everycr=\toks20
+\minrowclearance=\skip53
+\rownum=\count283
+)
+(D:\apps\miktex\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\apps\miktex\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(D:\apps\miktex\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\apps\miktex\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(D:\apps\miktex\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen151
+\Gin@req@width=\dimen152
+)
+(D:\apps\miktex\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/06/16 v2.17y AMS math features
+\@mathmargin=\skip54
+
+For additional information on amsmath, use the `?' option.
+(D:\apps\miktex\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(D:\apps\miktex\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen153
+))
+(D:\apps\miktex\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen154
+)
+(D:\apps\miktex\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count284
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count285
+\leftroot@=\count286
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count287
+\DOTSCASE@=\count288
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen155
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count289
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count290
+\dotsspace@=\muskip17
+\c@parentequation=\count291
+\dspbrk@lvl=\count292
+\tag@help=\toks23
+\row@=\count293
+\column@=\count294
+\maxfields@=\count295
+\andhelp@=\toks24
+\eqnshift@=\dimen156
+\alignsep@=\dimen157
+\tagshift@=\dimen158
+\tagwidth@=\dimen159
+\totwidth@=\dimen160
+\lineht@=\dimen161
+\@envbody=\toks25
+\multlinegap=\skip55
+\multlinetaggap=\skip56
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2949.
+LaTeX Info: Redefining \] on input line 2950.
+)
+(D:\apps\miktex\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(D:\apps\miktex\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(D:\apps\miktex\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen162
+\lightrulewidth=\dimen163
+\cmidrulewidth=\dimen164
+\belowrulesep=\dimen165
+\belowbottomsep=\dimen166
+\aboverulesep=\dimen167
+\abovetopsep=\dimen168
+\cmidrulesep=\dimen169
+\cmidrulekern=\dimen170
+\defaultaddspace=\dimen171
+\@cmidla=\count296
+\@cmidlb=\count297
+\@aboverulesep=\dimen172
+\@belowrulesep=\dimen173
+\@thisruleclass=\count298
+\@lastruleclass=\count299
+\@thisrulewidth=\dimen174
+)
+(D:\apps\miktex\tex/latex/natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip57
+\bibsep=\skip58
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count300
+)
+(D:\apps\miktex\tex/latex/silence\silence.sty
+Package: silence 2012/07/02 v1.5b Selective filtering of warnings and error mes
+sages
+\sl@Save=\count301
+\sl@StateNumber=\count302
+\sl@MessageCount=\count303
+\sl@Casualties=\count304
+\sl@Filter=\toks27
+\sl@Message=\toks28
+\sl@UnexpandedMessage=\toks29
+\sl@Mess@ge=\toks30
+\sl@WarningCount=\count305
+\sl@WarningNumber=\count306
+\sl@WarningCasualties=\count307
+\sl@TempBOW=\toks31
+\sl@BankOfWarnings=\toks32
+LaTeX Info: Redefining \GenericWarning on input line 433.
+\sl@ErrorCount=\count308
+\sl@ErrorNumber=\count309
+\sl@ErrorCasualties=\count310
+\sl@TempBOE=\toks33
+\sl@BankOfErrors=\toks34
+LaTeX Info: Redefining \GenericError on input line 601.
+)
+(D:\apps\miktex\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count311
+)
+(D:\apps\miktex\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(D:\apps\miktex\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen175
+\captionmargin=\dimen176
+\caption@leftmargin=\dimen177
+\caption@rightmargin=\dimen178
+\caption@width=\dimen179
+\caption@indent=\dimen180
+\caption@parindent=\dimen181
+\caption@hangindent=\dimen182
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count312
+\c@continuedfloat=\count313
+)
+(D:\apps\miktex\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count314
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count315
+)
+(D:\apps\miktex\tex/latex/url\url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+CVPR 8.5 x 11-Inch Proceedings Style `cvpr.sty'.
+(D:\apps\miktex\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip59
+\enit@outerparindent=\dimen183
+\enit@toks=\toks35
+\enit@inbox=\box58
+\enit@count@id=\count316
+\enitdp@description=\count317
+))
+(D:\apps\miktex\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip60
+\multirow@cntb=\count318
+\multirow@dima=\skip61
+\bigstrutjot=\dimen184
+)
+(D:\apps\miktex\tex/latex/arydshln\arydshln.sty
+Package: arydshln 2019/02/21 v1.76 
+\dashlinedash=\dimen185
+\dashlinegap=\dimen186
+\adl@box=\box59
+\adl@height=\dimen187
+\adl@heightsave=\dimen188
+\adl@depth=\dimen189
+\adl@depthsave=\dimen190
+\adl@finaldepth=\dimen191
+\adl@columns=\count319
+\adl@ncol=\count320
+\adl@currentcolumn=\count321
+\adl@currentcolumnsave=\count322
+\adl@totalheight=\count323
+\adl@totalheightsave=\count324
+\adl@dash=\count325
+\adl@gap=\count326
+\adl@cla=\count327
+\adl@clb=\count328
+\adl@everyvbox=\toks36
+\adl@LTpagetotal=\dimen192
+)
+==> First Aid for arydshln.sty applied!
+(D:\apps\miktex\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2025-06-21 v7.01n Hypertext links for LaTeX
+
+(D:\apps\miktex\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(D:\apps\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(D:\apps\miktex\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(D:\apps\miktex\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(D:\apps\miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(D:\apps\miktex\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(D:\apps\miktex\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(D:\apps\miktex\tex/latex/hyperref\nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+
+(D:\apps\miktex\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(D:\apps\miktex\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(D:\apps\miktex\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count329
+)
+(D:\apps\miktex\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen193
+\Hy@linkcounter=\count330
+\Hy@pagecounter=\count331
+
+(D:\apps\miktex\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2025-06-21 v7.01n Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(D:\apps\miktex\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count332
+
+(D:\apps\miktex\tex/latex/hyperref\puenc.def
+File: puenc.def 2025-06-21 v7.01n Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 4052.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4052.
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing ON on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4448.
+
+(D:\apps\miktex\tex/latex/hyperref\backref.sty
+Package: backref 2025-06-21 v1.45 Bibliographical back referencing
+
+(D:\apps\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(D:\apps\miktex\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+
+(D:\apps\miktex\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+))
+\c@Hy@tempcnt=\count333
+LaTeX Info: Redefining \url on input line 4787.
+\XeTeXLinkMargin=\dimen194
+
+(D:\apps\miktex\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+)
+\Fld@menulength=\count334
+\Field@Width=\dimen195
+\Fld@charsize=\dimen196
+Package hyperref Info: Hyper figures OFF on input line 6066.
+Package hyperref Info: Link nesting OFF on input line 6071.
+Package hyperref Info: Hyper index ON on input line 6074.
+Package hyperref Info: backreferencing ON on input line 6079.
+Package hyperref Info: Link coloring ON on input line 6084.
+Package hyperref Info: Link coloring with OCG OFF on input line 6091.
+Package hyperref Info: PDF/A mode OFF on input line 6096.
+\Hy@abspage=\count335
+\c@Item=\count336
+\c@Hfootnote=\count337
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(D:\apps\miktex\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2025-06-21 v7.01n Hyperref driver for pdfTeX
+\Fld@listcount=\count338
+\c@bookmark@seq@number=\count339
+\Hy@SectionHShift=\skip62
+)
+(D:\apps\miktex\tex/latex/cleveref\cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: always capitalise cross-reference names on input line 78
+30.
+Package cleveref Info: always capitalise cross-reference names on input line 78
+52.
+)
+==> First Aid for cleveref.sty applied!
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
+8.
+(D:\apps\miktex\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(D:\apps\miktex\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count340
+) (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+
+(D:\apps\miktex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count341
+\scratchdimen=\dimen197
+\scratchbox=\box60
+\nofMPsegments=\count342
+\nofMParguments=\count343
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count344
+\MPscratchDim=\dimen198
+\MPnumerator=\count345
+\makeMPintoPDFobject=\count346
+\everyMPtoPDFconversion=\toks38
+) (D:\apps\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(D:\apps\miktex\tex/latex/grfext\grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(D:\apps\miktex\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+ABD: EveryShipout initializing macros
+Package backref Info: ** backref set up for natbib ** on input line 38.
+Package hyperref Info: Link coloring ON on input line 38.
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+
+(D:\apps\miktex\tex/latex/cjk/UTF8\UTF8.bdg
+File: UTF8.bdg 2021/10/16 4.8.5
+)
+(D:\apps\miktex\tex/latex/cjk/UTF8\UTF8.enc
+File: UTF8.enc 2021/10/16 4.8.5
+)
+(D:\apps\miktex\tex/latex/cjk/UTF8\UTF8.chr
+File: UTF8.chr 2021/10/16 4.8.5
+)
+LaTeX Font Info:    Trying to load font information for C70+gbsn on input line 
+41.
+
+(D:\apps\miktex\tex/latex/cjk/UTF8\c70gbsn.fd
+File: c70gbsn.fd 2021/10/16 4.8.5
+)
+(D:\apps\miktex\tex/latex/cjk/UTF8\c70gbsn.fdx
+File: c70gbsn.fdx 2021/10/16 4.8.5
+)
+
+LaTeX Font Warning: Font shape `C70/gbsn/b/n' undefined
+(Font)              using `C70/gbsn/m/n' instead on input line 41.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
+
+(D:\apps\miktex\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
+
+
+(D:\apps\miktex\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 4
+1.
+
+(D:\apps\miktex\tex/latex/psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 4
+1.
+
+(D:\apps\miktex\tex/latex/psnfss\omspcr.fd
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
+ (sec/0_abstract.tex
+
+LaTeX Font Warning: Font shape `C70/gbsn/m/it' undefined
+(Font)              using `C70/gbsn/m/n' instead on input line 2.
+
+) (sec/1_intro.tex
+
+Package natbib Warning: Citation `schult2023controlroom3droomgenerationusing' o
+n page 1 undefined on input line 6.
+
+
+Package natbib Warning: Citation `sarch2022tideetidyingnovelrooms' on page 1 un
+defined on input line 6.
+
+
+
+pdfTeX warning: pdflatex (file ./object_information_font.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+<object_information_font.pdf, id=67, 545.12662pt x 384.63701pt>
+File: object_information_font.pdf Graphic file (type pdf)
+<use object_information_font.pdf>
+Package pdftex.def Info: object_information_font.pdf  used on input line 12.
+(pdftex.def)             Requested size: 237.13594pt x 167.31573pt.
+sec/1_intro.tex:19: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.19 ...bal, keetha2023anylocuniversalvisualplace}
+                                                  ，室内房间重识别�...
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+sec/1_intro.tex:19: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.19 ...bal, keetha2023anylocuniversalvisualplace}
+                                                  ，室内房间重识别�...
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+Package natbib Warning: Citation `arandjelovi\unhbox \voidb@x \bgroup \let \unh
+box \voidb@x \setbox \@tempboxa \hbox {c\global \mathchardef \accent@spacefacto
+r \spacefactor }\let \begingroup \let \typeout \begingroup\def 
+(natbib)                {
+(Font)              }\let \immediate\write \m@ne {LaTeX Font Info:     on input
+ line 19.}\endgroup \endgroup \relax \let \ignorespaces \relax \accent 19 c\egr
+oup \spacefactor \accent@spacefactor 2016netvladcnnarchitectureweakly' on page 
+1 undefined on input line 19.
+
+
+Package natbib Warning: Citation `hausler2021patchnetvladmultiscalefusionlocall
+yglobal' on page 1 undefined on input line 19.
+
+
+Package natbib Warning: Citation `keetha2023anylocuniversalvisualplace' on page
+ 1 undefined on input line 19.
+
+
+Package natbib Warning: Citation `xu2023clusvprefficientvisualplace' on page 1 
+undefined on input line 19.
+
+
+Package natbib Warning: Citation `7339473' on page 1 undefined on input line 19
+.
+
+
+Package natbib Warning: Citation `caron2021emergingpropertiesselfsupervisedvisi
+on' on page 1 undefined on input line 20.
+
+
+Package natbib Warning: Citation `oquab2024dinov2learningrobustvisual' on page 
+1 undefined on input line 20.
+
+
+Package natbib Warning: Citation `cai2022patchnetvladlearnedpatchdescriptor' on
+ page 1 undefined on input line 20.
+
+
+Package natbib Warning: Citation `hausler2021patchnetvladmultiscalefusionlocall
+yglobal' on page 1 undefined on input line 20.
+
+
+Package natbib Warning: Citation `aryan2023airlocobjectbasedindoorrelocalizatio
+n' on page 1 undefined on input line 20.
+
+
+Package natbib Warning: Citation `keetha2023anylocuniversalvisualplace' on page
+ 1 undefined on input line 20.
+
+
+Package natbib Warning: Citation `sattler2019understandinglimitationscnnbasedab
+solute' on page 1 undefined on input line 20.
+
+
+
+
+Package natbib Warning: Citation `lee2017roomnetendtoendroomlayout' on page 1 u
+ndefined on input line 22.
+
+
+Package natbib Warning: Citation `Snderhauf2015PlaceRW' on page 1 undefined on 
+input line 24.
+
+
+LaTeX Warning: Reference `fig:example_image' on page 1 undefined on input line 
+28.
+
+
+
+[1{C:/Users/xhs/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/apps/mikte
+x/fonts/enc/dvips/base/8r.enc}
+
+
+ <./object_information_font.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+9.
+
+(D:\apps\miktex\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)) (sec/2_related_work.tex
+
+Package natbib Warning: Citation `Lowe2004DistinctiveIF' on page 2 undefined on
+ input line 8.
+
+
+Package natbib Warning: Citation `BAY2008346' on page 2 undefined on input line
+ 8.
+
+sec/2_related_work.tex:8: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.8 ... radenović2018finetuningcnnimageretrieval}
+                                                  。
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+Package natbib Warning: Citation `cao2020unifyingdeeplocalglobal' on page 2 und
+efined on input line 8.
+
+sec/2_related_work.tex:8: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.8 ... radenović2018finetuningcnnimageretrieval}
+                                                  。
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+Package natbib Warning: Citation `radenovi\unhbox \voidb@x \bgroup \let \unhbox
+ \voidb@x \setbox \@tempboxa \hbox {c\global \mathchardef \accent@spacefactor \
+spacefactor }\let \begingroup \let \typeout \begingroup\def 
+(natbib)                {
+(Font)              }\let \immediate\write \m@ne {LaTeX Font Info:     on input
+ line 8.}\endgroup \endgroup \relax \let \ignorespaces \relax \accent 19 c\egro
+up \spacefactor \accent@spacefactor 2018finetuningcnnimageretrieval' on page 2 
+undefined on input line 8.
+
+
+Package natbib Warning: Citation `Wan2014DeepLF' on page 2 undefined on input l
+ine 10.
+
+
+Package natbib Warning: Citation `10.1145/1348246.1348248' on page 2 undefined 
+on input line 10.
+
+
+
+
+
+pdfTeX warning: pdflatex (file ./pipeline_font.pdf): PDF inclusion: found PDF v
+ersion <1.7>, but at most version <1.5> allowed
+<pipeline_font.pdf, id=182, 1288.7568pt x 355.41585pt>
+File: pipeline_font.pdf Graphic file (type pdf)
+<use pipeline_font.pdf>
+Package pdftex.def Info: pipeline_font.pdf  used on input line 14.
+(pdftex.def)             Requested size: 496.85625pt x 137.02261pt.
+
+Package natbib Warning: Citation `he2015deepresiduallearningimage' on page 2 un
+defined on input line 23.
+
+
+Package natbib Warning: Citation `oquab2024dinov2learningrobustvisual' on page 
+2 undefined on input line 23.
+
+
+Package natbib Warning: Citation `Lowe2004DistinctiveIF' on page 2 undefined on
+ input line 23.
+
+
+Package natbib Warning: Citation `10.1007/11744023_32' on page 2 undefined on i
+nput line 23.
+
+
+Package natbib Warning: Citation `6126544' on page 2 undefined on input line 23
+.
+
+sec/2_related_work.tex:23: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.23 ...patchnetvladmultiscalefusionlocallyglobal}
+                                                   和AnyLoc \cite{keetha202...
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+sec/2_related_work.tex:23: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.23 ...patchnetvladmultiscalefusionlocallyglobal}
+                                                   和AnyLoc \cite{keetha202...
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+Package natbib Warning: Citation `arandjelovi\unhbox \voidb@x \bgroup \let \unh
+box \voidb@x \setbox \@tempboxa \hbox {c\global \mathchardef \accent@spacefacto
+r \spacefactor }\let \begingroup \let \typeout \begingroup\def 
+(natbib)                {
+(Font)              }\let \immediate\write \m@ne {LaTeX Font Info:     on input
+ line 23.}\endgroup \endgroup \relax \let \ignorespaces \relax \accent 19 c\egr
+oup \spacefactor \accent@spacefactor 2016netvladcnnarchitectureweakly' on page 
+2 undefined on input line 23.
+
+
+Package natbib Warning: Citation `hausler2021patchnetvladmultiscalefusionlocall
+yglobal' on page 2 undefined on input line 23.
+
+
+Package natbib Warning: Citation `keetha2023anylocuniversalvisualplace' on page
+ 2 undefined on input line 23.
+
+
+Package natbib Warning: Citation `keetha2023anylocuniversalvisualplace' on page
+ 2 undefined on input line 25.
+
+) (sec/3_proposed_approach.tex
+
+LaTeX Warning: Reference `fig:pipeline' on page 2 undefined on input line 4.
+
+sec/3_proposed_approach.tex:11: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.11 ...obal, alibey2023mixvprfeaturemixingvisual}
+                                                  。
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+sec/3_proposed_approach.tex:11: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.11 ...obal, alibey2023mixvprfeaturemixingvisual}
+                                                  。
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+
+Package natbib Warning: Citation `arandjelovi\unhbox \voidb@x \bgroup \let \unh
+box \voidb@x \setbox \@tempboxa \hbox {c\global \mathchardef \accent@spacefacto
+r \spacefactor }\let \begingroup \let \typeout \begingroup\def 
+(natbib)                {
+(Font)              }\let \immediate\write \m@ne {LaTeX Font Info:     on input
+ line 11.}\endgroup \endgroup \relax \let \ignorespaces \relax \accent 19 c\egr
+oup \spacefactor \accent@spacefactor 2016netvladcnnarchitectureweakly' on page 
+2 undefined on input line 11.
+
+
+Package natbib Warning: Citation `hausler2021patchnetvladmultiscalefusionlocall
+yglobal' on page 2 undefined on input line 11.
+
+
+Package natbib Warning: Citation `alibey2023mixvprfeaturemixingvisual' on page 
+2 undefined on input line 11.
+
+
+Package natbib Warning: Citation `kornblith2019betterimagenetmodelstransfer' on
+ page 2 undefined on input line 13.
+
+
+Package natbib Warning: Citation `he2015deepresiduallearningimage' on page 2 un
+defined on input line 13.
+
+
+Package natbib Warning: Citation `oquab2024dinov2learningrobustvisual' on page 
+2 undefined on input line 13.
+
+
+
+[2]
+
+Package natbib Warning: Citation `he2018maskrcnn' on page 3 undefined on input 
+line 32.
+
+
+Package natbib Warning: Citation `li2023semanticsamsegmentrecognizegranularity'
+ on page 3 undefined on input line 32.
+
+
+
+
+Package natbib Warning: Citation `10.5555/1370949' on page 3 undefined on input
+ line 44.
+
+
+
+pdfTeX warning: pdflatex (file ./expander.pdf): PDF inclusion: found PDF versio
+n <1.7>, but at most version <1.5> allowed
+<expander.pdf, id=200, 649.08997pt x 311.1625pt>
+File: expander.pdf Graphic file (type pdf)
+<use expander.pdf>
+Package pdftex.def Info: expander.pdf  used on input line 49.
+(pdftex.def)             Requested size: 237.13594pt x 113.68019pt.
+
+LaTeX Warning: Reference `fig:expander_image' on page 3 undefined on input line
+ 56.
+
+
+
+[3 <./pipeline_font.pdf> <./expander.pdf
+
+pdfTeX warning: pdflatex (file ./expander.pdf): PDF inclusion: multiple pdfs wi
+th page group included in a single page
+>]
+
+pdfTeX warning: pdflatex (file ./dataset_font.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+<dataset_font.pdf, id=363, 1403.49944pt x 425.73456pt>
+File: dataset_font.pdf Graphic file (type pdf)
+<use dataset_font.pdf>
+Package pdftex.def Info: dataset_font.pdf  used on input line 60.
+(pdftex.def)             Requested size: 496.85625pt x 150.71782pt.
+
+Package natbib Warning: Citation `zheng2018sift' on page 4 undefined on input l
+ine 74.
+
+
+LaTeX Warning: Reference `sec:section3.1.1' on page 4 undefined on input line 7
+4.
+
+
+Package natbib Warning: Citation `zhong2017reranking' on page 4 undefined on in
+put line 92.
+
+
+LaTeX Warning: Reference `eq:global feature cosine similarity' on page 4 undefi
+ned on input line 95.
+
+
+
+
+Package natbib Warning: Citation `1498756' on page 4 undefined on input line 11
+9.
+
+
+Package natbib Warning: Citation `sarlin2020supergluelearningfeaturematching' o
+n page 4 undefined on input line 122.
+
+
+Package natbib Warning: Citation `lindenberger2023lightgluelocalfeaturematching
+' on page 4 undefined on input line 122.
+
+
+Package natbib Warning: Citation `Lowe2004DistinctiveIF' on page 4 undefined on
+ input line 124.
+
+) (sec/4_experimental_results.tex
+
+Package natbib Warning: Citation `yeshwanth2023scannethighfidelitydataset3d' on
+ page 4 undefined on input line 29.
+
+
+Package natbib Warning: Citation `5206537' on page 4 undefined on input line 29
+.
+
+
+Package natbib Warning: Citation `7801503' on page 4 undefined on input line 29
+.
+
+
+Package natbib Warning: Citation `aryan2023airlocobjectbasedindoorrelocalizatio
+n' on page 4 undefined on input line 29.
+
+
+Package natbib Warning: Citation `Matterport3D' on page 4 undefined on input li
+ne 31.
+
+
+Package natbib Warning: Citation `ramakrishnan2021hm3d' on page 4 undefined on 
+input line 31.
+
+
+Package natbib Warning: Citation `xiazamirhe2018gibsonenv' on page 4 undefined 
+on input line 31.
+
+
+Package natbib Warning: Citation `replica19arxiv' on page 4 undefined on input 
+line 31.
+
+
+Package natbib Warning: Citation `puig2023habitat3' on page 4 undefined on inpu
+t line 31.
+
+
+Package natbib Warning: Citation `szot2021habitat' on page 4 undefined on input
+ line 31.
+
+
+Package natbib Warning: Citation `habitat19iccv' on page 4 undefined on input l
+ine 31.
+
+
+LaTeX Warning: Reference `fig:dataset_image' on page 4 undefined on input line 
+31.
+
+
+
+[4]
+
+Package natbib Warning: Citation `radford2021learningtransferablevisualmodels' 
+on page 5 undefined on input line 41.
+
+
+Package natbib Warning: Citation `tan2005introduction' on page 5 undefined on i
+nput line 41.
+
+
+
+
+Package natbib Warning: Citation `lee2022correlationverificationimageretrieval'
+ on page 5 undefined on input line 116.
+
+
+Package natbib Warning: Citation `oquab2024dinov2learningrobustvisual' on page 
+5 undefined on input line 116.
+
+
+Package natbib Warning: Citation `hausler2021patchnetvladmultiscalefusionlocall
+yglobal' on page 5 undefined on input line 116.
+
+
+Package natbib Warning: Citation `keetha2023anylocuniversalvisualplace' on page
+ 5 undefined on input line 116.
+
+
+Package natbib Warning: Citation `he2015deepresiduallearningimage' on page 5 un
+defined on input line 116.
+
+
+
+pdfTeX warning: pdflatex (file ./failure_font.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+<failure_font.pdf, id=389, 495.09767pt x 288.42453pt>
+File: failure_font.pdf Graphic file (type pdf)
+<use failure_font.pdf>
+Package pdftex.def Info: failure_font.pdf  used on input line 120.
+(pdftex.def)             Requested size: 237.13594pt x 138.14293pt.
+
+LaTeX Warning: Reference `tab:overall' on page 5 undefined on input line 127.
+
+
+LaTeX Warning: Reference `fig:failure' on page 5 undefined on input line 127.
+
+
+
+[5 <./dataset_font.pdf>]
+
+
+Package natbib Warning: Citation `lee2022correlationverificationimageretrieval'
+ on page 6 undefined on input line 135.
+
+
+Package natbib Warning: Citation `hausler2021patchnetvladmultiscalefusionlocall
+yglobal' on page 6 undefined on input line 135.
+
+
+LaTeX Warning: Reference `tab:grouped' on page 6 undefined on input line 137.
+
+
+Package natbib Warning: Citation `dosovitskiy2021imageworth16x16words' on page 
+6 undefined on input line 146.
+
+
+Package natbib Warning: Citation `caron2021emergingpropertiesselfsupervisedvisi
+on' on page 6 undefined on input line 146.
+
+
+Package natbib Warning: Citation `oquab2024dinov2learningrobustvisual' on page 
+6 undefined on input line 146.
+
+
+Package natbib Warning: Citation `keetha2023anylocuniversalvisualplace' on page
+ 6 undefined on input line 146.
+
+
+LaTeX Warning: Reference `tab:global feature extractor flexibility' on page 6 u
+ndefined on input line 148.
+
+
+Package natbib Warning: Citation `he2018maskrcnn' on page 6 undefined on input 
+line 153.
+
+
+Package natbib Warning: Citation `li2023semanticsamsegmentrecognizegranularity'
+ on page 6 undefined on input line 153.
+
+
+
+[6 <./failure_font.pdf>]
+
+LaTeX Warning: Reference `tab:is flexibility' on page 7 undefined on input line
+ 155.
+
+
+Package natbib Warning: Citation `he2015deepresiduallearningimage' on page 7 un
+defined on input line 179.
+
+
+Package natbib Warning: Citation `oquab2024dinov2learningrobustvisual' on page 
+7 undefined on input line 179.
+
+
+LaTeX Warning: Reference `tab:ofe flexibility' on page 7 undefined on input lin
+e 181.
+
+
+LaTeX Warning: Reference `tab:os flexibility' on page 7 undefined on input line
+ 207.
+
+
+LaTeX Warning: Reference `tab:ablation w/o global score' on page 7 undefined on
+ input line 285.
+
+
+LaTeX Warning: Reference `tab:ablation on global score' on page 7 undefined on 
+input line 285.
+
+
+LaTeX Warning: Reference `subsec:refinement' on page 7 undefined on input line 
+285.
+
+
+
+
+Package natbib Warning: Citation `zhao2024dynamicsceneunderstandingobjectcentri
+c' on page 7 undefined on input line 288.
+
+) (sec/5_conclusion.tex
+
+[7]) (main.bbl
+No file main.brf.
+\tf@brf=\write4
+\openout4 = `main.brf'.
+
+main.bbl:15: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.15 
+     
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:15: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.15 
+     
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:15: Extra \endcsname.
+\@lbibitem ...pen \csname NAT@b@open@#2\endcsname 
+                                                  \expandafter \let \expanda...
+l.15 
+     
+I'm ignoring this, since I wasn't doing a \csname.
+
+main.bbl:15: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.15 
+     
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:15: Extra \endcsname.
+\@lbibitem ...hut \csname NAT@b@shut@#2\endcsname 
+                                                  \@ifnum {\NAT@merge >\@ne ...
+l.15 
+     
+I'm ignoring this, since I wasn't doing a \csname.
+
+
+Overfull \hbox (42.32536pt too wide) in paragraph at lines 15--15
+[][]\OT1/ptm/m/n/9 c2016netvladcnnarchitectureweakly[]c2016netvladcnnarchitectu
+reweakly 
+ []
+
+main.bbl:15: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.15 
+     
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:15: Extra \endcsname.
+\BR@backref ...decommand \csname brc@#1\endcsname 
+                                                  {0}\expandafter \provideco...
+l.15 
+     
+I'm ignoring this, since I wasn't doing a \csname.
+
+main.bbl:15: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.15 
+     
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:15: Extra \endcsname.
+\BR@backref ...ecommand \csname brcd@#1\endcsname 
+                                                  {0}\csname @safe@activesfa...
+l.15 
+     
+I'm ignoring this, since I wasn't doing a \csname.
+
+main.bbl:15: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.15 
+     
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:15: Extra \endcsname.
+<recently read> \endcsname 
+                           
+l.15 
+     
+I'm ignoring this, since I wasn't doing a \csname.
+
+
+Overfull \hbox (190.05905pt too wide) in paragraph at lines 15--15
+\OT1/ptm/m/n/9 
+[]c2016netvladcnnarchitectureweakly0
+[]c2016netvladcnnarchitectureweakly0[]c2016netvladcnnarchitectureweakly 
+ []
+
+
+
+main.bbl:129: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.129 
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:129: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.129 
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:129: Extra \endcsname.
+\@lbibitem ...pen \csname NAT@b@open@#2\endcsname 
+                                                  \expandafter \let \expanda...
+l.129 
+      
+I'm ignoring this, since I wasn't doing a \csname.
+
+main.bbl:129: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.129 
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:129: Extra \endcsname.
+\@lbibitem ...hut \csname NAT@b@shut@#2\endcsname 
+                                                  \@ifnum {\NAT@merge >\@ne ...
+l.129 
+      
+I'm ignoring this, since I wasn't doing a \csname.
+
+
+Overfull \hbox (28.91545pt too wide) in paragraph at lines 129--129
+[][]\OT1/ptm/m/n/9 c2018finetuningcnnimageretrieval[]c2018finetuningcnnimageret
+rieval 
+ []
+
+main.bbl:129: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.129 
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:129: Extra \endcsname.
+\BR@backref ...decommand \csname brc@#1\endcsname 
+                                                  {0}\expandafter \provideco...
+l.129 
+      
+I'm ignoring this, since I wasn't doing a \csname.
+
+main.bbl:129: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.129 
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:129: Extra \endcsname.
+\BR@backref ...ecommand \csname brcd@#1\endcsname 
+                                                  {0}\csname @safe@activesfa...
+l.129 
+      
+I'm ignoring this, since I wasn't doing a \csname.
+
+main.bbl:129: Missing \endcsname inserted.
+<to be read again> 
+                   \unhbox 
+l.129 
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+main.bbl:129: Extra \endcsname.
+<recently read> \endcsname 
+                           
+l.129 
+      
+I'm ignoring this, since I wasn't doing a \csname.
+
+
+Overfull \hbox (169.94418pt too wide) in paragraph at lines 129--129
+\OT1/ptm/m/n/9 
+[]c2018finetuningcnnimageretrieval0
+[]c2018finetuningcnnimageretrieval0[]c2018finetuningcnnimageretrieval 
+ []
+
+
+
+[8]
+
+) (sec/X_suppl.tex
+
+[9]
+
+LaTeX Warning: Reference `tab:MPReID' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Reference `tab:HMReID' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Reference `tab:GibsonReID' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Reference `tab:ReplicaReID' on page 1 undefined on input line 5.
+
+
+
+LaTeX Warning: Reference `tab:Statistics' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+
+LaTeX Warning: Reference `sec:appendix_overall' on page 1 undefined on input li
+ne 145.
+
+
+LaTeX Warning: Reference `sec:appendix_overall' on page 1 undefined on input li
+ne 145.
+
+
+LaTeX Warning: Reference `sec:appendix_overall' on page 1 undefined on input li
+ne 147.
+
+
+LaTeX Warning: Reference `sec:appendix_overall' on page 1 undefined on input li
+ne 147.
+
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.148 
+       [1
+
+
+]
+
+LaTeX Warning: Reference `sec:appendix_overall' on page 2 undefined on input li
+ne 149.
+
+
+LaTeX Warning: Reference `sec:appendix_overall' on page 2 undefined on input li
+ne 149.
+
+
+LaTeX Warning: Reference `sec:appendix_overall' on page 2 undefined on input li
+ne 154.
+
+
+LaTeX Warning: Reference `sec:appendix_overall' on page 2 undefined on input li
+ne 154.
+
+
+LaTeX Warning: Reference `sec:appendix_overall' on page 2 undefined on input li
+ne 158.
+
+
+LaTeX Warning: Reference `sec:appendix_overall' on page 2 undefined on input li
+ne 161.
+
+
+LaTeX Warning: Reference `tab:Union' on page 2 undefined on input line 163.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package natbib Warning: Citation `taira2018inlocindoorvisuallocalization' on pa
+ge 2 undefined on input line 185.
+
+
+Package natbib Warning: Citation `Structured3D' on page 2 undefined on input li
+ne 185.
+
+
+Package natbib Warning: Citation `taira2018inlocindoorvisuallocalization' on pa
+ge 2 undefined on input line 185.
+
+
+Package natbib Warning: Citation `Structured3D' on page 2 undefined on input li
+ne 185.
+
+
+
+
+LaTeX Warning: Reference `tab:Indoor' on page 2 undefined on input line 187.
+
+<runtime.pdf, id=579, 659.59865pt x 406.73143pt>
+File: runtime.pdf Graphic file (type pdf)
+<use runtime.pdf>
+Package pdftex.def Info: runtime.pdf  used on input line 280.
+(pdftex.def)             Requested size: 237.13594pt x 146.2246pt.
+
+LaTeX Warning: Reference `tab:module_runtime_mr' on page 2 undefined on input l
+ine 324.
+
+
+LaTeX Warning: Reference `tab:module_runtime_md' on page 2 undefined on input l
+ine 324.
+
+
+LaTeX Warning: Reference `tab:module_accuracy' on page 2 undefined on input lin
+e 324.
+
+
+LaTeX Warning: Reference `fig:runtime' on page 2 undefined on input line 324.
+
+
+LaTeX Warning: Reference `tab:module_runtime_ssam' on page 2 undefined on input
+ line 324.
+
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.325 
+       [2]
+
+LaTeX Warning: Reference `tab:runtime_comparison' on page 3 undefined on input 
+line 326.
+
+
+
+)
+
+Package natbib Warning: There were undefined citations.
+
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.56 \end{document}
+                    [3 <./runtime.pdf>] (main.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-06-09>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  B07DB248A3FAD15E9BC1B0E9790D42B1;3728.
+
+Package rerunfilecheck Warning: File `main.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `main.brf':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+ ) 
+Here is how much of TeX's memory you used:
+ 19527 strings out of 468221
+ 314475 string characters out of 5447328
+ 806006 words of memory out of 5000000
+ 47259 multiletter control sequences out of 15000+600000
+ 704776 words of font info for 274 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 90i,15n,93p,1241b,2120s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/apps/miktex/fon
+ts/type1/public/amsfonts/cm/cmbx7.pfb><D:/apps/miktex/fonts/type1/public/amsfon
+ts/cm/cmex10.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/
+apps/miktex/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/apps/miktex/fonts/type
+1/public/amsfonts/cm/cmmi7.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/apps/mikte
+x/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/apps/miktex/fonts/type1/public/
+amsfonts/cm/cmsy7.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+<D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu30.pfb><D:/apps/miktex/fonts/type
+1/arphic/gbsnu/gbsnu4e.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu4f.pfb
+><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu50.pfb><D:/apps/miktex/fonts/typ
+e1/arphic/gbsnu/gbsnu51.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu52.pf
+b><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu53.pfb><D:/apps/miktex/fonts/ty
+pe1/arphic/gbsnu/gbsnu54.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu55.p
+fb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu56.pfb><D:/apps/miktex/fonts/t
+ype1/arphic/gbsnu/gbsnu57.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu58.
+pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu59.pfb><D:/apps/miktex/fonts/
+type1/arphic/gbsnu/gbsnu5b.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu5c
+.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu5d.pfb><D:/apps/miktex/fonts
+/type1/arphic/gbsnu/gbsnu5e.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu5
+f.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu60.pfb><D:/apps/miktex/font
+s/type1/arphic/gbsnu/gbsnu61.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu
+62.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu63.pfb><D:/apps/miktex/fon
+ts/type1/arphic/gbsnu/gbsnu64.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsn
+u65.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu66.pfb><D:/apps/miktex/fo
+nts/type1/arphic/gbsnu/gbsnu67.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbs
+nu68.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu69.pfb><D:/apps/miktex/f
+onts/type1/arphic/gbsnu/gbsnu6a.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gb
+snu6b.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu6c.pfb><D:/apps/miktex/
+fonts/type1/arphic/gbsnu/gbsnu6d.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/g
+bsnu6e.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu6f.pfb><D:/apps/miktex
+/fonts/type1/arphic/gbsnu/gbsnu70.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/
+gbsnu71.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu72.pfb><D:/apps/mikte
+x/fonts/type1/arphic/gbsnu/gbsnu73.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu
+/gbsnu74.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu75.pfb><D:/apps/mikt
+ex/fonts/type1/arphic/gbsnu/gbsnu76.pfb><D:/apps/miktex/fonts/type1/arphic/gbsn
+u/gbsnu77.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu78.pfb><D:/apps/mik
+tex/fonts/type1/arphic/gbsnu/gbsnu79.pfb><D:/apps/miktex/fonts/type1/arphic/gbs
+nu/gbsnu7a.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu7b.pfb><D:/apps/mi
+ktex/fonts/type1/arphic/gbsnu/gbsnu7c.pfb><D:/apps/miktex/fonts/type1/arphic/gb
+snu/gbsnu7d.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu7e.pfb><D:/apps/m
+iktex/fonts/type1/arphic/gbsnu/gbsnu7f.pfb><D:/apps/miktex/fonts/type1/arphic/g
+bsnu/gbsnu80.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu81.pfb><D:/apps/
+miktex/fonts/type1/arphic/gbsnu/gbsnu82.pfb><D:/apps/miktex/fonts/type1/arphic/
+gbsnu/gbsnu83.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu84.pfb><D:/apps
+/miktex/fonts/type1/arphic/gbsnu/gbsnu86.pfb><D:/apps/miktex/fonts/type1/arphic
+/gbsnu/gbsnu87.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu88.pfb><D:/app
+s/miktex/fonts/type1/arphic/gbsnu/gbsnu89.pfb><D:/apps/miktex/fonts/type1/arphi
+c/gbsnu/gbsnu8a.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu8b.pfb><D:/ap
+ps/miktex/fonts/type1/arphic/gbsnu/gbsnu8c.pfb><D:/apps/miktex/fonts/type1/arph
+ic/gbsnu/gbsnu8d.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu8e.pfb><D:/a
+pps/miktex/fonts/type1/arphic/gbsnu/gbsnu8f.pfb><D:/apps/miktex/fonts/type1/arp
+hic/gbsnu/gbsnu90.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu91.pfb><D:/
+apps/miktex/fonts/type1/arphic/gbsnu/gbsnu95.pfb><D:/apps/miktex/fonts/type1/ar
+phic/gbsnu/gbsnu96.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu97.pfb><D:
+/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu98.pfb><D:/apps/miktex/fonts/type1/a
+rphic/gbsnu/gbsnu99.pfb><D:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu9a.pfb><D
+:/apps/miktex/fonts/type1/arphic/gbsnu/gbsnu9c.pfb><D:/apps/miktex/fonts/type1/
+arphic/gbsnu/gbsnuff.pfb><D:/apps/miktex/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb><D:/apps/miktex/fonts/type1/urw/courier/ucrr8a.pfb><D:/apps/miktex/fon
+ts/type1/urw/times/utmb8a.pfb><D:/apps/miktex/fonts/type1/urw/times/utmr8a.pfb>
+<D:/apps/miktex/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (12 pages, 2022993 bytes).
+PDF statistics:
+ 1061 PDF objects out of 1200 (max. 8388607)
+ 151 named destinations out of 1000 (max. 500000)
+ 331 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,11 @@
+\centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.49\linewidth}
+        \input{graphs/early_late/early_vs_late_scalemodel_mem}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\linewidth}
+        \input{graphs/early_late/early_vs_late_scalemodel_time}
+    \end{subfigure}
+    \vspace{-3pt}
+    \caption{\textbf{早期与晚期：预训练效率。} 早期融合的训练速度更快，内存消耗更少。模型在 16 个 H100 GPU 上训练 160k 步（300B 个 tokens）。}
+    \label{fig:early_vs_late_efficiency}

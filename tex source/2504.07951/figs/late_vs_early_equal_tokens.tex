@@ -1,0 +1,22 @@
+\begin{figure*}[htb]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scaledata_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scaledata_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scaledata_dclm}
+    \end{subfigure}
+    \vspace{-15pt}
+        \begin{center}
+            \ref{sharedlegend}
+        \end{center}
+    \caption{\textbf{Early vs late fusion: scaling training FLOPs.} We compare
+    early and late fusion models when scaling both the model size and the number
+    of training tokens. The gap decreases mainly due to scaling models size.}
+    \label{fig:early_vs_late_scaledata_main}
+\end{figure*}
+

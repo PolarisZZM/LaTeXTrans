@@ -1,0 +1,218 @@
+\NeedsTeXFormat{LaTeX2e}
+% \ProvidesPackage{neurips_2024}[2024/03/31 NeurIPS 2024 submission/camera-ready style file]
+
+% declare final option, which creates camera-ready copy
+\newif\if@neuripsfinal\@neuripsfinalfalse
+\DeclareOption{final}{
+  \@neuripsfinaltrue
+}
+
+% declare nonatbib option, which does not load natbib in case of
+% package clash (users can pass options to natbib via
+% \PassOptionsToPackage)
+\newif\if@natbib\@natbibtrue
+\DeclareOption{nonatbib}{
+  \@natbibfalse
+}
+
+% declare preprint option, which creates a preprint version ready for
+% upload to, e.g., arXiv
+\newif\if@preprint\@preprintfalse
+\DeclareOption{preprint}{
+  \@preprinttrue
+}
+
+\ProcessOptions\relax
+
+% determine whether this is an anonymized submission
+\newif\if@submission\@submissiontrue
+\if@neuripsfinal\@submissionfalse\fi
+\if@preprint\@submissionfalse\fi
+
+
+
+\usepackage[T1]{fontenc}
+% \usepackage{lmodern}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[unicode=true]{hyperref}       %
+\usepackage{cleveref}
+% \usepackage{ifxetex,ifluatex}
+% \usepackage{fixltx2e} % provides \textsubscript
+\usepackage{bbm}
+\usepackage{xifthen}
+\usepackage{todonotes}
+\usepackage{libertine} % nice fonts
+% \usepackage{times}
+\usepackage[letterpaper,lmargin=1.5in,rmargin=1.5in,tmargin=1in,bmargin=1in]{geometry} % iclr
+% \usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[round,authoryear]{natbib}
+
+% \usepackage{xcolor}
+\definecolor{mydarkblue}{rgb}{0,0.08,0.45}
+\hypersetup{ %
+    pdftitle={},
+    pdfauthor={},
+    pdfsubject={},
+    pdfkeywords={},
+    pdfborder=0 0 0,
+    pdfpagemode=UseNone,
+    colorlinks=true,
+    linkcolor=mydarkblue,
+    citecolor=mydarkblue,
+    filecolor=mydarkblue,
+    urlcolor=mydarkblue,
+    pdfview=FitH
+}
+
+% preetum
+\usepackage{graphicx}
+% \usepackage{subcaption}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{wrapfig}
+% \usepackage{fullpage} % small margins
+%\usepackage[small,compact]{titlesec} % compact section titles
+
+% compact list spacing
+\usepackage[shortlabels]{enumitem}
+\setlist{topsep=1pt,parsep=1pt,partopsep=1pt,itemsep=1pt}
+
+% compact main title. see
+% https://mirror.hmc.edu/ctan/macros/latex/contrib/titling/titling.pdf
+% for defaults
+%\usepackage{titling}
+%\setlength{\droptitle}{-7em}
+%\posttitle{\par\end{center}\vspace{-2em}}
+%\postauthor{\end{tabular}\par\end{center}\vspace{-2.5em}}
+%\postdate{\par\end{center}}
+
+% macros (preetum)
+\newcommand{\1}{\mathbbm{1}}
+% \DeclareMathOperator*{\argmin}{argmin}
+% \DeclareMathOperator*{\argmax}{argmax}
+\newcommand{\x}{\times}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathop{\mathbb{E}}}
+\renewcommand{\bar}{\overline}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\nullset}{\emptyset}
+\newcommand{\set}[1]{\{#1\}}
+
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cN}{\mathcal{N}}
+
+
+\let\Oldforall\forall
+\renewcommand{\forall}{~\Oldforall} % add some space before foralls
+
+\let\Oldsum\sum
+%\renewcommand{\sum}{\Oldsum\limits}
+\let\Oldinf\inf
+\renewcommand{\inf}{\Oldinf\limits}
+\let\Oldsup\sup
+\renewcommand{\sup}{\Oldsup\limits}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+% \setlength{\parskip}{2pt plus 1pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+%\setcounter{secnumdepth}{0} % What does this line do?
+
+
+% create title
+\providecommand{\maketitle}{}
+\renewcommand{\maketitle}{%
+  \par
+  \begingroup
+    \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+    % for perfect author name centering
+    \renewcommand{\@makefnmark}{\hbox to \z@{$^{\@thefnmark}$\hss}}
+    % The footnote-mark was overlapping the footnote-text,
+    % added the following to fix this problem               (MK)
+    \long\def\@makefntext##1{%
+      \parindent 1em\noindent
+      \hbox to 1.8em{\hss $\m@th ^{\@thefnmark}$}##1
+    }
+    \thispagestyle{empty}
+    \@maketitle
+    \@thanks
+    % \@notice
+  \endgroup
+  \let\maketitle\relax
+  \let\thanks\relax
+}
+
+% rules for title box at top of first page
+\newcommand{\@toptitlebar}{
+  \hrule height 2\p@
+  \vskip 0.25in
+  \vskip -\parskip%
+}
+\newcommand{\@bottomtitlebar}{
+  \vskip 0.29in
+  \vskip -\parskip
+  \hrule height 2\p@
+  \vskip 0.09in%
+}
+
+% create title (includes both anonymized and non-anonymized versions)
+\providecommand{\@maketitle}{}
+\renewcommand{\@maketitle}{%
+  \vbox{%
+    \hsize\textwidth
+    \linewidth\hsize
+    \vskip 0.1in
+    \@toptitlebar
+    \centering
+    {\LARGE\bf \@title\par}
+    \@bottomtitlebar
+    \if@submission
+      \begin{tabular}[t]{c}\bf\rule{\z@}{24\p@}
+        Anonymous Author(s) \\
+        Affiliation \\
+        Address \\
+        \texttt{email} \\
+      \end{tabular}%
+    \else
+      \def\And{%
+        \end{tabular}\hfil\linebreak[0]\hfil%
+        \begin{tabular}[t]{c}\bf\rule{\z@}{24\p@}\ignorespaces%
+      }
+      \def\AND{%
+        \end{tabular}\hfil\linebreak[4]\hfil%
+        \begin{tabular}[t]{c}\bf\rule{\z@}{24\p@}\ignorespaces%
+      }
+      \begin{tabular}[t]{c}\bf\rule{\z@}{24\p@}\@author\end{tabular}%
+    \fi
+    \vskip 0.3in \@minus 0.1in
+  }
+}
+
+
+% Add a period to the end of an abbreviation unless there's one
+% already, then \xspace.
+\makeatletter
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+
+\def\eg{\emph{e.g}\onedot} \def\Eg{\emph{E.g}\onedot}
+\def\ie{\emph{i.e}\onedot} \def\Ie{\emph{I.e}\onedot}
+\def\cf{\emph{cf}\onedot} \def\Cf{\emph{Cf}\onedot}
+\def\etc{\emph{etc}\onedot} \def\vs{\emph{vs}\onedot}
+\def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
+\def\iid{i.i.d\onedot} \def\wolog{w.l.o.g\onedot}
+\def\etal{\emph{et al}\onedot}
+\makeatother

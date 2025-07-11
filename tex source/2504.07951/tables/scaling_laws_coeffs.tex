@@ -1,0 +1,39 @@
+\begin{table}[h!]
+    \begin{minipage}[b]{1\linewidth}
+        \centering
+        \setlength{\tabcolsep}{24pt}
+        \renewcommand{\arraystretch}{1}
+        \resizebox{1\linewidth}{!}{
+        \begin{tabular}{c c c c c}
+             \grayrow $L \propto E+\frac{1}{N^{\alpha}}+\frac{1}{D^{\beta}}$ & $N \propto C^a$ & $D \propto C^b$ & $L \propto C^c$ & $D \propto N^d$ \\
+        \end{tabular}}
+      \label{tab:power_laws}
+      \vspace{-3mm}
+    \end{minipage}
+    \begin{minipage}[b]{1\linewidth}
+        \centering
+        \setlength{\tabcolsep}{8pt}
+        \renewcommand{\arraystretch}{1}
+        \resizebox{1\linewidth}{!}{
+        \begin{tabular}{lccccccccc}
+            Model & Data & E & $\alpha$ & $\beta$ & a & b  & c & d \\ %
+            \shline
+            GPT3 \citep{brown2020language} & Text &  -- & -- & -- & -- & -- & -0.048 & \\% & 1.7 \\
+            Chinchilla \citep{hoffmann2022training} & Text &  1.693 & 0.339 & 0.285 & 0.46 & 0.54 & -- & \\%& 20 \\
+            \midrule
+            \multirow{4}{*}{NMM (early-fusion)} & Text &  2.222 & 0.308 & 0.338 & 0.525 & 0.477     & -0.042 & 0.909 \\%& 58.35\\
+            & Image-Caption & 1.569 & 0.311 & 0.339 & 0.520 & 0.479 & -0.061 & 0.919 \\% & 72.21\\
+            & Interleaved & 1.966 & 0.297 & 0.338 & 0.532 & 0.468     & -0.046 & 0.879 \\%& 57.74\\
+            & AVG & 1.904 & 0.301 & 0.335 & 0.526 & 0.473 & -0.049 & 0.899 \\% & 64.05\\
+            \midrule
+            NMM (late-fusion) & AVG &  1.891 & 0.290 & 0.338 & 0.636 & 0.462 & -0.049 & 0.673 \\%& 46.19\\
+            \midrule
+            \edit{Sparse NMM (early-fusion)} & AVG & 2.158  & 0.710 & 0.372 & 0.361  & 0.656 & -0.047 & 1.797 \\%& 46.19\\
+        \end{tabular}%
+        } \caption{\textbf{Scaling laws for native multimodal models}. We report the
+        scaling laws results for early and late fusion models. We fit the scaling laws for different target data types as well as their average loss (AVG).
+        }
+        \label{tab:early_vs_late_coeffs}
+    \end{minipage}
+    \vspace{-3mm}
+\end{table}

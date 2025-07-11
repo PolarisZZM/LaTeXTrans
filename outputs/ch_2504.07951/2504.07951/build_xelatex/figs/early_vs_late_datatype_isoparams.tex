@@ -1,0 +1,51 @@
+\begin{figure*}[t!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.32\linewidth}
+         \input{graphs/early_late/early_late_datatype_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_late_datatype_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+         \input{graphs/early_late/early_vs_late_datatype_dclm}
+    \end{subfigure}
+
+    \makebox[0.9\linewidth]{
+        \begin{tikzpicture}
+            \begin{axis}[
+                hide axis,
+                xmin=0, xmax=0.5, ymin=0, ymax=1,
+                legend columns=4,
+                legend style={
+                    at={(0.5, 1)},
+                    anchor=north,
+                    /tikz/every even column/.append style={column sep=0.2cm},
+                    scale=0.5,
+                    cells={align=left}, font=\footnotesize,
+                },
+            ]
+
+                \addlegendimage{legend late style}
+                \addlegendentry{L}
+
+\addlegendimage{EarlyGradStart!10!EarlyGradEnd, thick, solid, mark=*, mark size=1.75pt}
+                \addlegendentry{E (Text)}
+
+\addlegendimage{legend early style, mark size=1.75pt}
+                \addlegendentry{E (FLOPs)}
+
+\addlegendimage{EarlyGradStart!95!EarlyGradEnd, thick, solid, mark=*, mark size=1.75pt}
+                \addlegendentry{E (Params)}
+            \end{axis}
+        \end{tikzpicture}
+    }
+
+    \vspace{-5cm}
+
+    \caption{\textbf{早期融合与晚期融合：改变训练混合和早期融合配置。} 我们
+    变化训练混合，并绘制不同
+    早期融合模型配置的最终训练损失。对于
+    相同数量的总参数，早期融合始终优于晚期融合。}
+    \label{fig:early_vs_late_datatype_isoparams}
+\end{figure*}

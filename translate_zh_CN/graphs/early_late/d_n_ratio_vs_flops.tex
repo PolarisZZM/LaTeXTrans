@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=north west,
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xmode=log, %
+        log basis x=10, %
+        height=2.5in,
+        width=1.1\linewidth,
+        xtick distance=1e02,
+        ylabel={\footnotesize{$N/D$}},
+        ylabel style={yshift=-1ex},
+        xlabel={\footnotesize{FLOPs ($C$)}},
+        yticklabel style={font=\footnotesize},
+        xticklabel style={font=\footnotesize},
+        legend style={cells={align=left}, font=\footnotesize, fill opacity=0.7}, %
+        mark options={solid},
+    ]
+
+    \addplot[line width=1.7pt, dashdotdotted, color=EarlyGradStart!50!EarlyGradEnd, samples=50, domain=5e18:5e23] {((780.3128750575453^-1)*x^(0.05302278709608001)};
+    \addlegendentry{\scalebox{0.9}{Early: $\frac{N}{D} \propto C^{0.053}$}};
+    \addplot[line width=1.7pt, dashdotdotted, color=LateGradStart!50!LateGradEnd, samples=50, domain=5e18:5e23] {(1880.7495777617235^-1)*x^(0.07616482680724829)};
+    \addlegendentry{\scalebox{0.9}{Late: $\frac{N}{D} \propto C^{0.076}$}};
+
+    \addplot[line width=1.7pt, dashdotdotted, color=MOEGradStart!50!MOEGradEnd, samples=50, domain=5e18:5e23] {((5.024013439838208e-05)^-1)*x^(-0.31205022008476146)};
+    \addlegendentry{\scalebox{0.9}{MoE: $\frac{N}{D} \propto C^{-0.312}$}};
+
+    \end{axis}
+\end{tikzpicture}

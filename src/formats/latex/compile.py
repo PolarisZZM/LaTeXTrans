@@ -94,25 +94,43 @@ class LaTexCompiler:
             # Attempt 1: pdflatex
             print(f"\nAttempting compilation with pdflatex using '{selected_dist_name}'...⏳")
             compile_out_dir_pdflatex = os.path.join(self.output_latex_dir, "build_pdflatex")
-            self._compile_with_pdflatex(tex_file_to_compile, compile_out_dir_pdflatex, engine="pdflatex")
+            return_code_pdflatex = self._compile_with_pdflatex(tex_file_to_compile, compile_out_dir_pdflatex, engine="pdflatex")
             
-            # Check for PDF in a more robust way
-            if os.path.exists(compile_out_dir_pdflatex):
-                pdf_files_pdflatex = [f for f in os.listdir(compile_out_dir_pdflatex) if f.lower().endswith('.pdf')]
-                if pdf_files_pdflatex:
+            # Check for PDF in a more robust way, considering the return code
+            if return_code_pdflatex == 0:
+                main_tex_base = os.path.splitext(os.path.basename(tex_file_to_compile))[0]
+                source_pdf_path = os.path.join(compile_out_dir_pdflatex, f"{main_tex_base}.pdf")
+                
+                if os.path.exists(source_pdf_path):
+                    # Destination is one level up, named after the parent directory
+                    dest_dir = os.path.dirname(self.output_latex_dir)
+                    dest_filename = f"{os.path.basename(dest_dir)}.pdf"
+                    dest_pdf_path = os.path.join(dest_dir, dest_filename)
+                    
                     print(f"✅ Successfully generated PDF with pdflatex!")
-                    return os.path.join(compile_out_dir_pdflatex, pdf_files_pdflatex[0])
+                    print(f"   Copying '{source_pdf_path}' to '{dest_pdf_path}'...")
+                    shutil.copy(source_pdf_path, dest_pdf_path)
+                    return dest_pdf_path
 
             # Attempt 2: xelatex
             print(f"⚠️ Failed to generate PDF with pdflatex. Retrying with xelatex using '{selected_dist_name}'...⏳")
             compile_out_dir_xelatex = os.path.join(self.output_latex_dir, "build_xelatex")
-            self._compile_with_xelatex(tex_file_to_compile, compile_out_dir_xelatex, engine="xelatex")
+            return_code_xelatex = self._compile_with_xelatex(tex_file_to_compile, compile_out_dir_xelatex, engine="xelatex")
             
-            if os.path.exists(compile_out_dir_xelatex):
-                pdf_files_xelatex = [f for f in os.listdir(compile_out_dir_xelatex) if f.lower().endswith('.pdf')]
-                if pdf_files_xelatex:
+            if return_code_xelatex == 0:
+                main_tex_base = os.path.splitext(os.path.basename(tex_file_to_compile))[0]
+                source_pdf_path = os.path.join(compile_out_dir_xelatex, f"{main_tex_base}.pdf")
+
+                if os.path.exists(source_pdf_path):
+                    # Destination is one level up, named after the parent directory
+                    dest_dir = os.path.dirname(self.output_latex_dir)
+                    dest_filename = f"{os.path.basename(dest_dir)}.pdf"
+                    dest_pdf_path = os.path.join(dest_dir, dest_filename)
+
                     print(f"✅ Successfully generated PDF with xelatex!")
-                    return os.path.join(compile_out_dir_xelatex, pdf_files_xelatex[0])
+                    print(f"   Copying '{source_pdf_path}' to '{dest_pdf_path}'...")
+                    shutil.copy(source_pdf_path, dest_pdf_path)
+                    return dest_pdf_path
 
             # Both engines failed
             print(f"❌ Compilation failed with both pdflatex and xelatex using '{selected_dist_name}'.")
@@ -149,7 +167,7 @@ class LaTexCompiler:
             return None
         print("Start compiling with lualatex...⏳")
         compile_out_dir_lualatex = os.path.join(self.output_latex_dir, "build_lualatex")
-        self._compile_with_lualatex(tex_file_to_compile, compile_out_dir_lualatex, engine="lualatex")
+        return_code_lualatex = self._compile_with_lualatex(tex_file_to_compile, compile_out_dir_lualatex, engine="lualatex")
         pdf_files = [os.path.join(compile_out_dir_lualatex, file) for file in os.listdir(compile_out_dir_lualatex) if file.lower().endswith('.pdf')]
         if pdf_files:
 
@@ -169,19 +187,54 @@ class LaTexCompiler:
                               out_dir: str, 
                               engine: str = "pdflatex"):
         
-        os.makedirs(out_dir, exist_ok=True)
+        source_dir = os.path.dirname(tex_file)
+        main_tex_filename = os.path.basename(tex_file)
+
+        # Copy all source files to the build directory for a clean, isolated environment
+        try:
+            # ignore_patterns is important to prevent copying old build directories recursively
+            shutil.copytree(source_dir, out_dir, ignore=shutil.ignore_patterns('build_*'))
+        except Exception as e:
+            print(f"❌ Error copying source files to build directory: {e}")
+            return -1
+
+        # Path to the main tex file *inside* the new build directory
+        tex_file_in_build_dir = os.path.join(out_dir, main_tex_filename)
         
+        # Read original content from the copied file, replace placeholder, and write back
+        try:
+            with open(tex_file_in_build_dir, 'r', encoding='utf-8') as f:
+                original_content = f.read()
+        except FileNotFoundError:
+            print(f"❌ Error: Main TeX file not found at {tex_file_in_build_dir}")
+            return -1 # Return a non-zero code to indicate failure
+
+        # Replace placeholder and add CJK environment
+        pdflatex_packages = "\\usepackage{CJKutf8}\n\\usepackage[utf8]{inputenc}"
+        modified_content = original_content.replace("%%CHINESE_PACKAGE_PLACEHOLDER%%", pdflatex_packages)
+        
+        # Wrap the whole document in CJK environment to support Chinese
+        modified_content = re.sub(r"(\\begin\{document\})", r"\1\n\\begin{CJK*}{UTF8}{gbsn}", modified_content, count=1)
+        modified_content = re.sub(r"(\\end\{document\})", r"\\end{CJK*}\n\1", modified_content, count=1)
+
+        # Fix known syntax errors found in logs
+        modified_content = modified_content.replace(r'\(s_{\max}}\)', r'\(s_{\max}\)')
+
+        # Overwrite the tex file in the build directory
+        with open(tex_file_in_build_dir, 'w', encoding='utf-8') as f:
+            f.write(modified_content)
+
         cmd = [
             self.latexmk_path,
             f"-{engine}",                
             "-interaction=nonstopmode",   # no stop on errors
-            f"-outdir={out_dir}",  
             f"-file-line-error",       
             f"-synctex=1",
-            f"-f",                        # force mode
-            tex_file
+            main_tex_filename            # Compile the file (now relative to cwd)
         ]
-        cwd = os.path.dirname(tex_file)
+        
+        # Run the compiler from within the build directory
+        cwd = out_dir
 
         # Create a new environment for the subprocess, prioritizing the selected distribution's path
         env = os.environ.copy()
@@ -190,9 +243,6 @@ class LaTexCompiler:
 
         result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env)
 
-        # A non-zero return code from latexmk doesn't always mean failure.
-        # The calling method `compile` will check for PDF existence to determine success.
-        # We log the output if there's a non-zero exit code for debugging purposes.
         if result.returncode == 0:
             print(f"✅  `{engine}` process completed with exit code 0.")
             output_path = os.path.join(self.output_latex_dir, "success.txt")
@@ -207,25 +257,65 @@ class LaTexCompiler:
                 print(f"--- {engine} stdout ---\n{stdout}\n---")
             if stderr.strip():
                 print(f"--- {engine} stderr ---\n{stderr}\n---")
+        
+        return result.returncode
 
     def _compile_with_xelatex(self,
                               tex_file: str, 
                               out_dir: str, 
                               engine: str = "xelatex"):
         
-        os.makedirs(out_dir, exist_ok=True)
+        source_dir = os.path.dirname(tex_file)
+        main_tex_filename = os.path.basename(tex_file)
+
+        # Copy all source files to the build directory for a clean, isolated environment
+        try:
+            shutil.copytree(source_dir, out_dir, ignore=shutil.ignore_patterns('build_*'))
+        except Exception as e:
+            print(f"❌ Error copying source files to build directory: {e}")
+            return -1
+
+        # Path to the main tex file *inside* the new build directory
+        tex_file_in_build_dir = os.path.join(out_dir, main_tex_filename)
         
+        # Read original content from the copied file, replace placeholder, and write back
+        try:
+            with open(tex_file_in_build_dir, 'r', encoding='utf-8') as f:
+                original_content = f.read()
+        except FileNotFoundError:
+            print(f"❌ Error: Main TeX file not found at {tex_file_in_build_dir}")
+            return -1
+
+        # Replace placeholder with xeCJK and set a comprehensive font configuration.
+        # These fonts (SimSun, SimHei, FangSong) are common on Windows systems.
+        # If compilation fails due to missing fonts, you may need to install them
+        # or replace them with other Chinese fonts available on your system.
+        xelatex_packages = """
+\\usepackage{xeCJK}
+\\setCJKmainfont{SimSun}
+\\setCJKsansfont{SimHei}
+\\setCJKmonofont{FangSong}
+"""
+        modified_content = original_content.replace("%%CHINESE_PACKAGE_PLACEHOLDER%%", xelatex_packages)
+
+        # Fix known syntax errors found in logs
+        modified_content = modified_content.replace(r'\(s_{\max}}\)', r'\(s_{\max}\)')
+
+        # Overwrite the tex file in the build directory
+        with open(tex_file_in_build_dir, 'w', encoding='utf-8') as f:
+            f.write(modified_content)
+
         cmd = [
             self.latexmk_path,
             f"-{engine}",                
             "-interaction=nonstopmode",   # no stop on errors
-            f"-outdir={out_dir}",  
             f"-file-line-error",       
             f"-synctex=1",
-            f"-f",                        # force mode
-            tex_file
+            main_tex_filename            # Compile the file (now relative to cwd)
         ]
-        cwd = os.path.dirname(tex_file)
+        
+        # Run the compiler from within the build directory
+        cwd = out_dir
 
         # Create a new environment for the subprocess, prioritizing the selected distribution's path
         env = os.environ.copy()
@@ -245,6 +335,8 @@ class LaTexCompiler:
                 print(f"--- {engine} stdout ---\n{stdout}\n---")
             if stderr.strip():
                 print(f"--- {engine} stderr ---\n{stderr}\n---")
+        
+        return result.returncode
 
 
     def _compile_with_lualatex(self,
@@ -261,7 +353,6 @@ class LaTexCompiler:
             f"-outdir={out_dir}",  
             f"-file-line-error",       
             f"-synctex=1",
-            f"-f",                        # force mode
             tex_file
         ]
         cwd = os.path.dirname(tex_file)
@@ -287,3 +378,5 @@ class LaTexCompiler:
                 print(f"--- {engine} stdout ---\n{stdout}\n---")
             if stderr.strip():
                 print(f"--- {engine} stderr ---\n{stderr}\n---")
+        
+        return result.returncode

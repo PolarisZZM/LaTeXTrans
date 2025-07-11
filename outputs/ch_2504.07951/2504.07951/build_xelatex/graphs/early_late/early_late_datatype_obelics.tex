@@ -1,0 +1,76 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=north east,
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xtick={
+            18,
+            27,
+            45,
+            63,
+            72
+        },
+        xticklabels={
+            18,
+            27,
+            45,
+            63,
+            72
+        },
+        xmin=18,
+        xmax=90,
+        width=1.1\linewidth,
+        ylabel style={align=center, font=\tiny, yshift=-1ex},
+        xlabel style={font=\footnotesize},
+        title={\tiny{Interleaved CE}},
+        title style={yshift=-1ex},
+        xlabel={\tiny{\% of Interleaved}},
+        yticklabel style={font=\tiny},
+        xticklabel style={font=\tiny},
+        legend style={cells={align=left}, font=\tiny},
+        legend cell align={left},
+        mark options={solid},
+    ]
+
+\addplot[legend late style] plot coordinates {
+    (18, 2.773)
+    (27, 2.726)
+    (45, 2.666)
+    (63, 2.63)
+    (72, 2.615)
+    (90, 2.594)
+};
+
+\addplot[EarlyGradStart!5!EarlyGradEnd, thick, solid, mark=*, mark size=1.75pt] plot coordinates {
+    (18, 2.781)
+    (27, 2.735)
+    (45, 2.673)
+    (63, 2.62)
+    (72, 2.605)
+    (90, 2.582)
+};
+
+\addplot[legend early style, mark size=1.75pt] plot coordinates {
+    (18, 2.767)
+    (27, 2.719)
+    (45, 2.656)
+    (63, 2.618)
+    (72, 2.601)
+    (90, 2.578)
+};
+
+\addplot[EarlyGradStart!95!EarlyGradEnd, thick, solid, mark=*, mark size=1.75pt] plot coordinates {
+    (18, 2.752)
+    (27, 2.695)
+    (45, 2.639)
+    (63, 2.586)
+    (72, 2.584)
+    (90, 2.561)
+};
+
+\end{axis}
+\end{tikzpicture}

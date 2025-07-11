@@ -1,0 +1,78 @@
+
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=north east,
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xtick={
+        0,
+        0.2, 
+        0.6,
+        1,
+        1.4
+        },
+        xticklabels={
+        \texttt{50B}, 
+        \texttt{200B}, 
+        \texttt{600B},
+        \texttt{1T},
+        \texttt{1.4T}
+        },
+        xmin=0.05,
+        xmax=1.4,
+        height=1.5in,
+        width=1.2\linewidth,
+        ylabel style={align=center, font=\scriptsize, yshift=-1ex},
+        xlabel style={font=\scriptsize},
+        title={\footnotesize{Image-Caption}},
+        xlabel={\scriptsize{Tokens seen}},
+        ylabel={\scriptsize{Validation Loss}},
+        yticklabel style={font=\scriptsize},
+        xticklabel style={font=\scriptsize},
+        legend style={cells={align=left}, font=\scriptsize, fill opacity=0.7}, %
+        legend cell align={left},
+        mark options={solid},
+    ]
+
+
+
+
+    
+    
+
+
+    \addplot[legend early style] plot coordinates {
+        (0.1, 2.534)
+        (0.2, 2.435)
+        (0.3, 2.384)
+        (0.4, 2.356)
+        (0.5, 2.329)
+        (0.6, 2.32)  
+        (0.8, 2.297)  
+        (1,   2.275)
+        (1.2, 2.255)
+        (1.4, 2.245)
+    };
+    \addlegendentry{\scalebox{1}{Early}}
+
+
+    \addplot[legend early_init style_dashed, mark=triangle*, mark size=1.35pt] plot coordinates {
+        (0.1, 2.447)
+        (0.3, 2.34)
+        (0.4, 2.321)
+        (0.5, 2.297)
+        (0.6, 2.284)  
+        (0.8, 2.274)
+        (1,   2.256)
+        (1.2, 2.251)
+
+    };
+    \addlegendentry{\scalebox{1}{Early + Init.}}
+
+
+    \end{axis}
+\end{tikzpicture}

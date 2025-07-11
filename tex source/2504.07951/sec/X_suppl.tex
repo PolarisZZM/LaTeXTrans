@@ -1,0 +1,841 @@
+
+
+
+
+
+
+
+\section{Experimental setup}
+\label{app:implementation_details}
+
+In \Cref{tab:scaling_laws_hparams}, we show the pre-training hyperparameters for different model configurations used to derive the scaling laws. The number of parameters ranges from 275M to 3.7B, with model width increasing accordingly, while the depth remains fixed at 24 layers. Learning rates vary by model size, decreasing as the model scales up. Based on empirical experiments and estimates similar to \citep{mckinzie2025mm1}, we found these values to be effective in our setup. Training is optimized using a fully decoupled AdamW optimizer with momentum values $\beta_1=0.9$, $\beta_2=0.95$, and a weight decay of $1\text{e}{-4}$. The batch size is set to 2k samples, which account for 2M tokens, given a 1k context length.  Gradient clipping is set to 1.0, with a maximum warmup duration of 5k iterations, adjusted for shorter training runs: 1k and 2.5k warmup steps for models trained between 1k–4k and 5k–15k steps, respectively. For MoEs, we found that a longer warmup is significantly better, so we adopt a 2.5k warmup for all runs under 20k steps. We use a constant learning rate schedule with cooldown during the final 20\% of training, gradually reducing to zero following an inverse square root schedule. For vision processing, image inputs are divided into $(14,14)$ patches, with augmentations including Random Resized Crop (resizing images to 224px with a scale range of [0.4, 1.0]) and Random Horizontal Flip with a probability of 0.5.  We train our models on mixture of interleaved, image captions and text only data \Cref{tab:pretraining_datasets}.
+For late fusion models, we found that using smaller learning rate for the vision encoder significantly boost the performance \Cref{tab:late_scaler_scratch}, and when both the encoder and decoder are initialized (\Cref{sec:app_init_early_late}) we found that freezing the vision encoder works best \Cref{tab:late_scaler_init}.
+
+
+ 
+
+          
+
+
+
+
+\begin{table}[htb]
+    \begin{center}
+        \centering
+        \setlength{\tabcolsep}{14pt}
+        \resizebox{\linewidth}{!}{
+        \begin{tabular}{l c c c c c c}
+            \toprule
+            \textbf{Early-fusion} \\
+            \midrule
+            Params &  275M & 468M & 932M  & 1.63B & 2.28B & 3.35B \\
+            width & 800 & 1088 & 1632 & 2208 & 2624 & 3232\\
+            depth & \multicolumn{6}{c}{24} \\
+            Learning rate & 1.5e-3 & 1.5e-3 & 5e-4 & 4.2e-4 & 4e-4 & 3.5e-4 \\
+            \midrule
+            \textbf{Late-fusion} \\
+            \midrule
+            Params &  289M & 494M & 1B  & 1.75B & 2.43B & 3.7B \\
+            vision encoder width & 384 & 512 & 768 & 1024 & 1184 & 1536 \\
+            vision encoder depth & \multicolumn{6}{c}{24} \\
+            width & 768 & 1024 & 1536 & 2048 & 2464 & 3072\\
+            depth & \multicolumn{6}{c}{24} \\
+            Learning rate & 1.5e-3 & 1.5e-3 & 5e-4 & 4.2e-4 & 3.8e-4 & 3.3e-4 \\
+            \midrule
+            \textbf{Early-fusion MoEs} \\
+            \midrule
+            Active Params &  275M & 468M & 932M  & 1.63B & 2.28B & 3.35B \\
+            width & 800 & 1088 & 1632 & 2208 & 2624 & 3232\\
+            depth & \multicolumn{6}{c}{24} \\
+            Learning rate & 1.5e-3 & 1.5e-3 & 5e-4 & 4.2e-4 & 4e-4 & 3.5e-4 \\
+            \midrule
+            Training tokens & \multicolumn{6}{c}{2.5B-600B} \\
+            Optimizer & \multicolumn{6}{c}{Fully decoupled AdamW~\citep{loshchilov2017decoupled}} \\ %
+            Optimizer Momentum & \multicolumn{6}{c}{$\beta_1=0.9 ,\beta_2=0.95$} \\
+            Minimum Learning rate & \multicolumn{6}{c}{0} \\
+            Weight decay & \multicolumn{6}{c}{1e-4} \\
+            Batch size & \multicolumn{6}{c}{2k} \\
+            Patch size & \multicolumn{6}{c}{(14, 14)} \\
+            Gradient clipping & \multicolumn{6}{c}{1.0} \\
+            MAximum Warmup iterations & \multicolumn{6}{c}{5k} \\
+            Augmentations: \\
+            \quad {\tt RandomResizedCrop} \\
+            \qquad {\tt size} & \multicolumn{6}{c}{224px} \\
+            \qquad {\tt scale} & \multicolumn{6}{c}{[0.4, 1.0]} \\
+            \quad {\tt RandomHorizontalFlip} & \multicolumn{6}{c}{$p=0.5$} \\
+            \bottomrule
+        \end{tabular}}
+    \end{center}
+    \caption{\textbf{Pre-training hyperparameters} We detail the hyperaparmeters used for pre-training different model configurations to derive scaling laws.}
+    \label{tab:scaling_laws_hparams}
+    \end{table}
+
+
+\begin{table}[htb]
+    \centering
+    \setlength{\tabcolsep}{16pt}
+    \renewcommand{\arraystretch}{1}
+    \resizebox{0.9\linewidth}{!}{
+    \begin{tabular}{lccccc}
+        Vision encoder & Interleaved & Image-Caption & Text  & AVG & AVG (SFT)  \\
+        lr scaler & (CE) & (CE) & (CE) & (CE) & (Acc) \\
+        \shline
+        1 & 2.521 & 2.15 & 2.867 &  2.513 & 43.49 \\
+        0.1 & 2.502 & 2.066 & 2.862 &  2.477 & 52.27\\
+        0.01 & 2.502 & 2.066 & 2.859 &  2.476 & 53.76\\
+        0.001 & 2.513 & 2.066 & 2.857 &  2.479 & -- \\
+        0 (frozen) & 2.504 & 2.061 & 2.856 & 2.474 & 54.14 \\
+        \bottomrule
+    \end{tabular}%
+    } 
+    \caption{\textbf{Vision encoder scaler.} Freezing the vision encoder works best when initializing late-fusion models with pre-trained models.}
+    \label{tab:late_scaler_init}
+\end{table}
+
+
+\begin{table}[htb]
+    \centering
+    \setlength{\tabcolsep}{16pt}
+    \renewcommand{\arraystretch}{1}
+    \resizebox{0.9\linewidth}{!}{
+    \begin{tabular}{lccccc}
+        Vision encoder & Interleaved & Image-Caption & Text  & AVG & AVG (SFT)  \\
+        lr scaler & (CE) & (CE) & (CE) & (CE) & (Acc) \\
+        \shline
+        0.1 & 2.674 & 2.219 & 3.072   & 2.655 & 34.84 \\
+        0.01 & 2.672 & 2.197 & 3.071  & 2.647 & 38.77 \\
+        0.001 & 2.674 & 2.218 & 3.073 & 2.655 & 38.46 \\
+        \bottomrule
+    \end{tabular}%
+    } 
+    \caption{\textbf{Vision encoder scaler.} Reducing the learning rate for the vision encoder is better when training late-fusion models from scratch.}
+    \label{tab:late_scaler_scratch}
+\end{table}
+
+
+
+\input{figs/late_vs_early_equal_tokens}
+
+
+
+
+\begin{figure*}[htp]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.33\linewidth}
+        \input{graphs/early_late/early_late_datatype_sameflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+         \input{graphs/early_late/early_late_datatype_sameflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+         \input{graphs/early_late/early_vs_late_datatype_sameflops_dclm}
+    \end{subfigure}
+            
+    \vspace{0.3cm}
+    \caption{\textbf{Early vs late fusion: changing the training mixture.} We vary the training mixtures and plot the final training loss. Early fusion models become better when increasing the proportion of interleaved documents. Early and late fusion has 1.63B and 1.75B parameters respectively.}
+    \label{fig:early_vs_late_datatype_sameflops}
+\end{figure*}
+
+
+\section{Late vs early fusion}
+\label{app:late_vs_early}
+This section provides additional comparison between early and late fusion models.
+
+\subsection{Scaling FLOPs} \Cref{fig:early_vs_late_scaledata_main} compares early-fusion and late-fusion models when scaling FLOPs. Specifically, for each model size, we train multiple models using different amounts of training tokens. The performance gap between the two approaches mainly decreases due to increasing model sizes rather than increasing the number of training tokens. Despite the decreasing gap, across all the models that we train, early-fusion consistently outperform late-fusion.
+
+
+
+
+\subsection{Changing the training data mixture} We analyze how the performance gap between early and late fusion models changes with variations in the training data mixture. As shown in \Cref{fig:early_vs_late_textratio} and \Cref{fig:early_vs_late_datatype_sameflops}, when fixing the model size, increasing the ratio of text and interleaved data favors early fusion. Interestingly, the gap remains largely unchanged for other data types. We also observe interference effects between different data types. Specifically, increasing the amount of interleaved data negatively impacts performance on image captions and vice versa. Additionally, increasing the proportion of text-only data slightly improves interleaved performance but increases loss on image captions. Overall, we find that text-only and interleaved data are correlated across different setups.
+
+
+
+    
+
+
+
+
+
+
+
+
+
+\begin{figure*}[htp]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.33\linewidth}
+        \input{graphs/early_late/early_vs_late_textratio_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_textratio_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_textratio_dclm}
+    \end{subfigure}
+            
+    \vspace{0.3cm}
+    \caption{\textbf{Early vs late fusion: changing the amount of text-only data in the training mixture (isoFLOPs).} We vary the ratio of text-only data and plot the final training loss. The gap increases with the text data ratio in favor of early fusion model. Early fusion has 1.63B parameters and late fusion 1.75B parameters.}
+    \label{fig:early_vs_late_textratio}
+\end{figure*}
+
+\input{figs/early_vs_late_imageres}
+
+\subsection{Scaling image resolution is in favor of early-fusion}
+
+We examine how both
+architectures perform with varying image resolution. We fix the number of model parameters to 1.63B and 1.75B for early and late fusion respecively. All models are trained for 100K steps or 200B tokens. Since the patch size remains
+constant, increasing the resolution results in a higher number of visual tokens. For all resolutions, we maintain the same number of text tokens.
+As shown in \Cref{fig:early_vs_late_imageres}, the early-fusion model
+consistently outperforms the late-fusion model across resolutions, particularly
+for multimodal data, with the performance gap widening at higher resolutions.
+Additionally, we observe that the loss on text and interleaved data increases as
+resolution increases.
+
+\vspace{1cm}
+\subsection{Early-fusion is consistently better when matching the late-fusion model size}
+\input{figs/early_vs_late_datatype_isoparams}
+
+
+In this section, we compare the late-fusion model with different configurations
+of early-fusion one. Specifically, we train early-fusion models that match the
+late-fusion model in total parameters (Params), text model size (Text), and
+FLOPs (FLOPs), assuming 45-45-10 training mixture. As shown in
+\Cref{fig:early_vs_late_datatype_isoparams}, early fusion consistently
+outperforms late fusion when normalized by total parameters, followed by
+normalization by FLOPs. When matching the text model size, early fusion performs
+better at higher ratios of interleaved data. 
+
+
+
+
+
+
+
+\subsection{Different late-fusion configuration} 
+We examine how this scaling changes with different late-fusion configurations. Instead of scaling both the vision and text models equally, as done in the main paper, we fix the vision encoder size to 300M and scale only the text model. \Cref{fig:early_vs_late_scalellmdata_dclm} shows that late-fusion models lag behind at smaller model sizes, with the gap closing significantly as the text model scales. This suggests that allocating more parameters to shared components is more beneficial, further supporting the choice of early-fusion models.
+
+
+
+
+
+
+
+
+
+
+\begin{figure*}[htp]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.33\linewidth}
+        \input{graphs/early_late/early_vs_late_scalellmdata_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scalellmdata_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/early_vs_late_scalellmdata_dclm}
+    \end{subfigure}
+
+    \makebox[0.9\linewidth]{ %
+        \begin{tikzpicture}
+            \begin{axis}[
+                hide axis, %
+                xmin=0, xmax=0.5, ymin=0, ymax=1, %
+                legend columns=4, %
+                legend style={
+                    at={(0.5, 1)}, %
+                    anchor=north, %
+                    /tikz/every even column/.append style={column sep=0.2cm}, %
+                    scale=0.5, %
+                    cells={align=left}, font=\footnotesize,
+                },
+            ]
+               \addlegendimage{legend late_0_2b style}
+                \addlegendentry{Late-0.555B}
+                \addlegendimage{legend late_0_4b style}
+                \addlegendentry{Late-1.14B}
+                \addlegendimage{LateGradStart!50!LateGradEnd, thick, solid, mark=*, mark size=1.5pt}
+                \addlegendentry{Late-2.320B}
+                \addlegendimage{LateGradStart!75!LateGradEnd, thick, solid, mark=*, mark size=1.5pt}
+                \addlegendentry{Late-3.33B}
+            
+            
+                \addlegendimage{legend early_0_2b style}
+                \addlegendentry{Early-0.464B}
+                \addlegendimage{EarlyGradStart!25!EarlyGradEnd, thick, solid, mark=*, mark size=1.5pt}
+                \addlegendentry{Early-0.932B}
+                \addlegendimage{legend early style}
+                \addlegendentry{Early-1.627B}
+                \addlegendimage{legend early_2_2b style}
+                \addlegendentry{Early-3.354B}
+            \end{axis}
+        \end{tikzpicture}
+    }
+
+    \vspace{-4.2cm}
+    \caption{\textbf{Early vs late fusion: scaling training FLOPs while fixing the vision encoder size.} We compare early and late fusion models when scaling both the amount of training tokens and model sizes. For late fusion mdoels, we fix the vision encoder size (300M) and scale the text model (250M, 834M, 2B, 3B). The gap between early and late get tighter when scaling the text model.}
+    \label{fig:early_vs_late_scalellmdata_dclm}
+\end{figure*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Initializing from LLM and CLIP}
+\label{sec:app_init_early_late}
+
+We study the case where both late and early fusion models are initialized from pre-trained models, specifically DCLM-1B \citep{li2024datacomp} and CLIP-ViT-L \citep{radford2021learning} for late fusion. Interestingly, \Cref{fig:early_vs_late_init_scaledata} shows that for text and interleaved multimodal documents, early fusion can match the performance of late fusion when trained for longer. However, closing the gap on image caption data remains more challenging. Notably, when considering the overall training cost, including that of pre-trained models, early fusion requires significantly longer training to compensate for the vision encoder’s pretraining cost.
+
+\input{figs/early_vs_late_init_scaledata}
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                
+
+
+
+
+
+\section{Scaling laws}
+\label{app:scaling_laws}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Fitting \(L = F(N, D)\)}  
+Following \citep{hoffmann2022training}, we determine the parameters that minimize the following objective across all our runs \(i\):  
+\begin{equation}
+\footnotesize
+    \min_{a,b,e,\alpha,\beta} \sum_{i} \text{Huber}_\delta \left( \text{LSE} \left( a - \alpha \log N_i, b - \beta \log D_i, e \right) - \log L_i \right),
+\end{equation}  
+We perform this optimization across various initialization ranges and select the parameters that achieve the lowest loss across all initializations. Specifically, our grid search spans \(\{0, 0.5, 2.5\}\) for \(\alpha\) and \(\beta\), \(\{0, 5, 10, ..., 30\}\) for \(a\) and \(b\), and \(\{-1, -0.5, 1, 0.5\}\) for \(e\). We use the L-BFGS algorithm with \(\delta=1e-3\).  
+
+
+
+\subsection{Fitting \(N \propto C^a\), \(D \propto C^b\) and \(D \propto N^d\)}  
+While these equations have a closed-form solution \citep{hoffmann2022training} for early-fusion models that can be derived from \Cref{eq:scaling_laws}, this is not the case for late-fusion models without specifying either the vision encoder or text model size. To ensure a fair comparison, we derive these equations for both models, by performing linear regression in log space. We found that the regression is very close to the coefficient found with closed-form derivation \Cref{tab:scaling_laws_closed_form}. For instance, to derive \(N = K_aC^a\), given a FLOP budget \(C\) and a set of linearly spaced tokens \(D_i\) ranging from 10B to 600B, we compute the model size for each \(D_i\) as \(N_i = \frac{C}{6D}\) for early fusion and \(N_i = \frac{C}{6D}+0.483*N_v\) for late fusion (for the 45-45-10 mixture, \(D_v=0.544D\), thus $C=6D(0.544N_v+N_t)$). We then apply \Cref{eq:scaling_laws} to obtain the loss for each model size and select \(N\) that has the minimum loss. We repeat this for all FLOP values corresponding to our runs, resulting in a set of points \((C, N_{opt})\) that we use to regress \(a\) and \(K_a\).  We follow a similar procedure to find \(b\) and \(d\). For late-fusion models, we regress a linear model to determine \(N_v\) given \(N\). Notably, even though we maintain a fixed width ratio for late-fusion models, this approach is more accurate, as embedding layers prevent a strictly fixed ratio between text and vision model sizes. We present the regression results in \Cref{fig:scaling_laws_closed_form_early_late}.
+
+
+\begin{table}[htb]
+    \centering
+    \setlength{\tabcolsep}{16pt} %
+    \renewcommand{\arraystretch}{1} %
+    \resizebox{0.9\linewidth}{!}{
+    \begin{tabular}{lcccccccc}
+        Model & $a$ & $b$ & $d$ & $n$ & $dn$  \\
+        \midrule
+        Closed form  & 0.52649 & 0.47351 & 0.89938 &  1.11188 & -0.05298  \\
+        Regression & 0.52391 & 0.47534 & 0.90052 & 1.10224 & -0.04933  \\
+        \bottomrule
+    \end{tabular}%
+    }
+    \caption{\textbf{Scaling laws parameters for early-fusion.} Doing regression to derive the scaling laws coefficients leads to very close results to using the closed-form solution.}
+    \label{tab:scaling_laws_closed_form}
+\end{table}
+
+
+\subsection{Fitting \(L \propto C^c\)}  
+To determine the relationship between the final model loss and the compute budget \(C\), we begin by interpolating the points corresponding to the same model size and compute the convex hull that covers the minimum loss achieved by all runs for each FLOP. This results in a continuous mapping from the FLOPs to the lowest loss. We consider a range of FLOPs, excluding very small values ($\leq 3e^{19}$), and construct a dataset of \((C, L)\) for linearly spaced compute \(C\). Using this data, we find the linear relationship between \(L\) and \(C\) in the log space and deduce the exponent \(c\). We visualize the results in \Cref{fig:scaling_laws_early_late_moe}.
+
+
+
+
+
+
+
+
+
+\begin{figure}[h!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{1\linewidth}
+
+
+
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/early/early_scalinglaws_params_vs_flops_avg_ap3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/late/late_scalinglaws_params_vs_flops_avg_ap3}
+    \end{subfigure}
+    
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/early/early_scalinglaws_tokens_vs_flops_avg_ap3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/late/late_scalinglaws_tokens_vs_flops_avg_ap3}
+    \end{subfigure}
+    
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/early/early_scalinglaws_tokens_to_params_vs_flops_avg_ap3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.47\linewidth}
+        \input{graphs/late/late_scalinglaws_tokens_to_params_vs_flops_avg_ap3}
+    \end{subfigure}
+
+    
+
+
+      
+    \end{subfigure}
+    \caption{\textbf{Regression results of the scaling laws coefficients.} our estimation of the scaling coefficients is close to the closed form solution.}
+    \label{fig:scaling_laws_closed_form_early_late}
+\end{figure}
+
+
+\begin{figure*}[h!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_late/pred_loss_vs_loss_early}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/late/pred_loss_vs_loss_late}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/moe/pred_loss_vs_loss_moe}
+    \end{subfigure}
+    \caption{\textbf{Observed vs predicted loss.} We visualize the loss predicted by our scaling laws (\Cref{eq:scaling_laws}) and the actual loss achieved by each run.}
+    \label{fig:observed_vs_predicted_loss}
+\end{figure*}
+
+
+
+\subsection{Scaling laws for different target data type}
+In \Cref{fig:scaling_laws_early_late_moe_getty_obelics_dclm}, we derive the scaling laws for different target data types. In general, we observe that the model learns image captioning faster than interleaved data, as indicated by the higher absolute value of the scaling exponent (e.g., 0.062 vs 0.046), despite using the same data ratio for captioning and interleaved data (45\% each). Additionally, we find that the model learns more slowly on text-only data, likely due to the smaller amount of text-only data (10\%). Across model configurations, we find that early fusion scales similarly to late fusion on image captioning but has a lower multiplicative constant (49.99 vs 47.97). For MoEs, the model learns faster but exhibits a higher multiplicative constant. On text and interleaved data, early and late fusion models scale similarly and achieve comparable performance. However, MoEs demonstrate better overall performance while learning slightly more slowly.
+
+
+
+
+
+
+\subsection{Scaling laws for different training mixtures}
+
+We investigate how the scaling laws change when modifying the training mixtures. Specifically, we vary the ratio of image caption, interleaved, and text-only data and report the results in \Cref{fig:app_early_scaleflops_data_mixtures}. Overall, we observe similar scaling trends, with only minor changes in the scaling coefficients. Upon closer analysis, we find that increasing the ratio of a particular data type in the training mixture, leads to a corresponding increase in its scaling exponent. For instance, increasing the ratio of image captions from 30\% to 40\% raises the absolute value of the exponent from 0.056 to 0.061. However, for text-only data, we do not observe significant changes in the scaling coefficients when varying its proportion in the training mixture.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+                                 
+                                     
+                            
+
+
+
+
+                    
+                        
+                    
+                    
+
+
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+        \vspace{-4mm}
+        \centering
+        \captionsetup{type=figure}
+        \begin{subfigure}[t]{\linewidth}
+            \includegraphics[width=1.0\textwidth]{assets/moes/specialization/model1088/modality_specialization_1088_150_across_layers.pdf}
+        \end{subfigure}
+        
+        \caption{\textbf{Modality-specific specialization.} We visualize the experts specialization to text and image modalities. Models are evaluated on Obelics.}
+        \label{fig:app_moes_specialization}
+\end{wrapfigure}   
+
+
+
+\subsection{Scaling laws evaluation and sensitivity}
+
+For each model size and number of training tokens, we compute the loss based on the estimated functional form in \Cref{eq:scaling_laws} and compare it with the actual loss achieved by our runs. We visualize these points in \Cref{fig:observed_vs_predicted_loss}, demonstrating that our estimation is highly accurate, particularly for lower loss values, and hence for larger FLOPs. Additionally, we perform a sensitivity analysis using bootstrapping. Specifically, we sample with replacement \( P \) points (\( P \) being equal to the total number of trained models) and re-estimate the scaling law coefficients. This process is repeated 100 times, and we report the average and standard deviation of each coefficient. \Cref{tab:scaling_laws_sensitivity} shows that our estimation is more precise for \(\beta\) compared to \(\alpha\), primarily due to the smaller number of model sizes relative to the number of different token counts used to derive the scaling laws.  
+
+
+
+
+
+\begin{table}[htb]
+    \centering
+    \setlength{\tabcolsep}{16pt} %
+    \renewcommand{\arraystretch}{1} %
+    \resizebox{0.9\linewidth}{!}{
+    \begin{tabular}{lcccccccc}
+        Model & E & $\alpha$ & $\beta$ & a & b  & d\\
+        \midrule
+        Avg  & 1.80922 & 0.29842 & 0.33209 & 0.54302  & 0.48301 &  0.92375 \\
+        Std & 0.33811 & 0.10101 & 0.02892 & 0.08813 & 0.05787 & 0.23296 \\
+        \bottomrule
+    \end{tabular}%
+    }
+    \caption{\textbf{Scaling laws sensitivity.} We report the mean and standard deviation after bootstrapping with 100 iterations.}
+    \label{tab:scaling_laws_sensitivity}
+\end{table}
+
+
+\subsection{\edit{Scaling laws for sparse NMMs.}}
+\label{app:scaling_laws_moes}
+
+Similar to dense models, we fit a parametric loss function (\Cref{eq:scaling_laws}) to predict the loss of sparse NMMs based on the number of parameters and training tokens, replacing the total parameter count with the number of active parameters. While incorporating sparsity is standard when deriving scaling laws for MoEs \citep{wangscalingmoe,krajewski2024scalingmoe,abnar2025parameters}, we focus on deriving scaling laws specific to the sparsity level used in our MoE setup. This yields coefficients that are implicitly conditioned on the sparsity configuration. 
+
+We also experiment with a sparsity-aware formulation of the scaling law as proposed in \citep{abnar2025parameters}, and observe consistent trends (\Cref{tab:moes_coeffs}). In particular, the exponents associated with model size ($N$) are substantially larger than those for training tokens ($\beta$), reinforcing the importance of scaling model size in sparse architectures. Additionally, we observe that the terms governing the scaling of active parameters decompose into two components.
+
+
+\input{tables/scaling_laws_coeffs_moes}
+
+
+\section{Mixture of experts and modality-specific specialization}
+\label{app:moes}
+
+
+
+
+
+We investigate multimodal specialization in MoE architectures. We compute a
+specialization score as the average difference between the number of text/images
+tokens assigned to each expert and a uniform assignment ($1/E$). Additionally,
+we visualize the normalized number of text and image tokens assigned to each
+expert across layers. \Cref{fig:app_moes_specialization} shows clear modality-specific
+experts, particularly in the early layers. Furthermore, the specialization score
+decreases as the number of layers increases but rises again in the very last
+layers. This suggests that early and final layers require more modality
+specialization compared to mid-layers. Additionally, we observe several experts
+shared between text and image modalities, a phenomenon not present in
+hard-routed or predefined modality-specific experts.
+
+
+        
+
+
+
+\begin{figure*}[h!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/late/late_scaleflops_avg}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_avg}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/moe/moe_scaleflops_avg_big}
+    \end{subfigure}
+
+
+    \makebox[0.9\linewidth]{ %
+        \begin{tikzpicture}
+            \begin{axis}[
+                hide axis, %
+                xmin=0, xmax=0.5, ymin=0, ymax=1, %
+                legend columns=6, %
+                legend style={
+                    at={(0.5, 1)}, %
+                    anchor=north, %
+                    /tikz/every even column/.append style={column sep=0.2cm}, %
+                    scale=0.5, %
+                    cells={align=left}, font=\footnotesize,
+                },
+            ]
+
+            \addlegendimage{legend late_0_2b style}
+            \addlegendentry{0.289B}
+            \addlegendimage{legend late_0_4b style}
+            \addlegendentry{0.494B}
+            \addlegendimage{legend late_0_9b style}
+            \addlegendentry{1B}
+            \addlegendimage{legend late style}
+            \addlegendentry{1.748B}
+            \addlegendimage{legend late_2_2b style}
+            \addlegendentry{2.430B}
+            \addlegendimage{legend late_3_3b style}
+            \addlegendentry{3.714B}
+
+            \addlegendimage{legend early_0_2b style}
+            \addlegendentry{0.275B}
+            \addlegendimage{legend early_0_4b style}
+            \addlegendentry{0.464B}
+            \addlegendimage{legend early_0_9b style}
+            \addlegendentry{0.932B}
+            \addlegendimage{legend early style}
+            \addlegendentry{1.627B}
+            \addlegendimage{legend early_2_2b style}
+            \addlegendentry{2.280B}
+            \addlegendimage{legend early_3_3b style}
+            \addlegendentry{3.354B}
+
+            \addlegendimage{legend moe_0_2b style}
+            \addlegendentry{0.275B}
+            \addlegendimage{legend moe_0_4b style}
+            \addlegendentry{0.464B}
+            \addlegendimage{legend moe_0_9b style}
+            \addlegendentry{0.932B}
+            \addlegendimage{legend moe style}
+            \addlegendentry{1.627B}
+            \addlegendimage{legend moe_2_2b style}
+            \addlegendentry{2.280B}
+            \addlegendimage{legend moe_3_3b style}
+            \addlegendentry{3.354B}
+
+            \end{axis}
+        \end{tikzpicture}
+    }
+
+    \vspace{-4cm}
+
+    \caption{\textbf{Scaling laws for native multimodal models.} From left to right: late-fusion (dense), early-fusion (dense) and early-fusion MoEs. The scaling exponents are very close for all models. However, MoEs leads to overall lower loss (smaller multiplicative constant) and takes longer to saturate.}
+    \label{fig:scaling_laws_early_late_moe}
+\end{figure*}
+
+
+
+\begin{figure*}[h!]
+    \centering
+    \captionsetup{type=figure}
+
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/late/late_scaleflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/late/late_scaleflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/late/late_scaleflops_dclm}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_dclm}
+    \end{subfigure}
+
+
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/moe/moe_scaleflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/moe/moe_scaleflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/moe/moe_scaleflops_dclm}
+    \end{subfigure}
+
+
+    \makebox[0.9\linewidth]{ %
+        \begin{tikzpicture}
+            \begin{axis}[
+                hide axis, %
+                xmin=0, xmax=0.5, ymin=0, ymax=1, %
+                legend columns=6, %
+                legend style={
+                    at={(0.5, 1)}, %
+                    anchor=north, %
+                    /tikz/every even column/.append style={column sep=0.2cm}, %
+                    scale=0.5, %
+                    cells={align=left}, font=\footnotesize,
+                },
+            ]
+
+            \addlegendimage{legend late_0_2b style}
+            \addlegendentry{0.289B}
+            \addlegendimage{legend late_0_4b style}
+            \addlegendentry{0.494B}
+            \addlegendimage{legend late_0_9b style}
+            \addlegendentry{1B}
+            \addlegendimage{legend late style}
+            \addlegendentry{1.748B}
+            \addlegendimage{legend late_2_2b style}
+            \addlegendentry{2.430B}
+            \addlegendimage{legend late_3_3b style}
+            \addlegendentry{3.714B}
+
+            \addlegendimage{legend early_0_2b style}
+            \addlegendentry{0.275B}
+            \addlegendimage{legend early_0_4b style}
+            \addlegendentry{0.464B}
+            \addlegendimage{legend early_0_9b style}
+            \addlegendentry{0.932B}
+            \addlegendimage{legend early style}
+            \addlegendentry{1.627B}
+            \addlegendimage{legend early_2_2b style}
+            \addlegendentry{2.280B}
+            \addlegendimage{legend early_3_3b style}
+            \addlegendentry{3.354B}
+
+            \addlegendimage{legend moe_0_2b style}
+            \addlegendentry{0.275B}
+            \addlegendimage{legend moe_0_4b style}
+            \addlegendentry{0.464B}
+            \addlegendimage{legend moe_0_9b style}
+            \addlegendentry{0.932B}
+            \addlegendimage{legend moe style}
+            \addlegendentry{1.627B}
+            \addlegendimage{legend moe_2_2b style}
+            \addlegendentry{2.280B}
+            \addlegendimage{legend moe_3_3b style}
+            \addlegendentry{3.354B}
+
+            \end{axis}
+        \end{tikzpicture}
+    }
+
+    \vspace{-4cm}
+    \caption{\textbf{Scaling laws for native multimodal models.} From top to bottom: late-fusion (dense), early-fusion (dense) and early-fusion MoEs. From left to right: cross-entropy on the validation set of image-caption, interleaved and text-only data.}
+    \label{fig:scaling_laws_early_late_moe_getty_obelics_dclm}
+\end{figure*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure*}[h!]
+    \centering
+    \captionsetup{type=figure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_getty}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_obelics}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early/early_scaleflops_dclm}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_getty_40_20_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_obelics_40_20_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_dclm_40_20_40}
+    \end{subfigure}
+    
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_getty_30_30_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_obelics_30_30_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_dclm_30_30_40}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_getty_20_40_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_obelics_20_40_40}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.32\linewidth}
+        \input{graphs/early_data_mixtures/early_scaleflops_dclm_20_40_40}
+    \end{subfigure}
+
+    \makebox[0.9\linewidth]{ %
+    \begin{tikzpicture}
+        \node[anchor=north] (legend) at (0\linewidth, 0) {
+            \begin{axis}[
+                        hide axis, %
+                        xmin=0, xmax=0.5, ymin=0, ymax=1, %
+                        legend columns=6, %
+                        legend style={
+                            at={(-0.12, -0.025)}, %
+                            anchor=north, %
+                            /tikz/every even column/.append style={column sep=0.2cm}, %
+                            scale=0.5,
+                            cells={align=left}, font=\footnotesize,
+                            anchor=center,
+                        },
+                    ]
+                \addlegendimage{legend early_0_2b style}
+                \addlegendentry{0.275B}
+                \addlegendimage{legend early_0_4b style}
+                \addlegendentry{0.464B}
+                \addlegendimage{legend early_0_9b style}
+                \addlegendentry{0.932B}
+                \addlegendimage{legend early style}
+                \addlegendentry{1.627B}
+                \addlegendimage{legend early_2_2b style}
+                \addlegendentry{2.280B}
+                \addlegendimage{legend early_3_3b style}
+                \addlegendentry{3.354B}
+            \end{axis}
+        };
+    \end{tikzpicture}
+    }
+    \vspace{0.5cm}
+
+
+
+
+      
+
+    \caption{\textbf{Scaling laws for early-fusion native multimodal models.} Our runs across different training mixtures (Image-caption-Interleaved-Text) and FLOPs. We visulize the final validation loss on 3 data types: HQITP (left), Obelics (middle) and DCLM (right).}
+    \label{fig:app_early_scaleflops_data_mixtures}
+\end{figure*}

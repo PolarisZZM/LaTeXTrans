@@ -1,0 +1,39 @@
+\begin{figure}[htbp]
+        \centering
+            \vspace{-16pt}
+        \foreach \row in {0,1,2,3}{
+            \foreach \col in {ipr_mse_zoomed_in, timeshot}{
+                \includegraphics[height=50pt]{rebuttal-figures/time/seed=\row/\col.pdf}
+                \hspace{10pt}
+            }
+            \\
+            \foreach \col in {ipr_mse_zoomed_in, timeshot}{
+                \label{fig:\row\col}
+            }
+            \vspace{4pt}
+        }
+        \vspace{4pt}
+        \hrule
+        \vspace{4pt}
+        \foreach \col in {ipr_mse, timeshot}{
+            \includegraphics[height=60pt]{rebuttal-figures/time/seed=0_gaussian/\col.pdf}
+            \hspace{10pt}
+        }
+        \\
+        \foreach \col in {ipr_mse, timeshot}{
+            \label{fig:gaussian_\col}
+        }
+        \caption{
+(\textbf{顶部}) 在 $\texttt{NLGP}(g=100)$ 上训练的四个初始化，$\xi_0 = 0.3$ 和 $\xi_1 = 0.7$。
+如预期的那样，权重始终会本地化。
+在（左，第一）中，我们绘制了经验和解析感受野（RF）随时间变化的 IPR（定义为（\# 梯度步数）$\times \, \tau$，学习率）。
+在（左，第二）中，我们绘制了经验和解析 RF 之间的 $\ell_2$ 距离的时间演化。
+在（左，第三）中，我们放大（左，第一），将范围限制在 $[0,0.1]$ 以更清楚地观察训练初期 IPR 的发散。
+在（右，第一）和（右，第二）中，我们分别在解析模型因本地化而崩溃之前和之后的时刻快照了经验和解析 RF（根据 IPR 和 $\ell_2$ 距离）。
+最后，在（右，第三）中，我们快照了训练期结束时的情况。
+(\textbf{底部}) 与顶部第一行相同的初始化，但在 $\texttt{NLGP}(g=0.01)$ 数据上训练，仍然使用 $\xi_0 = 0.3$ 和 $\xi_1 = 0.7$。
+如预期的那样，权重不会本地化。
+我们绘制了与上面相同的量，但在这里我们的解析模型的预测在整个训练过程中保持有效，因为本地化从未出现，因此假设（A3）未像上面那样被违反。
+\label{fig:time}
+}
+    \end{figure}

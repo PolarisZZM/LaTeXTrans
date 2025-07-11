@@ -1,0 +1,131 @@
+
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=north east,
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=2,
+        axis x line*=bottom,
+        axis y line*=left,
+        xmode=log, %
+        log basis x=10, %
+        xtick={
+            1E+19,
+            1E+20,
+            1E+21,
+            1E+22
+        },
+        xmin=2E+18,
+        xmax=2E+22,
+        width=1.05\linewidth,
+        ylabel style={align=center, font=\scriptsize, yshift=-1ex},
+        xlabel style={font=\scriptsize},
+        ylabel={\scriptsize{Text CE}},
+        xlabel={\scriptsize{FLOPs}},
+        yticklabel style={font=\scriptsize},
+        xticklabel style={font=\scriptsize},
+        legend style={cells={align=left}, font=\scriptsize, fill opacity=0.7, fill=none, draw=none}, %
+        legend cell align={left},
+        mark options={solid},
+    ]
+
+
+    \addplot[color=black, samples=50, domain=5e18:10e21] {20.256571145096377*x^(-0.040624578333416074)};
+    \addlegendentry{$L = 20.257C^{-0.041}$};
+
+    \addplot[legend early_0_2b style] plot coordinates {
+        (4.13e+18, 3.954)
+        (8.25e+18, 3.601)
+        (1.24e+19, 3.456)
+        (2.06e+19, 3.314)
+        (4.13e+19, 3.279)
+        (6.19e+19, 3.228)
+        (8.25e+19, 3.142)
+        (1.65e+20, 3.091)
+        (3.3e+20, 3.091)
+        (4.95e+20, 3.065)
+        (6.6e+20, 3.048)
+    };
+    \addplot[legend early_0_4b style] plot coordinates {
+        (6.96e+18, 3.852)
+        (1.39e+19, 3.511)
+        (2.09e+19, 3.392)
+        (3.48e+19, 3.292)
+        (6.96e+19, 3.18)
+        (1.04e+20, 3.127)
+        (1.39e+20, 3.103)
+        (2.78e+20, 3.037)
+        (5.57e+20, 2.982)
+        (8.35e+20, 2.956)
+        (1.11e+21, 2.938)
+        (1.39e+21, 2.925)
+        (1.67e+21, 2.915)
+        
+          
+    };
+    \addplot[legend early_0_9b style] plot coordinates {
+        (1.4e+19, 3.827)
+        (2.8e+19, 3.405)
+        (4.19e+19, 3.267)
+        (6.99e+19, 3.21)
+        (1.4e+20, 3.085)
+        (2.1e+20, 3.02)
+        (2.8e+20, 2.992)
+        (5.59e+20, 2.909)
+        (1.12e+21, 2.844)
+        (1.68e+21, 2.813)
+        (2.24e+21, 2.792)
+        (2.8e+21, 2.778)
+        (3.36e+21, 2.766)
+    };
+
+    \addplot[legend early style] plot coordinates {
+        (2.44e+19, 3.827)
+        (4.88e+19, 3.405)
+        (7.32e+19, 3.267)
+        (1.22e+20, 3.144)
+        (2.44e+20, 3.017)
+        (3.66e+20, 2.949)
+        (4.88e+20, 2.918)
+        (9.76e+20, 2.83)
+        (1.95e+21, 2.762)
+        (2.93e+21, 2.728)
+        (3.9e+21, 2.705)
+        (4.88e+21, 2.689)
+        (5.86e+21, 2.677)
+    };
+
+    \addplot[legend early_2_2b style] plot coordinates {
+        (3.42e+19, 3.758)
+        (6.84e+19, 3.364)
+        (1.03e+20, 3.23)
+        (1.71e+20, 3.109)
+        (3.42e+20, 2.977)
+        (5.13e+20, 2.909)
+        (6.84e+20, 2.889)
+        (1.37e+21, 2.799)
+        (2.74e+21, 2.728)
+        (4.1e+21, 2.692)
+        (5.47e+21, 2.669)
+        (6.84e+21, 2.65)
+        (8.21e+21, 2.638)
+    };
+    \addplot[legend early_3_3b style] plot coordinates {
+        (5.03e+19, 3.714)
+        (1.01e+20, 3.33)
+        (1.51e+20, 3.197)
+        (2.52e+20, 3.075)
+        (5.03e+20, 2.94)
+        (7.55e+20, 2.87)
+        (1.01e+21, 2.849)
+        (2.01e+21, 2.757)
+        (4.02e+21, 2.683)
+        (6.04e+21, 2.645)
+        (8.05e+21, 2.621)
+        (1.01e+22, 2.602)
+    };
+    
+
+    \end{axis}
+\end{tikzpicture}
