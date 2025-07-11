@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.8)  11 JUL 2025 15:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.8)  11 JUL 2025 16:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1079,29 +1079,9 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@cols=\count402
 \TX@ftn=\toks57
 )
-(d:/texlive/2025/texmf-dist/tex/latex/axessibility/axessibility.sty
-Package: axessibility 
-
-(d:/texlive/2025/texmf-dist/tex/generic/xstring/xstring.sty
-(d:/texlive/2025/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count403
-\xs_countb=\count404
-)
-Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-)
-(d:/texlive/2025/texmf-dist/tex/latex/accsupp/accsupp.sty
-Package: accsupp 2019/12/05 v0.6 Accessibility support by marked content (HO)
-
-(d:/texlive/2025/texmf-dist/tex/latex/accsupp/accsupp-pdftex.def
-File: accsupp-pdftex.def 2019/12/05 v0.6 accsupp driver for pdfTeX (HO)
-))
-(d:/texlive/2025/texmf-dist/tex/generic/pdftex/glyphtounicode.tex)
-\@mltext=\toks58
-\@mltexttmp=\toks59
-)
 (d:/texlive/2025/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2025/05/09 v7.0b a miscellany of footnote facilities
-\FN@temptoken=\toks60
+\FN@temptoken=\toks58
 \footnotemargin=\dimen329
 Package footmisc Info: Declaring symbol style bringhurst on input line 549.
 Package footmisc Info: Declaring symbol style chicago on input line 557.
@@ -1118,12 +1098,12 @@ Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks61
-\t@pgfplots@tokb=\toks62
-\t@pgfplots@tokc=\toks63
+\t@pgfplots@toka=\toks59
+\t@pgfplots@tokb=\toks60
+\t@pgfplots@tokc=\toks61
 \pgfplots@tmpa=\dimen330
-\c@pgfplots@coordindex=\count405
-\c@pgfplots@scanlineindex=\count406
+\c@pgfplots@coordindex=\count403
+\c@pgfplots@scanlineindex=\count404
 
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.te
 x))
@@ -1133,9 +1113,9 @@ x))
 upp_loader.code.tex
 (d:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks64
-\t@pgf@tokb=\toks65
-\t@pgf@tokc=\toks66
+\t@pgf@toka=\toks62
+\t@pgf@tokb=\toks63
+\t@pgf@tokc=\toks64
 
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
 upp_pgfutil-common-lists.tex))
@@ -1146,14 +1126,14 @@ cture.code.tex)
 ctureext.code.tex)
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.co
 de.tex
-\c@pgfplotsarray@tmp=\count407
+\c@pgfplotsarray@tmp=\count405
 )
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.c
 ode.tex)
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.c
 ode.tex
-\c@pgfplotstable@counta=\count408
-\t@pgfplotstable@a=\toks67
+\c@pgfplotstable@counta=\count406
+\t@pgfplotstable@a=\toks65
 )
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.co
 de.tex)
@@ -1164,7 +1144,7 @@ tex))
 x)
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfsh
 ading.code.tex
-\c@pgfplotslibrarysurf@no=\count409
+\c@pgfplotslibrarysurf@no=\count407
 
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsha
 ding.pgfsys-pdftex.def)))
@@ -1192,7 +1172,7 @@ ex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen333
 \pgfdecoratedinputsegmentremainingdistance=\dimen334
 \pgf@decorate@distancetomove=\dimen335
-\pgf@decorate@repeatstate=\count410
+\pgf@decorate@repeatstate=\count408
 \pgfdecorationsegmentamplitude=\dimen336
 \pgfdecorationsegmentlength=\dimen337
 )
@@ -1208,7 +1188,7 @@ brarydecorations.pathreplacing.code.tex
 orations.pathreplacing.code.tex))
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.conto
 urlua.code.tex)
-\pgfplots@numplots=\count411
+\pgfplots@numplots=\count409
 \pgfplots@xmin@reg=\dimen338
 \pgfplots@xmax@reg=\dimen339
 \pgfplots@ymin@reg=\dimen340
@@ -1251,7 +1231,7 @@ Package minitoc Info: I0004
 (minitoc)             chapter level macros NOT available.
 Package minitoc Info: I0028
 (minitoc)             section level macros available.
-\mtc@toks=\toks68
+\mtc@toks=\toks66
 \mtc@strutbox=\box127
 \mtc@hstrutbox=\box128
 Package minitoc Info: I0002
@@ -1270,11 +1250,11 @@ Package minitoc Info: I0031
 
 \openout4 = `main.mtc0'.
 
-\c@ptc=\count412
-\c@parttocdepth=\count413
+\c@ptc=\count410
+\c@parttocdepth=\count411
 \ptcindent=\skip77
-\c@stc=\count414
-\c@secttocdepth=\count415
+\c@stc=\count412
+\c@secttocdepth=\count413
 \stcindent=\skip78
 Package minitoc Info: I0010
 (minitoc)             The english language is selected.
@@ -1301,9 +1281,9 @@ with kernel methods
 ternalshared.code.tex)))
 (d:/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.group
 plots.code.tex
-\pgfplots@group@current@plot=\count416
-\pgfplots@group@current@row=\count417
-\pgfplots@group@current@column=\count418
+\pgfplots@group@current@plot=\count414
+\pgfplots@group@current@row=\count415
+\pgfplots@group@current@column=\count416
 
 (d:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarycalc.code.tex
@@ -1417,10 +1397,10 @@ you can ask a wizard to enlarge me.
 
  
 Here is how much of TeX's memory you used:
- 42814 strings out of 467888
- 943288 string characters out of 5438241
- 1569492 words of memory out of 5000000
- 70669 multiletter control sequences out of 15000+600000
+ 42393 strings out of 467888
+ 936102 string characters out of 5438241
+ 1561022 words of memory out of 5000000
+ 70267 multiletter control sequences out of 15000+600000
  633236 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  30000i,1n,135p,720b,609s stack positions out of 30000i,1000n,20000p,200000b,200000s

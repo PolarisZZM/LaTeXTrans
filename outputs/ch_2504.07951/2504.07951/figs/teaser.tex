@@ -9,6 +9,6 @@
         \input{graphs/early_late/d_n_ratio_vs_flops}
     \end{subfigure}
     \vspace{-3mm}
-    \caption{\textbf{原生多模态模型的规模特性。} 基于 \cref{sec:scaling_laws_early} 中的规模法则研究，我们观察到：（1）早期和后期融合模型在使用相同计算预算 $C$（以 FLOPs 为单位）进行训练时，提供相当的验证损失 $L$；（2）这一性能是通过在参数 $N$ 和训练标记数量 $D$ 之间的不同权衡实现的，其中早期融合模型需要更少的参数。 \edit{；（3）稀疏的早期融合模型在给定 FLOP 预算的情况下，能够实现更低的损失，并且需要更多的训练标记。} }
+    \caption{\textbf{原生多模态模型的可扩展性特性。} 基于 \cref{sec:scaling_laws_early} 中的可扩展性规律研究，我们观察到： (1) 在使用相同计算预算 $C$（以 FLOPs 计）进行训练时，早期融合模型和后期融合模型在验证损失 $L$ 上表现相当； (2) 该性能是通过参数量 $N$ 与训练标记数 $D$ 之间的不同权衡实现的，其中早期融合模型所需参数更少； \edit{；(3) 稀疏的早期融合模型在给定的 FLOP 预算下可获得更低的损失，但需要更多的训练标记。} }
     \label{fig:teaser}
 \end{figure}

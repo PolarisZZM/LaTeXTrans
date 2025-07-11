@@ -278,63 +278,46 @@ class LaTexCompiler:
         # Path to the main tex file *inside* the new build directory
         tex_file_in_build_dir = os.path.join(out_dir, main_tex_filename)
         
-        # Read original content from the copied file, replace placeholder, and write back
         try:
             with open(tex_file_in_build_dir, 'r', encoding='utf-8') as f:
                 original_content = f.read()
         except FileNotFoundError:
             print(f"❌ Error: Main TeX file not found at {tex_file_in_build_dir}")
-            return -1
+            return -1 # Return a non-zero code to indicate failure
 
-        # Replace placeholder with xeCJK and set a comprehensive font configuration.
-        # These fonts (SimSun, SimHei, FangSong) are common on Windows systems.
-        # If compilation fails due to missing fonts, you may need to install them
-        # or replace them with other Chinese fonts available on your system.
-        xelatex_packages = """
-\\usepackage{xeCJK}
-\\setCJKmainfont{SimSun}
-\\setCJKsansfont{SimHei}
-\\setCJKmonofont{FangSong}
-"""
-        modified_content = original_content.replace("%%CHINESE_PACKAGE_PLACEHOLDER%%", xelatex_packages)
+        # Replace placeholder with ctex package for better Chinese support with XeLaTeX
+        xelatex_package = "\\usepackage[fontset=fandol,UTF8]{ctex}"
+        modified_content = original_content.replace("%%CHINESE_PACKAGE_PLACEHOLDER%%", xelatex_package)
 
         # Fix known syntax errors found in logs
         modified_content = modified_content.replace(r'\(s_{\max}}\)', r'\(s_{\max}\)')
 
-        # Overwrite the tex file in the build directory
         with open(tex_file_in_build_dir, 'w', encoding='utf-8') as f:
             f.write(modified_content)
 
         cmd = [
             self.latexmk_path,
             f"-{engine}",                
-            "-interaction=nonstopmode",   # no stop on errors
+            "-interaction=nonstopmode",   
             f"-file-line-error",       
             f"-synctex=1",
-            main_tex_filename            # Compile the file (now relative to cwd)
+            main_tex_filename
         ]
         
-        # Run the compiler from within the build directory
         cwd = out_dir
 
         # Create a new environment for the subprocess, prioritizing the selected distribution's path
         env = os.environ.copy()
         dist_bin_dir = os.path.dirname(self.latexmk_path)
         env['PATH'] = f"{dist_bin_dir}{os.pathsep}{env.get('PATH', '')}"
-
+        
         result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env)
 
         if result.returncode == 0:
             print(f"✅  `{engine}` process completed with exit code 0.")
-        else:
-            print(f"⚠️  `{engine}` process finished with non-zero exit code ({result.returncode}).")
-            print(f"   This may indicate warnings or errors. Checking for PDF output...")
-            stdout = result.stdout.decode('utf-8', errors='ignore')
-            stderr = result.stderr.decode('utf-8', errors='ignore')
-            if stdout.strip():
-                print(f"--- {engine} stdout ---\n{stdout}\n---")
-            if stderr.strip():
-                print(f"--- {engine} stderr ---\n{stderr}\n---")
+            output_path = os.path.join(self.output_latex_dir, "success.txt")
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(result.stdout.decode("utf-8", errors="ignore"))
         
         return result.returncode
 

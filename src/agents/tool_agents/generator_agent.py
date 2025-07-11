@@ -4,6 +4,7 @@ from pathlib import Path
 import sys
 import os
 import shutil
+import re
 
 base_dir = os.getcwd()
 sys.path.append(base_dir)
@@ -44,6 +45,8 @@ class GeneratorAgent(BaseToolAgent):
                             )
         latex_constructor.construct()
 
+        self._patch_problematic_packages(os.path.join(transed_latex_dir, "main.tex"))
+
         latex_compiler = LaTexCompiler(output_latex_dir=transed_latex_dir)
         pdf_file = latex_compiler.compile()
         if pdf_file:
@@ -68,8 +71,29 @@ class GeneratorAgent(BaseToolAgent):
 
         return dest_dir
         
-    
+    def _patch_problematic_packages(self, main_tex_path: str):
+        """
+        Comments out problematic LaTeX packages in the main.tex file.
+        """
+        if not os.path.exists(main_tex_path):
+            self.log(f"⚠️  main.tex file not found at {main_tex_path}. Skipping patch.", "warning")
+            return
+            
+        try:
+            with open(main_tex_path, 'r', encoding='utf-8') as f:
+                content = f.read()
 
+            # Pattern to find \usepackage[...]{axessibility} and comment it out
+            pattern = r"(\\usepackage(?:\[.*?\])?\{axessibility\})"
+            
+            if re.search(pattern, content):
+                content = re.sub(pattern, r"%\1", content)
+                with open(main_tex_path, 'w', encoding='utf-8') as f:
+                    f.write(content)
+                self.log(f"✅ Patched problematic package 'axessibility' in {main_tex_path}.")
+
+        except Exception as e:
+            self.log(f"❌ Error patching file {main_tex_path}: {e}", "error")
 
 # import toml
 # import argparse

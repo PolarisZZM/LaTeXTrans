@@ -13,6 +13,11 @@
     \vspace{5pt}
     \setlength{\fboxsep}{0.5pt}
     \setlength{\fboxrule}{0pt}
-    \caption{\textbf{原生多模态模型中 \fbox{\colorbox{CustomC_Light1!20}{\strut early-fusion}} 与 \fbox{\colorbox{CustomD_Light1!20}{late-fusion\strut}} 的尺度规律。} 每个点表示一个在不同 \edit{数量的} tokens（250M 到 400B）上训练的模型（300M 到 3B 参数）。我们报告了在 \edit{交错数据（Obelics）、图像描述数据（HQITP）和纯文本数据（DCLM）} 的验证集上的平均交叉熵损失。}
+    \caption{\textbf{早期融合和 \fbox{\colorbox{CustomC_Light1!20}{\strut
+    早期融合}} 和 \fbox{\colorbox{CustomD_Light1!20}{晚期融合\strut}}
+    本地多模态模型的规模规律。} 每个点代表一个模型（300M 到 3B
+    参数），在不同的 \edit{标记数量}（250M 到 400B）上训练。我们
+    报告在 \edit{交替（Obelics）、图像-标题（HQITP）和仅文本数据
+    （DCLM）} 上的平均交叉熵损失。}
     \label{fig:early_vs_late_scaleflops_3d}
 \end{figure}
