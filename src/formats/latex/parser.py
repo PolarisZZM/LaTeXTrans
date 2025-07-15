@@ -32,7 +32,10 @@ class LatexParser:
         full_tex = self._extract_newcommands(full_tex)
         full_tex = compress_newlines(full_tex)
         self._split_to_sections(full_tex)
-
+        
+        # 先处理长章节
+        self._split_long_sections(max_tokens=2000)
+        # 再合并短章节
         self._merge_short_sections(min_tokens=50)  # Merge short sections to avoid too many sections
 
         for i,section in enumerate(self.sections_json):
@@ -274,43 +277,44 @@ class LatexParser:
                     subsection_count += 1
                     subsubsection_count = 0
                     self.sections_json.append({
-                        "section": f'{section_count}_{subsection_count}',
+                        "section": f"{section_count}.{subsection_count}",
                         "content": sections_tex[last_pos:result.start()],
-                        "trans_content": ''
+                        "trans_content": ""
                     })
                 elif last_result.group(1) == "subsubsection" or last_result.group(1) == "subsubsection*":
                     subsubsection_count += 1
                     self.sections_json.append({
-                        "section": f'{section_count}_{subsection_count}_{subsubsection_count}',
+                        "section": f"{section_count}.{subsection_count}.{subsubsection_count}",
                         "content": sections_tex[last_pos:result.start()],
-                        "trans_content": ''
+                        "trans_content": ""
                     })
             last_pos = result.start()
             last_result = result
 
+        # 处理文档最后一个章节
         if last_result.group(1) == "section" or last_result.group(1) == "section*":
             section_count += 1
             subsection_count = 0
             subsubsection_count = 0
             self.sections_json.append({
-                "section": f'{section_count}',
+                "section": f"{section_count}",
                 "content": sections_tex[last_pos:],
-                "trans_content": ''
+                "trans_content": ""
             })
         elif last_result.group(1) == "subsection" or last_result.group(1) == "subsection*":
             subsection_count += 1
             subsubsection_count = 0
             self.sections_json.append({
-                "section": f'{section_count}_{subsection_count}',
+                "section": f"{section_count}.{subsection_count}",
                 "content": sections_tex[last_pos:],
-                "trans_content": ''
+                "trans_content": ""
             })
         elif last_result.group(1) == "subsubsection" or last_result.group(1) == "subsubsection*":
             subsubsection_count += 1
             self.sections_json.append({
-                "section": f'{section_count}_{subsection_count}_{subsubsection_count}',
+                "section": f"{section_count}.{subsection_count}.{subsubsection_count}",
                 "content": sections_tex[last_pos:],
-                "trans_content": ''
+                "trans_content": ""
             })
 
     def _merge_short_sections(self, min_tokens=20):
@@ -351,4 +355,99 @@ class LatexParser:
 
         self.sections_json = merged_sections
 
+    def _split_long_sections(self, max_tokens=1000):
+        """
+        将过长的章节分割成多个小节，确保：
+        1. 不会切断句子
+        2. 不会切断LaTeX环境
+        3. 尽可能多分割以适应token限制
+        Args:
+            max_tokens (int): 每个章节的最大token数，默认设置更小以获得更多分段
+        """
+        enc = tiktoken.encoding_for_model("gpt-4")
+        split_sections = []
         
+        for section in self.sections_json:
+            content = section["content"]
+            tokens = len(enc.encode(content))
+            
+            if tokens > max_tokens:
+                # 1. 首先按LaTeX环境分割
+                env_pattern = r'\\begin\{.*?\}.*?\\end\{.*?\}'
+                parts = re.split(f'({env_pattern})', content)
+                
+                current_content = ""
+                current_tokens = 0
+                sub_section_count = 1
+                buffer = ""  # 用于临时存储未处理完的内容
+                
+                for part in parts:
+                    # 如果是LaTeX环境，作为一个整体处理
+                    if re.match(env_pattern, part):
+                        part_tokens = len(enc.encode(part))
+                        if current_content and current_tokens + part_tokens > max_tokens:
+                            # 保存当前累积的内容
+                            split_sections.append({
+                                "section": f"{section['section']}.{sub_section_count}",
+                                "content": current_content.strip(),
+                                "trans_content": ""
+                            })
+                            sub_section_count += 1
+                            current_content = part
+                            current_tokens = part_tokens
+                        else:
+                            if current_content:
+                                current_content += "\n\n" + part
+                            else:
+                                current_content = part
+                            current_tokens += part_tokens
+                        continue
+
+                    # 2. 对非环境内容，按句子分割
+                    sentences = re.split(r'([。！？\n\n])', part)
+                    
+                    for i in range(0, len(sentences), 2):
+                        sentence = sentences[i]
+                        if i + 1 < len(sentences):
+                            sentence += sentences[i+1]  # 加上分隔符
+                        
+                        if not sentence.strip():
+                            continue
+                            
+                        sentence_tokens = len(enc.encode(buffer + sentence))
+                        
+                        if current_tokens + sentence_tokens > max_tokens and current_content:
+                            # 保存当前累积的内容
+                            split_sections.append({
+                                "section": f"{section['section']}.{sub_section_count}",
+                                "content": current_content.strip(),
+                                "trans_content": ""
+                            })
+                            sub_section_count += 1
+                            current_content = buffer + sentence
+                            current_tokens = len(enc.encode(current_content))
+                            buffer = ""
+                        else:
+                            if current_content:
+                                current_content += buffer + sentence
+                            else:
+                                current_content = buffer + sentence
+                            current_tokens += sentence_tokens
+                            buffer = ""
+                
+                # 处理最后剩余的内容
+                if buffer:
+                    current_content += buffer
+                if current_content:
+                    split_sections.append({
+                        "section": f"{section['section']}.{sub_section_count}",
+                        "content": current_content.strip(),
+                        "trans_content": ""
+                    })
+            else:
+                # 章节不需要分割，直接添加
+                split_sections.append(section)
+        
+        self.sections_json = split_sections
+
+
