@@ -3,7 +3,7 @@
         "placeholder": "<PLACEHOLDER_ENV_1>",
         "env_name": "abstract",
         "content": "\\begin{abstract}\nHelical dichroism (HD) is a proposed method for the resolution of molecular chirality, employing the orbital angular momentum (OAM) of light. Going beyond the conventional assumptions about~HD, this work proposes a rigid theoretical framework for the analysis of the HD, based on molecular symmetries and rotational eigenstates. We derive the rotational selection rules, which clearly establish that HD only emerges from the spin-orbit coupling of light, even for beams without far-field OAM. Our findings refine the conditions for observing HD, shedding light on the outcome of prior experiments and guiding future designs for chiral sensing using structured light.\n\\end{abstract}",
-        "trans_content": "\\begin{abstract}\n螺旋二色性（Helical Dichroism, HD）是一种利用光的轨道角动量（Orbital Angular Momentum, OAM）解析分子手性的新兴方法。本研究突破传统理论对HD的假设，基于分子对称性与转动本征态构建了严格的HD分析理论框架。我们推导出转动选择定则，明确证明即使对于无远场OAM的光束，HD现象也仅源于光的自旋-轨道耦合作用。这些发现细化了观测HD的实验条件，不仅为已有实验结果提供理论解释，更为未来基于结构光的手性传感设计提供了重要指导。\n\\end{abstract}",
+        "trans_content": "\\begin{abstract}\n螺旋二色性（Helical Dichroism, HD）是一种利用光轨道角动量（Orbital Angular Momentum, OAM）解析分子手性的新兴方法。本研究突破传统HD理论的假设框架，基于分子对称性与转动本征态，构建了严格的HD分析理论体系。通过推导转动选择定则，我们明确论证了HD现象仅源于光的自旋-轨道耦合效应，即使对于不携带远场OAM的光束亦然。研究成果细化了观测HD的实验条件，不仅为已有实验结果提供了理论阐释，更为未来基于结构光的手性传感设计提供了重要指导。\n\\end{abstract}",
         "need_trans": true
     },
     {

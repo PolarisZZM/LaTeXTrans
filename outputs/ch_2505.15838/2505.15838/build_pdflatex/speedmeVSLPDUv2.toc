@@ -1,0 +1,15 @@
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{1}{section*.1}%
+\tocdepth@restore 
+\contentsline {section}{\numberline {I}引言}{1}{section*.2}%
+\contentsline {section}{\numberline {II}现有变光速理论概述}{2}{section*.3}%
+\contentsline {section}{\numberline {III}Friedmann-Lemaître-Robertson-Walker 度规}{4}{section*.5}%
+\contentsline {section}{\numberline {IV}爱因斯坦-希尔伯特作用量}{7}{section*.7}%
+\contentsline {section}{\numberline {V}爱因斯坦场方程}{8}{section*.8}%
+\contentsline {subsection}{\numberline {A}里奇张量与爱因斯坦张量}{8}{section*.9}%
+\contentsline {subsection}{\numberline {B}能量动量张量}{9}{section*.10}%
+\contentsline {subsection}{\numberline {C}Friedmann 方程}{10}{section*.11}%
+\contentsline {section}{\numberline {VI}光速的运动方程}{11}{section*.12}%
+\contentsline {section}{\numberline {VII}结论与总结}{13}{section*.14}%
+\contentsline {section}{\numberline {}Acknowledgments}{13}{section*.15}%
+\contentsline {section}{\numberline {}References}{14}{section*.16}%

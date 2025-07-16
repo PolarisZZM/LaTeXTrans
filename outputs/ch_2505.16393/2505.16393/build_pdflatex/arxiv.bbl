@@ -1,0 +1,626 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{43}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Maier}\ \emph {et~al.}(2001)\citenamefont {Maier},
+  \citenamefont {Franco},\ and\ \citenamefont {Lindner}}]{MAIER2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.~M.}\ \bibnamefont
+  {Maier}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Franco}},\ and\
+  \bibinfo {author} {\bibfnamefont {W.}~\bibnamefont {Lindner}},\ }\bibfield
+  {title} {\bibinfo {title} {Separation of enantiomers: needs, challenges,
+  perspectives},\ }\href
+  {https://doi.org/https://doi.org/10.1016/S0021-9673(00)00532-X} {\bibfield
+  {journal} {\bibinfo  {journal} {Journal of Chromatography A}\ }\textbf
+  {\bibinfo {volume} {906}},\ \bibinfo {pages} {3} (\bibinfo {year} {2001})},\
+  \bibinfo {note} {chiral Separations}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Barkholtz}\ \emph {et~al.}(2023)\citenamefont
+  {Barkholtz}, \citenamefont {Hadzima},\ and\ \citenamefont
+  {Miles}}]{barkholtz2023}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.~M.}\ \bibnamefont
+  {Barkholtz}}, \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Hadzima}},\
+  and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Miles}},\ }\bibfield
+   {title} {\bibinfo {title} {Pharmacology of r-(-)-methamphetamine in humans:
+  A systematic review of the literature},\ }\href
+  {https://doi.org/10.1021/acsptsci.3c00019} {\bibfield  {journal} {\bibinfo
+  {journal} {ACS Pharmacology \& Translational Science}\ }\textbf {\bibinfo
+  {volume} {6}},\ \bibinfo {pages} {914} (\bibinfo {year} {2023})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Brown}\ and\ \citenamefont
+  {Davies}(1989)}]{Brown1989}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont
+  {Brown}}\ and\ \bibinfo {author} {\bibfnamefont {S.~G.}\ \bibnamefont
+  {Davies}},\ }\bibfield  {title} {\bibinfo {title} {Chemical asymmetric
+  synthesis},\ }\href {https://doi.org/10.1038/342631a0} {\bibfield  {journal}
+  {\bibinfo  {journal} {Nature}\ }\textbf {\bibinfo {volume} {342}},\ \bibinfo
+  {pages} {631} (\bibinfo {year} {1989})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Qian}\ \emph {et~al.}(2023)\citenamefont {Qian},
+  \citenamefont {Xu},\ and\ \citenamefont {Yan}}]{qian2023}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.-L.}\ \bibnamefont
+  {Qian}}, \bibinfo {author} {\bibfnamefont {S.-T.}\ \bibnamefont {Xu}},\ and\
+  \bibinfo {author} {\bibfnamefont {X.-P.}\ \bibnamefont {Yan}},\ }\bibfield
+  {title} {\bibinfo {title} {Recent advances in separation and analysis of
+  chiral compounds},\ }\href {https://doi.org/10.1021/acs.analchem.2c04371}
+  {\bibfield  {journal} {\bibinfo  {journal} {Analytical Chemistry}\ }\textbf
+  {\bibinfo {volume} {95}},\ \bibinfo {pages} {304} (\bibinfo {year}
+  {2023})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Koch}\ \emph {et~al.}(2019)\citenamefont {Koch},
+  \citenamefont {Lemeshko},\ and\ \citenamefont {Sugny}}]{Koch2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~P.}\ \bibnamefont
+  {Koch}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Lemeshko}},\
+  and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Sugny}},\ }\bibfield
+   {title} {\bibinfo {title} {Quantum control of molecular rotation},\ }\href
+  {https://doi.org/10.1103/RevModPhys.91.035005} {\bibfield  {journal}
+  {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf {\bibinfo {volume} {91}},\
+  \bibinfo {pages} {035005} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Deutsche}\ and\ \citenamefont
+  {Moscowitz}(1970)}]{deutsche1970}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~W.}\ \bibnamefont
+  {Deutsche}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Moscowitz}},\ }\bibfield  {title} {\bibinfo {title} {Optical activity of
+  vibrational origin. ii. consequences of polymer conformation},\ }\href
+  {https://doi.org/10.1063/1.1674383} {\bibfield  {journal} {\bibinfo
+  {journal} {The Journal of Chemical Physics}\ }\textbf {\bibinfo {volume}
+  {53}},\ \bibinfo {pages} {2630} (\bibinfo {year} {1970})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Holzwarth}\ \emph {et~al.}(1974)\citenamefont
+  {Holzwarth}, \citenamefont {Hsu}, \citenamefont {Mosher}, \citenamefont
+  {Faulkner},\ and\ \citenamefont {Moscowitz}}]{Holzwarth1974}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Holzwarth}}, \bibinfo {author} {\bibfnamefont {E.~C.}\ \bibnamefont {Hsu}},
+  \bibinfo {author} {\bibfnamefont {H.~S.}\ \bibnamefont {Mosher}}, \bibinfo
+  {author} {\bibfnamefont {T.~R.}\ \bibnamefont {Faulkner}},\ and\ \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {Moscowitz}},\ }\bibfield  {title}
+  {\bibinfo {title} {Infrared circular dichroism of carbon-hydrogen and
+  carbon-deuterium stretching modes. observations},\ }\href
+  {https://doi.org/10.1021/ja00808a042} {\bibfield  {journal} {\bibinfo
+  {journal} {J. Am. Chem. Soc.}\ }\textbf {\bibinfo {volume} {96}},\ \bibinfo
+  {pages} {251} (\bibinfo {year} {1974})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Miles}\ \emph {et~al.}(2021)\citenamefont {Miles},
+  \citenamefont {Janes},\ and\ \citenamefont {Wallace}}]{Miles2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~J.}\ \bibnamefont
+  {Miles}}, \bibinfo {author} {\bibfnamefont {R.~W.}\ \bibnamefont {Janes}},\
+  and\ \bibinfo {author} {\bibfnamefont {B.~A.}\ \bibnamefont {Wallace}},\
+  }\bibfield  {title} {\bibinfo {title} {Tools and methods for circular
+  dichroism spectroscopy of proteins: a tutorial review},\ }\href
+  {https://doi.org/10.1039/D0CS00558D} {\bibfield  {journal} {\bibinfo
+  {journal} {Chem. Soc. Rev.}\ }\textbf {\bibinfo {volume} {50}},\ \bibinfo
+  {pages} {8400} (\bibinfo {year} {2021})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Allen}\ \emph {et~al.}(1992)\citenamefont {Allen},
+  \citenamefont {Beijersbergen}, \citenamefont {Spreeuw},\ and\ \citenamefont
+  {Woerdman}}]{Allen1992}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Allen}}, \bibinfo {author} {\bibfnamefont {M.~W.}\ \bibnamefont
+  {Beijersbergen}}, \bibinfo {author} {\bibfnamefont {R.~J.~C.}\ \bibnamefont
+  {Spreeuw}},\ and\ \bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont
+  {Woerdman}},\ }\bibfield  {title} {\bibinfo {title} {Orbital angular momentum
+  of light and the transformation of laguerre-gaussian laser modes},\ }\href
+  {https://doi.org/10.1103/PhysRevA.45.8185} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {45}},\ \bibinfo
+  {pages} {8185} (\bibinfo {year} {1992})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Andrews}\ \emph {et~al.}(2004)\citenamefont
+  {Andrews}, \citenamefont {Romero},\ and\ \citenamefont
+  {Babiker}}]{ANDREWS2004}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Andrews}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Romero}},\
+  and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Babiker}},\
+  }\bibfield  {title} {\bibinfo {title} {On optical vortex interactions with
+  chiral matter},\ }\href
+  {https://doi.org/https://doi.org/10.1016/j.optcom.2004.03.093} {\bibfield
+  {journal} {\bibinfo  {journal} {Optics Communications}\ }\textbf {\bibinfo
+  {volume} {237}},\ \bibinfo {pages} {133} (\bibinfo {year}
+  {2004})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ye}\ \emph {et~al.}(2019)\citenamefont {Ye},
+  \citenamefont {Rouxel}, \citenamefont {Asban}, \citenamefont {Rösner},\ and\
+  \citenamefont {Mukamel}}]{Ye2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Ye}}, \bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont {Rouxel}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Asban}}, \bibinfo
+  {author} {\bibfnamefont {B.}~\bibnamefont {Rösner}},\ and\ \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Mukamel}},\ }\bibfield  {title} {\bibinfo
+  {title} {Probing molecular chirality by orbital-angular-momentum-carrying
+  x-ray pulses},\ }\href {https://doi.org/10.1021/acs.jctc.9b00346} {\bibfield
+  {journal} {\bibinfo  {journal} {Journal of Chemical Theory and Computation}\
+  }\textbf {\bibinfo {volume} {15}},\ \bibinfo {pages} {4180} (\bibinfo {year}
+  {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Li}\ \emph {et~al.}(2021)\citenamefont {Li},
+  \citenamefont {Yan}, \citenamefont {Zhang}, \citenamefont {Chen},\ and\
+  \citenamefont {Yao}}]{Li2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Li}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Yan}}, \bibinfo
+  {author} {\bibfnamefont {Y.}~\bibnamefont {Zhang}}, \bibinfo {author}
+  {\bibfnamefont {X.}~\bibnamefont {Chen}},\ and\ \bibinfo {author}
+  {\bibfnamefont {B.}~\bibnamefont {Yao}},\ }\bibfield  {title} {\bibinfo
+  {title} {Optical separation and discrimination of chiral particles by vector
+  beams with orbital angular momentum},\ }\href
+  {https://doi.org/10.1039/D1NA00530H} {\bibfield  {journal} {\bibinfo
+  {journal} {Nanoscale Adv.}\ }\textbf {\bibinfo {volume} {3}},\ \bibinfo
+  {pages} {6897} (\bibinfo {year} {2021})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Forbes}\ and\ \citenamefont
+  {Andrews}(2018)}]{Forbes2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~A.}\ \bibnamefont
+  {Forbes}}\ and\ \bibinfo {author} {\bibfnamefont {D.~L.}\ \bibnamefont
+  {Andrews}},\ }\bibfield  {title} {\bibinfo {title} {Optical orbital angular
+  momentum: twisted light and chirality},\ }\href
+  {https://doi.org/10.1364/OL.43.000435} {\bibfield  {journal} {\bibinfo
+  {journal} {Opt. Lett.}\ }\textbf {\bibinfo {volume} {43}},\ \bibinfo {pages}
+  {435} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Forbes}\ and\ \citenamefont
+  {Andrews}(2019)}]{Forbes2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~A.}\ \bibnamefont
+  {Forbes}}\ and\ \bibinfo {author} {\bibfnamefont {D.~L.}\ \bibnamefont
+  {Andrews}},\ }\bibfield  {title} {\bibinfo {title} {Spin-orbit interactions
+  and chiroptical effects engaging orbital angular momentum of twisted light in
+  chiral and achiral media},\ }\href
+  {https://doi.org/10.1103/PhysRevA.99.023837} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {99}},\ \bibinfo
+  {pages} {023837} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Forbes}(2021)}]{Forbes2021}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~A.}\ \bibnamefont
+  {Forbes}},\ }\href {https://arxiv.org/abs/2101.10660} {\bibinfo {title} {On
+  the transfer of optical orbital angular momentum to matter}} (\bibinfo {year}
+  {2021}),\ \Eprint {https://arxiv.org/abs/2101.10660} {arXiv:2101.10660
+  [physics.optics]} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Araoka}\ \emph {et~al.}(2005)\citenamefont {Araoka},
+  \citenamefont {Verbiest}, \citenamefont {Clays},\ and\ \citenamefont
+  {Persoons}}]{Araoka2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Araoka}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Verbiest}},
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Clays}},\ and\ \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {Persoons}},\ }\bibfield  {title}
+  {\bibinfo {title} {Interactions of twisted light with chiral molecules: An
+  experimental investigation},\ }\href
+  {https://doi.org/10.1103/PhysRevA.71.055401} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {71}},\ \bibinfo
+  {pages} {055401} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {L\"offler}\ \emph {et~al.}(2011)\citenamefont
+  {L\"offler}, \citenamefont {Broer},\ and\ \citenamefont
+  {Woerdman}}]{Loeffler2011}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {L\"offler}}, \bibinfo {author} {\bibfnamefont {D.~J.}\ \bibnamefont
+  {Broer}},\ and\ \bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont
+  {Woerdman}},\ }\bibfield  {title} {\bibinfo {title} {Circular dichroism of
+  cholesteric polymers and the orbital angular momentum of light},\ }\href
+  {https://doi.org/10.1103/PhysRevA.83.065801} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {83}},\ \bibinfo
+  {pages} {065801} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Rusak}\ \emph {et~al.}(2019)\citenamefont {Rusak},
+  \citenamefont {Straubel}, \citenamefont {Gładysz}, \citenamefont {Göddel},
+  \citenamefont {Kedziorski}, \citenamefont {Kühn}, \citenamefont {Weigend},
+  \citenamefont {Rockstuhl},\ and\ \citenamefont {Słowik}}]{Rusak2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Rusak}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Straubel}},
+  \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Gładysz}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Göddel}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Kedziorski}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Kühn}}, \bibinfo {author} {\bibfnamefont
+  {F.}~\bibnamefont {Weigend}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Rockstuhl}},\ and\ \bibinfo {author} {\bibfnamefont
+  {K.}~\bibnamefont {Słowik}},\ }\bibfield  {title} {\bibinfo {title}
+  {Enhancement of and interference among higher order multipole transitions in
+  molecules near a plasmonic nanoantenna},\ }\href
+  {https://doi.org/10.1038/s41467-019-13748-4} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature Communications}\ }\textbf {\bibinfo {volume} {10}},\
+  \bibinfo {pages} {5775} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhang}\ and\ \citenamefont {Cui}(2020)}]{Zhang2020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {X.}~\bibnamefont
+  {Zhang}}\ and\ \bibinfo {author} {\bibfnamefont {T.~J.}\ \bibnamefont
+  {Cui}},\ }\bibfield  {title} {\bibinfo {title} {Single-particle dichroism
+  using orbital angular momentum in a microwave plasmonic resonator},\ }\href
+  {https://doi.org/10.1021/acsphotonics.0c01139} {\bibfield  {journal}
+  {\bibinfo  {journal} {ACS Photonics}\ }\textbf {\bibinfo {volume} {7}},\
+  \bibinfo {pages} {3291} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{Rouxel}}\ \emph {et~al.}(2022)\citenamefont
+  {{Rouxel}}, \citenamefont {{R{\"o}sner}}, \citenamefont {{Karpov}},
+  \citenamefont {{Bacellar}}, \citenamefont {{Mancini}}, \citenamefont
+  {{Zinna}}, \citenamefont {{Kinschel}}, \citenamefont {{Cannelli}},
+  \citenamefont {{Oppermann}}, \citenamefont {{Svetina}}, \citenamefont
+  {{Diaz}}, \citenamefont {{Lacour}}, \citenamefont {{David}},\ and\
+  \citenamefont {{Chergui}}}]{Rouxel2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont
+  {{Rouxel}}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {{R{\"o}sner}}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {{Karpov}}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {{Bacellar}}}, \bibinfo {author} {\bibfnamefont {G.~F.}\ \bibnamefont
+  {{Mancini}}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {{Zinna}}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {{Kinschel}}}, \bibinfo
+  {author} {\bibfnamefont {O.}~\bibnamefont {{Cannelli}}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {{Oppermann}}}, \bibinfo {author}
+  {\bibfnamefont {C.}~\bibnamefont {{Svetina}}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {{Diaz}}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {{Lacour}}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {{David}}},\ and\ \bibinfo {author} {\bibfnamefont
+  {M.}~\bibnamefont {{Chergui}}},\ }\bibfield  {title} {\bibinfo {title} {{Hard
+  X-ray helical dichroism of disordered molecular media}},\ }\href
+  {https://doi.org/10.1038/s41566-022-01022-x} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature Photonics}\ }\textbf {\bibinfo {volume} {16}},\ \bibinfo
+  {pages} {570} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{B{\'e}gin}}\ \emph {et~al.}(2023)\citenamefont
+  {{B{\'e}gin}}, \citenamefont {{Jain}}, \citenamefont {{Parks}}, \citenamefont
+  {{Hufnagel}}, \citenamefont {{Corkum}}, \citenamefont {{Karimi}},
+  \citenamefont {{Brabec}},\ and\ \citenamefont {{Bhardwaj}}}]{Begin2023}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.-L.}\ \bibnamefont
+  {{B{\'e}gin}}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {{Jain}}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {{Parks}}}, \bibinfo
+  {author} {\bibfnamefont {F.}~\bibnamefont {{Hufnagel}}}, \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {{Corkum}}}, \bibinfo {author}
+  {\bibfnamefont {E.}~\bibnamefont {{Karimi}}}, \bibinfo {author}
+  {\bibfnamefont {T.}~\bibnamefont {{Brabec}}},\ and\ \bibinfo {author}
+  {\bibfnamefont {R.}~\bibnamefont {{Bhardwaj}}},\ }\bibfield  {title}
+  {\bibinfo {title} {{Nonlinear helical dichroism in chiral and achiral
+  molecules}},\ }\href {https://doi.org/10.1038/s41566-022-01100-0} {\bibfield
+  {journal} {\bibinfo  {journal} {Nature Photonics}\ }\textbf {\bibinfo
+  {volume} {17}},\ \bibinfo {pages} {82} (\bibinfo {year} {2023})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Jain}\ \emph {et~al.}(2023)\citenamefont {Jain},
+  \citenamefont {Bégin},\ and\ \citenamefont {Bhardwaj}}]{Jain2023}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Jain}}, \bibinfo {author} {\bibfnamefont {J.-L.}\ \bibnamefont {Bégin}},\
+  and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Bhardwaj}},\
+  }\bibfield  {title} {\bibinfo {title} {{Helical dichroism in enantiomeric
+  solutions}},\ }\href {https://doi.org/10.1063/5.0152203} {\bibfield
+  {journal} {\bibinfo  {journal} {The Journal of Chemical Physics}\ }\textbf
+  {\bibinfo {volume} {159}},\ \bibinfo {pages} {014504} (\bibinfo {year}
+  {2023})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Maslov}\ \emph {et~al.}(2024)\citenamefont {Maslov},
+  \citenamefont {Koutentakis}, \citenamefont {Hrast}, \citenamefont {Heckl},\
+  and\ \citenamefont {Lemeshko}}]{Maslov2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Maslov}}, \bibinfo {author} {\bibfnamefont {G.~M.}\ \bibnamefont
+  {Koutentakis}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Hrast}},
+  \bibinfo {author} {\bibfnamefont {O.~H.}\ \bibnamefont {Heckl}},\ and\
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Lemeshko}},\ }\bibfield
+  {title} {\bibinfo {title} {Theory of angular momentum transfer from light to
+  molecules},\ }\href {https://doi.org/10.1103/PhysRevResearch.6.033277}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Res.}\ }\textbf
+  {\bibinfo {volume} {6}},\ \bibinfo {pages} {033277} (\bibinfo {year}
+  {2024})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Maslov}(2025)}]{Maslov_Thesis}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Maslov}},\ }\emph {\bibinfo {title} {Emergent physics of rotating quantum
+  impurities in many-body environments}},\ \href
+  {https://doi.org/10.15479/at:ista:19048} {Ph.D. thesis},\ \bibinfo  {school}
+  {Institute of Science and Technology Austria (ISTA)} (\bibinfo {year}
+  {2025})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bliokh}\ \emph {et~al.}(2015)\citenamefont {Bliokh},
+  \citenamefont {Rodr{\'i}guez-Fortu{\~{n}}o}, \citenamefont {Nori},\ and\
+  \citenamefont {Zayats}}]{Bliokh2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~Y.}\ \bibnamefont
+  {Bliokh}}, \bibinfo {author} {\bibfnamefont {F.~J.}\ \bibnamefont
+  {Rodr{\'i}guez-Fortu{\~{n}}o}}, \bibinfo {author} {\bibfnamefont
+  {F.}~\bibnamefont {Nori}},\ and\ \bibinfo {author} {\bibfnamefont {A.~V.}\
+  \bibnamefont {Zayats}},\ }\bibfield  {title} {\bibinfo {title} {Spin--orbit
+  interactions of light},\ }\href {https://doi.org/10.1038/nphoton.2015.201}
+  {\bibfield  {journal} {\bibinfo  {journal} {Nature Photonics}\ }\textbf
+  {\bibinfo {volume} {9}},\ \bibinfo {pages} {796} (\bibinfo {year}
+  {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Stephens}(1985)}]{Stephens1985}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~J.}\ \bibnamefont
+  {Stephens}},\ }\bibfield  {title} {\bibinfo {title} {Theory of vibrational
+  circular dichroism},\ }\href {https://doi.org/10.1021/j100251a006} {\bibfield
+   {journal} {\bibinfo  {journal} {J. Phys. Chem.}\ }\textbf {\bibinfo {volume}
+  {89}},\ \bibinfo {pages} {748} (\bibinfo {year} {1985})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Buckingham}\ \emph {et~al.}(1987)\citenamefont
+  {Buckingham}, \citenamefont {Fowler},\ and\ \citenamefont
+  {Galwas}}]{BUCKINGHAM1987}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Buckingham}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Fowler}},\
+  and\ \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Galwas}},\
+  }\bibfield  {title} {\bibinfo {title} {Velocity-dependent property surfaces
+  and the theory of vibrational circular dichroism},\ }\href
+  {https://doi.org/https://doi.org/10.1016/0301-0104(87)85017-6} {\bibfield
+  {journal} {\bibinfo  {journal} {Chemical Physics}\ }\textbf {\bibinfo
+  {volume} {112}},\ \bibinfo {pages} {1} (\bibinfo {year} {1987})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Mun}\ and\ \citenamefont {Rho}(2019)}]{Mun2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Mun}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Rho}},\
+  }\bibfield  {title} {\bibinfo {title} {Importance of higher-order multipole
+  transitions on chiral nearfield interactions},\ }\href
+  {https://doi.org/doi:10.1515/nanoph-2019-0046} {\bibfield  {journal}
+  {\bibinfo  {journal} {Nanophotonics}\ }\textbf {\bibinfo {volume} {8}},\
+  \bibinfo {pages} {941} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lovesey}\ \emph {et~al.}(2019)\citenamefont
+  {Lovesey}, \citenamefont {Collins},\ and\ \citenamefont
+  {Collins}}]{Lovesey2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~W.}\ \bibnamefont
+  {Lovesey}}, \bibinfo {author} {\bibfnamefont {J.~T.}\ \bibnamefont
+  {Collins}},\ and\ \bibinfo {author} {\bibfnamefont {S.~P.}\ \bibnamefont
+  {Collins}},\ }\bibfield  {title} {\bibinfo {title} {Superchiral photons
+  unveil magnetic circular dichroism},\ }\href
+  {https://doi.org/10.1103/PhysRevB.99.054428} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {99}},\ \bibinfo
+  {pages} {054428} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Patterson}\ \emph {et~al.}(2013)\citenamefont
+  {Patterson}, \citenamefont {Schnell},\ and\ \citenamefont
+  {Doyle}}]{Patterson2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Patterson}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Schnell}},\
+  and\ \bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont {Doyle}},\
+  }\bibfield  {title} {\bibinfo {title} {Enantiomer-specific detection of
+  chiral molecules via microwave spectroscopy},\ }\href
+  {https://doi.org/10.1038/nature12150} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {497}},\ \bibinfo {pages}
+  {475} (\bibinfo {year} {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Patterson}\ and\ \citenamefont
+  {Doyle}(2013)}]{Patterson2013PRL}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Patterson}}\ and\ \bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont
+  {Doyle}},\ }\bibfield  {title} {\bibinfo {title} {Sensitive chiral analysis
+  via microwave three-wave mixing},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.111.023008} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {111}},\
+  \bibinfo {pages} {023008} (\bibinfo {year} {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ordonez}\ and\ \citenamefont
+  {Smirnova}(2018)}]{Ordonez2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~F.}\ \bibnamefont
+  {Ordonez}}\ and\ \bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
+  {Smirnova}},\ }\bibfield  {title} {\bibinfo {title} {Generalized perspective
+  on chiral measurements without magnetic interactions},\ }\href
+  {https://doi.org/10.1103/PhysRevA.98.063428} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {98}},\ \bibinfo
+  {pages} {063428} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ayuso}\ \emph {et~al.}(2022)\citenamefont {Ayuso},
+  \citenamefont {Ordonez}, \citenamefont {Decleva}, \citenamefont {Ivanov},\
+  and\ \citenamefont {Smirnova}}]{Ayuso2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Ayuso}}, \bibinfo {author} {\bibfnamefont {A.~F.}\ \bibnamefont {Ordonez}},
+  \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Decleva}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Ivanov}},\ and\ \bibinfo {author}
+  {\bibfnamefont {O.}~\bibnamefont {Smirnova}},\ }\bibfield  {title} {\bibinfo
+  {title} {Strong chiral response in non-collinear high harmonic generation
+  driven by purely electric-dipole interactions},\ }\href
+  {https://doi.org/10.1364/OE.444210} {\bibfield  {journal} {\bibinfo
+  {journal} {Opt. Express}\ }\textbf {\bibinfo {volume} {30}},\ \bibinfo
+  {pages} {4659} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ji}\ \emph {et~al.}(2024)\citenamefont {Ji},
+  \citenamefont {Xu}, \citenamefont {Liang}, \citenamefont {Zhang},
+  \citenamefont {Hong}, \citenamefont {Wang}, \citenamefont {Li}, \citenamefont
+  {Jiang}, \citenamefont {Wang}, \citenamefont {Ni}, \citenamefont {Wu},\ and\
+  \citenamefont {Li}}]{Ji2024}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.-Y.}\ \bibnamefont
+  {Ji}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Xu}}, \bibinfo
+  {author} {\bibfnamefont {Q.}~\bibnamefont {Liang}}, \bibinfo {author}
+  {\bibfnamefont {X.}~\bibnamefont {Zhang}}, \bibinfo {author} {\bibfnamefont
+  {X.}~\bibnamefont {Hong}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Wang}}, \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Li}}, \bibinfo
+  {author} {\bibfnamefont {L.}~\bibnamefont {Jiang}}, \bibinfo {author}
+  {\bibfnamefont {Y.}~\bibnamefont {Wang}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Ni}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Wu}},\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Li}},\
+  }\bibfield  {title} {\bibinfo {title} {Observation of magnetic quadrupole
+  endowed helical dichroism in artificial propeller meta-molecules},\ }\href
+  {https://doi.org/https://doi.org/10.1002/adom.202302795} {\bibfield
+  {journal} {\bibinfo  {journal} {Advanced Optical Materials}\ }\textbf
+  {\bibinfo {volume} {12}},\ \bibinfo {pages} {2302795} (\bibinfo {year}
+  {2024})}\BibitemShut {NoStop}%
+\bibitem [{Note1()}]{Note1}%
+  \BibitemOpen
+  \bibinfo {note} {See Supplementary Material, containing references \cite
+  {Maslov2024,Maslov_Thesis,Lax1975,Bliokh2015,Bliokh2023}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Bernath}(2005)}]{Bernath}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~F.}\ \bibnamefont
+  {Bernath}},\ }\href@noop {} {\emph {\bibinfo {title} {Spectra of atoms and
+  molecules}}}\ (\bibinfo  {publisher} {Oxford university Press},\ \bibinfo
+  {year} {2005})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bliokh}\ \emph {et~al.}(2023)\citenamefont {Bliokh},
+  \citenamefont {Karimi}, \citenamefont {Padgett}, \citenamefont {Alonso},
+  \citenamefont {Dennis}, \citenamefont {Dudley}, \citenamefont {Forbes},
+  \citenamefont {Zahedpour}, \citenamefont {Hancock}, \citenamefont
+  {Milchberg}, \citenamefont {Rotter}, \citenamefont {Nori}, \citenamefont
+  {Şahin K~Özdemir}, \citenamefont {Bender}, \citenamefont {Cao},
+  \citenamefont {Corkum}, \citenamefont {Hernández-García}, \citenamefont
+  {Ren}, \citenamefont {Kivshar}, \citenamefont {Silveirinha}, \citenamefont
+  {Engheta}, \citenamefont {Rauschenbeutel}, \citenamefont {Schneeweiss},
+  \citenamefont {Volz}, \citenamefont {Leykam}, \citenamefont {Smirnova},
+  \citenamefont {Rong}, \citenamefont {Wang}, \citenamefont {Hasman},
+  \citenamefont {Picardi}, \citenamefont {Zayats}, \citenamefont
+  {Rodríguez-Fortuño}, \citenamefont {Yang}, \citenamefont {Ren},
+  \citenamefont {Khanikaev}, \citenamefont {Alù}, \citenamefont {Brasselet},
+  \citenamefont {Shats}, \citenamefont {Verbeeck}, \citenamefont
+  {Schattschneider}, \citenamefont {Sarenac}, \citenamefont {Cory},
+  \citenamefont {Pushin}, \citenamefont {Birk}, \citenamefont {Gorlach},
+  \citenamefont {Kaminer}, \citenamefont {Cardano}, \citenamefont {Marrucci},
+  \citenamefont {Krenn},\ and\ \citenamefont {Marquardt}}]{Bliokh2023}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~Y.}\ \bibnamefont
+  {Bliokh}}, \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Karimi}},
+  \bibinfo {author} {\bibfnamefont {M.~J.}\ \bibnamefont {Padgett}}, \bibinfo
+  {author} {\bibfnamefont {M.~A.}\ \bibnamefont {Alonso}}, \bibinfo {author}
+  {\bibfnamefont {M.~R.}\ \bibnamefont {Dennis}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Dudley}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Forbes}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Zahedpour}}, \bibinfo {author} {\bibfnamefont {S.~W.}\
+  \bibnamefont {Hancock}}, \bibinfo {author} {\bibfnamefont {H.~M.}\
+  \bibnamefont {Milchberg}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Rotter}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Nori}},
+  \bibinfo {author} {\bibnamefont {Şahin K~Özdemir}}, \bibinfo {author}
+  {\bibfnamefont {N.}~\bibnamefont {Bender}}, \bibinfo {author} {\bibfnamefont
+  {H.}~\bibnamefont {Cao}}, \bibinfo {author} {\bibfnamefont {P.~B.}\
+  \bibnamefont {Corkum}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Hernández-García}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Ren}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Kivshar}},
+  \bibinfo {author} {\bibfnamefont {M.~G.}\ \bibnamefont {Silveirinha}},
+  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Engheta}}, \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {Rauschenbeutel}}, \bibinfo
+  {author} {\bibfnamefont {P.}~\bibnamefont {Schneeweiss}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Volz}}, \bibinfo {author} {\bibfnamefont
+  {D.}~\bibnamefont {Leykam}}, \bibinfo {author} {\bibfnamefont {D.~A.}\
+  \bibnamefont {Smirnova}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Rong}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Wang}}, \bibinfo
+  {author} {\bibfnamefont {E.}~\bibnamefont {Hasman}}, \bibinfo {author}
+  {\bibfnamefont {M.~F.}\ \bibnamefont {Picardi}}, \bibinfo {author}
+  {\bibfnamefont {A.~V.}\ \bibnamefont {Zayats}}, \bibinfo {author}
+  {\bibfnamefont {F.~J.}\ \bibnamefont {Rodríguez-Fortuño}}, \bibinfo
+  {author} {\bibfnamefont {C.}~\bibnamefont {Yang}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Ren}}, \bibinfo {author} {\bibfnamefont
+  {A.~B.}\ \bibnamefont {Khanikaev}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Alù}}, \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Brasselet}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Shats}},
+  \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Verbeeck}}, \bibinfo
+  {author} {\bibfnamefont {P.}~\bibnamefont {Schattschneider}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Sarenac}}, \bibinfo {author}
+  {\bibfnamefont {D.~G.}\ \bibnamefont {Cory}}, \bibinfo {author}
+  {\bibfnamefont {D.~A.}\ \bibnamefont {Pushin}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Birk}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Gorlach}}, \bibinfo {author} {\bibfnamefont
+  {I.}~\bibnamefont {Kaminer}}, \bibinfo {author} {\bibfnamefont
+  {F.}~\bibnamefont {Cardano}}, \bibinfo {author} {\bibfnamefont
+  {L.}~\bibnamefont {Marrucci}}, \bibinfo {author} {\bibfnamefont
+  {M.}~\bibnamefont {Krenn}},\ and\ \bibinfo {author} {\bibfnamefont
+  {F.}~\bibnamefont {Marquardt}},\ }\bibfield  {title} {\bibinfo {title}
+  {Roadmap on structured waves},\ }\href
+  {https://doi.org/10.1088/2040-8986/acea92} {\bibfield  {journal} {\bibinfo
+  {journal} {Journal of Optics}\ }\textbf {\bibinfo {volume} {25}},\ \bibinfo
+  {pages} {103001} (\bibinfo {year} {2023})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Forbes}\ and\ \citenamefont
+  {Jones}(2021)}]{Forbes2021nonparaxial}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~A.}\ \bibnamefont
+  {Forbes}}\ and\ \bibinfo {author} {\bibfnamefont {G.~A.}\ \bibnamefont
+  {Jones}},\ }\bibfield  {title} {\bibinfo {title} {Optical vortex dichroism in
+  chiral particles},\ }\href {https://doi.org/10.1103/PhysRevA.103.053515}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo
+  {volume} {103}},\ \bibinfo {pages} {053515} (\bibinfo {year}
+  {2021})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Forbes}\ \emph {et~al.}(2021)\citenamefont {Forbes},
+  \citenamefont {Green},\ and\ \citenamefont {Jones}}]{Forbes2021longitudinal}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~A.}\ \bibnamefont
+  {Forbes}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Green}},\ and\
+  \bibinfo {author} {\bibfnamefont {G.~A.}\ \bibnamefont {Jones}},\ }\bibfield
+  {title} {\bibinfo {title} {Relevance of longitudinal fields of paraxial
+  optical vortices},\ }\href {https://doi.org/10.1088/2040-8986/abff96}
+  {\bibfield  {journal} {\bibinfo  {journal} {Journal of Optics}\ }\textbf
+  {\bibinfo {volume} {23}},\ \bibinfo {pages} {075401} (\bibinfo {year}
+  {2021})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lax}\ \emph {et~al.}(1975)\citenamefont {Lax},
+  \citenamefont {Louisell},\ and\ \citenamefont {McKnight}}]{Lax1975}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Lax}}, \bibinfo {author} {\bibfnamefont {W.~H.}\ \bibnamefont {Louisell}},\
+  and\ \bibinfo {author} {\bibfnamefont {W.~B.}\ \bibnamefont {McKnight}},\
+  }\bibfield  {title} {\bibinfo {title} {From maxwell to paraxial wave
+  optics},\ }\href {https://doi.org/10.1103/PhysRevA.11.1365} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume}
+  {11}},\ \bibinfo {pages} {1365} (\bibinfo {year} {1975})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Buckingham}\ and\ \citenamefont
+  {Dunn}(1971)}]{Buckingham1971}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~D.}\ \bibnamefont
+  {Buckingham}}\ and\ \bibinfo {author} {\bibfnamefont {M.~B.}\ \bibnamefont
+  {Dunn}},\ }\bibfield  {title} {\bibinfo {title} {Optical activity of oriented
+  molecules},\ }\href {https://doi.org/10.1039/J19710001988} {\bibfield
+  {journal} {\bibinfo  {journal} {J. Chem. Soc. A}\ ,\ \bibinfo {pages} {1988}}
+  (\bibinfo {year} {1971})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Power}(1975)}]{Power1975}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~A.}\ \bibnamefont
+  {Power}},\ }\bibfield  {title} {\bibinfo {title} {Two‐photon circular
+  dichroism},\ }\href {https://doi.org/10.1063/1.431521} {\bibfield  {journal}
+  {\bibinfo  {journal} {The Journal of Chemical Physics}\ }\textbf {\bibinfo
+  {volume} {63}},\ \bibinfo {pages} {1348} (\bibinfo {year}
+  {1975})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Leibscher}\ \emph {et~al.}(2022)\citenamefont
+  {Leibscher}, \citenamefont {Pozzoli}, \citenamefont {Pérez}, \citenamefont
+  {Schnell}, \citenamefont {Sigalotti}, \citenamefont {Boscain},\ and\
+  \citenamefont {Koch}}]{Leibscher2022}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Leibscher}}, \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Pozzoli}},
+  \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Pérez}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Schnell}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Sigalotti}}, \bibinfo {author}
+  {\bibfnamefont {U.}~\bibnamefont {Boscain}},\ and\ \bibinfo {author}
+  {\bibfnamefont {C.}~\bibnamefont {Koch}},\ }\bibfield  {title} {\bibinfo
+  {title} {Full quantum control of enantiomer-selective state transfer in
+  chiral molecules despite degeneracy},\ }\href
+  {https://doi.org/10.1038/s42005-022-00883-6} {\bibfield  {journal} {\bibinfo
+  {journal} {Communications Physics}\ }\textbf {\bibinfo {volume} {5}},\
+  \bibinfo {pages} {1234567890} (\bibinfo {year} {2022})}\BibitemShut {NoStop}%
+\end{thebibliography}%

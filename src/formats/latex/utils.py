@@ -19,6 +19,9 @@ from typing import List
 import shutil
 import platform
 import subprocess
+import platform # 确保导入 platform
+import shutil # 确保导入 shutil
+from typing import Dict # 确保导入 Dict
 
 options = r"\[[^\[\]]*?\]"
 spaces = r"[ \t]*"
@@ -907,10 +910,31 @@ def batch_download_arxiv_tex(arxiv_ids: List[str], save_dir: str = "./tex_source
 
     return source_dirs
 
+def select_tex_distribution(distributions: Dict[str, str]) -> str:
+    """Prompts the user to select a LaTeX distribution and returns the path to latexmk."""
+    print("\nPlease choose which one to use:")
+    
+    # Create a numbered list of distributions
+    dist_list = list(distributions.items())
+    for i, (name, path) in enumerate(dist_list):
+        print(f"  [{i+1}] {name} ({path})")
+    
+    choice = -1
+    while choice < 1 or choice > len(dist_list):
+        try:
+            raw_choice = input(f"Enter your choice (1-{len(dist_list)}): ")
+            choice = int(raw_choice)
+            if not (1 <= choice <= len(dist_list)):
+                print("Invalid choice. Please try again.")
+        except (ValueError, EOFError):
+            print("Invalid input. Please enter a number.")
+    
+    # Return the full path of the selected latexmk
+    return dist_list[choice-1][1]
+
 def detect_tex_distributions():
     """
     Detects available LaTeX distributions (TeX Live and MiKTeX) on a Windows system.
-
     Returns:
         A dictionary mapping the distribution name to the full path of its latexmk executable.
     """
@@ -925,7 +949,7 @@ def detect_tex_distributions():
 
     try:
         # On Windows, 'where' command can find all executables in PATH.
-        result = subprocess.run(['where', 'latexmk.exe'], capture_output=True, text=True, check=True)
+        result = subprocess.run(['where', 'latexmk.exe'], capture_output=True, text=True, check=True, creationflags=subprocess.CREATE_NO_WINDOW)
         paths = result.stdout.strip().split('\n')
         
         for path in paths:
@@ -949,6 +973,7 @@ def detect_tex_distributions():
         pass
         
     return distributions
+
 
 # get_texts_from_data(
 #     folder_path="D:\code\AutoLaTexTrans\data\cs",

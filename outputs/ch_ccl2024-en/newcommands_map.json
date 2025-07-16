@@ -1,7 +1,0 @@
-[
-    {
-        "placeholder": "<PLACEHOLDER_NEWCOMMAND_0>",
-        "name": "headrulewidth",
-        "content": "\\renewcommand{\\headrulewidth}{0pt}"
-    }
-]

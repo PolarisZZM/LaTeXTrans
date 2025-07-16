@@ -3,7 +3,13 @@ import argparse
 import os
 import sys
 from src.agents.coordinator_agent import CoordinatorAgent
-from src.formats.latex.utils import get_profect_dirs, batch_download_arxiv_tex, extract_compressed_files
+from src.formats.latex.utils import (
+    get_profect_dirs, 
+    batch_download_arxiv_tex, 
+    extract_compressed_files,
+    detect_tex_distributions, 
+    select_tex_distribution # 导入新函数
+)
 from tqdm import tqdm
 
 base_dir = os.getcwd()
@@ -20,6 +26,29 @@ def main():
     args = parser.parse_args()
 
     config = toml.load(args.config)
+
+    # --- 新增的发行版选择逻辑 ---
+    all_distributions = detect_tex_distributions()
+    selected_latexmk_path = None
+
+    if not all_distributions:
+        print("❌ Error: No LaTeX distribution (like TeX Live or MiKTeX) with 'latexmk' was found on your system.")
+        print("Please install a LaTeX distribution and ensure it's in your system's PATH.")
+        return # 退出程序
+
+    if len(all_distributions) > 1:
+        print("Found multiple LaTeX distributions. Please select one to use for all projects in this run.")
+        selected_latexmk_path = select_tex_distribution(all_distributions)
+        if not selected_latexmk_path:
+            print("No distribution selected. Exiting.")
+            return
+    else:
+        selected_latexmk_path = list(all_distributions.values())[0]
+        dist_name = list(all_distributions.keys())[0]
+        print(f"✅ Automatically selected LaTeX distribution: {dist_name}")
+    
+    print("-" * 50)
+    # --- 逻辑结束 ---
 
     # override paper_list if user passed in IDs via CLI
     if args.paper_ids:
@@ -41,10 +70,12 @@ def main():
 
     for project_dir in tqdm(projects, desc="Processing projects", unit="project"):
         try:
+            # 将选择的发行版路径传递给 CoordinatorAgent
             LaTexTrans = CoordinatorAgent(
                 config=config,
                 project_dir=project_dir,
-                output_dir=output_dir
+                output_dir=output_dir,
+                latexmk_path=selected_latexmk_path  # <--- 新增参数
             )
             LaTexTrans.workflow_latextrans()
         except Exception as e:
