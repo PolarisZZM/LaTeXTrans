@@ -3,11 +3,11 @@
 sys_name = "LaTeXTrans"
 version = "0.1.0"
 target_language = "ch" # only support Chinese (ch) now
-paper_list = ["2504.07951" ] # List of paper IDs to process, e.g., ["2505.19590", "2505.19591"]
+paper_list = ["2505.16393"] # List of paper IDs to process, e.g., ["2505.19590", "2505.19591"]
 tex_sources_dir = "tex source" # Directory to store LaTeX source files
 output_dir = "outputs" # Directory to store output files
 
 [llm_config]
-model = "gpt-4o"
+model = "deepseek-v3"
 api_key = "sk-OjzR0XKuOj6MxYAEFdB3292eE7Ce4b4fA4BbFe486aA1B375"
 base_url = "https://api.bltcy.ai/v1/chat/completions"
