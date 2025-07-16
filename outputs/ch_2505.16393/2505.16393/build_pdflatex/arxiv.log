@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2025.7.16)  16 JUL 2025 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2025.7.16)  16 JUL 2025 20:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -887,17 +887,7 @@ LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
  on input line 108.
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 134--134
-[]\OT1/cmr/m/n/9 TABLE II. []\C70/gbsn/m/n/9/75 5 \C70/gbsn/m/n/9/50 v \C70/gbs
-n/m/it/9/67 Å \C70/gbsn/m/it/9/5b P\OT1/cmr/m/n/9 ($\OML/cmm/m/it/9 E[]$\OT1/cm
-r/m/n/9 ) \C70/gbsn/m/n/9/4e ^^N \C70/gbsn/m/n/9/56 € \C70/gbsn/m/it/9/67 Å \C7
-0/gbsn/m/it/9/5b P\OT1/cmr/m/n/9 ($\OML/cmm/m/it/9 E[]$\OT1/cmr/m/n/9 ) \C70/gb
-sn/m/n/9/8d √ \C70/gbsn/m/n/9/8f ¡ \C70/gbsn/m/it/9/57 ( \C70/gbsn/m/n/9/8f l \
-C70/gbsn/m/it/9/52 ®
- []
-
-
-Underfull \hbox (badness 4366) in paragraph at lines 118--138
+Underfull \hbox (badness 4366) in paragraph at lines 119--139
 \C70/gbsn/m/it/10/5f ^^O \C70/gbsn/m/it/10/4e -$\OML/cmm/m/it/10 l \OT1/cmr/m/n
 /10 = 0$\C70/gbsn/m/n/10/54 å$\OML/cmm/m/it/10 l \OT1/cmr/m/n/10 = 1$\C70/gbsn/
 m/it/10/52 ^^F + \C70/gbsn/m/it/10/5b ˘ \C70/gbsn/m/n/10/5e î \C70/gbsn/m/it/10
@@ -908,25 +898,15 @@ m/it/10/52 ^^F + \C70/gbsn/m/it/10/5b ˘ \C70/gbsn/m/n/10/5e î \C70/gbsn/m/it/10
 <Figure1.pdf, id=274, 246.04828pt x 246.04828pt>
 File: Figure1.pdf Graphic file (type pdf)
 <use Figure1.pdf>
-Package pdftex.def Info: Figure1.pdf  used on input line 143.
+Package pdftex.def Info: Figure1.pdf  used on input line 145.
 (pdftex.def)             Requested size: 246.0pt x 245.99886pt.
-[2 <./Figure1.pdf>]
-<Figure2.pdf, id=369, 190.7125pt x 214.8025pt>
+<Figure2.pdf, id=295, 190.7125pt x 214.8025pt>
 File: Figure2.pdf Graphic file (type pdf)
 <use Figure2.pdf>
-Package pdftex.def Info: Figure2.pdf  used on input line 157.
+Package pdftex.def Info: Figure2.pdf  used on input line 158.
 (pdftex.def)             Requested size: 246.0pt x 277.08653pt.
-
-Underfull \hbox (badness 4832) in paragraph at lines 158--158
-[]\OT1/cmr/m/n/9 FIG. 2. []\C70/gbsn/m/n/9/75 1 \C70/gbsn/m/it/9/62 … \C70/gbsn
-/m/n/9/76 ÷ \C70/gbsn/m/n/9/5c ^^T\OT1/cmr/m/n/9 -\C70/gbsn/m/n/9/9a ÿ \C70/gbs
-n/m/it/9/65 Ø \C70/gbsn/m/it/9/51 I \C70/gbsn/m/it/9/67 _ \C70/gbsn/m/n/9/80 & 
-\C70/gbsn/m/n/9/54 ^^H \C70/gbsn/m/n/9/76 Ñ \C70/gbsn/m/it/9/5b ˘ \C70/gbsn/m/n
-/9/66   \C70/gbsn/m/n/9/5f ^^B \C70/gbsn/m/it/9/67 Ñ \C70/gbsn/m/n/9/4f S
- []
-
-
-Underfull \hbox (badness 2443) in paragraph at lines 172--173
+[2 <./Figure1.pdf>]
+Underfull \hbox (badness 2443) in paragraph at lines 173--174
 []\C70/gbsn/m/n/10/7e ¸ \C70/gbsn/m/it/10/4e 
  \C70/gbsn/m/it/10/62 @ \C70/gbsn/m/it/10/8f  \C70/gbsn/m/it/10/ff ^^L \C70/gb
 sn/m/it/10/62 ^^Q \C70/gbsn/m/it/10/4e Ï \C70/gbsn/m/it/10/8b ¡ \C70/gbsn/m/n/1
@@ -936,7 +916,7 @@ T1/cmr/m/n/10 OAM\C70/gbsn/m/it/10/51 I \C70/gbsn/m/it/10/67 _ \C70/gbsn/m/n/10
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
@@ -1277,13 +1257,13 @@ Package rerunfilecheck Info: File `arxiv.out' has not changed.
 (rerunfilecheck)             Checksum: ABB2CCE0BD68DBFAD8190CC1C410FBDC;587.
  ) 
 Here is how much of TeX's memory you used:
- 16930 strings out of 478268
- 245935 string characters out of 5850345
- 656926 words of memory out of 5000000
- 34522 multiletter control sequences out of 15000+600000
- 522923 words of font info for 221 fonts, out of 8000000 for 9000
+ 16887 strings out of 478268
+ 245219 string characters out of 5850345
+ 653771 words of memory out of 5000000
+ 34486 multiletter control sequences out of 15000+600000
+ 522025 words of font info for 218 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,13n,77p,1127b,1845s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 69i,13n,77p,1118b,1839s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><d:/te
 xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/202
 2/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><d:/texlive/2022/texmf-di
@@ -1358,18 +1338,18 @@ pe1/arphic/gbsnu/gbsnu8d.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbs
 nu/gbsnu8f.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu90.pfb
 ><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu91.pfb><d:/texlive/2
 022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu92.pfb><d:/texlive/2022/texmf-dist
-/fonts/type1/arphic/gbsnu/gbsnu95.pfb><d:/texlive/2022/texmf-dist/fonts/type1/a
-rphic/gbsnu/gbsnu96.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gb
-snu97.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu98.pfb><d:/
-texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu99.pfb><d:/texlive/2022/t
-exmf-dist/fonts/type1/arphic/gbsnu/gbsnu9a.pfb><d:/texlive/2022/texmf-dist/font
-s/type1/arphic/gbsnu/gbsnu9f.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic
-/gbsnu/gbsnuff.pfb><d:/texlive/2022/texmf-dist/fonts/type1/urw/zapfding/uzdr.pf
-b>
-Output written on arxiv.pdf (6 pages, 1283339 bytes).
+/fonts/type1/arphic/gbsnu/gbsnu94.pfb><d:/texlive/2022/texmf-dist/fonts/type1/a
+rphic/gbsnu/gbsnu95.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gb
+snu96.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu97.pfb><d:/
+texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu98.pfb><d:/texlive/2022/t
+exmf-dist/fonts/type1/arphic/gbsnu/gbsnu99.pfb><d:/texlive/2022/texmf-dist/font
+s/type1/arphic/gbsnu/gbsnu9a.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic
+/gbsnu/gbsnu9f.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnuff
+.pfb><d:/texlive/2022/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on arxiv.pdf (6 pages, 1282774 bytes).
 PDF statistics:
- 970 PDF objects out of 1000 (max. 8388607)
- 677 compressed objects within 7 object streams
+ 975 PDF objects out of 1000 (max. 8388607)
+ 679 compressed objects within 7 object streams
  64 named destinations out of 1000 (max. 500000)
- 347 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 351 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2025.7.16)  16 JUL 2025 15:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2025.7.16)  16 JUL 2025 20:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,74 +284,6 @@ Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
-(d:/texlive/2022/texmf-dist/tex/latex/cjk-ko/kotex.sty
-Package: kotex 2015/04/19 v1.6 Korean TeX (ko.TeX)
-
-(d:/texlive/2022/texmf-dist/tex/latex/kotex-utf/kotex.cfg)
-(d:/texlive/2022/texmf-dist/tex/latex/kotex-utf/kotexutf.sty
-Package: kotexutf 2015/07/18 v2.1.1 typesetting UTF-8 Korean documents
-
-(d:/texlive/2022/texmf-dist/tex/plain/kotex-plain/kotexutf-core.tex
-\unih@ngulpoint=\count277
-\dhucs@emph@raise=\dimen149
-)
-Now handling font encoding LUC ...
-... processing UTF-8 mapping file for font encoding LUC
-
-(d:/texlive/2022/texmf-dist/tex/latex/kotex-utf/lucenc.dfu
-File: lucenc.dfu 2007/09/05 UTF-8 support for dhucs
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+3001 (decimal 12289)
-   defining Unicode char U+3002 (decimal 12290)
-   defining Unicode char U+3008 (decimal 12296)
-   defining Unicode char U+3009 (decimal 12297)
-   defining Unicode char U+300A (decimal 12298)
-   defining Unicode char U+300B (decimal 12299)
-   defining Unicode char U+300C (decimal 12300)
-   defining Unicode char U+300D (decimal 12301)
-   defining Unicode char U+300E (decimal 12302)
-   defining Unicode char U+300F (decimal 12303)
-   defining Unicode char U+3010 (decimal 12304)
-   defining Unicode char U+3011 (decimal 12305)
-   defining Unicode char U+3014 (decimal 12308)
-   defining Unicode char U+3015 (decimal 12309)
-   defining Unicode char U+3016 (decimal 12310)
-   defining Unicode char U+3017 (decimal 12311)
-   defining Unicode char U+3018 (decimal 12312)
-   defining Unicode char U+3019 (decimal 12313)
-   defining Unicode char U+301A (decimal 12314)
-   defining Unicode char U+301B (decimal 12315)
-   defining Unicode char U+FF01 (decimal 65281)
-   defining Unicode char U+FF08 (decimal 65288)
-   defining Unicode char U+FF09 (decimal 65289)
-   defining Unicode char U+FF0C (decimal 65292)
-   defining Unicode char U+FF0E (decimal 65294)
-   defining Unicode char U+FF1A (decimal 65306)
-   defining Unicode char U+FF1B (decimal 65307)
-   defining Unicode char U+FF1C (decimal 65308)
-   defining Unicode char U+FF1D (decimal 65309)
-   defining Unicode char U+FF1E (decimal 65310)
-   defining Unicode char U+FF1F (decimal 65311)
-   defining Unicode char U+FF3B (decimal 65339)
-   defining Unicode char U+FF3D (decimal 65341)
-   defining Unicode char U+FF5B (decimal 65371)
-   defining Unicode char U+FF5D (decimal 65373)
-   defining Unicode char U+FF61 (decimal 65377)
-   defining Unicode char U+FF62 (decimal 65378)
-   defining Unicode char U+FF63 (decimal 65379)
-   defining Unicode char U+FF64 (decimal 65380)
-   defining Unicode char U+FF65 (decimal 65381)
-)
-\@josa=\count278
-\josatoks=\toks27
-
-(d:/texlive/2022/texmf-dist/tex/latex/cjk-ko/kolabels-utf.sty
-Package: kolabels-utf 2015/03/20 v1.5 UTF-8 Hangul item labels
-)))
 (d:/texlive/2022/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
 LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
@@ -368,40 +300,40 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
 (d:/texlive/2022/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen150
-\lightrulewidth=\dimen151
-\cmidrulewidth=\dimen152
-\belowrulesep=\dimen153
-\belowbottomsep=\dimen154
-\aboverulesep=\dimen155
-\abovetopsep=\dimen156
-\cmidrulesep=\dimen157
-\cmidrulekern=\dimen158
-\defaultaddspace=\dimen159
-\@cmidla=\count279
-\@cmidlb=\count280
-\@aboverulesep=\dimen160
-\@belowrulesep=\dimen161
-\@thisruleclass=\count281
-\@lastruleclass=\count282
-\@thisrulewidth=\dimen162
+\heavyrulewidth=\dimen149
+\lightrulewidth=\dimen150
+\cmidrulewidth=\dimen151
+\belowrulesep=\dimen152
+\belowbottomsep=\dimen153
+\aboverulesep=\dimen154
+\abovetopsep=\dimen155
+\cmidrulesep=\dimen156
+\cmidrulekern=\dimen157
+\defaultaddspace=\dimen158
+\@cmidla=\count277
+\@cmidlb=\count278
+\@aboverulesep=\dimen159
+\@belowrulesep=\dimen160
+\@thisruleclass=\count279
+\@lastruleclass=\count280
+\@thisrulewidth=\dimen161
 )
 (d:/texlive/2022/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen163
+\col@sep=\dimen162
 \ar@mcellbox=\box61
-\extrarowheight=\dimen164
-\NC@list=\toks28
+\extrarowheight=\dimen163
+\NC@list=\toks27
 \extratabsurround=\skip55
 \backup@length=\skip56
 \ar@cellbox=\box62
 )
 (d:/texlive/2022/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count283
-\float@exts=\toks29
+\c@float@type=\count281
+\float@exts=\toks28
 \float@box=\box63
-\@float@everytoks=\toks30
+\@float@everytoks=\toks29
 \@floatcapt=\box64
 )
 (d:/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
@@ -450,14 +382,14 @@ Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 
 (d:/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
-\caption@tempdima=\dimen165
-\captionmargin=\dimen166
-\caption@leftmargin=\dimen167
-\caption@rightmargin=\dimen168
-\caption@width=\dimen169
-\caption@indent=\dimen170
-\caption@parindent=\dimen171
-\caption@hangindent=\dimen172
+\caption@tempdima=\dimen164
+\captionmargin=\dimen165
+\caption@leftmargin=\dimen166
+\caption@rightmargin=\dimen167
+\caption@width=\dimen168
+\caption@indent=\dimen169
+\caption@parindent=\dimen170
+\caption@hangindent=\dimen171
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 Package caption Info: \@makecaption = \long macro:#1#2->\par \vskip \abovecapti
@@ -472,21 +404,21 @@ Package caption Warning: Unknown document class (or package),
 (caption)                standard defaults will be used.
 See the caption package documentation for explanation.
 
-\c@caption@flags=\count284
-\c@continuedfloat=\count285
+\c@caption@flags=\count282
+\c@continuedfloat=\count283
 Package caption Info: float package is loaded.
 ) (d:/texlive/2022/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip57
 \subfigcapskip=\skip58
-\subfigcaptopadj=\dimen173
+\subfigcaptopadj=\dimen172
 \subfigbottomskip=\skip59
-\subfigcapmargin=\dimen174
+\subfigcapmargin=\dimen173
 \subfiglabelskip=\skip60
-\c@subfigure=\count286
-\c@lofdepth=\count287
-\c@subtable=\count288
-\c@lotdepth=\count289
+\c@subfigure=\count284
+\c@lofdepth=\count285
+\c@subtable=\count286
+\c@lotdepth=\count287
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -497,8 +429,8 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 )
 (d:/texlive/2022/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
-\epsfxsize=\dimen175
-\epsfysize=\dimen176
+\epsfxsize=\dimen174
+\epsfysize=\dimen175
 )
 (d:/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
@@ -511,18 +443,18 @@ Package color Info: Driver file: pdftex.def on input line 149.
 (d:/texlive/2022/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip63
-\multirow@cntb=\count290
+\multirow@cntb=\count288
 \multirow@dima=\skip64
-\bigstrutjot=\dimen177
+\bigstrutjot=\dimen176
 )
 (d:/texlive/2022/texmf-dist/tex/latex/tensor/tensor.sty
 Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
 LaTeX Info: Redefining \tensor on input line 24.
-\tnsr@Sps=\toks31
-\tnsr@Sbs=\toks32
-\tnsr@Spe=\toks33
-\tnsr@Sbe=\toks34
-\ncld@Mno=\toks35
+\tnsr@Sps=\toks30
+\tnsr@Sbs=\toks31
+\tnsr@Spe=\toks32
+\tnsr@Sbe=\toks33
+\ncld@Mno=\toks34
 )
 (d:/texlive/2022/texmf-dist/tex/latex/adjustbox/adjustbox.sty
 Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
@@ -532,10 +464,10 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 
 (d:/texlive/2022/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (d:/texlive/2022/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks36
-\XKV@tempa@toks=\toks37
+\XKV@toks=\toks35
+\XKV@tempa@toks=\toks36
 )
-\XKV@depth=\count291
+\XKV@depth=\count289
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (d:/texlive/2022/texmf-dist/tex/latex/adjustbox/adjcalc.sty
@@ -549,34 +481,34 @@ Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box65
 )
-\tc@llx=\dimen178
-\tc@lly=\dimen179
-\tc@urx=\dimen180
-\tc@ury=\dimen181
+\tc@llx=\dimen177
+\tc@lly=\dimen178
+\tc@urx=\dimen179
+\tc@ury=\dimen180
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 (d:/texlive/2022/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen182
-\adjbox@Height=\dimen183
-\adjbox@Depth=\dimen184
-\adjbox@Totalheight=\dimen185
-\adjbox@pwidth=\dimen186
-\adjbox@pheight=\dimen187
-\adjbox@pdepth=\dimen188
-\adjbox@ptotalheight=\dimen189
+\adjbox@Width=\dimen181
+\adjbox@Height=\dimen182
+\adjbox@Depth=\dimen183
+\adjbox@Totalheight=\dimen184
+\adjbox@pwidth=\dimen185
+\adjbox@pheight=\dimen186
+\adjbox@pdepth=\dimen187
+\adjbox@ptotalheight=\dimen188
 
 (d:/texlive/2022/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count292
+\c@checkoddpage=\count290
 )
 (d:/texlive/2022/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box66
-\sift@deathcycles=\count293
-\@vwid@loff=\dimen190
-\@vwid@roff=\dimen191
+\sift@deathcycles=\count291
+\@vwid@loff=\dimen189
+\@vwid@roff=\dimen190
 ))
 (d:/texlive/2022/texmf-dist/tex/latex/tabularray/tabularray.sty
 (d:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -584,98 +516,98 @@ Package: expl3 2022-02-24 L3 programming layer (loader)
 
 (d:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count294
+\l__color_backend_stack_int=\count292
 \l__pdf_internal_box=\box67
 ))
 Package: tabularray 2022-03-01 v2022A Typeset tabulars and arrays with LaTeX3
-\l__tblr_a_int=\count295
-\l__tblr_c_int=\count296
-\l__tblr_r_int=\count297
-\l__tblr_d_dim=\dimen192
-\l__tblr_h_dim=\dimen193
-\l__tblr_o_dim=\dimen194
-\l__tblr_p_dim=\dimen195
-\l__tblr_q_dim=\dimen196
-\l__tblr_r_dim=\dimen197
-\l__tblr_s_dim=\dimen198
-\l__tblr_t_dim=\dimen199
-\l__tblr_v_dim=\dimen256
-\l__tblr_w_dim=\dimen257
+\l__tblr_a_int=\count293
+\l__tblr_c_int=\count294
+\l__tblr_r_int=\count295
+\l__tblr_d_dim=\dimen191
+\l__tblr_h_dim=\dimen192
+\l__tblr_o_dim=\dimen193
+\l__tblr_p_dim=\dimen194
+\l__tblr_q_dim=\dimen195
+\l__tblr_r_dim=\dimen196
+\l__tblr_s_dim=\dimen197
+\l__tblr_t_dim=\dimen198
+\l__tblr_v_dim=\dimen199
+\l__tblr_w_dim=\dimen256
 \l__tblr_a_box=\box68
 \l__tblr_b_box=\box69
 \l__tblr_c_box=\box70
 \l__tblr_d_box=\box71
-\g__tblr_table_count_int=\count298
-\c@rownum=\count299
-\c@colnum=\count300
-\c@rowcount=\count301
-\c@colcount=\count302
-\abovesep=\dimen258
-\belowsep=\dimen259
-\leftsep=\dimen260
-\rightsep=\dimen261
-\g_tblr_level_int=\count303
-\g__tblr_data_row_key_count_int=\count304
-\g__tblr_data_column_key_count_int=\count305
-\g__tblr_data_cell_key_count_int=\count306
-\g__tblr_array_int=\count307
-\l__tblr_key_count_int=\count308
-\l__tblr_key_quotient_int=\count309
-\l__tblr_key_quotient_two_int=\count310
-\l__tblr_key_remainder_int=\count311
-\g__tblr_data_str_value_count_int=\count312
-\rulewidth=\dimen262
+\g__tblr_table_count_int=\count296
+\c@rownum=\count297
+\c@colnum=\count298
+\c@rowcount=\count299
+\c@colcount=\count300
+\abovesep=\dimen257
+\belowsep=\dimen258
+\leftsep=\dimen259
+\rightsep=\dimen260
+\g_tblr_level_int=\count301
+\g__tblr_data_row_key_count_int=\count302
+\g__tblr_data_column_key_count_int=\count303
+\g__tblr_data_cell_key_count_int=\count304
+\g__tblr_array_int=\count305
+\l__tblr_key_count_int=\count306
+\l__tblr_key_quotient_int=\count307
+\l__tblr_key_quotient_two_int=\count308
+\l__tblr_key_remainder_int=\count309
+\g__tblr_data_str_value_count_int=\count310
+\rulewidth=\dimen261
 \l__tblr_strut_ht_box=\box72
 \l__tblr_strut_dp_box=\box73
-\g__tblr_cell_wd_dim=\dimen263
-\g__tblr_cell_ht_dim=\dimen264
-\g__tblr_cell_head_dim=\dimen265
-\g__tblr_cell_foot_dim=\dimen266
-\l__column_target_dim=\dimen267
+\g__tblr_cell_wd_dim=\dimen262
+\g__tblr_cell_ht_dim=\dimen263
+\g__tblr_cell_head_dim=\dimen264
+\g__tblr_cell_foot_dim=\dimen265
+\l__column_target_dim=\dimen266
 \l__tblr_caption_box=\box74
 \l__tblr_caption_left_box=\box75
 \l__tblr_row_head_box=\box76
 \l__tblr_row_foot_box=\box77
-\l__tblr_row_head_foot_dim=\dimen268
-\tablewidth=\dimen269
+\l__tblr_row_head_foot_dim=\dimen267
+\tablewidth=\dimen268
 \l__tblr_table_firsthead_box=\box78
 \l__tblr_table_middlehead_box=\box79
 \l__tblr_table_lasthead_box=\box80
 \l__tblr_table_firstfoot_box=\box81
 \l__tblr_table_middlefoot_box=\box82
 \l__tblr_table_lastfoot_box=\box83
-\l__tblr_remain_height_dim=\dimen270
-\l__tblr_long_from_int=\count313
-\l__tblr_long_to_int=\count314
-\l__tblr_curr_i_int=\count315
-\l__tblr_prev_i_int=\count316
-\l__tblr_table_page_int=\count317
+\l__tblr_remain_height_dim=\dimen269
+\l__tblr_long_from_int=\count311
+\l__tblr_long_to_int=\count312
+\l__tblr_curr_i_int=\count313
+\l__tblr_prev_i_int=\count314
+\l__tblr_table_page_int=\count315
 \l__tblr_table_head_box=\box84
 \l__tblr_table_foot_box=\box85
-\l__tblr_table_head_foot_dim=\dimen271
-\l__tblr_table_head_body_foot_dim=\dimen272
+\l__tblr_table_head_foot_dim=\dimen270
+\l__tblr_table_head_body_foot_dim=\dimen271
 \l__tblr_table_box=\box86
 \l__tblr_table_hlines_box=\box87
 \l__tblr_hline_box=\box88
 \l__tblr_row_box=\box89
-\l__tblr_col_o_wd_dim=\dimen273
-\l__tblr_col_b_wd_dim=\dimen274
-\l__tblr_hline_leftskip_dim=\dimen275
-\l__tblr_hline_rightskip_dim=\dimen276
-\l__tblr_row_ht_dim=\dimen277
-\l__tblr_row_dp_dim=\dimen278
-\l__tblr_row_abovesep_dim=\dimen279
-\l__tblr_row_belowsep_dim=\dimen280
+\l__tblr_col_o_wd_dim=\dimen272
+\l__tblr_col_b_wd_dim=\dimen273
+\l__tblr_hline_leftskip_dim=\dimen274
+\l__tblr_hline_rightskip_dim=\dimen275
+\l__tblr_row_ht_dim=\dimen276
+\l__tblr_row_dp_dim=\dimen277
+\l__tblr_row_abovesep_dim=\dimen278
+\l__tblr_row_belowsep_dim=\dimen279
 \l__tblr_row_vlines_box=\box90
 \l__tblr_vline_box=\box91
 \l__tblr_cell_box=\box92
-\l__row_upper_dim=\dimen281
-\l__row_lower_dim=\dimen282
-\l__row_vpace_dim=\dimen283
-\l__tblr_vline_aboveskip_dim=\dimen284
-\l__tblr_vline_belowskip_dim=\dimen285
-\l__tblr_cell_wd_dim=\dimen286
-\l__tblr_cell_ht_dim=\dimen287
+\l__row_upper_dim=\dimen280
+\l__row_lower_dim=\dimen281
+\l__row_vpace_dim=\dimen282
+\l__tblr_vline_aboveskip_dim=\dimen283
+\l__tblr_vline_belowskip_dim=\dimen284
+\l__tblr_cell_wd_dim=\dimen285
+\l__tblr_cell_ht_dim=\dimen286
 \l__tblr_diag_box=\box93
 )
 (d:/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -693,9 +625,9 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 (d:/texlive/2022/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen288
-\Hy@linkcounter=\count318
-\Hy@pagecounter=\count319
+\@linkdim=\dimen287
+\Hy@linkcounter=\count316
+\Hy@pagecounter=\count317
 
 (d:/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
@@ -708,7 +640,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (d:/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count320
+\Hy@SavedSpaceFactor=\count318
 
 (d:/texlive/2022/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
@@ -722,9 +654,9 @@ Package hyperref Info: Plain pages OFF on input line 4152.
 Package hyperref Info: Backreferencing OFF on input line 4157.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4390.
-\c@Hy@tempcnt=\count321
+\c@Hy@tempcnt=\count319
 LaTeX Info: Redefining \url on input line 4749.
-\XeTeXLinkMargin=\dimen289
+\XeTeXLinkMargin=\dimen288
 
 (d:/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -733,9 +665,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count322
-\Field@Width=\dimen290
-\Fld@charsize=\dimen291
+\Fld@menulength=\count320
+\Field@Width=\dimen289
+\Fld@charsize=\dimen290
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -750,9 +682,9 @@ LaTeX Info: Redefining \pageref on input line 6101.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count323
-\c@Item=\count324
-\c@Hfootnote=\count325
+\Hy@abspage=\count321
+\c@Item=\count322
+\c@Hfootnote=\count323
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -764,8 +696,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count326
-\c@bookmark@seq@number=\count327
+\Fld@listcount=\count324
+\c@bookmark@seq@number=\count325
 
 (d:/texlive/2022/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -778,15 +710,15 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip65
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 41.
+Package hyperref Info: Option `colorlinks' set `true' on input line 40.
 
 (d:/texlive/2022/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (d:/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (d:/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks38
-\pgfutil@tempdima=\dimen292
-\pgfutil@tempdimb=\dimen293
+\pgfutil@everybye=\toks37
+\pgfutil@tempdima=\dimen291
+\pgfutil@tempdimb=\dimen292
 
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)
 ) (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -804,32 +736,32 @@ Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
 Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks39
-\pgfkeys@temptoks=\toks40
+\pgfkeys@pathtoks=\toks38
+\pgfkeys@temptoks=\toks39
 
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks41
+\pgfkeys@tmptoks=\toks40
 ))
-\pgf@x=\dimen294
-\pgf@y=\dimen295
-\pgf@xa=\dimen296
-\pgf@ya=\dimen297
-\pgf@xb=\dimen298
-\pgf@yb=\dimen299
-\pgf@xc=\dimen300
-\pgf@yc=\dimen301
-\pgf@xd=\dimen302
-\pgf@yd=\dimen303
+\pgf@x=\dimen293
+\pgf@y=\dimen294
+\pgf@xa=\dimen295
+\pgf@ya=\dimen296
+\pgf@xb=\dimen297
+\pgf@yb=\dimen298
+\pgf@xc=\dimen299
+\pgf@yc=\dimen300
+\pgf@xd=\dimen301
+\pgf@yd=\dimen302
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count328
-\c@pgf@countb=\count329
-\c@pgf@countc=\count330
-\c@pgf@countd=\count331
-\t@pgf@toka=\toks42
-\t@pgf@tokb=\toks43
-\t@pgf@tokc=\toks44
-\pgf@sys@id@count=\count332
+\c@pgf@counta=\count326
+\c@pgf@countb=\count327
+\c@pgf@countc=\count328
+\c@pgf@countd=\count329
+\t@pgf@toka=\toks41
+\t@pgf@tokb=\toks42
+\t@pgf@tokc=\toks43
+\pgf@sys@id@count=\count330
  (d:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -843,8 +775,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 )))
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count333
-\pgfsyssoftpath@bigbuffer@items=\count334
+\pgfsyssoftpath@smallbuffer@items=\count331
+\pgfsyssoftpath@bigbuffer@items=\count332
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -873,12 +805,12 @@ Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen304
-\pgfmath@count=\count335
+\pgfmath@dimen=\dimen303
+\pgfmath@count=\count333
 \pgfmath@box=\box95
-\pgfmath@toks=\toks45
-\pgfmath@stack@operand=\toks46
-\pgfmath@stack@operation=\toks47
+\pgfmath@toks=\toks44
+\pgfmath@stack@operand=\toks45
+\pgfmath@stack@operation=\toks46
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
@@ -898,56 +830,56 @@ x)
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
 etics.code.tex)))
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count336
+\c@pgfmathroundto@lastzeros=\count334
 ))
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@picminx=\dimen305
-\pgf@picmaxx=\dimen306
-\pgf@picminy=\dimen307
-\pgf@picmaxy=\dimen308
-\pgf@pathminx=\dimen309
-\pgf@pathmaxx=\dimen310
-\pgf@pathminy=\dimen311
-\pgf@pathmaxy=\dimen312
-\pgf@xx=\dimen313
-\pgf@xy=\dimen314
-\pgf@yx=\dimen315
-\pgf@yy=\dimen316
-\pgf@zx=\dimen317
-\pgf@zy=\dimen318
+\pgf@picminx=\dimen304
+\pgf@picmaxx=\dimen305
+\pgf@picminy=\dimen306
+\pgf@picmaxy=\dimen307
+\pgf@pathminx=\dimen308
+\pgf@pathmaxx=\dimen309
+\pgf@pathminy=\dimen310
+\pgf@pathmaxy=\dimen311
+\pgf@xx=\dimen312
+\pgf@xy=\dimen313
+\pgf@yx=\dimen314
+\pgf@yy=\dimen315
+\pgf@zx=\dimen316
+\pgf@zy=\dimen317
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.cod
 e.tex
 File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@path@lastx=\dimen319
-\pgf@path@lasty=\dimen320
+\pgf@path@lastx=\dimen318
+\pgf@path@lasty=\dimen319
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.te
 x
 File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@shorten@end@additional=\dimen321
-\pgf@shorten@start@additional=\dimen322
+\pgf@shorten@end@additional=\dimen320
+\pgf@shorten@start@additional=\dimen321
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box96
 \pgf@hbox=\box97
 \pgf@layerbox@main=\box98
-\pgf@picture@serial@count=\count337
+\pgf@picture@serial@count=\count335
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
 .tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgflinewidth=\dimen323
+\pgflinewidth=\dimen322
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.c
 ode.tex
 File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@pt@x=\dimen324
-\pgf@pt@y=\dimen325
-\pgf@pt@temp=\dimen326
+\pgf@pt@x=\dimen323
+\pgf@pt@y=\dimen324
+\pgf@pt@temp=\dimen325
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -961,13 +893,13 @@ File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowsep=\dimen327
+\pgfarrowsep=\dimen326
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@max=\dimen328
-\pgf@sys@shading@range@num=\count338
-\pgf@shadingcount=\count339
+\pgf@max=\dimen327
+\pgf@sys@shading@range@num=\count336
+\pgf@shadingcount=\count337
 )
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -998,8 +930,8 @@ File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (d:/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
 y
 Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@nodesepstart=\dimen329
-\pgf@nodesepend=\dimen330
+\pgf@nodesepstart=\dimen328
+\pgf@nodesepend=\dimen329
 )
 (d:/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
 y
@@ -1013,10 +945,10 @@ Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
 Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen331
-\pgffor@skip=\dimen332
-\pgffor@stack=\toks48
-\pgffor@toks=\toks49
+\pgffor@iter=\dimen330
+\pgffor@skip=\dimen331
+\pgffor@stack=\toks47
+\pgffor@toks=\toks48
 ))
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
@@ -1024,33 +956,33 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
 de.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count340
-\pgfplotmarksize=\dimen333
+\pgf@plot@mark@count=\count338
+\pgfplotmarksize=\dimen332
 )
-\tikz@lastx=\dimen334
-\tikz@lasty=\dimen335
-\tikz@lastxsaved=\dimen336
-\tikz@lastysaved=\dimen337
-\tikz@lastmovetox=\dimen338
-\tikz@lastmovetoy=\dimen339
-\tikzleveldistance=\dimen340
-\tikzsiblingdistance=\dimen341
+\tikz@lastx=\dimen333
+\tikz@lasty=\dimen334
+\tikz@lastxsaved=\dimen335
+\tikz@lastysaved=\dimen336
+\tikz@lastmovetox=\dimen337
+\tikz@lastmovetoy=\dimen338
+\tikzleveldistance=\dimen339
+\tikzsiblingdistance=\dimen340
 \tikz@figbox=\box101
 \tikz@figbox@bg=\box102
 \tikz@tempbox=\box103
 \tikz@tempbox@bg=\box104
-\tikztreelevel=\count341
-\tikznumberofchildren=\count342
-\tikznumberofcurrentchild=\count343
-\tikz@fig@count=\count344
+\tikztreelevel=\count339
+\tikznumberofchildren=\count340
+\tikznumberofcurrentchild=\count341
+\tikz@fig@count=\count342
 
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count345
-\pgfmatrixcurrentcolumn=\count346
-\pgf@matrix@numberofcolumns=\count347
+\pgfmatrixcurrentrow=\count343
+\pgfmatrixcurrentcolumn=\count344
+\pgf@matrix@numberofcolumns=\count345
 )
-\tikz@expandcount=\count348
+\tikz@expandcount=\count346
 
 (d:/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarytopaths.code.tex
@@ -1072,114 +1004,106 @@ LaTeX Warning: Unused global option(s):
 (./speedmeVSLPDUv2.aux)
 \openout1 = `speedmeVSLPDUv2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 155.
-LaTeX Font Info:    Trying to load font information for LUC+nanummj on input li
-ne 155.
-
-(d:/texlive/2022/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
-File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
-)
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
 Class revtex4 Info: Unrecognized array package. Please update this document cla
-ss! (Proceeding with fingers crossed.) on input line 155.
-Class revtex4 Info: cite was not loaded (OK!) on input line 155.
-Class revtex4 Info: multicol was not loaded (OK!) on input line 155.
+ss! (Proceeding with fingers crossed.) on input line 154.
+Class revtex4 Info: cite was not loaded (OK!) on input line 154.
+Class revtex4 Info: multicol was not loaded (OK!) on input line 154.
 
 (d:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count349
-\scratchdimen=\dimen342
+\scratchcounter=\count347
+\scratchdimen=\dimen341
 \scratchbox=\box105
-\nofMPsegments=\count350
-\nofMParguments=\count351
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count352
-\MPscratchDim=\dimen343
-\MPnumerator=\count353
-\makeMPintoPDFobject=\count354
-\everyMPtoPDFconversion=\toks51
+\nofMPsegments=\count348
+\nofMParguments=\count349
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count350
+\MPscratchDim=\dimen342
+\MPnumerator=\count351
+\makeMPintoPDFobject=\count352
+\everyMPtoPDFconversion=\toks50
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
@@ -1196,7 +1120,7 @@ Package: xparse 2022-01-12 L3 Experimental document command parser
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring ON on input line 155.
+Package hyperref Info: Link coloring ON on input line 154.
 (d:/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1206,11 +1130,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (d:/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count355
+\c@section@level=\count353
 )
-LaTeX Info: Redefining \ref on input line 155.
-LaTeX Info: Redefining \pageref on input line 155.
-LaTeX Info: Redefining \nameref on input line 155.
+LaTeX Info: Redefining \ref on input line 154.
+LaTeX Info: Redefining \pageref on input line 154.
+LaTeX Info: Redefining \nameref on input line 154.
 
 (./speedmeVSLPDUv2.out) (./speedmeVSLPDUv2.out)
 \@outlinefile=\write5
@@ -1227,7 +1151,7 @@ File: UTF8.enc 2021/10/16 4.8.5
 File: UTF8.chr 2021/10/16 4.8.5
 )
 LaTeX Font Info:    Trying to load font information for C70+gbsn on input line 
-167.
+166.
 
 (d:/texlive/2022/texmf-dist/tex/latex/cjk/texinput/UTF8/c70gbsn.fd
 File: c70gbsn.fd 2021/10/16 4.8.5
@@ -1235,30 +1159,19 @@ File: c70gbsn.fd 2021/10/16 4.8.5
 (d:/texlive/2022/texmf-dist/tex/latex/cjk/texinput/UTF8/c70gbsn.fdx
 File: c70gbsn.fdx 2021/10/16 4.8.5
 )
-LaTeX Font Info:    Trying to load font information for LUC+uhcmj on input line
- 167.
-
-(d:/texlive/2022/texmf-dist/tex/latex/kotex-utf/lucuhcmj.fd
-File: lucuhcmj.fd 2013/09/26 UHC Myeongjo font definitions
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 167
+LaTeX Font Info:    Trying to load font information for U+msa on input line 166
 .
 
 (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 167
+LaTeX Font Info:    Trying to load font information for U+msb on input line 166
 .
 
 (d:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Font Warning: Font shape `LUC/uhcmj/bx/n' undefined
-(Font)              using `LUC/uhcmj/m/n' instead on input line 170.
-
-[0{d:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./speedmeVSLPDUv2.toc
+) [0{d:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./speedmeV
+SLPDUv2.toc
 Overfull \hbox (0.87494pt too wide) detected at line 4
  \OT1/cmr/m/n/12 1
  []
@@ -1310,7 +1223,7 @@ Overfull \hbox (6.74988pt too wide) detected at line 13
 
 
 Overfull \hbox (6.74988pt too wide) detected at line 14
- \OT1/cmr/m/n/12 13
+ \OT1/cmr/m/n/12 14
  []
 
 
@@ -1323,244 +1236,349 @@ Overfull \hbox (6.74988pt too wide) detected at line 15
 \openout6 = `speedmeVSLPDUv2.toc'.
 
  [1] [2] [3]
-<Fig1.pdf, id=318, 313.80836pt x 204.79109pt>
+<Fig1.pdf, id=321, 313.80836pt x 204.79109pt>
 File: Fig1.pdf Graphic file (type pdf)
 <use Fig1.pdf>
-Package pdftex.def Info: Fig1.pdf  used on input line 252.
+Package pdftex.def Info: Fig1.pdf  used on input line 254.
 (pdftex.def)             Requested size: 421.19714pt x 274.89362pt.
- [4] [5 <./Fig1.pdf>] [6] [7] [8] [9] [10]
-<Fig2.pdf, id=478, 398.84409pt x 186.51884pt>
+ [4] [5 <./Fig1.pdf>] [6] [7] [8] [9] [10] [11]
+<Fig2.pdf, id=491, 398.84409pt x 186.51884pt>
 File: Fig2.pdf Graphic file (type pdf)
 <use Fig2.pdf>
-Package pdftex.def Info: Fig2.pdf  used on input line 405.
+Package pdftex.def Info: Fig2.pdf  used on input line 404.
 (pdftex.def)             Requested size: 421.19714pt x 196.98611pt.
- [11] [12 <./Fig2.pdf>]
-Underfull \hbox (badness 1997) in paragraph at lines 432--433
+ [12 <./Fig2.pdf>]
+[13]
+Underfull \hbox (badness 1221) in paragraph at lines 431--432
 []\C70/gbsn/m/n/12/67 , \C70/gbsn/bx/n/12/78 ^^T \C70/gbsn/m/n/12/7a v \C70/gbs
 n/m/n/12/75 1 \C70/gbsn/m/n/12/97 é \C70/gbsn/m/n/12/56 ý ý \C70/gbsn/bx/n/12/5
 b ¶ \C70/gbsn/bx/n/12/78 ^^T \C70/gbsn/m/n/12/7a v \C70/gbsn/m/n/12/57 ú \C70/g
 bsn/m/n/12/91 Ñ \C70/gbsn/m/n/12/4f ^^Z\OT1/cmr/m/n/12 (NRF)\C70/gbsn/bx/n/12/8
-d D \C70/gbsn/bx/n/12/52 ©[]\C70/gbsn/m/n/12/65 Y \C70/gbsn/m/n/12/80 ² \C70/gb
-sn/m/n/12/90 è \C70/gbsn/m/n/12/62 è \C70/gbsn/m/n/12/6b >\OT1/cmr/m/n/12 (\C70
-/gbsn/bx/n/12/98 y \C70/gbsn/m/n/12/76 î \C70/gbsn/bx/n/12/7f ^^V \C70/gbsn/m/n
-/12/53 ÷\OT1/cmr/m/n/12 NRF-
+d D \C70/gbsn/bx/n/12/52 © \C70/gbsn/m/n/12/ff ^^L \C70/gbsn/m/n/12/65 Y \C70/g
+bsn/m/n/12/80 ² \C70/gbsn/m/n/12/90 è \C70/gbsn/m/n/12/62 è \C70/gbsn/m/n/12/6b
+ >\OT1/cmr/m/n/12 (\C70/gbsn/bx/n/12/98 y \C70/gbsn/bx/n/12/76 î \C70/gbsn/bx/n
+/12/7f ^^V \C70/gbsn/m/n/12/53 ÷\OT1/cmr/m/n/12 NRF-
  []
 
-[13]
-Underfull \hbox (badness 1635) in paragraph at lines 455--459
+
+Underfull \hbox (badness 10000) in paragraph at lines 449--453
+[]\OT1/cmr/m/n/10.95 S. Lee, Phys. Dark Univ. \OT1/cmr/bx/n/10.95 42\OT1/cmr/m/
+n/10.95 , 101286 (2023) doi:10.1016/j.dark.2023.101286
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 454--458
 []\OT1/cmr/m/n/10.95 S. Lee, Class. Quant. Grav. \OT1/cmr/bx/n/10.95 42\OT1/cmr
 /m/n/10.95 , no.2, 025026 (2025) doi:10.1088/1361-6382/ada2d5
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--479
+Underfull \hbox (badness 10000) in paragraph at lines 474--478
 []\OT1/cmr/m/n/10.95 M. Szyd-lowski and A. Kraw-iec, Phys. Rev. D \OT1/cmr/bx/n
 /10.95 68\OT1/cmr/m/n/10.95 , 063511 (2003)
  []
 
 
-Underfull \hbox (badness 2846) in paragraph at lines 480--484
+Underfull \hbox (badness 2376) in paragraph at lines 479--483
 []\OT1/cmr/m/n/10.95 J. Magueijo, Rept. Prog. Phys. \OT1/cmr/bx/n/10.95 66\OT1/
 cmr/m/n/10.95 , 2025 (2003) doi:10.1088/0034-4885/66/11/R04
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 495--499
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 494--498
 []\OT1/cmr/m/n/10.95 A. Bal-cerzak and M. P. Dabrowski, Phys. Lett. B \OT1/cmr/
 bx/n/10.95 728\OT1/cmr/m/n/10.95 , 15-18 (2014)
  []
 
 
-Underfull \hbox (badness 7012) in paragraph at lines 500--504
+Underfull \hbox (badness 6063) in paragraph at lines 499--503
 []\OT1/cmr/m/n/10.95 A. Bal-cerzak and M. P. Dabrowski, JCAP \OT1/cmr/bx/n/10.9
 5 06\OT1/cmr/m/n/10.95 , 035 (2014) doi:10.1088/1475-
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 513--517
+
+Underfull \hbox (badness 6893) in paragraph at lines 512--516
 []\OT1/cmr/m/n/10.95 F. Skara and L. Perivolaropou-los, Phys. Rev. D \OT1/cmr/b
 x/n/10.95 101\OT1/cmr/m/n/10.95 , no.6, 063521 (2020)
  []
 
 
-Underfull \hbox (badness 2772) in paragraph at lines 518--522
+Underfull \hbox (badness 3989) in paragraph at lines 517--521
 []\OT1/cmr/m/n/10.95 S. Bhat-tachar-jee \C70/gbsn/bx/n/10.95/4e ^^N\OT1/cmr/m/n
-/10.95 P. K. Sahoo[] []\C70/gbsn/m/n/10.95/6b ' \C70/gbsn/m/n/10.95/6d 2 \C70/g
-bsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/67 B \C70/
-gbsn/bx/n/10.95/5f ×\OT1/cmr/m/n/10.95 Plus[]\OT1/cmr/bx/n/10.95 135[]\C70/gbsn
-/m/n/10.95/7b ,\OT1/cmr/m/n/10.95 1\C70/gbsn/bx/n/10.95/67 ^^_[]\OT1/cmr/m/n/10
-.95 86\C70/gbsn/m/n/10.95/98 u[]\OT1/cmr/m/n/10.95 2020\C70/gbsn/bx/n/10.95/5e 
-t[]
+/10.95 P. K. Sa-hoo\C70/gbsn/m/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/m/n/10.95/6b ' \C70/gbsn/m/n/10.95/6d 2 \C70/gbsn/bx/n/10.95/72 i \C
+70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/67 B \C70/gbsn/bx/n/10.95/5f ×\O
+T1/cmr/m/n/10.95 Plus\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 135\C70/gbsn/m
+/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/7b ,\OT1/cmr/m/n/10.95 1\C70/gbsn/bx/n/10.9
+5/67 ^^_ \C70/gbsn/m/n/10.95/ff ^^L\OT1/cmr/m/n/10.95 86\C70/gbsn/m/n/10.95/98 
+u
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--555
+Underfull \hbox (badness 1158) in paragraph at lines 536--540
+[]\OT1/cmr/m/n/10.95 R. R. Cuz-i-natto\C70/gbsn/m/n/10.95/30 ^^A\OT1/cmr/m/n/10
+.95 R. P. Gupta \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 P. J. Pom-peia\C70/g
+bsn/m/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/m/n/10.95/5b ù \C70/gbsn/m/n/10.95/79 ð \C70/gbsn/bx/n/10.95/60 ' \C
+70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 15\C70/gbsn/m/n/10.95/ff ^^L \C70/gbs
+n/m/n/10.95/7b ,\OT1/cmr/m/n/10.95 3\C70/gbsn/bx/n/10.95/67 ^^_ \C70/gbsn/m/n/1
+0.95/ff ^^L\OT1/cmr/m/n/10.95 709\C70/gbsn/m/n/10.95/98 u
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 545--549
+[]\OT1/cmr/m/n/10.95 S. R. Cole-man \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 
+S. L. Glashow\C70/gbsn/m/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/5f 
+ë \C70/gbsn/m/n/10.95/62 ¥\OT1/cmr/m/n/10.95 B\C70/gbsn/m/n/10.95/30 \OT1/cmr/
+bx/n/10.95 405\C70/gbsn/m/n/10.95/ff ^^L\OT1/cmr/m/n/10.95 249-252\C70/gbsn/m/n
+/10.95/98 u
+ []
+
+
+Overfull \hbox (39.02362pt too wide) in paragraph at lines 550--554
 []\OT1/cmr/m/n/10.95 A. Al-brecht \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 J.
- Magueijo[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/b
-x/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D[]\OT1/cmr/bx/n/10.95 59[]\OT1/cmr/m/n/10.9
-5 043516[]1999\C70/gbsn/bx/n/10.95/5e t[]
+ Magueijo\C70/gbsn/m/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 59\C70/gbsn/
+m/n/10.95/ff ^^L\OT1/cmr/m/n/10.95 043516\C70/gbsn/m/n/10.95/ff ^^H\OT1/cmr/m/n
+/10.95 1999\C70/gbsn/bx/n/10.95/5e t \C70/gbsn/m/n/10.95/ff 	\OT1/cmr/m/n/10.95
+ doi:10.1103/PhysRevD.59.043516
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 570--574
-[]\OT1/cmr/m/n/10.95 T. Ja-cob-son \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 D
-. Mattingly[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn
-/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D[]\OT1/cmr/bx/n/10.95 64[]\OT1/cmr/m/n/10
-.95 024028[]2001\C70/gbsn/bx/n/10.95/5e t[]
+Underfull \hbox (badness 10000) in paragraph at lines 564--568
+[]\OT1/cmr/m/n/10.95 B. A. Bas-sett\C70/gbsn/m/n/10.95/30 ^^A\OT1/cmr/m/n/10.95
+ S. Liberati\C70/gbsn/m/n/10.95/30 ^^A\OT1/cmr/m/n/10.95 C. Molina-Paris \C70/g
+bsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 M. Visser\C70/gbsn/m/n/10.95/ff ^^L \C70/g
+bsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--568
+\C70/gbsn/bx/n/10.95/8b º\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/b
+x/n/10.95 62\C70/gbsn/m/n/10.95/ff ^^L\OT1/cmr/m/n/10.95 103518\C70/gbsn/m/n/10
+.95/ff ^^H\OT1/cmr/m/n/10.95 2000\C70/gbsn/bx/n/10.95/5e t \C70/gbsn/m/n/10.95/
+ff 	\OT1/cmr/m/n/10.95 doi:10.1103/PhysRevD.62.103518 [arXiv:astro-ph/0001441
  []
 
 [15]
-Underfull \hbox (badness 2103) in paragraph at lines 598--602
+Overfull \hbox (47.41869pt too wide) in paragraph at lines 569--573
+[]\OT1/cmr/m/n/10.95 T. Ja-cob-son \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 D
+. Mat-tingly\C70/gbsn/m/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 64\C70/gbsn/
+m/n/10.95/ff ^^L\OT1/cmr/m/n/10.95 024028\C70/gbsn/m/n/10.95/ff ^^H\OT1/cmr/m/n
+/10.95 2001\C70/gbsn/bx/n/10.95/5e t \C70/gbsn/m/n/10.95/ff 	\OT1/cmr/m/n/10.95
+ doi:10.1103/PhysRevD.64.024028
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 574--578
+[]\OT1/cmr/m/n/10.95 J. Magueijo\C70/gbsn/m/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/
+30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 62\C70/gbsn/
+m/n/10.95/ff ^^L\OT1/cmr/m/n/10.95 103521\C70/gbsn/m/n/10.95/ff ^^H\OT1/cmr/m/n
+/10.95 2000\C70/gbsn/bx/n/10.95/5e t \C70/gbsn/m/n/10.95/ff 	\OT1/cmr/m/n/10.95
+ doi:10.1103/PhysRevD.62.103521
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--583
 []\OT1/cmr/m/n/10.95 M. A. Clay-ton \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 
-J. W. Moffat[] []\C70/gbsn/bx/n/10.95/73 ° \C70/gbsn/bx/n/10.95/4e ã \C70/gbsn/
-bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/56 ý \C70/gbsn
-/m/n/10.95/96 E \C70/gbsn/bx/n/10.95/67 ^^_ \C70/gbsn/bx/n/10.95/52 
-\OT1/cmr/m/n/10.95 D[]\OT1/cmr/bx/n/10.95 11[]\OT1/cmr/m/n/10.95 187-206\C70/gb
-sn/m/n/10.95/98 u[]\OT1/cmr/m/n/10.95 2002\C70/gbsn/bx/n/10.95/5e t[]
+J. W. Mof-fat\C70/gbsn/m/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/5f 
+ë \C70/gbsn/m/n/10.95/62 ¥\OT1/cmr/m/n/10.95 B\C70/gbsn/m/n/10.95/30 \OT1/cmr/
+bx/n/10.95 460\C70/gbsn/m/n/10.95/ff ^^L\OT1/cmr/m/n/10.95 263-270\C70/gbsn/m/n
+/10.95/98 u
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 623--627
+Underfull \hbox (badness 10000) in paragraph at lines 587--591
+[]\OT1/cmr/m/n/10.95 M. A. Clay-ton \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 
+J. W. Mof-fat\C70/gbsn/m/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/5f 
+ë \C70/gbsn/m/n/10.95/62 ¥\OT1/cmr/m/n/10.95 B\C70/gbsn/m/n/10.95/30 \OT1/cmr/
+bx/n/10.95 477\C70/gbsn/m/n/10.95/ff ^^L\OT1/cmr/m/n/10.95 269-275\C70/gbsn/m/n
+/10.95/98 u
+ []
+
+
+Underfull \hbox (badness 5417) in paragraph at lines 597--601
+[]\OT1/cmr/m/n/10.95 M. A. Clay-ton \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 
+J. W. Mof-fat\C70/gbsn/m/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/73 ° \C70/gbsn/bx/n/10.95/4e ã \C70/gbsn/bx/n/10.95/72 i 
+\C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/56 ý \C70/gbsn/m/n/10.95/96 E 
+\C70/gbsn/bx/n/10.95/67 ^^_ \C70/gbsn/bx/n/10.95/52 
+\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 11\C70/gbsn/m/n
+/10.95/ff ^^L\OT1/cmr/m/n/10.95 187-206\C70/gbsn/m/n/10.95/98 u
+ []
+
+
+Overfull \hbox (65.56221pt too wide) in paragraph at lines 622--626
 []\OT1/cmr/m/n/10.95 G. Amelino-Camelia \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10
-.95 T. Piran[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbs
-n/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D[]\OT1/cmr/bx/n/10.95 64[]\OT1/cmr/m/n/1
-0.95 036005[]2001\C70/gbsn/bx/n/10.95/5e t[]
+.95 T. Pi-ran\C70/gbsn/m/n/10.95/ff ^^L \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 64\C70/gbsn/
+m/n/10.95/ff ^^L\OT1/cmr/m/n/10.95 036005\C70/gbsn/m/n/10.95/ff ^^H\OT1/cmr/m/n
+/10.95 2001\C70/gbsn/bx/n/10.95/5e t \C70/gbsn/m/n/10.95/ff 	\OT1/cmr/m/n/10.95
+ doi:10.1103/PhysRevD.64.036005
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 628--632
-[]\OT1/cmr/m/n/10.95 G. Amelino-Camelia[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn
-/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/5f ë \C70/gbsn/m/n/10.95/62 ¥\OT1/cmr/m
-/n/10.95 B[]\OT1/cmr/bx/n/10.95 510[]\OT1/cmr/m/n/10.95 255-263\C70/gbsn/m/n/10
-.95/98 u[]\OT1/cmr/m/n/10.95 2001\C70/gbsn/bx/n/10.95/5e t[] \OT1/cmr/m/n/10.95
- doi:10.1016/S0370-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 648--652
-[]\OT1/cmr/m/n/10.95 J. Magueijo \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 L. 
-Smolin[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n
-/10.95/8b Ä º \C70/gbsn/bx/n/10.95/5f ë \C70/gbsn/m/n/10.95/62 ¥[]\OT1/cmr/bx/n
-/10.95 88\OT1/cmr/m/n/10.95 , 190403 (2002)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 653--657
-[]\OT1/cmr/m/n/10.95 G. Amelino-Camelia[] []\C70/gbsn/bx/n/10.95/73 ° \C70/gbsn
-/bx/n/10.95/4e ã \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbs
-n/bx/n/10.95/56 ý \C70/gbsn/m/n/10.95/96 E \C70/gbsn/bx/n/10.95/67 ^^_ \C70/gbs
-n/bx/n/10.95/52 
-\OT1/cmr/m/n/10.95 D[]\OT1/cmr/bx/n/10.95 11\OT1/cmr/m/n/10.95 , 1643 (2002)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 658--662
-[]\OT1/cmr/m/n/10.95 J. Magueijo \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 L. 
-Pogosian[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx
-/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D[]\OT1/cmr/bx/n/10.95 67\OT1/cmr/m/n/10.95 ,
- 043518 (2003)
+Underfull \hbox (badness 1515) in paragraph at lines 627--631
+[]\OT1/cmr/m/n/10.95 G. Amelino-Camelia\C70/gbsn/m/n/10.95/ff ^^L \C70/gbsn/m/n
+/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/5f 
+ë \C70/gbsn/m/n/10.95/62 ¥\OT1/cmr/m/n/10.95 B\C70/gbsn/m/n/10.95/30 \OT1/cmr/
+bx/n/10.95 510\C70/gbsn/m/n/10.95/ff ^^L\OT1/cmr/m/n/10.95 255-263\C70/gbsn/m/n
+/10.95/98 u \C70/gbsn/m/n/10.95/ff ^^H\OT1/cmr/m/n/10.95 2001\C70/gbsn/bx/n/10.
+95/5e t \C70/gbsn/m/n/10.95/ff 	\OT1/cmr/m/n/10.95 doi:10.1016/S0370-
  []
 
 [16]
-Underfull \hbox (badness 2057) in paragraph at lines 676--680
-[]\OT1/cmr/m/n/10.95 S. S. Stepanov[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/
-n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D[]\OT1/cmr/bx/n/1
-0.95 62\OT1/cmr/m/n/10.95 , 023507 (2000) doi:10.1103/PhysRevD.62.023507
+Underfull \hbox (badness 10000) in paragraph at lines 647--651
+[]\OT1/cmr/m/n/10.95 J. Magueijo \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 L. 
+Smolin, \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º \C70/gbsn/bx/n/10.95/5f ë \C70/gbsn/m/n/10.95/62 ¥ \C70/gbsn/m/n/10.95/30 
+\OT1/cmr/bx/n/10.95 88\OT1/cmr/m/n/10.95 , 190403 (2002)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--696
+Underfull \hbox (badness 10000) in paragraph at lines 652--656
+[]\OT1/cmr/m/n/10.95 G. Amelino-Camelia, \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/73 ° \C70/gbsn/bx/n/10.95/4e ã \C70/gbsn/bx/n/10.95/72 i 
+\C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/56 ý \C70/gbsn/m/n/10.95/96 E 
+\C70/gbsn/bx/n/10.95/67 ^^_ \C70/gbsn/bx/n/10.95/52 
+\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 11\OT1/cmr/m/n/
+10.95 , 1643 (2002)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--661
+[]\OT1/cmr/m/n/10.95 J. Magueijo \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 L. 
+Pogosian, \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 67\OT1/cmr/m
+/n/10.95 , 043518 (2003)
+ []
+
+
+Underfull \hbox (badness 3108) in paragraph at lines 680--684
+[]\OT1/cmr/m/n/10.95 J. Magueijo, \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 63\OT1/cmr/m
+/n/10.95 , 043502 (2001) doi:10.1103/PhysRevD.63.043502
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 691--695
 []\OT1/cmr/m/n/10.95 L. Ran-dall \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 R. 
-Sundrum[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/
-n/10.95/8b Ä º \C70/gbsn/bx/n/10.95/5f ë \C70/gbsn/m/n/10.95/62 ¥[]\OT1/cmr/bx/
-n/10.95 83\OT1/cmr/m/n/10.95 , 3370-3373 (1999)
+Sun-drum, \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º \C70/gbsn/bx/n/10.95/5f ë \C70/gbsn/m/n/10.95/62 ¥ \C70/gbsn/m/n/10.95/30 
+\OT1/cmr/bx/n/10.95 83\OT1/cmr/m/n/10.95 , 3370-3373 (1999)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 697--701
+Underfull \hbox (badness 10000) in paragraph at lines 696--700
 []\OT1/cmr/m/n/10.95 L. Ran-dall \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 R. 
-Sundrum[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/
-n/10.95/8b Ä º \C70/gbsn/bx/n/10.95/5f ë \C70/gbsn/m/n/10.95/62 ¥[]\OT1/cmr/bx/
-n/10.95 83\OT1/cmr/m/n/10.95 , 4690-4693 (1999)
+Sun-drum, \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º \C70/gbsn/bx/n/10.95/5f ë \C70/gbsn/m/n/10.95/62 ¥ \C70/gbsn/m/n/10.95/30 
+\OT1/cmr/bx/n/10.95 83\OT1/cmr/m/n/10.95 , 4690-4693 (1999)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 707--711
+Underfull \hbox (badness 10000) in paragraph at lines 706--710
 []\OT1/cmr/m/n/10.95 D. J. H. Chung \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 
-K. Freese[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/b
-x/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D[]\OT1/cmr/bx/n/10.95 62\OT1/cmr/m/n/10.95 
-, 063513 (2000)
+K. Freese, \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 62\OT1/cmr/m
+/n/10.95 , 063513 (2000)
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 745--748
+Underfull \hbox (badness 10000) in paragraph at lines 744--747
 []\OT1/cmr/m/n/10.95 I. T. Drum-mond \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95
- S. J. Hathrell[] []\C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/
-gbsn/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D[]\OT1/cmr/bx/n/10.95 22\OT1/cmr/m/n/
-10.95 , 343 (1980)
+ S. J. Hathrell, \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b 
+Ä º\OT1/cmr/m/n/10.95 D\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 22\OT1/cmr/m
+/n/10.95 , 343 (1980)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 769--773
-[]\OT1/cmr/m/n/10.95 D. Col-la-day \C70/gbsn/bx/n/10.95/4e ^^N\OT1/cmr/m/n/10.9
-5 V. A. Kost-elecky, \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70
-/gbsn/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D \OT1/cmr/bx/n/10.95 52\OT1/cmr/m/n/
-10.95 , 6224-6230 (1995)
+Underfull \hbox (badness 10000) in paragraph at lines 748--751
+[]\OT1/cmr/m/n/10.95 M. Nov-ello \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 S. 
+D. Jorda, \C70/gbsn/m/n/10.95/30 
+ \C70/gbsn/bx/n/10.95/73 ° \C70/gbsn/bx/n/10.95/4e ã \C70/gbsn/bx/n/10.95/72 i 
+\C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/5f ë \C70/gbsn/m/n/10.95/62 ¥\
+OT1/cmr/m/n/10.95 A\C70/gbsn/m/n/10.95/30 \OT1/cmr/bx/n/10.95 4\OT1/cmr/m/n/10
+.95 , 1809 (1989)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 775--779
-[]\OT1/cmr/m/n/10.95 S. R. Cole-man \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 
-S. L. Glashow, \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/
-bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D \OT1/cmr/bx/n/10.95 59\OT1/cmr/m/n/10.95 
-, 116008 (1999)
+Underfull \hbox (badness 3724) in paragraph at lines 766--770
+[]\OT1/cmr/m/n/10.95 D. \C70/gbsn/m/n/10.95/79 Ñ \C70/gbsn/m/n/10.95/62 É 4 \C7
+0/gbsn/bx/n/10.95/4e ^^N\OT1/cmr/m/n/10.95 V. A. \C70/gbsn/m/n/10.95/79 Ñ \C70/
+gbsn/bx/n/10.95/65 ¯ \C70/gbsn/bx/n/10.95/72 y \C70/gbsn/m/n/10.95/83 ± ( \C70/
+gbsn/bx/n/10.95/57 ú\OT1/cmr/m/n/10.95 , \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx
+/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D \OT1/cmr/bx/n/1
+0.95 52\OT1/cmr/m/n/10.95 , 6224-6230\C70/gbsn/m/n/10.95/98 u\OT1/cmr/m/n/10.95
+ (1995\C70/gbsn/bx/n/10.95/5e t\OT1/cmr/m/n/10.95 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 781--785
-[]\OT1/cmr/m/n/10.95 O. Berto-lami \C70/gbsn/bx/n/10.95/4e ^^N\OT1/cmr/m/n/10.9
-5 C. S. Car-valho, \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/g
-bsn/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D \OT1/cmr/bx/n/10.95 61\OT1/cmr/m/n/10
-.95 , 103002 (2000)
+Underfull \hbox (badness 10000) in paragraph at lines 771--775
+[]\OT1/cmr/m/n/10.95 S. R. \C70/gbsn/m/n/10.95/79 Ñ \C70/gbsn/bx/n/10.95/5c ^^T
+ \C70/gbsn/bx/n/10.95/66 ü \C70/gbsn/bx/n/10.95/4e ^^N\OT1/cmr/m/n/10.95 S. L. 
+\C70/gbsn/m/n/10.95/68 < \C70/gbsn/m/n/10.95/62 É \C70/gbsn/bx/n/10.95/80 –\OT1
+/cmr/m/n/10.95 , \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbs
+n/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D \OT1/cmr/bx/n/10.95 59\OT1/cmr/m/n/10.9
+5 , 116008 (1999\C70/gbsn/bx/n/10.95/5e t\OT1/cmr/m/n/10.95 )
  []
 
 
-Underfull \hbox (badness 5161) in paragraph at lines 810--814
-[]\OT1/cmr/m/n/10.95 M. Bla-sone, J. Magueijo \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/
-m/n/10.95 P. Pires-Pacheco, \C70/gbsn/m/n/10.95/6b ' \C70/gbsn/m/n/10.95/6d 2 \
-C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/5f ë 
-\C70/gbsn/m/n/10.95/62 ¥\OT1/cmr/bx/n/10.95 70\OT1/cmr/m/n/10.95 , 600 (2005)
+Underfull \hbox (badness 10000) in paragraph at lines 776--780
+[]\OT1/cmr/m/n/10.95 O. \C70/gbsn/m/n/10.95/8d ^^] \C70/gbsn/bx/n/10.95/5c ^^T 
+\C70/gbsn/m/n/10.95/62 X É \C70/gbsn/m/n/10.95/7c s \C70/gbsn/bx/n/10.95/4e ^^N
+\OT1/cmr/m/n/10.95 C. S. \C70/gbsn/bx/n/10.95/53 a \C70/gbsn/bx/n/10.95/74 æ \C
+70/gbsn/bx/n/10.95/75 e\OT1/cmr/m/n/10.95 , \C70/gbsn/bx/n/10.95/72 i \C70/gbsn
+/bx/n/10.95/74 ^^F \C70/gbsn/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D \OT1/cmr/bx/
+n/10.95 61\OT1/cmr/m/n/10.95 , 103002 (2000\C70/gbsn/bx/n/10.95/5e t\OT1/cmr/m/
+n/10.95 )
  []
 
-
-Underfull \hbox (badness 2913) in paragraph at lines 816--820
-[]\OT1/cmr/m/n/10.95 S. Alexan-der, R. Bran-den-berger \C70/gbsn/m/n/10.95/54 Œ
-\OT1/cmr/m/n/10.95 J. Magueijo, \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95/
-74 ^^F \C70/gbsn/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D \OT1/cmr/bx/n/10.95 67\O
-T1/cmr/m/n/10.95 , 081301 (2003)
+[18]
+Underfull \hbox (badness 1308) in paragraph at lines 805--809
+[]\OT1/cmr/m/n/10.95 S. \C70/gbsn/bx/n/10.95/4e š \C70/gbsn/bx/n/10.95/53 † \C7
+0/gbsn/bx/n/10.95/5c q \C70/gbsn/bx/n/10.95/59 '\OT1/cmr/m/n/10.95 , R. \C70/gb
+sn/bx/n/10.95/5e ^^C \C70/gbsn/bx/n/10.95/51 p \C70/gbsn/m/n/10.95/76 { \C70/gb
+sn/bx/n/10.95/4f / \C70/gbsn/m/n/10.95/68 < \C70/gbsn/bx/n/10.95/4e ^^N\OT1/cmr
+/m/n/10.95 J. \C70/gbsn/m/n/10.95/9a l \C70/gbsn/bx/n/10.95/57 - \C70/gbsn/m/n/
+10.95/97 ^^M\OT1/cmr/m/n/10.95 , \C70/gbsn/bx/n/10.95/72 i \C70/gbsn/bx/n/10.95
+/74 ^^F \C70/gbsn/bx/n/10.95/8b Ä º\OT1/cmr/m/n/10.95 D \OT1/cmr/bx/n/10.95 67\
+OT1/cmr/m/n/10.95 , 081301 (2003\C70/gbsn/bx/n/10.95/5e t\OT1/cmr/m/n/10.95 )
  []
 
 
 LaTeX Font Warning: Font shape `C70/gbsn/m/it' undefined
-(Font)              using `C70/gbsn/m/n' instead on input line 828.
-
-[18]
-Underfull \hbox (badness 3291) in paragraph at lines 867--871
-[]\OT1/cmr/m/n/10.95 R. M. T. White \C70/gbsn/m/n/10.95/7b I\OT1/cmr/m/n/10.95 
-[DES], \C70/gbsn/m/it/10.95/76 ‡ \C70/gbsn/m/it/10.95/5b ¶ \C70/gbsn/bx/n/10.95
-/59 ) \C70/gbsn/bx/n/10.95/65 ‡ \C70/gbsn/m/it/10.95/5b f \C70/gbsn/bx/n/10.95/
-4f ^^Z \C70/gbsn/bx/n/10.95/67 ^^H \C70/gbsn/bx/n/10.95/52 
-\OT1/cmr/bx/n/10.95 533\OT1/cmr/m/n/10.95 , \C70/gbsn/m/n/10.95/7b ,\OT1/cmr/m/
-n/10.95 3\C70/gbsn/bx/n/10.95/67 ^^_\OT1/cmr/m/n/10.95 , 3365-3378 (2024)
- []
+(Font)              using `C70/gbsn/m/n' instead on input line 814.
 
 
-Underfull \hbox (badness 1515) in paragraph at lines 897--901
-[]\OT1/cmr/m/n/10.95 A. Meszaros \C70/gbsn/m/n/10.95/54 Œ\OT1/cmr/m/n/10.95 P. 
-Meszaros[] []\C70/gbsn/bx/n/10.95/59 ) \C70/gbsn/bx/n/10.95/4f S \C70/gbsn/bx/n
-/10.95/72 i \C70/gbsn/bx/n/10.95/74 ^^F \C70/gbsn/m/it/10.95/5b f \C70/gbsn/m/n
-/10.95/62 ¥[]\OT1/cmr/bx/n/10.95 466\OT1/cmr/m/n/10.95 , 29 (1996) doi:10.1086/
-177491
+Underfull \hbox (badness 2351) in paragraph at lines 846--850
+[]\OT1/cmr/m/n/10.95 R. M. T. \C70/gbsn/bx/n/10.95/60 ^^@ \C70/gbsn/bx/n/10.95/
+72 y \C70/gbsn/m/n/10.95/7b I\OT1/cmr/m/n/10.95 [DES], \C70/gbsn/m/it/10.95/76 
+‡ \C70/gbsn/m/it/10.95/5b ¶ \C70/gbsn/bx/n/10.95/59 ) \C70/gbsn/bx/n/10.95/65 ‡
+ \C70/gbsn/m/it/10.95/5b f \C70/gbsn/bx/n/10.95/4f ^^Z \C70/gbsn/bx/n/10.95/67 
+^^H \C70/gbsn/m/n/10.95/62 ¥\OT1/cmr/bx/n/10.95 533\OT1/cmr/m/n/10.95 , \C70/gb
+sn/m/n/10.95/7b ,\OT1/cmr/m/n/10.95 3\C70/gbsn/bx/n/10.95/67 ^^_\OT1/cmr/m/n/10
+.95 , 3365-3378\C70/gbsn/m/n/10.95/98 u\OT1/cmr/m/n/10.95 (2024\C70/gbsn/bx/n/1
+0.95/5e t\OT1/cmr/m/n/10.95 )
  []
 
 [19] [20] (./speedmeVSLPDUv2.aux)
@@ -1568,16 +1586,16 @@ Meszaros[] []\C70/gbsn/bx/n/10.95/59 ) \C70/gbsn/bx/n/10.95/4f S \C70/gbsn/bx/n
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `speedmeVSLPDUv2.out' has not changed.
-(rerunfilecheck)             Checksum: CA2BE47E47795E9294D2ECED76C8B39C;1517.
+(rerunfilecheck)             Checksum: 4D55031D163027D278C84368B648CD74;1488.
  ) 
 Here is how much of TeX's memory you used:
- 31152 strings out of 478268
- 568388 string characters out of 5850345
- 851373 words of memory out of 5000000
- 48286 multiletter control sequences out of 15000+600000
- 543029 words of font info for 276 fonts, out of 8000000 for 9000
+ 30844 strings out of 478268
+ 562908 string characters out of 5850345
+ 836499 words of memory out of 5000000
+ 48023 multiletter control sequences out of 15000+600000
+ 532251 words of font info for 254 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,17n,91p,1576b,2185s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,17n,91p,1567b,2170s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {d:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<d:/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2022/texmf-di
@@ -1595,76 +1613,77 @@ cm/cmsy10.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
 pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/te
 xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><d:/texlive/2022/texmf-di
-st/fonts/type1/arphic/gbsnu/gbsnu4e.pfb><d:/texlive/2022/texmf-dist/fonts/type1
-/arphic/gbsnu/gbsnu4f.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/
-gbsnu50.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu51.pfb><d
-:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu52.pfb><d:/texlive/2022
-/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu53.pfb><d:/texlive/2022/texmf-dist/fo
-nts/type1/arphic/gbsnu/gbsnu54.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arph
-ic/gbsnu/gbsnu55.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu
-56.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu57.pfb><d:/tex
-live/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu58.pfb><d:/texlive/2022/texm
-f-dist/fonts/type1/arphic/gbsnu/gbsnu59.pfb><d:/texlive/2022/texmf-dist/fonts/t
-ype1/arphic/gbsnu/gbsnu5b.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gb
-snu/gbsnu5c.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5d.pf
-b><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5e.pfb><d:/texlive/
-2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5f.pfb><d:/texlive/2022/texmf-dis
-t/fonts/type1/arphic/gbsnu/gbsnu60.pfb><d:/texlive/2022/texmf-dist/fonts/type1/
-arphic/gbsnu/gbsnu61.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/g
-bsnu62.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu63.pfb><d:
-/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu64.pfb><d:/texlive/2022/
-texmf-dist/fonts/type1/arphic/gbsnu/gbsnu65.pfb><d:/texlive/2022/texmf-dist/fon
-ts/type1/arphic/gbsnu/gbsnu66.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphi
-c/gbsnu/gbsnu67.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6
-8.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu69.pfb><d:/texl
-ive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6a.pfb><d:/texlive/2022/texmf
--dist/fonts/type1/arphic/gbsnu/gbsnu6b.pfb><d:/texlive/2022/texmf-dist/fonts/ty
-pe1/arphic/gbsnu/gbsnu6c.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbs
-nu/gbsnu6d.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6e.pfb
-><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6f.pfb><d:/texlive/2
-022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu70.pfb><d:/texlive/2022/texmf-dist
-/fonts/type1/arphic/gbsnu/gbsnu71.pfb><d:/texlive/2022/texmf-dist/fonts/type1/a
-rphic/gbsnu/gbsnu72.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gb
-snu73.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu74.pfb><d:/
-texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu75.pfb><d:/texlive/2022/t
-exmf-dist/fonts/type1/arphic/gbsnu/gbsnu76.pfb><d:/texlive/2022/texmf-dist/font
-s/type1/arphic/gbsnu/gbsnu77.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic
-/gbsnu/gbsnu78.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu79
-.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7a.pfb><d:/texli
-ve/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7b.pfb><d:/texlive/2022/texmf-
-dist/fonts/type1/arphic/gbsnu/gbsnu7c.pfb><d:/texlive/2022/texmf-dist/fonts/typ
-e1/arphic/gbsnu/gbsnu7d.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsn
-u/gbsnu7e.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7f.pfb>
-<d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu80.pfb><d:/texlive/20
-22/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu81.pfb><d:/texlive/2022/texmf-dist/
-fonts/type1/arphic/gbsnu/gbsnu82.pfb><d:/texlive/2022/texmf-dist/fonts/type1/ar
-phic/gbsnu/gbsnu83.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbs
-nu84.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu86.pfb><d:/t
-exlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu88.pfb><d:/texlive/2022/te
-xmf-dist/fonts/type1/arphic/gbsnu/gbsnu89.pfb><d:/texlive/2022/texmf-dist/fonts
-/type1/arphic/gbsnu/gbsnu8a.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/
-gbsnu/gbsnu8b.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu8c.
-pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu8d.pfb><d:/texliv
-e/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu8e.pfb><d:/texlive/2022/texmf-d
-ist/fonts/type1/arphic/gbsnu/gbsnu8f.pfb><d:/texlive/2022/texmf-dist/fonts/type
-1/arphic/gbsnu/gbsnu90.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu
-/gbsnu91.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu92.pfb><
-d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu94.pfb><d:/texlive/202
-2/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu95.pfb><d:/texlive/2022/texmf-dist/f
-onts/type1/arphic/gbsnu/gbsnu96.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arp
-hic/gbsnu/gbsnu97.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsn
-u98.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu9a.pfb><d:/te
-xlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu9e.pfb><d:/texlive/2022/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2022/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><d:/texlive/2022/texmf-dist/
-fonts/type1/public/cm-super/sfrm1095.pfb><d:/texlive/2022/texmf-dist/fonts/type
-1/public/cm-super/sfrm1200.pfb><d:/texlive/2022/texmf-dist/fonts/type1/uhc/umj/
-umj00.pfb><d:/texlive/2022/texmf-dist/fonts/type1/uhc/umj/umj02.pfb><d:/texlive
+st/fonts/type1/arphic/gbsnu/gbsnu30.pfb><d:/texlive/2022/texmf-dist/fonts/type1
+/arphic/gbsnu/gbsnu4e.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/
+gbsnu4f.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu50.pfb><d
+:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu51.pfb><d:/texlive/2022
+/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu52.pfb><d:/texlive/2022/texmf-dist/fo
+nts/type1/arphic/gbsnu/gbsnu53.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arph
+ic/gbsnu/gbsnu54.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu
+55.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu56.pfb><d:/tex
+live/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu57.pfb><d:/texlive/2022/texm
+f-dist/fonts/type1/arphic/gbsnu/gbsnu58.pfb><d:/texlive/2022/texmf-dist/fonts/t
+ype1/arphic/gbsnu/gbsnu59.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gb
+snu/gbsnu5b.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5c.pf
+b><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5d.pfb><d:/texlive/
+2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu5e.pfb><d:/texlive/2022/texmf-dis
+t/fonts/type1/arphic/gbsnu/gbsnu5f.pfb><d:/texlive/2022/texmf-dist/fonts/type1/
+arphic/gbsnu/gbsnu60.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/g
+bsnu61.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu62.pfb><d:
+/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu63.pfb><d:/texlive/2022/
+texmf-dist/fonts/type1/arphic/gbsnu/gbsnu64.pfb><d:/texlive/2022/texmf-dist/fon
+ts/type1/arphic/gbsnu/gbsnu65.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphi
+c/gbsnu/gbsnu66.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6
+7.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu68.pfb><d:/texl
+ive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu69.pfb><d:/texlive/2022/texmf
+-dist/fonts/type1/arphic/gbsnu/gbsnu6a.pfb><d:/texlive/2022/texmf-dist/fonts/ty
+pe1/arphic/gbsnu/gbsnu6b.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbs
+nu/gbsnu6c.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6d.pfb
+><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6e.pfb><d:/texlive/2
+022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu6f.pfb><d:/texlive/2022/texmf-dist
+/fonts/type1/arphic/gbsnu/gbsnu70.pfb><d:/texlive/2022/texmf-dist/fonts/type1/a
+rphic/gbsnu/gbsnu71.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gb
+snu72.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu73.pfb><d:/
+texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu74.pfb><d:/texlive/2022/t
+exmf-dist/fonts/type1/arphic/gbsnu/gbsnu75.pfb><d:/texlive/2022/texmf-dist/font
+s/type1/arphic/gbsnu/gbsnu76.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic
+/gbsnu/gbsnu77.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu78
+.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu79.pfb><d:/texli
+ve/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7a.pfb><d:/texlive/2022/texmf-
+dist/fonts/type1/arphic/gbsnu/gbsnu7b.pfb><d:/texlive/2022/texmf-dist/fonts/typ
+e1/arphic/gbsnu/gbsnu7c.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsn
+u/gbsnu7d.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7e.pfb>
+<d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu7f.pfb><d:/texlive/20
+22/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu80.pfb><d:/texlive/2022/texmf-dist/
+fonts/type1/arphic/gbsnu/gbsnu81.pfb><d:/texlive/2022/texmf-dist/fonts/type1/ar
+phic/gbsnu/gbsnu82.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbs
+nu83.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu84.pfb><d:/t
+exlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu86.pfb><d:/texlive/2022/te
+xmf-dist/fonts/type1/arphic/gbsnu/gbsnu87.pfb><d:/texlive/2022/texmf-dist/fonts
+/type1/arphic/gbsnu/gbsnu88.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/
+gbsnu/gbsnu89.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu8a.
+pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu8b.pfb><d:/texliv
+e/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu8c.pfb><d:/texlive/2022/texmf-d
+ist/fonts/type1/arphic/gbsnu/gbsnu8d.pfb><d:/texlive/2022/texmf-dist/fonts/type
+1/arphic/gbsnu/gbsnu8e.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu
+/gbsnu8f.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu90.pfb><
+d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu91.pfb><d:/texlive/202
+2/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu92.pfb><d:/texlive/2022/texmf-dist/f
+onts/type1/arphic/gbsnu/gbsnu94.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arp
+hic/gbsnu/gbsnu95.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsn
+u96.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu97.pfb><d:/te
+xlive/2022/texmf-dist/fonts/type1/arphic/gbsnu/gbsnu98.pfb><d:/texlive/2022/tex
+mf-dist/fonts/type1/arphic/gbsnu/gbsnu9a.pfb><d:/texlive/2022/texmf-dist/fonts/
+type1/arphic/gbsnu/gbsnu9e.pfb><d:/texlive/2022/texmf-dist/fonts/type1/arphic/g
+bsnu/gbsnuff.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msam10.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb><d:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><
+d:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/texlive
 /2022/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on speedmeVSLPDUv2.pdf (21 pages, 900407 bytes).
+Output written on speedmeVSLPDUv2.pdf (21 pages, 925576 bytes).
 PDF statistics:
- 1067 PDF objects out of 1200 (max. 8388607)
- 756 compressed objects within 8 object streams
+ 1075 PDF objects out of 1200 (max. 8388607)
+ 759 compressed objects within 8 object streams
  180 named destinations out of 1000 (max. 500000)
- 419 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 431 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -659,19 +659,35 @@ def get_captionof_pattern():
     """, regex.VERBOSE | regex.DOTALL)
     return pattern
 
-def add_chinese_support_placeholder(latex_code):
+def add_chinese_support_placeholder(latex_code: str) -> str:
     """
-    在 LaTeX 文档的 \documentclass 之后添加一个占位符，用于后续动态插入中文支持包。
+    Inserta un marcador de posición para el paquete de chino después de CADA
+    comando \\documentclass en el código LaTeX.
+
+    Args:
+        latex_code (str): El contenido del archivo LaTeX.
+
+    Returns:
+        str: El código LaTeX modificado con los marcadores de posición insertados.
     """
     placeholder = "%%CHINESE_PACKAGE_PLACEHOLDER%%"
-    # 确保不重复添加
-    if placeholder not in latex_code:
-        # 使用更可靠的正则表达式来匹配 \documentclass（支持可选参数）
-        match = re.search(r"\\documentclass(\[.*?\])?\{[^}]*\}", latex_code)
-        if match:
-            position = match.end()
-            latex_code = latex_code[:position] + "\n" + placeholder + "\n" + latex_code[position:]
-    return latex_code
+    
+    # Prevenir la inserción múltiple si la función se llama varias veces
+    if placeholder in latex_code:
+        return latex_code
+
+    # Patrón para encontrar \documentclass con sus posibles argumentos opcionales y obligatorios
+    # Capturamos todo el comando en un grupo para poder referenciarlo en el reemplazo
+    documentclass_pattern = r"(\\documentclass(?:\[.*?\])?\{[^}]*\})"
+    
+    # La cadena de reemplazo: el comando \documentclass original (\1), seguido de
+    # un salto de línea, el marcador de posición y otro salto de línea.
+    replacement = r"\1\n" + placeholder + "\n"
+    
+    # re.sub reemplazará todas las ocurrencias que coincidan con el patrón
+    modified_code = re.sub(documentclass_pattern, replacement, latex_code)
+    
+    return modified_code
 
 def add_luatexja_package(latex_code):
     """
