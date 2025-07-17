@@ -61,9 +61,13 @@ class GeneratorAgent(BaseToolAgent):
         )
         pdf_file = latex_compiler.compile()
         if pdf_file:
-            self.log(f"✅ Successfully generated for {os.path.basename(self.project_dir)}.")
+            if "_flawed.pdf" in pdf_file:
+                self.log(f"⚠️✅  Successfully generated a flawed PDF for {os.path.basename(self.project_dir)}. Please check the output for potential issues.")
+            else:
+                self.log(f"✅ Successfully generated for {os.path.basename(self.project_dir)}.")
             return pdf_file
         else:
+            self.log(f"❌ Failed to generate PDF for {os.path.basename(self.project_dir)}.", "error")
             return None
         
     def _creat_transed_latex_folder(self, src_dir: str, dest_dir: str) -> str:

@@ -75,5 +75,7 @@ class CoordinatorAgent:
             new_PDF_path = os.path.join(os.path.dirname(PDF_file_path), f"{self.target_language}_{base_name}.pdf")
             shutil.move(PDF_file_path, new_PDF_path)
             print(f"🤖🎉 {self.name}: Successfully translated {os.path.basename(self.project_dir)} to {new_PDF_path}.")
+            return new_PDF_path
         else:
             print(f"🤖🚧 {self.name}: Failed to translated {os.path.basename(self.project_dir)}.")
+            return None
