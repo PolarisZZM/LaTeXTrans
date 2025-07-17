@@ -1,0 +1,5 @@
+outputs/
+.git/
+__pycache__/
+*.pdf
+*.log 

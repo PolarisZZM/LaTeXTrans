@@ -965,7 +965,11 @@ def detect_tex_distributions():
 
     try:
         # On Windows, 'where' command can find all executables in PATH.
-        result = subprocess.run(['where', 'latexmk.exe'], capture_output=True, text=True, check=True, creationflags=subprocess.CREATE_NO_WINDOW)
+        # CREATE_NO_WINDOW is only available on Windows
+        if platform.system() == "Windows":
+            result = subprocess.run(['where', 'latexmk.exe'], capture_output=True, text=True, check=True, creationflags=subprocess.CREATE_NO_WINDOW)
+        else:
+            result = subprocess.run(['which', 'latexmk'], capture_output=True, text=True, check=True)
         paths = result.stdout.strip().split('\n')
         
         for path in paths:

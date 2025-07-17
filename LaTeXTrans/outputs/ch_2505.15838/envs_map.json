@@ -1,0 +1,247 @@
+[
+    {
+        "placeholder": "<PLACEHOLDER_ENV_1>",
+        "env_name": "description",
+        "content": "\\begin{description} \\item[\\emph{Remark :}]\\em}\n{\\end{description}",
+        "trans_content": "\\begin{description} \\item[\\emph{备注：}]\\em}\n{\\end{description}",
+        "need_trans": true
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_2>",
+        "env_name": "description",
+        "content": "\\begin{description} \\item[\\emph{Example #1 :}]\\em}\n{\\end{description}",
+        "trans_content": "\\begin{description} \\item[\\emph{示例 #1 :}]\\em}\n{\\end{description}",
+        "need_trans": true
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_3>",
+        "env_name": "abstract",
+        "content": "\\begin{abstract}\nIn the Friedmann-Lemaître-Robertson-Walker metric, a varying speed of light (VSL) reflects a change in the clock rate across hypersurfaces, described by the lapse function. This variation is not a dynamical field evolution but a consequence of coordinate choice, as the cosmic time coincides with the proper time of comoving observers due to the Weyl postulate. From an action principle including $\\tc$, we derive that $\\tc$ does not have its dynamics but imposes a constraint on the scale factor $a(t)$, indicating that it is not an independent degree of freedom. This insight reframes the VSL concept as a manifestation of gauge freedom in general relativity, wherein physical laws remain invariant under smooth coordinate transformations. Here, gauge refers to the freedom of choosing the temporal coordinate (\\textit{e.g.}, setting the lapse $N(t) \\neq 1$), which determines how the speed of light appears in the cosmological equations. Recognizing $\\tc$ as a coordinate-dependent quantity offers a new interpretation of cosmological time and observational tensions, such as the Hubble tension, without invoking new physical fields. This redefinition opens a novel theoretical pathway in interpreting cosmic expansion within a consistent relativistic framework.\n\\end{abstract}",
+        "trans_content": "\\begin{abstract}\n在弗里德曼-勒梅特-罗伯逊-沃克度规中，光速可变（VSL）现象反映了超曲面上时钟速率的变化，这种变化由时移函数描述。该变化并非动力学场的演化，而是坐标选择的结果——由于外尔公设，宇宙时间与共动观测者的固有时保持一致。基于包含$\\tc$的作用量原理，我们推导出$\\tc$本身不具有动力学特性，而是对尺度因子$a(t)$施加约束，表明其并非独立的自由度。这一认识将VSL概念重新阐释为广义相对论中规范自由度的体现，物理定律在光滑坐标变换下保持不变的特性在此得以彰显。此处的规范自由度特指时间坐标的选择自由（例如设定时移函数$N(t) \\neq 1$），它决定了光速在宇宙学方程中的表现形式。将$\\tc$理解为坐标依赖量，为重新诠释宇宙学时间及观测矛盾（如哈勃张力）提供了新视角，而无需引入新的物理场。这种重新定义在相对论框架的一致性范围内，开辟了解读宇宙膨胀的新理论路径。\n\\end{abstract}",
+        "need_trans": true
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_4>",
+        "env_name": "table",
+        "content": "\\begin{table}[htbp]\n\\centering\n<PLACEHOLDER_CAP_2>\n\\label{tab:VSLComparison}\n<PLACEHOLDER_NEWCOMMAND_96>\n\\resizebox{\\textwidth}{!}{\n \\begin{tabular}{\n    >{\\raggedright\\arraybackslash}p{3.2cm}\n    >{\\raggedright\\arraybackslash}p{4.5cm}\n    >{\\centering\\arraybackslash}p{1.2cm}\n    >{\\centering\\arraybackslash}p{1.5cm}\n    >{\\centering\\arraybackslash}p{1.5cm}\n    >{\\centering\\arraybackslash}p{1.6cm}\n    >{\\raggedright\\arraybackslash}p{2.8cm}\n    >{\\raggedright\\arraybackslash}p{2.8cm}\n}\n\\toprule\n\\hline\n\\textbf{Model} & \\textbf{Variation Mechanism} & \\textbf{Dyn} & \\textbf{LI} & \\textbf{New Fields} & \\textbf{GR Covariance} & \\textbf{Obs. Target} & \\textbf{References} \\\\\n\\midrule\n\\hline\nHard Lorentz breaking & Preferred frame with $c(t)$ imposed explicitly & \\xmark/\\cmark & \\xmark & \\xmark/\\cmark & \\xmark & Conceptual variation & \\cite{Coleman:1997xq,Albrecht:1998ir,Barrow:1998df,Barrow:1999is,Bassett:2000wj,Jacobson:2000xp,Magueijo:2000zt} \\\\\nBimetric VSL & $\\hat{g}_{\\mu\\nu} = g_{\\mu\\nu} + B\\partial_\\mu\\phi\\partial_\\nu\\phi$ & \\cmark & Partial & \\cmark & Partial & Propagation delay & \\cite{Clayton:1998hv,Drummond:1999ut,Clayton:1999zs,Liberati:2000us,Clayton:2000xt,Drummond:2001rj}  \\\\\nColor-dependent VSL & $c(\\nu)$ varies by frequency due to vacuum dispersion & \\xmark & \\xmark & \\xmark & \\xmark & High-energy astrophysics & \\cite{Amelino-Camelia:1996bln,Amelino-Camelia:1997ieq,Ellis:1999sd,Amelino-Camelia:2000bxx,Amelino-Camelia:2000cpa,Ellis:2000sf,Kowalski-Glikman:2001vvk,Bruno:2001mw,Magueijo:2001cr,Amelino-Camelia:2002uql,Magueijo:2002pg} \\\\\nLorentz-invariant VSL & $c(x^\\mu)$ as a scalar field in covariant framework & \\cmark & \\cmark & \\cmark & \\xmark & Model-dependent & \\cite{Moffat:1992ud,Manida:1999rx,Barrow:1999st,Stepanov:1999ax,Magueijo:2000au,Moffat:2002nm} \\\\\nString/M-theory & $c$ varies via compactification or brane motion & \\cmark & \\cmark & \\cmark & Partial & Early-universe physics & \\cite{Kaelbermann:1998hu,Randall:1999ee,Randall:1999vf,Kiritsis:1999tx,Chung:1999xg,Alexander:1999cb,Ishihara:2000nf,Csaki:2000dm,Youm:2001sw,Youm:2001zk,Grojean:2001pv,Youm:2001zp} \\\\\nField-theory VSL & $c = c(\\phi)$ via scalar field $\\phi$ & \\cmark & Model-dep. & \\cmark & \\xmark & CMB, LSS, BBN &  \\cite{Drummond:1979pp,Novello:1988ma,Barton:1989dq,Scharnhorst:1990sr,Shore:1995fz,Colladay:1995qb,Coleman:1998ti,Bertolami:1999da,Shore:2000bs,Greenberg:2002uu,Teyssandier:2003qh,Shore:2003zc,Blasone:2003wf} \\\\\nHybrid models & Combine metric and scalar field frameworks & \\cmark & Model-dep. & \\cmark & Model-dep. & Mixed datasets & \\cite{Alexander:2001dr,Burgess:2002tb} \\\\\nmeVSL & Lapse function $N(t)$ chosen via coordinate freedom $\\Rightarrow \\tc(t)$ & \\xmark & \\cmark & \\xmark & \\cmark & CTD, $H_0$ tension & \\cite{Lee:2020zts,Lee:2023ucu,Lee:2024kxa,Lee:2021ona,Lee:2023rqv,Lee:2024nya} \\\\\n\\bottomrule\n\\hline\n\\end{tabular}}\n\\end{table}",
+        "trans_content": "\\begin{table}[htbp]\n\\centering\n<PLACEHOLDER_CAP_2>\n\\label{tab:VSLComparison}\n<PLACEHOLDER_NEWCOMMAND_96>\n\\resizebox{\\textwidth}{!}{\n \\begin{tabular}{\n    >{\\raggedright\\arraybackslash}p{3.2cm}\n    >{\\raggedright\\arraybackslash}p{4.5cm}\n    >{\\centering\\arraybackslash}p{1.2cm}\n    >{\\centering\\arraybackslash}p{1.5cm}\n    >{\\centering\\arraybackslash}p{1.5cm}\n    >{\\centering\\arraybackslash}p{1.6cm}\n    >{\\raggedright\\arraybackslash}p{2.8cm}\n    >{\\raggedright\\arraybackslash}p{2.8cm}\n}\n\\toprule\n\\hline\n\\textbf{Model} & \\textbf{Variation Mechanism} & \\textbf{Dyn} & \\textbf{LI} & \\textbf{New Fields} & \\textbf{GR Covariance} & \\textbf{Obs. Target} & \\textbf{References} \\\\\n\\midrule\n\\hline\nHard Lorentz breaking & Preferred frame with $c(t)$ imposed explicitly & \\xmark/\\cmark & \\xmark & \\xmark/\\cmark & \\xmark & Conceptual variation & \\cite{Coleman:1997xq,Albrecht:1998ir,Barrow:1998df,Barrow:1999is,Bassett:2000wj,Jacobson:2000xp,Magueijo:2000zt} \\\\\nBimetric VSL & $\\hat{g}_{\\mu\\nu} = g_{\\mu\\nu} + B\\partial_\\mu\\phi\\partial_\\nu\\phi$ & \\cmark & Partial & \\cmark & Partial & Propagation delay & \\cite{Clayton:1998hv,Drummond:1999ut,Clayton:1999zs,Liberati:2000us,Clayton:2000xt,Drummond:2001rj}  \\\\\nColor-dependent VSL & $c(\\nu)$ varies by frequency due to vacuum dispersion & \\xmark & \\xmark & \\xmark & \\xmark & High-energy astrophysics & \\cite{Amelino-Camelia:1996bln,Amelino-Camelia:1997ieq,Ellis:1999sd,Amelino-Camelia:2000bxx,Amelino-Camelia:2000cpa,Ellis:2000sf,Kowalski-Glikman:2001vvk,Bruno:2001mw,Magueijo:2001cr,Amelino-Camelia:2002uql,Magueijo:2002pg} \\\\\nLorentz-invariant VSL & $c(x^\\mu)$ as a scalar field in covariant framework & \\cmark & \\cmark & \\cmark & \\xmark & Model-dependent & \\cite{Moffat:1992ud,Manida:1999rx,Barrow:1999st,Stepanov:1999ax,Magueijo:2000au,Moffat:2002nm} \\\\\nString/M-theory & $c$ varies via compactification or brane motion & \\cmark & \\cmark & \\cmark & Partial & Early-universe physics & \\cite{Kaelbermann:1998hu,Randall:1999ee,Randall:1999vf,Kiritsis:1999tx,Chung:1999xg,Alexander:1999cb,Ishihara:2000nf,Csaki:2000dm,Youm:2001sw,Youm:2001zk,Grojean:2001pv,Youm:2001zp} \\\\\nField-theory VSL & $c = c(\\phi)$ via scalar field $\\phi$ & \\cmark & Model-dep. & \\cmark & \\xmark & CMB, LSS, BBN &  \\cite{Drummond:1979pp,Novello:1988ma,Barton:1989dq,Scharnhorst:1990sr,Shore:1995fz,Colladay:1995qb,Coleman:1998ti,Bertolami:1999da,Shore:2000bs,Greenberg:2002uu,Teyssandier:2003qh,Shore:2003zc,Blasone:2003wf} \\\\\nHybrid models & Combine metric and scalar field frameworks & \\cmark & Model-dep. & \\cmark & Model-dep. & Mixed datasets & \\cite{Alexander:2001dr,Burgess:2002tb} \\\\\nmeVSL & Lapse function $N(t)$ chosen via coordinate freedom $\\Rightarrow \\tc(t)$ & \\xmark & \\cmark & \\xmark & \\cmark & CTD, $H_0$ tension & \\cite{Lee:2020zts,Lee:2023ucu,Lee:2024kxa,Lee:2021ona,Lee:2023rqv,Lee:2024nya} \\\\\n\\bottomrule\n\\hline\n\\end{tabular}}\n\\end{table}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_5>",
+        "env_name": "align",
+        "content": "\\begin{align}\n\\hat{g}_{\\mu\\nu} = g_{\\mu\\nu} + B \\partial_{\\mu} \\phi \\partial_{\\nu} \\phi \\label{bimetric} \\,,\n\\end{align}",
+        "trans_content": "\\begin{align}\n\\hat{g}_{\\mu\\nu} = g_{\\mu\\nu} + B \\partial_{\\mu} \\phi \\partial_{\\nu} \\phi \\label{bimetric} \\,,\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_6>",
+        "env_name": "figure",
+        "content": "\\begin{figure}\n\t\\begin{center}\n\t\\includegraphics[width=0.9\\textwidth]{Fig1.pdf}\n\t<PLACEHOLDER_CAP_3>\n\t\\label{Fig1}\n\t\\end{center}\n\\end{figure}",
+        "trans_content": "\\begin{figure}\n\t\\begin{center}\n\t\\includegraphics[width=0.9\\textwidth]{Fig1.pdf}\n\t<PLACEHOLDER_CAP_3>\n\t\\label{Fig1}\n\t\\end{center}\n\\end{figure}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_7>",
+        "env_name": "equation",
+        "content": "\\begin{equation}\ng_{\\mu\\nu}^{(\\text{CP})}(t_l') = \\text{diag} \\left( g_{00}(t_l') \\,,  \\frac{A(t_l')}{1-Kr^2} \\,,  A(t_l') r^2 \\,,  A(t_l') r^2 \\sin^2 \\theta \\right) \\,.\n\\end{equation}",
+        "trans_content": "\\begin{equation}\ng_{\\mu\\nu}^{(\\text{CP})}(t_l') = \\text{diag} \\left( g_{00}(t_l') \\,,  \\frac{A(t_l')}{1-Kr^2} \\,,  A(t_l') r^2 \\,,  A(t_l') r^2 \\sin^2 \\theta \\right) \\,.\n\\end{equation}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_8>",
+        "env_name": "equation",
+        "content": "\\begin{equation}\nds^2(t_l') = c_l^2 g_{00}(t_l') dt_l'^2 + A(t_l') \\left[ \\frac{dr^2}{1-Kr^2} + r^2 d \\theta^2 + r^2 \\sin^2 \\theta d \\phi^2 \\right] \\label{dstlp} \\,,\n\\end{equation}",
+        "trans_content": "\\begin{equation}\nds^2(t_l') = c_l^2 g_{00}(t_l') dt_l'^2 + A(t_l') \\left[ \\frac{dr^2}{1-Kr^2} + r^2 d \\theta^2 + r^2 \\sin^2 \\theta d \\phi^2 \\right] \\label{dstlp} \\,,\n\\end{equation}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_9>",
+        "env_name": "align",
+        "content": "\\begin{align}\nds^2 = - \\tc(t)^2 dt^2 + a(t)^2 \\left[ \\frac{dr^2}{1-Kr^2} + r^2  \\left( d \\theta^2 + \\sin^2 \\theta d \\phi^2 \\right)  \\right] \\equiv - \\tc(t)^2 dt^2 + a(t)^2 dl_{3\\textrm{D}}^2 \\label{dstgen} \\,,\n\\end{align}",
+        "trans_content": "\\begin{align}\nds^2 = - \\tc(t)^2 dt^2 + a(t)^2 \\left[ \\frac{dr^2}{1-Kr^2} + r^2  \\left( d \\theta^2 + \\sin^2 \\theta d \\phi^2 \\right)  \\right] \\equiv - \\tc(t)^2 dt^2 + a(t)^2 dl_{3\\textrm{D}}^2 \\label{dstgen} \\,,\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_10>",
+        "env_name": "align",
+        "content": "\\begin{align}\nd l_{3\\textrm{D}} &= \\frac{c(t_i) dt_i}{a(t_i)} \\quad : \\quad \\frac{\\tc_1 dt_1}{a_1} = \\frac{\\tc_2 dt_2}{a_2} \\Rightarrow \\begin{cases} \\tc_1 = \\tc_2 = c & \\textrm{if} \\quad \\frac{dt_1}{a_1} = \\frac{dt_2}{a_2} \\qquad \\textrm{SMC} \\\\\n\\tc_1 = \\frac{f(a_2)}{f(a_1)} \\frac{a_1}{a_2} \\tc_2 & \\textrm{if} \\quad \\frac{dt_1}{f(a_1)} = \\frac{dt_2}{f(a_2)} \\quad \\textrm{VSL} \\\\ \\tc_1 = \\left( \\frac{a_1}{a_2}\\right)^{\\frac{b}{4}} \\tc_2 & \\textrm{if} \\quad \\frac{dt_1}{a_1^{1-\\frac{b}{4}}} = \\frac{dt_2}{a_2^{1-\\frac{b}{4}}} \\quad \\textrm{meVSL}  \\end{cases} \\,, \\label{dl3D}\n\\end{align}",
+        "trans_content": "\\begin{align}\nd l_{3\\textrm{D}} &= \\frac{c(t_i) dt_i}{a(t_i)} \\quad : \\quad \\frac{\\tc_1 dt_1}{a_1} = \\frac{\\tc_2 dt_2}{a_2} \\Rightarrow \\begin{cases} \\tc_1 = \\tc_2 = c & \\textrm{if} \\quad \\frac{dt_1}{a_1} = \\frac{dt_2}{a_2} \\qquad \\textrm{SMC} \\\\\n\\tc_1 = \\frac{f(a_2)}{f(a_1)} \\frac{a_1}{a_2} \\tc_2 & \\textrm{if} \\quad \\frac{dt_1}{f(a_1)} = \\frac{dt_2}{f(a_2)} \\quad \\textrm{VSL} \\\\ \\tc_1 = \\left( \\frac{a_1}{a_2}\\right)^{\\frac{b}{4}} \\tc_2 & \\textrm{if} \\quad \\frac{dt_1}{a_1^{1-\\frac{b}{4}}} = \\frac{dt_2}{a_2^{1-\\frac{b}{4}}} \\quad \\textrm{meVSL}  \\end{cases} \\,, \\label{dl3D}\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_11>",
+        "env_name": "align",
+        "content": "\\begin{align} \\tc(t_1) = \\frac{f(a_2)}{f(a_1)} \\frac{a(t_1)}{a(t_2)} \\tc(t_2) \\label{cVSL}. \\end{align}",
+        "trans_content": "\\begin{align} \\tc(t_1) = \\frac{f(a_2)}{f(a_1)} \\frac{a(t_1)}{a(t_2)} \\tc(t_2) \\label{cVSL}. \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_12>",
+        "env_name": "align",
+        "content": "\\begin{align} S &\\equiv \\int \\Biggl[ \\frac{1}{2 \\tkapp} \\left( R - 2 \\Lambda \\right) + \\mathcal{L}_i \\Biggr] \\sqrt{-g} dt d^3x \\label{SHmp} \\,, \\end{align}",
+        "trans_content": "\\begin{align} S &\\equiv \\int \\Biggl[ \\frac{1}{2 \\tkapp} \\left( R - 2 \\Lambda \\right) + \\mathcal{L}_i \\Biggr] \\sqrt{-g} dt d^3x \\label{SHmp} \\,, \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_13>",
+        "env_name": "align",
+        "content": "\\begin{align} \\delta S &= \\int \\left( \\left[ \\frac{\\left( R - 2 \\Lambda \\right)}{2 \\tkapp} \\right] \\delta \\left( \\sqrt{-g} \\right)  + \\frac{1}{2\\tkapp} \\sqrt{-g} \\delta R \\right) dt d^3 x + \\int \\delta \\left( \\sqrt{-g} \\mathcal{L}{m} \\right) dt d^3 x \\nonumber \\\\ &= \\int \\frac{\\sqrt{-g}}{2 \\tkapp} \\left[ R{\\mu\\nu} - \\frac{1}{2} g_{\\mu\\nu} \\left( R - 2 \\Lambda \\right) - \\tkapp T_{\\mu\\nu} \\right] \\delta g^{\\mu\\nu} dtd^3 x \\nonumber \\\\ &+ \\int \\frac{\\sqrt{-g}}{2 \\tkapp} \\left[ \\nabla_{\\mu} \\nabla_{\\nu} - g_{\\mu\\nu} \\Box \\right] \\delta g^{\\mu\\nu} dtd^3 x \\label{deltaSHmp} \\,. \\end{align}",
+        "trans_content": "\\begin{align} \\delta S &= \\int \\left( \\left[ \\frac{\\left( R - 2 \\Lambda \\right)}{2 \\tkapp} \\right] \\delta \\left( \\sqrt{-g} \\right)  + \\frac{1}{2\\tkapp} \\sqrt{-g} \\delta R \\right) dt d^3 x + \\int \\delta \\left( \\sqrt{-g} \\mathcal{L}{m} \\right) dt d^3 x \\nonumber \\\\ &= \\int \\frac{\\sqrt{-g}}{2 \\tkapp} \\left[ R{\\mu\\nu} - \\frac{1}{2} g_{\\mu\\nu} \\left( R - 2 \\Lambda \\right) - \\tkapp T_{\\mu\\nu} \\right] \\delta g^{\\mu\\nu} dtd^3 x \\nonumber \\\\ &+ \\int \\frac{\\sqrt{-g}}{2 \\tkapp} \\left[ \\nabla_{\\mu} \\nabla_{\\nu} - g_{\\mu\\nu} \\Box \\right] \\delta g^{\\mu\\nu} dtd^3 x \\label{deltaSHmp} \\,. \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_14>",
+        "env_name": "align",
+        "content": "\\begin{align}\n&\\tkapp = \\text{const} \\quad \\Rightarrow \\quad \\frac{\\tG_0}{\\tc_0^4} = \\frac{\\tG}{\\tc^4} \\quad \\textrm{if} \\quad \\tc = \\tc_0 f(a) \\quad , \\quad \\tG = \\tG_{0} f(a)^4 \\label{tkappaconstmp} \\,,\n\\end{align}",
+        "trans_content": "\\begin{align}\n&\\tkapp = \\text{const} \\quad \\Rightarrow \\quad \\frac{\\tG_0}{\\tc_0^4} = \\frac{\\tG}{\\tc^4} \\quad \\textrm{if} \\quad \\tc = \\tc_0 f(a) \\quad , \\quad \\tG = \\tG_{0} f(a)^4 \\label{tkappaconstmp} \\,,\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_15>",
+        "env_name": "align",
+        "content": "\\begin{align} &R_{\\mu\\nu} - \\frac{1}{2} g_{\\mu\\nu} R + \\Lambda g_{\\mu\\nu} \\equiv G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu}  = \\frac{8 \\pi \\tG}{\\tc^4} T_{\\mu\\nu} \\label{tEFEmp} \\,, \\end{align}",
+        "trans_content": "\\begin{align} &R_{\\mu\\nu} - \\frac{1}{2} g_{\\mu\\nu} R + \\Lambda g_{\\mu\\nu} \\equiv G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu}  = \\frac{8 \\pi \\tG}{\\tc^4} T_{\\mu\\nu} \\label{tEFEmp} \\,, \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_16>",
+        "env_name": "align",
+        "content": "\\begin{align}\n&\\Gamma^{\\mu}_{\\,\\,\\nu\\lambda} \\equiv \\frac{1}{2} g^{\\mu\\alpha} \\left( g_{\\alpha\\nu,\\lambda} + g_{\\alpha\\lambda,\\nu} - g_{\\nu\\lambda,\\alpha} \\right) \\label{Gamma}\\,, \\\\ &\\Gamma^{0}_{\\,\\,ij} = \\frac{a\\dot{a}}{\\tc} \\gamma{ij} \\quad , \\quad \\Gamma^{i}_{\\,\\,0j} = \\frac{1}{\\tc}  \\frac{\\dot{a}}{a} \\delta^i_j \\quad , \\quad \\Gamma^{i}_{\\,\\,jk} = ^{s}\\Gamma^{i}_{\\,\\,jk}  \\label{Gammacomp} \\,, \\end{align}",
+        "trans_content": "\\begin{align}\n&\\Gamma^{\\mu}_{\\,\\,\\nu\\lambda} \\equiv \\frac{1}{2} g^{\\mu\\alpha} \\left( g_{\\alpha\\nu,\\lambda} + g_{\\alpha\\lambda,\\nu} - g_{\\nu\\lambda,\\alpha} \\right) \\label{Gamma}\\,, \\\\ &\\Gamma^{0}_{\\,\\,ij} = \\frac{a\\dot{a}}{\\tc} \\gamma{ij} \\quad , \\quad \\Gamma^{i}_{\\,\\,0j} = \\frac{1}{\\tc}  \\frac{\\dot{a}}{a} \\delta^i_j \\quad , \\quad \\Gamma^{i}_{\\,\\,jk} = ^{s}\\Gamma^{i}_{\\,\\,jk}  \\label{Gammacomp} \\,, \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_17>",
+        "env_name": "align",
+        "content": "\\begin{align}\n&\\tensor{R}{^\\alpha_\\beta_\\mu_\\nu} = \\tensor{\\Gamma}{^\\alpha_\\beta_\\nu_,_\\mu} - \\tensor{\\Gamma}{^\\alpha_\\beta_\\mu_,_\\nu} + \\tensor{\\Gamma}{^\\alpha_\\lambda_\\mu} \\tensor{\\Gamma}{^\\lambda_\\beta_\\nu} - \\tensor{\\Gamma}{^\\alpha_\\lambda_\\nu} \\tensor{\\Gamma}{^\\lambda_\\beta_\\mu} \\label{Rabmu} \\,, \\\\ &\\tensor{R}{^0_i_0_j} = \\frac{\\gamma_{ij}}{\\tc^2} \\left( a \\ddot{a} - \\dot{a}^2 \\frac{d \\ln \\tc}{d \\ln a} \\right) \\quad , \\quad \\tensor{R}{^i_0_0_j} = \\frac{\\delta^{i}{j}}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} - \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{ d \\ln a}  \\right) \\,, \\label{R0i0j} \\\\ &\\tensor{R}{^i_j_k_m} = \\frac{\\dot{a}^2}{\\tc^2} \\left( \\delta^{i}{k} \\gamma_{jm} - \\delta^i_m \\gamma_{jk} \\right) + \\tensor[^s]{R}{^i_j_k_m} \\quad , \\quad \\tensor[^s]{R}{^i_j_k_m} = k \\left( \\delta^i_k \\gamma_{jm} - \\delta^i_m \\gamma_{jk} \\right) \\,. \\label{Rijkm} \\end{align}",
+        "trans_content": "\\begin{align}\n&\\tensor{R}{^\\alpha_\\beta_\\mu_\\nu} = \\tensor{\\Gamma}{^\\alpha_\\beta_\\nu_,_\\mu} - \\tensor{\\Gamma}{^\\alpha_\\beta_\\mu_,_\\nu} + \\tensor{\\Gamma}{^\\alpha_\\lambda_\\mu} \\tensor{\\Gamma}{^\\lambda_\\beta_\\nu} - \\tensor{\\Gamma}{^\\alpha_\\lambda_\\nu} \\tensor{\\Gamma}{^\\lambda_\\beta_\\mu} \\label{Rabmu} \\,, \\\\ &\\tensor{R}{^0_i_0_j} = \\frac{\\gamma_{ij}}{\\tc^2} \\left( a \\ddot{a} - \\dot{a}^2 \\frac{d \\ln \\tc}{d \\ln a} \\right) \\quad , \\quad \\tensor{R}{^i_0_0_j} = \\frac{\\delta^{i}{j}}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} - \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{ d \\ln a}  \\right) \\,, \\label{R0i0j} \\\\ &\\tensor{R}{^i_j_k_m} = \\frac{\\dot{a}^2}{\\tc^2} \\left( \\delta^{i}{k} \\gamma_{jm} - \\delta^i_m \\gamma_{jk} \\right) + \\tensor[^s]{R}{^i_j_k_m} \\quad , \\quad \\tensor[^s]{R}{^i_j_k_m} = k \\left( \\delta^i_k \\gamma_{jm} - \\delta^i_m \\gamma_{jk} \\right) \\,. \\label{Rijkm} \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_18>",
+        "env_name": "align",
+        "content": "\\begin{align}\nR_{\\mu\\nu} &= \\tensor{\\Gamma}{^\\lambda_\\mu_\\nu_,_\\lambda} - \\tensor{\\Gamma}{^\\lambda_\\mu_\\lambda_,_\\nu} + \\tensor{\\Gamma}{^\\lambda_\\mu_\\nu} \\tensor{\\Gamma}{^\\sigma_\\lambda_\\sigma} - \\tensor{\\Gamma}{^\\sigma_\\mu_\\lambda} \\tensor{\\Gamma}{^\\lambda_\\nu_\\sigma} \\label{Rmn} \\,, \\\\ R_{00} &= -\\frac{3}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} - \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{ d \\ln a}  \\right) \\quad , \\quad R_{ij} = \\frac{\\gamma_{ij}}{\\tc^2} a^2 \\left( 2 \\frac{\\dot{a}^2}{a^2} + \\frac{\\ddot{a}}{a} + 2 k \\frac{\\tc^2}{a^2} - \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{ d \\ln a}  \\right) \\label{Rij} \\,. \\end{align}",
+        "trans_content": "\\begin{align}\nR_{\\mu\\nu} &= \\tensor{\\Gamma}{^\\lambda_\\mu_\\nu_,_\\lambda} - \\tensor{\\Gamma}{^\\lambda_\\mu_\\lambda_,_\\nu} + \\tensor{\\Gamma}{^\\lambda_\\mu_\\nu} \\tensor{\\Gamma}{^\\sigma_\\lambda_\\sigma} - \\tensor{\\Gamma}{^\\sigma_\\mu_\\lambda} \\tensor{\\Gamma}{^\\lambda_\\nu_\\sigma} \\label{Rmn} \\,, \\\\ R_{00} &= -\\frac{3}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} - \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{ d \\ln a}  \\right) \\quad , \\quad R_{ij} = \\frac{\\gamma_{ij}}{\\tc^2} a^2 \\left( 2 \\frac{\\dot{a}^2}{a^2} + \\frac{\\ddot{a}}{a} + 2 k \\frac{\\tc^2}{a^2} - \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{ d \\ln a}  \\right) \\label{Rij} \\,. \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_19>",
+        "env_name": "align",
+        "content": "\\begin{align} R &= \\frac{6}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} + \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} - \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{ d \\ln a}  \\right) =  \\frac{6}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} + \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} - \\frac{\\dot{a}}{a} \\frac{\\dot{\\tc}}{\\tc}  \\right)  \\label{Rmp} \\,, \\end{align}",
+        "trans_content": "\\begin{align} R &= \\frac{6}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} + \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} - \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{ d \\ln a}  \\right) =  \\frac{6}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} + \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} - \\frac{\\dot{a}}{a} \\frac{\\dot{\\tc}}{\\tc}  \\right)  \\label{Rmp} \\,, \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_20>",
+        "env_name": "align",
+        "content": "\\begin{align}\nG_{\\mu\\nu} = R_{\\mu\\nu} - \\frac{1}{2} g_{\\mu\\nu} R \\label{Gmunu} \\,.\n\\end{align}",
+        "trans_content": "\\begin{align}\nG_{\\mu\\nu} = R_{\\mu\\nu} - \\frac{1}{2} g_{\\mu\\nu} R \\label{Gmunu} \\,.\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_21>",
+        "env_name": "align",
+        "content": "\\begin{align}\nG_{00} = \\frac{3}{\\tc^2} \\left[ \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} \\right] \\quad , \\quad G_{ij} = -\\frac{g_{ij}}{\\tc^2} \\left[ 2 \\frac{\\ddot{a}}{a} + \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} - 2 \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{d \\ln a} \\right] \\,. \\label{G00Gij}\n\\end{align}",
+        "trans_content": "\\begin{align}\nG_{00} = \\frac{3}{\\tc^2} \\left[ \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} \\right] \\quad , \\quad G_{ij} = -\\frac{g_{ij}}{\\tc^2} \\left[ 2 \\frac{\\ddot{a}}{a} + \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} - 2 \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{d \\ln a} \\right] \\,. \\label{G00Gij}\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_22>",
+        "env_name": "align",
+        "content": "\\begin{align}\n\\nabla_{\\mu} G^{\\mu \\nu} = 0 \\label{nablaGmunu} \\,.\n\\end{align}",
+        "trans_content": "\\begin{align}\n\\nabla_{\\mu} G^{\\mu \\nu} = 0 \\label{nablaGmunu} \\,.\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_23>",
+        "env_name": "align",
+        "content": "\\begin{align} T_{\\mu\\nu} = \\left( \\rho + \\frac{P}{\\tc^2} \\right) U_{\\mu} U_{\\nu} + P g_{\\mu\\nu} \\label{Tmunump} \\,, \\end{align}",
+        "trans_content": "\\begin{align} T_{\\mu\\nu} = \\left( \\rho + \\frac{P}{\\tc^2} \\right) U_{\\mu} U_{\\nu} + P g_{\\mu\\nu} \\label{Tmunump} \\,, \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_24>",
+        "env_name": "align",
+        "content": "\\begin{align} &\\nabla_{\\mu} \\tensor{T}{^\\mu^\\nu} = 0 \\quad \\Rightarrow \\quad \\frac{\\partial \\rho_i}{\\partial t} + 3 H \\left( \\rho_i + \\frac{P_i}{\\tc^2} \\right) + 2 \\rho_i H \\frac{d \\ln \\tc}{d \\ln a} = 0 \\nonumber \\\\ &\\Rightarrow d \\ln \\left( \\rho_i \\tc^2 \\right) + 3 \\left( 1 + \\omega_i \\right) d \\ln a = 0 \\label{BI1mp} \\,, \\end{align}",
+        "trans_content": "\\begin{align} &\\nabla_{\\mu} \\tensor{T}{^\\mu^\\nu} = 0 \\quad \\Rightarrow \\quad \\frac{\\partial \\rho_i}{\\partial t} + 3 H \\left( \\rho_i + \\frac{P_i}{\\tc^2} \\right) + 2 \\rho_i H \\frac{d \\ln \\tc}{d \\ln a} = 0 \\nonumber \\\\ &\\Rightarrow d \\ln \\left( \\rho_i \\tc^2 \\right) + 3 \\left( 1 + \\omega_i \\right) d \\ln a = 0 \\label{BI1mp} \\,, \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_25>",
+        "env_name": "align",
+        "content": "\\begin{align} &\\rho_i \\tc^{2} = \\rho_{i0} \\tc_0^2 a^{-3 (1 + \\omega_i)} \\label{rhomp} \\,,\\end{align}",
+        "trans_content": "\\begin{align} &\\rho_i \\tc^{2} = \\rho_{i0} \\tc_0^2 a^{-3 (1 + \\omega_i)} \\label{rhomp} \\,,\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_26>",
+        "env_name": "align",
+        "content": "\\begin{align}\n &\\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2}  -\\frac{ \\Lambda \\tc^2}{3} = \\frac{8 \\pi \\tG}{3} \\sum_i \\rho_i \\label{tG00mp} \\,, \\\\\n &\\frac{\\dot{a}^2}{a^2} + 2 \\frac{\\ddot{a}}{a} +  k \\frac{\\tc^2}{a^2} - \\Lambda \\tc^2 - 2 \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{d \\ln a} = -\\frac{8 \\pi \\tG}{\\tc^2} \\sum_{i} P_i  \\label{tG11mp} \\,.\n \\end{align}",
+        "trans_content": "\\begin{align}\n &\\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2}  -\\frac{ \\Lambda \\tc^2}{3} = \\frac{8 \\pi \\tG}{3} \\sum_i \\rho_i \\label{tG00mp} \\,, \\\\\n &\\frac{\\dot{a}^2}{a^2} + 2 \\frac{\\ddot{a}}{a} +  k \\frac{\\tc^2}{a^2} - \\Lambda \\tc^2 - 2 \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{d \\ln a} = -\\frac{8 \\pi \\tG}{\\tc^2} \\sum_{i} P_i  \\label{tG11mp} \\,.\n \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_27>",
+        "env_name": "align",
+        "content": "\\begin{align}\n \\frac{\\ddot{a}}{a} = -\\frac{4\\pi \\tG}{3} \\sum_i \\left( 1 + 3 \\omega_i \\right) \\rho_i  + \\frac{\\Lambda \\tc^2}{3} + \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{d \\ln a} \\label{t3G11mG00mp} \\,.\n \\end{align}",
+        "trans_content": "\\begin{align}\n \\frac{\\ddot{a}}{a} = -\\frac{4\\pi \\tG}{3} \\sum_i \\left( 1 + 3 \\omega_i \\right) \\rho_i  + \\frac{\\Lambda \\tc^2}{3} + \\frac{\\dot{a}^2}{a^2} \\frac{d \\ln \\tc}{d \\ln a} \\label{t3G11mG00mp} \\,.\n \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_28>",
+        "env_name": "align",
+        "content": "\\begin{align}\n H^2 &= \\left[ \\frac{8 \\pi \\tG_0}{3} \\sum_{i} \\rho_{0i} a^{-3(1+\\omega_i)} + \\frac{ \\Lambda \\tc_0^2}{3} - k \\frac{\\tc_0^2}{a^2} \\right] \\frac{\\tc^2}{\\tc_0^2} \\equiv H^{(\\GR)2} \\frac{\\tc^2}{\\tc_0^2} \\label{H2me} \\,, \\\\\n \\frac{\\ddot{a}}{a} &= \\left[ -\\frac{4\\pi \\tG_0}{3} \\sum_i \\left( 1 + 3 \\omega_i \\right) \\rho_{0i} a^{-3(1+\\omega_i)} + \\frac{\\Lambda \\tc_0^2}{3} \\right] \\frac{\\tc^2}{\\tc_0^2} + H^2 \\frac{d \\ln \\tc}{d \\ln a} \\nonumber \\\\\n &= \\left[ \\left( \\frac{\\ddot{a}}{a} \\right)^{(\\GR)} +  H^{(\\GR)2} \\frac{d \\ln \\tc}{d \\ln a}  \\right] \\frac{\\tc^2}{\\tc_0^2} \\label{ddotaoa} \\,.\n \\end{align}",
+        "trans_content": "\\begin{align}\n H^2 &= \\left[ \\frac{8 \\pi \\tG_0}{3} \\sum_{i} \\rho_{0i} a^{-3(1+\\omega_i)} + \\frac{ \\Lambda \\tc_0^2}{3} - k \\frac{\\tc_0^2}{a^2} \\right] \\frac{\\tc^2}{\\tc_0^2} \\equiv H^{(\\GR)2} \\frac{\\tc^2}{\\tc_0^2} \\label{H2me} \\,, \\\\\n \\frac{\\ddot{a}}{a} &= \\left[ -\\frac{4\\pi \\tG_0}{3} \\sum_i \\left( 1 + 3 \\omega_i \\right) \\rho_{0i} a^{-3(1+\\omega_i)} + \\frac{\\Lambda \\tc_0^2}{3} \\right] \\frac{\\tc^2}{\\tc_0^2} + H^2 \\frac{d \\ln \\tc}{d \\ln a} \\nonumber \\\\\n &= \\left[ \\left( \\frac{\\ddot{a}}{a} \\right)^{(\\GR)} +  H^{(\\GR)2} \\frac{d \\ln \\tc}{d \\ln a}  \\right] \\frac{\\tc^2}{\\tc_0^2} \\label{ddotaoa} \\,.\n \\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_29>",
+        "env_name": "equation",
+        "content": "\\begin{equation}\n    \\frac{\\tilde{c}(a)}{H(a)}  = \\frac{\\tc_0}{H^{\\textsuperscript{\\tiny (\\GR)}}(a)} = \\frac{\\tilde{c}_0}{H_0} \\frac{1}{\\sqrt{\\sum_i \\Omega_{0i} a^{-3(1+w_i)} + \\Omega_\\Lambda + \\Omega_k a^{-2}}},\n\\end{equation}",
+        "trans_content": "\\begin{equation}\n    \\frac{\\tilde{c}(a)}{H(a)}  = \\frac{\\tc_0}{H^{\\textsuperscript{\\tiny (\\GR)}}(a)} = \\frac{\\tilde{c}_0}{H_0} \\frac{1}{\\sqrt{\\sum_i \\Omega_{0i} a^{-3(1+w_i)} + \\Omega_\\Lambda + \\Omega_k a^{-2}}},\n\\end{equation}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_30>",
+        "env_name": "align",
+        "content": "\\begin{align}\nS &\\equiv \\int \\Biggl[ \\frac{1}{2 \\tkapp} \\left( \\frac{6}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} + \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} - \\frac{\\dot{a}}{a} \\frac{\\dot{\\tc}}{ \\tc} \\right)  - 2 \\Lambda \\right) + \\sum_{i=r\\,,m} \\rho_i (1 + \\omega_i ) \\tc^2 \\Biggr] \\sqrt{-g} dt d^3x \\label{SHmppf} \\,.\n\\end{align}",
+        "trans_content": "\\begin{align}\nS &\\equiv \\int \\Biggl[ \\frac{1}{2 \\tkapp} \\left( \\frac{6}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} + \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} - \\frac{\\dot{a}}{a} \\frac{\\dot{\\tc}}{ \\tc} \\right)  - 2 \\Lambda \\right) + \\sum_{i=r\\,,m} \\rho_i (1 + \\omega_i ) \\tc^2 \\Biggr] \\sqrt{-g} dt d^3x \\label{SHmppf} \\,.\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_31>",
+        "env_name": "align",
+        "content": "\\begin{align}\n \\rho_i (1 + \\omega_i ) \\tc^2 =  \\rho_{i0} (1 + \\omega_i ) \\tc_{0}^2 a^{-3(1 + \\omega_i )}  \\label{rhoi} \\,.\n\\end{align}",
+        "trans_content": "\\begin{align}\n \\rho_i (1 + \\omega_i ) \\tc^2 =  \\rho_{i0} (1 + \\omega_i ) \\tc_{0}^2 a^{-3(1 + \\omega_i )}  \\label{rhoi} \\,.\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_32>",
+        "env_name": "align",
+        "content": "\\begin{align}\nS &= \\int \\Biggl[ \\frac{\\tc_0^4}{16 \\pi \\tG_0} \\left( \\frac{6}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} + \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} - \\frac{\\dot{a}}{a} \\frac{\\dot{\\tc}}{ \\tc} \\right)  - 2 \\Lambda \\right)  \\Biggr] \\sqrt{-g} dt d^3x \\equiv \\int \\frac{1}{2 \\tkapp_0} R \\sqrt{-g} dt d^3x \\label{SHmppf2} \\,.\n\\end{align}",
+        "trans_content": "\\begin{align}\nS &= \\int \\Biggl[ \\frac{\\tc_0^4}{16 \\pi \\tG_0} \\left( \\frac{6}{\\tc^2} \\left( \\frac{\\ddot{a}}{a} + \\frac{\\dot{a}^2}{a^2} + k \\frac{\\tc^2}{a^2} - \\frac{\\dot{a}}{a} \\frac{\\dot{\\tc}}{ \\tc} \\right)  - 2 \\Lambda \\right)  \\Biggr] \\sqrt{-g} dt d^3x \\equiv \\int \\frac{1}{2 \\tkapp_0} R \\sqrt{-g} dt d^3x \\label{SHmppf2} \\,.\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_33>",
+        "env_name": "align",
+        "content": "\\begin{align}\n& \\frac{d}{dt} \\frac{\\partial R}{\\partial \\dot{\\tc}} - \\frac{\\partial R}{\\partial \\tc} = 0 \\quad \\Rightarrow \\quad \\frac{\\ddot{a}}{a} + 3 \\frac{\\dot{a}^2}{a^2} = 0 \\quad \\Rightarrow \\quad a(t) = (c_1 + c_2 t)^{1/4} \\label{eomtc} \\,.\n\\end{align}",
+        "trans_content": "\\begin{align}\n& \\frac{d}{dt} \\frac{\\partial R}{\\partial \\dot{\\tc}} - \\frac{\\partial R}{\\partial \\tc} = 0 \\quad \\Rightarrow \\quad \\frac{\\ddot{a}}{a} + 3 \\frac{\\dot{a}^2}{a^2} = 0 \\quad \\Rightarrow \\quad a(t) = (c_1 + c_2 t)^{1/4} \\label{eomtc} \\,.\n\\end{align}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_34>",
+        "env_name": "figure",
+        "content": "\\begin{figure}\n\t\\begin{center}\n\t\\includegraphics[width=0.9\\textwidth]{Fig2.pdf}\n\t<PLACEHOLDER_CAP_4>\n\t\\label{Fig2}\n\t\\end{center}\n\\end{figure}",
+        "trans_content": "\\begin{figure}\n\t\\begin{center}\n\t\\includegraphics[width=0.9\\textwidth]{Fig2.pdf}\n\t<PLACEHOLDER_CAP_4>\n\t\\label{Fig2}\n\t\\end{center}\n\\end{figure}",
+        "need_trans": false
+    },
+    {
+        "placeholder": "<PLACEHOLDER_ENV_35>",
+        "env_name": "align",
+        "content": "\\begin{align}\nx^{0}(t+dt) - x^{0}(t) &=  \\left( c[t+dt] \\right) \\left( t+dt \\right) - c(t) t \\overset{\\mathcal{O}(1)}{\\approx} c[t] dt + dc[t] t \\nonumber \\\\\n\t&= \\left( 1 + \\frac{d \\ln c}{d \\ln t} \\right) c[t] dt \\equiv \\tilde{c}[t] dt \\equiv N[t] c[t] dt \\label{NmeVSL} \\,.\n\\end{align}",
+        "trans_content": "\\begin{align}\nx^{0}(t+dt) - x^{0}(t) &=  \\left( c[t+dt] \\right) \\left( t+dt \\right) - c(t) t \\overset{\\mathcal{O}(1)}{\\approx} c[t] dt + dc[t] t \\nonumber \\\\\n\t&= \\left( 1 + \\frac{d \\ln c}{d \\ln t} \\right) c[t] dt \\equiv \\tilde{c}[t] dt \\equiv N[t] c[t] dt \\label{NmeVSL} \\,.\n\\end{align}",
+        "need_trans": false
+    }
+]

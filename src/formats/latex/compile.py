@@ -3,6 +3,7 @@ import re
 import os
 import subprocess
 import shutil
+import platform
 from functools import partial
 # 假设你的 utils.py 文件在同一目录下
 from .utils import find_main_tex_file, detect_tex_distributions, select_tex_distribution
@@ -192,7 +193,11 @@ class LaTexCompiler:
         dist_bin_dir = os.path.dirname(self.latexmk_path)
         env['PATH'] = f"{dist_bin_dir}{os.pathsep}{env.get('PATH', '')}"
 
-        result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env, creationflags=subprocess.CREATE_NO_WINDOW)
+        # CREATE_NO_WINDOW is only available on Windows
+        if platform.system() == "Windows":
+            result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env, creationflags=subprocess.CREATE_NO_WINDOW)
+        else:
+            result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env)
 
         if result.returncode != 0:
             print(f"⚠️  `{engine}` process finished with non-zero exit code ({result.returncode}).")
@@ -326,7 +331,11 @@ class LaTexCompiler:
 
         try:
             print(f"🚀 开始使用 `{engine}` 进行编译...")
-            result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env, creationflags=subprocess.CREATE_NO_WINDOW)
+            # CREATE_NO_WINDOW is only available on Windows
+            if platform.system() == "Windows":
+                result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env, creationflags=subprocess.CREATE_NO_WINDOW)
+            else:
+                result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env)
         except Exception as e:
             print(f"❌ 编译过程中发生异常: {e}")
             return -1
