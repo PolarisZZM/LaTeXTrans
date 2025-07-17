@@ -1,0 +1,32 @@
+[
+    {
+        "placeholder": "<PLACEHOLDER_CAP_1>",
+        "cap_type": "title",
+        "content": "\\title{Bottom-up Analysis of Ro-Vibrational Helical Dichroism}",
+        "trans_content": "\\title{振转螺旋二色性的自下而上分析}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_2>",
+        "cap_type": "caption",
+        "content": "\\caption{The \\eoet ~chiral signatures in rotational and ro-vibrational spectroscopy of all possible chiral point groups. In the case of ro-vibrational spectroscopy we provide the irreducible-representations of the vibrational modes associated with non-zero chiral signature.}",
+        "trans_content": "\\caption{所有可能手性点群的旋转光谱与旋转振动光谱中的\\eoet~手性特征。对于旋转振动光谱，我们给出了与非零手性特征相关联的振动模式的不可约表示。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_3>",
+        "cap_type": "caption",
+        "content": "\\caption{Selection rules for electric dipole ($E_1$) and quadrupole ($E_2$) transitions between rotational states $\\ket{J,M,K}$. For details on prohibited transitions see \\cite{Note1}.}",
+        "trans_content": "\\caption{电偶极 ($E_1$) 与四极 ($E_2$) 跃迁在转动态 $\\ket{J,M,K}$ 之间的选择定则。关于禁戒跃迁的详细说明参见 \\cite{Note1}。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_4>",
+        "cap_type": "caption",
+        "content": "\\caption{Allowed dipole (red squares) and quadrupole transitions (blue squares) between eigenstates of the asymmetric top Hamiltonian. Panel columns represent different circular polarizations of the beam, and panel rows -- the amount of the OAM that can be transferred from the beam to the internal rotation of the molecule. Purple circles show an example of spin-orbit coupling creating an \\eoet ~term with the transfer of OAM. Orange squares highlight the transitions that would be superimposed in the experiment, as shown in Fig. \\ref{fig:profiles}.}",
+        "trans_content": "\\caption{不对称陀螺哈密顿量本征态之间允许的偶极跃迁（红色方块）与四极跃迁（蓝色方块）。各子图列表示光束的不同圆偏振态，子图行表示光束可传递给分子内转动的轨道角动量数值。紫色圆圈展示了自旋-轨道耦合产生伴随轨道角动量转移的\\eoet 项的实例。橙色方块标明了实验中会叠加的跃迁（如图\\ref{fig:profiles}所示）。}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_5>",
+        "cap_type": "caption",
+        "content": "\\caption{Signal profiles of the \\eoet ~transitions from $\\bra{1_{1,1}(M)}$ to $\\ket{1_{0,1}(M')}$ for the opposite enantiomers coupled by a Laguerre Gaussian beam without (top) and with (middle row) the spin-orbit coupling and by a Gaussian beam with spin-orbit coupling (bottom).}",
+        "trans_content": "\\caption{对映异构体在拉盖尔-高斯光束耦合下$\\bra{1_{1,1}(M)}$到$\\ket{1_{0,1}(M')}$跃迁的信号剖面（上：无自旋轨道耦合；中：有自旋轨道耦合）及高斯光束耦合下自旋轨道耦合作用的信号剖面（下）。}"
+    }
+]

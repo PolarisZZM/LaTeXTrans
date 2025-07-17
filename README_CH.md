@@ -37,6 +37,7 @@ pip install -r requirements.txt
 
 如需编译LaTeX文件（例如生成PDF输出），需要安装 [TeXLive](https://www.tug.org/texlive/).
 
+
 ### 方式二：Docker部署（推荐）
 
 使用Docker可以避免复杂的环境配置，我们提供了两个版本的Docker镜像：
@@ -48,14 +49,16 @@ pip install -r requirements.txt
 | **基础版 (basic)** | ~800MB | 适合大多数标准LaTeX文档，包含中文支持 |
 | **完整版 (full)** | ~5GB | 适合复杂文档，包含所有TeXLive宏包 |
 
-#### 构建Docker镜像
+
+
+#### 拉取预构建镜像
 
 ```bash
-# 构建基础版（推荐）
-docker build -f Dockerfile.basic -t ymdxe/latextrans:v1.0.0-basic .
+# 拉取基础版
+docker pull ymdxe/latextrans:basic-latest
 
-# 构建完整版（如果需要完整的TeXLive支持）
-docker build -t ymdxe/latextrans:v1.0.0 .
+# 拉取完整版
+docker pull ymdxe/latextrans:latest
 ```
 
 #### 运行Docker容器
@@ -69,7 +72,7 @@ docker run `
   -e LLM_BASE_URL="your-base-url" `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
-  ymdxe/latextrans:v1.0.0 2505.15838
+  ymdxe/latextrans:latest 2505.15838
 
 # 使用本地TeX源文件
 docker run `
@@ -78,7 +81,7 @@ docker run `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
   -v "${PWD}\tex source:/app/tex source" `
-  ymdxe/latextrans:v1.0.0 --source_dir "/app/tex source/2505.15838"
+  ymdxe/latextrans:latest --source_dir "/app/tex source/2505.15838"
 ```
 
 **Linux/Mac Bash示例：**
@@ -90,7 +93,7 @@ docker run \
   -e LLM_BASE_URL="your-base-url" \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
-  ymdxe/latextrans:v1.0.0 2505.15838
+  ymdxe/latextrans:latest 2505.15838
 
 # 使用本地TeX源文件
 docker run \
@@ -99,7 +102,7 @@ docker run \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
   -v "${PWD}/tex source:/app/tex source" \
-  ymdxe/latextrans:v1.0.0 --source_dir "/app/tex source/2505.15838"
+  ymdxe/latextrans:latest --source_dir "/app/tex source/2505.15838"
 ```
 
 #### 使用构建脚本（Windows PowerShell）
@@ -111,8 +114,6 @@ docker run \
 # 构建完整版
 .\build-docker.ps1 -Version full
 
-# 构建所有版本
-.\build-docker.ps1 -Version all
 ```
 
 ---
@@ -171,40 +172,49 @@ python main.py <paper_id> (i.e. 2501.12948)
 
 ```powershell
 # 基础版Docker
+docker pull ymdxe/latextrans:basic-latest
+
 docker run `
   -e LLM_API_KEY="your-api-key" `
   -e LLM_BASE_URL="your-base-url" `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
-  ymdxe/latextrans:v1.0.0-basic 2501.12948
+  ymdxe/latextrans:basic-latest 2501.12948
 
 # 完整版Docker（适合复杂文档）
+docker pull ymdxe/latextrans:latest
+
 docker run `
   -e LLM_API_KEY="your-api-key" `
   -e LLM_BASE_URL="your-base-url" `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
-  ymdxe/latextrans:v1.0.0 2501.12948
+  ymdxe/latextrans:latest 2501.12948
 ```
 
 **Linux/Mac Bash示例：**
 
 ```bash
+
 # 基础版Docker
+docker pull ymdxe/latextrans:basic-latest
+
 docker run \
   -e LLM_API_KEY="your-api-key" \
   -e LLM_BASE_URL="your-base-url" \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
-  ymdxe/latextrans:v1.0.0-basic 2501.12948
+  ymdxe/latextrans:basic-latest 2501.12948
 
 # 完整版Docker（适合复杂文档）
+docker pull ymdxe/latextrans:latest
+
 docker run \
   -e LLM_API_KEY="your-api-key" \
   -e LLM_BASE_URL="your-base-url" \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
-  ymdxe/latextrans:v1.0.0 2501.12948
+  ymdxe/latextrans:latest 2501.12948
 ```
 
 ---

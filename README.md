@@ -6,25 +6,26 @@ English | [中文](README_CH.md) | [日本語](README_JP.md)
 
 # 🚀 LaTeXTrans
 
-> **A structured LaTeX document translation system based on multi-agent collaboration**
-
-
----
-
-## ✨ Features
-
-- 🧠 **Multi-agent collaboration**: Parser, Translator, Summarizer, Terminology Extractor, Generator  
-- 📄 **LaTeX-aware structure preservation**: Retains `\section`, `\label`, `\ref`, environments, math, and formatting  
-- 🌐 **Flexible backend support**: Works with GPT-4, DeepSeek, or your own LLM API  
-- 📚 **ArXiv ID support**: Automatically downloads and translates papers from arXiv with a single command  
-- 🧰 **Customizable pipeline**: Easily adjust summarization, terminology injection, and translation agents  
-- 🌏 **Multilingual translation**: Currently supports 🇨🇳 Chinese and 🇯🇵 Japanese; 🇰🇷 Korean coming soon!
+> **Structured LaTeX Document Translation System Based on Multi-Agent Collaboration**
 
 ---
 
-## 🛠️ Installation
+## ✨ Key Features
 
-### 1. Clone the repository
+- 🧠 **Multi-Agent Collaboration**: Parser, Translator, Summarizer, Terminology Extractor, Generator    
+- 📄 **LaTeX Structure Preservation**: Complete preservation of `\section`, `\label`, `\ref`, mathematical environments and formatting  
+- 🌐 **Flexible Backend Support**: Supports GPT-4, DeepSeek, or custom LLM APIs  
+- 📚 **ArXiv ID Support**: Automatically download and translate arXiv papers with a single command  
+- 🧰 **Customizable Workflow**: Freely adjust summary generation, terminology injection, and translation agents  
+- 🌏 **Multi-language Translation**: Currently supports 🇨🇳 Chinese and 🇯🇵 Japanese; 🇰🇷 Korean coming soon!
+
+---
+
+## 🛠️ Installation Guide
+
+### Method 1: Local Installation
+
+#### 1. Clone Repository
 
 ```bash
 git clone https://github.com/PolarisZZM/LaTeXTrans.git
@@ -32,63 +33,220 @@ cd LaTeXTrans
 pip install -r requirements.txt
 ```
 
-### 2. Install TeXLive
+#### 2. Install TeXLive
 
-To compile LaTeX files (e.g., generating PDF output), you need to install [TeXLive](https://www.tug.org/texlive/).
+If you need to compile LaTeX files (e.g., generate PDF output), install [TeXLive](https://www.tug.org/texlive/).
 
-## ⚙️ Configuration
 
-Before using the system, open the configuration file:
+### Method 2: Docker Deployment (Recommended)
+
+Using Docker avoids complex environment configuration. We provide two versions of Docker images:
+
+#### 🐳 Docker Version Description
+
+| Version | Image Size | Use Case |
+|---------|------------|----------|
+| **Basic (basic)** | ~800MB | Suitable for most standard LaTeX documents, includes Chinese support |
+| **Full (full)** | ~5GB | Suitable for complex documents, includes all TeXLive packages |
+
+#### Build Docker Images
+
+```bash
+# Build basic version (recommended)
+docker build -f Dockerfile.basic -t ymdxe/latextrans:basic-latest .
+
+# Build full version (if complete TeXLive support is needed)
+docker build -t ymdxe/latextrans:latest .
+
+# If you need to tag specific versions simultaneously
+docker build -f Dockerfile.basic -t ymdxe/latextrans:basic-latest -t ymdxe/latextrans:basic-v1.0.0 .
+docker build -t ymdxe/latextrans:latest -t ymdxe/latextrans:v1.0.0 .
+```
+
+#### Pull Pre-built Images (if published to Docker Hub)
+
+```bash
+# Pull basic version
+docker pull ymdxe/latextrans:basic-latest
+
+# Pull full version
+docker pull ymdxe/latextrans:latest
+```
+
+#### Run Docker Container
+
+**Windows PowerShell Example:**
+
+```powershell
+# Translate arXiv paper (using paper ID)
+docker run `
+  -e LLM_API_KEY="your-api-key" `
+  -e LLM_BASE_URL="your-base-url" `
+  -e LLM_MODEL="deepseek-v3" `
+  -v "${PWD}\outputs:/app/outputs" `
+  ymdxe/latextrans:latest 2505.15838
+
+# Use local TeX source files
+docker run `
+  -e LLM_API_KEY="your-api-key" `
+  -e LLM_BASE_URL="your-base-url" `
+  -e LLM_MODEL="deepseek-v3" `
+  -v "${PWD}\outputs:/app/outputs" `
+  -v "${PWD}\tex source:/app/tex source" `
+  ymdxe/latextrans:latest --source_dir "/app/tex source/2505.15838"
+```
+
+**Linux/Mac Bash Example:**
+
+```bash
+# Translate arXiv paper (using paper ID)
+docker run \
+  -e LLM_API_KEY="your-api-key" \
+  -e LLM_BASE_URL="your-base-url" \
+  -e LLM_MODEL="deepseek-v3" \
+  -v "${PWD}/outputs:/app/outputs" \
+  ymdxe/latextrans:latest 2505.15838
+
+# Use local TeX source files
+docker run \
+  -e LLM_API_KEY="your-api-key" \
+  -e LLM_BASE_URL="your-base-url" \
+  -e LLM_MODEL="deepseek-v3" \
+  -v "${PWD}/outputs:/app/outputs" \
+  -v "${PWD}/tex source:/app/tex source" \
+  ymdxe/latextrans:latest --source_dir "/app/tex source/2505.15838"
+```
+
+#### Using Build Script (Windows PowerShell)
+
+```powershell
+# Build basic version
+.\build-docker.ps1 -Version basic
+
+# Build full version
+.\build-docker.ps1 -Version full
+
+# Build all versions
+.\build-docker.ps1 -Version all
+```
+
+---
+
+## ⚙️ Configuration Guide
+
+### Local Configuration
+
+Please edit the configuration file before use:
 
 ```arduino
 config/default.toml
 ```
 
-
-And set your API key and base URL for the language model:
+Set the language model's API key and base URL:
 
 ```toml
 [llm]
 api_key = " " #your_api_key_here
 base_url = " " #base url of the API
+model = "deepseek-v3" #model name (optional)
 ```
 
-You can connect to services such as OpenAI, DeepSeek, Claude, or your own hosted LLMs.
+### Docker Environment Variable Configuration
+
+When using Docker, you can override configuration file settings with environment variables:
+
+- `LLM_API_KEY`: API key
+- `LLM_BASE_URL`: API base URL
+- `LLM_MODEL`: Model name (e.g., deepseek-v3)
+
+Supports services like OpenAI, DeepSeek, Claude, or self-hosted LLMs.
+
+---
 
 ## 🚀 Usage
 
-### 🔹 Run with ArXiv ID (recommended)
+### 🔹 Translation via ArXiv ID (Recommended)
 
-You can translate an arXiv paper by simply passing its ID:
+Simply provide an arXiv paper ID to complete translation:
 
 ```bash
 python main.py <paper_id> (i.e. 2501.12948)
 ```
 
-This will:
+This command will:
 
-Download the LaTeX source from arXiv
+1. Download LaTeX source code from arXiv
+2. Extract to tex source file directory
+3. Run multi-agent translation workflow
+4. Save translated .tex files and compiled PDF in outputs folder
 
-Unpack the source into the tex cource folder
+### 🔹 Running with Docker
 
-Run the multi-agent translation pipeline
+**Windows PowerShell Example:**
 
-Save the translated .tex file and the compiled PDF in the outputs folder
+```powershell
+# Basic Docker version
+docker pull ymdxe/latextrans:basic-latest
 
-## 💬 Demonstration video
+docker run `
+  -e LLM_API_KEY="your-api-key" `
+  -e LLM_BASE_URL="your-base-url" `
+  -e LLM_MODEL="deepseek-v3" `
+  -v "${PWD}\outputs:/app/outputs" `
+  ymdxe/latextrans:basic-latest 2501.12948
 
-The demonstration video of our system: https://www.youtube.com/watch?v=tSVm_EOL7i8
+# Full Docker version (suitable for complex documents)
+docker pull ymdxe/latextrans:latest
 
-## 🖼️ Translation Cases
+docker run `
+  -e LLM_API_KEY="your-api-key" `
+  -e LLM_BASE_URL="your-base-url" `
+  -e LLM_MODEL="deepseek-v3" `
+  -v "${PWD}\outputs:/app/outputs" `
+  ymdxe/latextrans:latest 2501.12948
+```
 
-Here are three real translation cases produced by **LaTeXTrans**. Each case shows the LaTeX source on the left and the translated output on the right.
+**Linux/Mac Bash Example:**
 
-### 📄 Case 1: 
+```bash
+
+# Basic Docker version
+docker pull ymdxe/latextrans:basic-latest
+
+docker run \
+  -e LLM_API_KEY="your-api-key" \
+  -e LLM_BASE_URL="your-base-url" \
+  -e LLM_MODEL="deepseek-v3" \
+  -v "${PWD}/outputs:/app/outputs" \
+  ymdxe/latextrans:basic-latest 2501.12948
+
+# Full Docker version (suitable for complex documents)
+docker pull ymdxe/latextrans:latest
+
+docker run \
+  -e LLM_API_KEY="your-api-key" \
+  -e LLM_BASE_URL="your-base-url" \
+  -e LLM_MODEL="deepseek-v3" \
+  -v "${PWD}/outputs:/app/outputs" \
+  ymdxe/latextrans:latest 2501.12948
+```
+
+---
+
+## 💬 Demo Video
+
+System demonstration video: https://www.youtube.com/watch?v=tSVm_EOL7i8
+
+## 🖼️ Translation Examples
+
+The following are three real translation examples generated by **LaTeXTrans**, with the original text on the left and translation results on the right.
+
+### 📄 Case 1:
 
 <table>
   <tr>
     <td align="center"><b>Original</b></td>
-    <td align="center"><b>Translated</b></td>
+    <td align="center"><b>Translation</b></td>
   </tr>
   <tr>
     <td><img src="examples/case1src.png" width="100%"></td>
@@ -96,12 +254,12 @@ Here are three real translation cases produced by **LaTeXTrans**. Each case show
   </tr>
 </table>
 
-### 📄 Case 2: 
+### 📄 Case 2:
 
 <table>
   <tr>
     <td align="center"><b>Original</b></td>
-    <td align="center"><b>Translated</b></td>
+    <td align="center"><b>Translation</b></td>
   </tr>
   <tr>
     <td><img src="examples/case2src.png" width="100%"></td>
@@ -109,12 +267,12 @@ Here are three real translation cases produced by **LaTeXTrans**. Each case show
   </tr>
 </table>
 
-### 📄 Case 3: 
+### 📄 Case 3:
 
 <table>
   <tr>
     <td align="center"><b>Original</b></td>
-    <td align="center"><b>Translated</b></td>
+    <td align="center"><b>Translation</b></td>
   </tr>
   <tr>
     <td><img src="examples/case3src.png" width="100%"></td>
@@ -122,5 +280,183 @@ Here are three real translation cases produced by **LaTeXTrans**. Each case show
   </tr>
 </table>
 
+📂 **See [`examples/`](examples/) folder for more cases**, including complete translation PDFs for each case.
 
-📂 **More examples can be found in the [`examples/`](examples/) folder**, including the full translated PDFs for each case.
+#### Using Build Script (Windows PowerShell)
+
+```powershell
+# Build basic version
+.\build-docker.ps1 -Version basic
+
+# Build full version
+.\build-docker.ps1 -Version full
+
+# Build all versions
+.\build-docker.ps1 -Version all
+```
+
+---
+
+## ⚙️ Configuration Guide
+
+### Local Configuration
+
+Please edit the configuration file before use:
+
+```arduino
+config/default.toml
+```
+
+Set the language model's API key and base URL:
+
+```toml
+[llm]
+api_key = " " #your_api_key_here
+base_url = " " #base url of the API
+model = "deepseek-v3" #model name (optional)
+```
+
+### Docker Environment Variable Configuration
+
+When using Docker, you can override configuration file settings with environment variables:
+
+- `LLM_API_KEY`: API key
+- `LLM_BASE_URL`: API base URL
+- `LLM_MODEL`: Model name (e.g., deepseek-v3)
+
+Supports services like OpenAI, DeepSeek, Claude, or self-hosted LLMs.
+
+---
+
+## 🚀 Usage
+
+### 🔹 Translation via ArXiv ID (Recommended)
+
+Simply provide an arXiv paper ID to complete translation:
+
+```bash
+python main.py <paper_id> (i.e. 2501.12948)
+```
+
+This command will:
+
+1. Download LaTeX source code from arXiv
+2. Extract to tex source file directory
+3. Run multi-agent translation workflow
+4. Save translated .tex files and compiled PDF in outputs folder
+
+### 🔹 Running with Docker
+
+**Windows PowerShell Example:**
+
+```powershell
+# Basic Docker version
+docker run `
+  -e LLM_API_KEY="your-api-key" `
+  -e LLM_BASE_URL="your-base-url" `
+  -e LLM_MODEL="deepseek-v3" `
+  -v "${PWD}\outputs:/app/outputs" `
+  ymdxe/latextrans:v1.0.0-basic 2501.12948
+
+# Full Docker version (suitable for complex documents)
+docker run `
+  -e LLM_API_KEY="your-api-key" `
+  -e LLM_BASE_URL="your-base-url" `
+  -e LLM_MODEL="deepseek-v3" `
+  -v "${PWD}\outputs:/app/outputs" `
+  ymdxe/latextrans:v1.0.0 2501.12948
+```
+
+**Linux/Mac Bash Example:**
+
+```bash
+# Basic Docker version
+docker run \
+  -e LLM_API_KEY="your-api-key" \
+  -e LLM_BASE_URL="your-base-url" \
+  -e LLM_MODEL="deepseek-v3" \
+  -v "${PWD}/outputs:/app/outputs" \
+  ymdxe/latextrans:v1.0.0-basic 2501.12948
+
+# Full Docker version (suitable for complex documents)
+docker run \
+  -e LLM_API_KEY="your-api-key" \
+  -e LLM_BASE_URL="your-base-url" \
+  -e LLM_MODEL="deepseek-v3" \
+  -v "${PWD}/outputs:/app/outputs" \
+  ymdxe/latextrans:v1.0.0 2501.12948
+```
+
+---
+
+## 💬 Demo Video
+
+System demonstration video: https://www.youtube.com/watch?v=tSVm_EOL7i8
+
+## 🖼️ Translation Examples
+
+The following are three real translation examples generated by **LaTeXTrans**, with the original text on the left and translation results on the right.
+
+### 📄 Case 1:
+
+<table>
+  <tr>
+    <td align="center"><b>Original</b></td>
+    <td align="center"><b>Translation</b></td>
+  </tr>
+  <tr>
+    <td><img src="examples/case1src.png" width="100%"></td>
+    <td><img src="examples/case1ch.png" width="100%"></td>
+  </tr>
+</table>
+
+### 📄 Case 2:
+
+<table>
+  <tr>
+    <td align="center"><b>Original</b></td>
+    <td align="center"><b>Translation</b></td>
+  </tr>
+  <tr>
+    <td><img src="examples/case2src.png" width="100%"></td>
+    <td><img src="examples/case2ch.png" width="100%"></td>
+  </tr>
+</table>
+
+### 📄 Case 3:
+
+<table>
+  <tr>
+    <td align="center"><b>Original</b></td>
+    <td align="center"><b>Translation</b></td>
+  </tr>
+  <tr>
+    <td><img src="examples/case3src.png" width="100%"></td>
+    <td><img src="examples/case3ch.png" width="100%"></td>
+  </tr>
+</table>
+
+📂 **See [`examples/`](examples/) folder for more cases**, including complete translation PDFs for each case.
+
+---
+
+## 🐳 Docker Deployment Advantages
+
+1. **No local TeXLive installation required** - Docker image includes all necessary LaTeX environments
+2. **Environment isolation** - Does not affect local system environment
+3. **Version consistency** - Ensures all users use the same runtime environment
+4. **Quick deployment** - Run with a single command
+
+## 📋 Docker Version Selection Recommendations
+
+- **Basic (basic)** - First choice recommendation
+  - Small size, fast build
+  - Includes Chinese support and common packages
+  - Suitable for 90% of LaTeX documents
+
+- **Full (full)** - Special requirements
+  - Includes all TeXLive packages
+  - Suitable for very complex documents
+  - Long build time, large image size
+
+For more Docker usage details, please refer to [docker-versions.md](docker-versions.md)

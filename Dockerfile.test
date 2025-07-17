@@ -1,0 +1,7 @@
+# 使用完整的官方镜像地址
+FROM docker.io/library/python:3.11-slim
+
+# 测试基础镜像是否能正常拉取
+RUN echo "Base image pulled successfully"
+
+WORKDIR /app
