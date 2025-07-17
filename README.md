@@ -123,4 +123,5 @@ Here are three real translation cases produced by **LaTeXTrans**. Each case show
 </table>
 
 
+
 📂 **More examples can be found in the [`examples/`](examples/) folder**, including the full translated PDFs for each case.
