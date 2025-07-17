@@ -3,7 +3,7 @@
         "placeholder": "<PLACEHOLDER_CAP_1>",
         "cap_type": "title",
         "content": "\\title[]{Revisiting Varying Speed of Light in Cosmology: Insights from the Friedmann-Lemaître-Robertson-Walker Metric}",
-        "trans_content": "\\title[]{重审宇宙学中的光速可变性：基于弗里德曼-勒梅特-罗伯逊-沃尔克度规的新见解}"
+        "trans_content": "\\title[]{重审宇宙学中的光速变化：弗里德曼-勒梅特-罗伯逊-沃尔克度规的启示}"
     },
     {
         "placeholder": "<PLACEHOLDER_CAP_2>",
@@ -15,12 +15,12 @@
         "placeholder": "<PLACEHOLDER_CAP_3>",
         "cap_type": "caption",
         "content": "\\caption{At $t = t_k$, the values of physical quantities and constants, such as $a_k$, $\\rho_k$, $P_k$,  $T_k$, $\\tc_k$,  $k_{k}$, and $\\hbar_k$, are fixed and independent of spatial position on the $t=t_k$ hypersurface. As the universe expands, these quantities and constants transition to $a_l$, $\\rho_l$, $P_l$,  $T_l$, $\\tc_l$,  $k_l$, and $\\hbar_l$. The CP and Weyl’s postulate do not restrict $c_k$ to be equal to $c_l$.  Its value is determined by the CTD relation. }",
-        "trans_content": "\\caption{在 $t = t_k$ 时刻，物理量和常数的值（如 $a_k$、$\\rho_k$、$P_k$、$T_k$、$\\tc_k$、$k_{k}$ 和 $\\hbar_k$）是固定的，且在 $t=t_k$ 超曲面上与空间位置无关。随着宇宙膨胀，这些量和常数会过渡到 $a_l$、$\\rho_l$、$P_l$、$T_l$、$\\tc_l$、$k_l$ 和 $\\hbar_l$。宇宙学原理与外尔假设并不限制 $c_k$ 必须等于 $c_l$，其值由 CTD 关系决定。}"
+        "trans_content": "\\caption{在 $t = t_k$ 时刻，物理量和常数的值（如 $a_k$、$\\rho_k$、$P_k$、$T_k$、$\\tc_k$、$k_{k}$ 和 $\\hbar_k$）是固定的，且在 $t=t_k$ 超曲面上与空间位置无关。随着宇宙膨胀，这些量和常数会过渡为 $a_l$、$\\rho_l$、$P_l$、$T_l$、$\\tc_l$、$k_l$ 和 $\\hbar_l$。宇宙学原理与外尔假设并未限制 $c_k$ 必须等于 $c_l$，其值由 CTD 关系决定。}"
     },
     {
         "placeholder": "<PLACEHOLDER_CAP_4>",
         "cap_type": "caption",
         "content": "\\caption{This illustrates the foliation of spacetime within the RW metric framework. The hypersurfaces $\\Sigma$ represent constant values of the temporal coordinate $\\mathcal{T}$, corresponding to different moments in time. The lapse function governs the separation between these hypersurfaces, ensuring that the normal vector $\\bar{n} = n^{\\mu} e_{\\mu}$ remains orthogonal to them.}",
-        "trans_content": "\\caption{该图展示了RW度规框架下时空的叶状结构。超曲面$\\Sigma$表示时间坐标$\\mathcal{T}$的常数值，对应于不同的时间时刻。lapse函数控制这些超曲面之间的间隔，确保法向量$\\bar{n} = n^{\\mu} e_{\\mu}$始终与它们正交。}"
+        "trans_content": "\\caption{该图展示了RW度规框架下时空的叶状结构。超曲面$\\Sigma$表示时间坐标$\\mathcal{T}$的常数值，对应于不同的时间时刻。流逝函数控制着这些超曲面之间的间距，确保法向量$\\bar{n} = n^{\\mu} e_{\\mu}$始终与它们保持正交。}"
     }
 ]

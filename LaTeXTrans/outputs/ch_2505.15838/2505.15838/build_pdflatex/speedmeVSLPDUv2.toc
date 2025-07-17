@@ -9,7 +9,7 @@
 \contentsline {subsection}{\numberline {A}里奇张量与爱因斯坦张量}{8}{section*.9}%
 \contentsline {subsection}{\numberline {B}能量动量张量}{9}{section*.10}%
 \contentsline {subsection}{\numberline {C}弗里德曼方程}{10}{section*.11}%
-\contentsline {section}{\numberline {VI}光速的运动方程}{11}{section*.12}%
+\contentsline {section}{\numberline {VI}光速运动方程}{11}{section*.12}%
 \contentsline {section}{\numberline {VII}结论与总结}{13}{section*.14}%
-\contentsline {section}{\numberline {}Acknowledgments}{13}{section*.15}%
+\contentsline {section}{\numberline {}Acknowledgments}{14}{section*.15}%
 \contentsline {section}{\numberline {}References}{14}{section*.16}%
