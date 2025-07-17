@@ -1,0 +1,282 @@
+\begin{thebibliography}{10}
+
+\bibitem{crosshair}
+Crosshair: Symbolic execution for python.
+\newblock https://github.com/pschanely/CrossHair, 2020.
+
+\bibitem{codellama}
+Codellama.
+\newblock https://codellama.dev/about, 2022.
+
+\bibitem{deepseekcoder}
+Deepseekcoder.
+\newblock https://deepseekcoder.github.io/t, 2022.
+
+\bibitem{chatGPT}
+Chatgpt.
+\newblock https://chat.openai.com/, 2023.
+
+\bibitem{copilot}
+Github copilot.
+\newblock https://github.com/features/copilot, 2023.
+
+\bibitem{gpt4}
+Gpt-4.
+\newblock https://openai.com/gpt-4, 2023.
+
+\bibitem{codex}
+Openai codex.
+\newblock https://openai.com/blog/openai-codex, 2023.
+
+\bibitem{bagging}
+Leo Breiman.
+\newblock Bagging predictors.
+\newblock {\em Machine learning}, 24(2):123--140, 1996.
+
+\bibitem{brown2020language}
+Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared~D Kaplan, Prafulla
+  Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell,
+  et~al.
+\newblock Language models are few-shot learners.
+\newblock {\em Advances in neural information processing systems},
+  33:1877--1901, 2020.
+
+\bibitem{bubeck2023sparks}
+Sébastien Bubeck, Varun Chandrasekaran, Ron Eldan, Johannes Gehrke, Eric
+  Horvitz, Ece Kamar, Peter Lee, Or~Levy, Yin~Tat Li, Scott Lundberg, et~al.
+\newblock Sparks of artificial general intelligence: Early experiments with
+  gpt-4.
+\newblock {\em arXiv preprint arXiv:2303.12712}, 2023.
+
+\bibitem{chen2021evaluating}
+Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde, Jared Kaplan,
+  Harri Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, et~al.
+\newblock Evaluating large language models trained on code.
+\newblock {\em arXiv preprint arXiv:2107.03374}, 2021.
+
+\bibitem{humaneval}
+Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde, Jared Kaplan,
+  Harri Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, et~al.
+\newblock Evaluating large language models trained on code.
+\newblock {\em arXiv preprint arXiv:2107.03374}, 2021.
+
+\bibitem{dakhel2023github}
+Arghavan~Moradi Dakhel, Vahid Majdinasab, Amin Nikanjam, Foutse Khomh, Michel~C
+  Desmarais, and Zhen Ming~Jack Jiang.
+\newblock Github copilot ai pair programmer: Asset or liability?
+\newblock {\em Journal of Systems and Software}, 203:111734, 2023.
+
+\bibitem{deng2022fuzzing}
+Yinlin Deng, Chunqiu~Steven Xia, Haoran Peng, Chenyuan Yang, and Lingming
+  Zhang.
+\newblock Fuzzing deep-learning libraries via large language models.
+\newblock {\em arXiv preprint arXiv:2212.14834}, 2022.
+
+\bibitem{devlin2018bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock {\em arXiv preprint arXiv:1810.04805}, 2018.
+
+\bibitem{fedus2021switch}
+William Fedus, Barret Zoph, and Noam Shazeer.
+\newblock Switch transformers: Scaling to trillion parameter models with simple
+  and efficient sparsity.
+\newblock {\em arXiv preprint arXiv:2101.03961}, 2021.
+
+\bibitem{boosting}
+Yoav Freund and Robert~E Schapire.
+\newblock A decision-theoretic generalization of on-line learning and an
+  application to boosting.
+\newblock {\em Journal of Computer and System Sciences}, 55(1):119--139, 1997.
+
+\bibitem{huang2022prompt}
+Qing Huang, Zhiqiang Yuan, Zhenchang Xing, Xiwei Xu, Liming Zhu, and Qinghua
+  Lu.
+\newblock Prompt-tuned code language model as a neural knowledge base for type
+  inference in statically-typed partial code.
+\newblock In {\em Proceedings of the 37th IEEE/ACM International Conference on
+  Automated Software Engineering}, pages 1--13, 2022.
+
+\bibitem{imai2022github}
+Saki Imai.
+\newblock Is github copilot a substitute for human pair-programming? an
+  empirical study.
+\newblock In {\em Proceedings of the ACM/IEEE 44th International Conference on
+  Software Engineering: Companion Proceedings}, pages 319--321, 2022.
+
+\bibitem{jain2022jigsaw}
+Naman Jain, Skanda Vaidyanath, Arun Iyer, Nagarajan Natarajan, Suresh
+  Parthasarathy, Sriram Rajamani, and Rahul Sharma.
+\newblock Jigsaw: Large language models meet program synthesis.
+\newblock In {\em Proceedings of the 44th International Conference on Software
+  Engineering}, pages 1219--1231, 2022.
+
+\bibitem{jordan1994hierarchical}
+Michael~I. Jordan and Robert~A. Jacobs.
+\newblock Hierarchical mixtures of experts and the em algorithm.
+\newblock {\em Neural Computation}, 6(2):181--214, 1994.
+
+\bibitem{kittler1998combining}
+Josef Kittler, Mohamad Hatef, Robert P~W Duin, and Jiri Matas.
+\newblock On combining classifiers.
+\newblock In {\em IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, volume~20, pages 226--239. IEEE, 1998.
+
+\bibitem{lahiri2010differential}
+Shuvendu~K Lahiri, Kapil Vaswani, and C~AR Hoare.
+\newblock Differential static analysis: opportunities, applications, and
+  challenges.
+\newblock In {\em Proceedings of the FSE/SDP workshop on Future of software
+  engineering research}, pages 201--204, 2010.
+
+\bibitem{le2023invalidator}
+Thanh Le-Cong, Duc-Minh Luong, Xuan Bach~D Le, David Lo, Nhat-Hoa Tran, Bui
+  Quang-Huy, and Quyet-Thang Huynh.
+\newblock Invalidator: Automated patch correctness assessment via semantic and
+  syntactic reasoning.
+\newblock {\em IEEE Transactions on Software Engineering}, 2023.
+
+\bibitem{li2022competition}
+Yujia Li, David Choi, Junyoung Chung, Nate Kushman, Julian Schrittwieser,
+  R{\'e}mi Leblond, Tom Eccles, James Keeling, Felix Gimeno, Agustin Dal~Lago,
+  et~al.
+\newblock Competition-level code generation with alphacode.
+\newblock {\em Science}, 378(6624):1092--1097, 2022.
+
+\bibitem{liu2023your}
+Jiawei Liu, Chunqiu~Steven Xia, Yuyao Wang, and Lingming Zhang.
+\newblock Is your code generated by chatgpt really correct? rigorous evaluation
+  of large language models for code generation.
+\newblock {\em arXiv preprint arXiv:2305.01210}, 2023.
+
+\bibitem{liu2023fill}
+Zhe Liu, Chunyang Chen, Junjie Wang, Xing Che, Yuekai Huang, Jun Hu, and Qing
+  Wang.
+\newblock Fill in the blank: Context-aware automated text input generation for
+  mobile gui testing.
+\newblock In {\em 2023 IEEE/ACM 45th International Conference on Software
+  Engineering (ICSE)}, pages 1355--1367. IEEE, 2023.
+
+\bibitem{mienye2022survey}
+Ibomoiye~Domor Mienye and Yanxia Sun.
+\newblock A survey of ensemble learning: Concepts, algorithms, applications,
+  and prospects.
+\newblock {\em Ieee Access}, 10:99129--99149, 2022.
+
+\bibitem{mueller2023automated}
+Tobias Mueller, Donggyu Wang, and Michael Pradel.
+\newblock Automated test generation using large language models: How far are
+  we?
+\newblock {\em arXiv preprint arXiv:2304.08955}, 2023.
+
+\bibitem{hydiff}
+Yannic Noller, Corina~S. Păsăreanu, Marcel Böhme, Youcheng Sun, Hoang~Lam
+  Nguyen, and Lars Grunske.
+\newblock Hydiff: Hybrid differential software analysis.
+\newblock In {\em 2020 IEEE/ACM 42nd International Conference on Software
+  Engineering (ICSE)}, pages 1273--1285, 2020.
+
+\bibitem{paul2023automated}
+Rishov Paul, Md~Mohib Hossain, Masum Hasan, and Anindya Iqbal.
+\newblock Automated program repair based on code review: How do pre-trained
+  transformer models perform?
+\newblock {\em arXiv preprint arXiv:2304.07840}, 2023.
+
+\bibitem{pearce2023examining}
+Hammond Pearce, Benjamin Tan, Baleegh Ahmad, Ramesh Karri, and Brendan
+  Dolan-Gavitt.
+\newblock Examining zero-shot vulnerability repair with large language models.
+\newblock In {\em 2023 IEEE Symposium on Security and Privacy (SP)}, pages
+  2339--2356. IEEE, 2023.
+
+\bibitem{pearce2022asleep}
+Henry Pearce, Benjamin Ahmad, Ben Tobin, Nigel Shadbolt, and Benjamin Livshits.
+\newblock Asleep at the keyboard? assessing the security of github copilot’s
+  code contributions.
+\newblock {\em arXiv preprint arXiv:2108.09293}, 2022.
+
+\bibitem{rahul2023llm}
+Kumar Rahul, Bogdan Vasilescu, and Michael Pradel.
+\newblock Llms for software engineering: A survey of capabilities and
+  challenges.
+\newblock {\em arXiv preprint arXiv:2306.08950}, 2023.
+
+\bibitem{codebleu}
+Shiqi Ren, Zhiyang Tu, Deng Cai, Jun Zhang, and Yanzhi Chen.
+\newblock Codebleu: a method for automatic evaluation of code synthesis.
+\newblock In {\em Proceedings of the 28th International Conference on
+  Computational Linguistics (COLING)}, pages 3981--3992, 2020.
+
+\bibitem{tian2023best}
+Haoye Tian, Kui Liu, Yinghua Li, Abdoul~Kader Kabor{\'e}, Anil Koyuncu, Andrew
+  Habib, Li~Li, Junhao Wen, Jacques Klein, and Tegawend{\'e}~F Bissyand{\'e}.
+\newblock The best of both worlds: Combining learned embeddings with engineered
+  features for accurate prediction of correct patches.
+\newblock {\em ACM Transactions on Software Engineering and Methodology},
+  32(4):1--34, 2023.
+
+\bibitem{wang2023code}
+Lin Wang, Fei Zeng, and Jian Xu.
+\newblock Code search and summarization with multi-model ensembles.
+\newblock {\em Proceedings of ICSE}, 2023.
+
+\bibitem{stacking}
+David~H Wolpert.
+\newblock Stacked generalization.
+\newblock In {\em Neural networks}, volume~5, pages 241--259. Elsevier, 1992.
+
+\bibitem{xia2023automated}
+Chunqiu~Steven Xia, Yuxiang Wei, and Lingming Zhang.
+\newblock Automated program repair in the era of large pre-trained language
+  models.
+\newblock In {\em Proceedings of the 45th International Conference on Software
+  Engineering (ICSE 2023). Association for Computing Machinery}, 2023.
+
+\bibitem{xia2023keep}
+Chunqiu~Steven Xia and Lingming Zhang.
+\newblock Keep the conversation going: Fixing 162 out of 337 bugs for \$0.42
+  each using chatgpt.
+\newblock {\em arXiv preprint arXiv:2304.00385}, 2023.
+
+\bibitem{xu2022systematic}
+Frank~F Xu, Uri Alon, Graham Neubig, and Vincent~Josua Hellendoorn.
+\newblock A systematic evaluation of large language models of code.
+\newblock In {\em Proceedings of the 6th ACM SIGPLAN International Symposium on
+  Machine Programming}, pages 1--10, 2022.
+
+\bibitem{livecodebench}
+Frank~F Xu, Joon~Sung Shin, Gabriel Poesia, Yao Luan, Pengcheng Yin,
+  Xi~Victoria Lin, Yi-Ting Chiu, Scott Lundberg, Hannaneh Hajishirzi, Mike Guo,
+  et~al.
+\newblock Livecodebench: Benchmarking large language models for code in the
+  wild.
+\newblock {\em arXiv preprint arXiv:2308.11233}, 2023.
+
+\bibitem{zhang2023ensemble}
+Wei Zhang, Dong Wang, and Xiang Liu.
+\newblock Ensemble learning for code generation: A multi-model approach to
+  improve llm performance.
+\newblock {\em IEEE Transactions on Software Engineering}, 2023.
+
+\bibitem{zhao2022large}
+Ying Zhao, Akash Gupta, Zhiqiang Li, et~al.
+\newblock Large language models in software engineering: Capabilities,
+  challenges, and future directions.
+\newblock {\em arXiv preprint arXiv:2210.07343}, 2022.
+
+\bibitem{ziegler2022productivity}
+Albert Ziegler, Eirini Kalliamvakou, X~Alice Li, Andrew Rice, Devon Rifkin,
+  Shawn Simister, Ganesh Sittampalam, and Edward Aftandilian.
+\newblock Productivity assessment of neural code completion.
+\newblock In {\em Proceedings of the 6th ACM SIGPLAN International Symposium on
+  Machine Programming}, pages 21--29, 2022.
+
+\bibitem{ziemniak2023codellama}
+Mateusz Ziemniak, Johannes Meyer, Victor Bajona, Asya Glaese, Guillaume
+  Belrose, Sebastian Borgeaud, Mayur Daswani, Luca Demontis, Marylou Gabrié,
+  Felix Hill, et~al.
+\newblock Codellama: Open foundation models for code.
+\newblock {\em arXiv preprint arXiv:2308.12950}, 2023.
+
+\end{thebibliography}

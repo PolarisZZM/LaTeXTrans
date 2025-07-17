@@ -1,0 +1,7 @@
+[
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_0>",
+        "name": "tool",
+        "content": "\\newcommand{\\tool}{EnsLLM}"
+    }
+]
