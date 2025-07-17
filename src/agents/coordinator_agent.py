@@ -55,7 +55,6 @@ class CoordinatorAgent:
                                             trans_mode=0)
         translator_agent.execute()
         
-        # ... (retry logic is commented out, keeping it as is) ...
 
         # 将路径传递给 GeneratorAgent
         generator_agent = GeneratorAgent(config=self.config,
@@ -69,9 +68,6 @@ class CoordinatorAgent:
             return
 
         if PDF_file_path:
-            # Note: The original code had a small bug here, moving the PDF to a file named after the folder.
-            # The destination should probably be inside the translated project directory.
-            # Keeping original logic but this might be something to review.
             new_PDF_path = os.path.join(os.path.dirname(PDF_file_path), f"{self.target_language}_{base_name}.pdf")
             shutil.move(PDF_file_path, new_PDF_path)
             print(f"🤖🎉 {self.name}: Successfully translated {os.path.basename(self.project_dir)} to {new_PDF_path}.")

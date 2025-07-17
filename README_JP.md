@@ -72,6 +72,7 @@ docker pull ymdxe/latextrans:basic-latest
 
 # 完全版の取得
 docker pull ymdxe/latextrans:latest
+
 ```
 
 #### Dockerコンテナの実行
@@ -95,6 +96,7 @@ docker run `
   -v "${PWD}\outputs:/app/outputs" `
   -v "${PWD}\tex source:/app/tex source" `
   ymdxe/latextrans:latest --source_dir "/app/tex source/2505.15838"
+
 ```
 
 **Linux/Mac Bashの例：**

@@ -3,7 +3,7 @@
         "placeholder": "<PLACEHOLDER_CAP_1>",
         "cap_type": "title",
         "content": "\\title{Enhancing LLM Code Generation with Ensembles: \\\\ A Similarity-Based Selection Approach}",
-        "trans_content": "\\title{基于相似性的集成选择方法增强大语言模型代码生成能力}"
+        "trans_content": "\\title{通过集成方法增强大语言模型代码生成能力：\\\\ 一种基于相似性的选择策略}"
     },
     {
         "placeholder": "<PLACEHOLDER_CAP_2>",
@@ -15,30 +15,30 @@
         "placeholder": "<PLACEHOLDER_CAP_3>",
         "cap_type": "caption",
         "content": "\\caption{Overview of \\tool.}",
-        "trans_content": "\\caption{\\tool 概览}"
+        "trans_content": ""
     },
     {
         "placeholder": "<PLACEHOLDER_CAP_4>",
         "cap_type": "caption",
         "content": "\\caption{Voting with Aggregated Pairwise Similarity}",
-        "trans_content": "\\caption{基于聚合成对相似性的投票方法}"
+        "trans_content": ""
     },
     {
         "placeholder": "<PLACEHOLDER_CAP_5>",
         "cap_type": "caption",
         "content": "\\caption{Performance of \\tool\\ compared to standalone LLMs on HumanEval and LiveCodeBench (pass@1). (F) denotes the free LLMs, and the accuracy provided in the braces is achievable accuracy.}",
-        "trans_content": "\\caption{\\tool\\ 与独立大语言模型在 HumanEval 和 LiveCodeBench 基准上的性能对比（pass@1 指标）。(F) 表示免费模型，括号内数值为可达到的准确率。}"
+        "trans_content": ""
     },
     {
         "placeholder": "<PLACEHOLDER_CAP_6>",
         "cap_type": "caption",
         "content": "\\caption{Ablation study showing the contribution of CodeBLEU and CrossHair to accuracy.}",
-        "trans_content": "\\caption{消融实验展示CodeBLEU与CrossHair对准确率的贡献。}"
+        "trans_content": ""
     },
     {
         "placeholder": "<PLACEHOLDER_CAP_7>",
         "cap_type": "caption",
         "content": "\\caption{Impact of different CodeBLEU weighting configurations on accuracy.}",
-        "trans_content": "\\caption{不同CodeBLEU权重配置对准确率的影响。}"
+        "trans_content": ""
     }
 ]

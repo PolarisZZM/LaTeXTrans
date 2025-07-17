@@ -15,13 +15,13 @@ class GeneratorAgent(BaseToolAgent):
                  config: Dict[str, Any],
                  project_dir: str = None,
                  output_dir: str = None,
-                 latexmk_path: str = None  # <--- 新增参数
+                 latexmk_path: str = None 
                  ):
         super().__init__(agent_name="GeneratorAgent", config=config)
         self.config = config
         self.project_dir = project_dir
         self.output_dir = output_dir
-        self.latexmk_path = latexmk_path # <--- 存储路径
+        self.latexmk_path = latexmk_path 
 
     def execute(self) -> Any:
         
@@ -54,10 +54,9 @@ class GeneratorAgent(BaseToolAgent):
 
         self._patch_problematic_packages(os.path.join(transed_latex_dir, "main.tex"))
 
-        # 将预选的路径传递给 LaTexCompiler
         latex_compiler = LaTexCompiler(
             output_latex_dir=transed_latex_dir,
-            latexmk_path=self.latexmk_path  # <--- 传递路径
+            latexmk_path=self.latexmk_path 
         )
         pdf_file = latex_compiler.compile()
         if pdf_file:
@@ -84,7 +83,6 @@ class GeneratorAgent(BaseToolAgent):
         return dest_dir
         
     def _patch_problematic_packages(self, main_tex_path: str):
-        # ... (此函数保持不变) ...
         if not os.path.exists(main_tex_path):
             self.log(f"⚠️  main.tex file not found at {main_tex_path}. Skipping patch.", "warning")
             return
