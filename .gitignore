@@ -5,6 +5,10 @@ compile.md
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Specific __pycache__ directories
+src/formats/latex/__pycache__/
+src/agents/tool_agents/__pycache__/
 *.so
 .Python
 build/

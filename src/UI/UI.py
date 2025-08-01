@@ -384,7 +384,7 @@ with st.sidebar:
                                 placeholder="Such as: https://api.deepseek.com/v1",
                                 key="base_url")
     
-    with st.expander("📁 FIle setting", expanded=False):
+    with st.expander("📁 File setting", expanded=False):
         # 选择下载文件和翻译文件的保存位置
         tex_sources_dir = st.text_input("Projects Directory",
                                     value=default_tex_sources_dir,
@@ -395,6 +395,98 @@ with st.sidebar:
                                     value=default_output_dir,
                                     key="output_dir",
                                     help="Directory to store output files.")
+
+    # 新增：LaTeX编译设置
+    with st.expander("🛠️ LaTeX Compilation Settings", expanded=False):
+        st.info("💡 These settings help optimize LaTeX compilation for better success rates.")
+        
+        # LaTeX发行版检测和选择
+        from src.formats.latex.utils import detect_tex_distributions, select_tex_distribution
+        
+        if st.button("🔍 Detect LaTeX Distributions", help="Detect available LaTeX distributions on your system"):
+            with st.spinner("Detecting LaTeX distributions..."):
+                distributions = detect_tex_distributions()
+                
+                if not distributions:
+                    st.error("❌ No LaTeX distributions found. Please install TeX Live or MiKTeX.")
+                else:
+                    st.success(f"✅ Found {len(distributions)} LaTeX distribution(s):")
+                    for name, path in distributions.items():
+                        st.write(f"   - **{name}**: `{path}`")
+                    
+                    # 存储检测到的发行版到session state
+                    st.session_state['latex_distributions'] = distributions
+                    
+                    if len(distributions) == 1:
+                        selected_dist = list(distributions.keys())[0]
+                        st.session_state['selected_latexmk_path'] = distributions[selected_dist]
+                        st.success(f"✅ Auto-selected: **{selected_dist}**")
+                        st.rerun()
+        
+        # 只要有发行版可选，就显示选择框
+        if 'latex_distributions' in st.session_state and st.session_state['latex_distributions']:
+            distributions = st.session_state['latex_distributions']
+            dist_options = list(distributions.keys())
+            
+            # 计算当前选中的索引
+            current_index = 0
+            if 'selected_latexmk_path' in st.session_state:
+                current_path = st.session_state['selected_latexmk_path']
+                for i, (name, path) in enumerate(distributions.items()):
+                    if path == current_path:
+                        current_index = i
+                        break
+            
+            # 显示选择框，绑定到session_state
+            selected_dist_name = st.selectbox(
+                "Choose LaTeX Distribution",
+                dist_options,
+                index=current_index,
+                key="latex_dist_select",
+                help="Select which LaTeX distribution to use for compilation"
+            )
+            
+            # 检查选择是否发生变化
+            if selected_dist_name and distributions[selected_dist_name] != st.session_state.get('selected_latexmk_path'):
+                st.session_state['selected_latexmk_path'] = distributions[selected_dist_name]
+                st.success(f"✅ Selected: **{selected_dist_name}**")
+                st.rerun()
+        
+        # 显示当前选择的发行版
+        if 'selected_latexmk_path' in st.session_state:
+            st.success(f"✅ Current LaTeX distribution: `{st.session_state['selected_latexmk_path']}`")
+        else:
+            st.warning("⚠️ No LaTeX distribution selected. Please detect distributions first.")
+        
+        # 编译引擎选择
+        st.subheader("Compilation Engine")
+        compilation_mode = st.selectbox(
+            "Compilation Strategy",
+            ["Auto (Recommended)", "pdflatex only", "xelatex only", "Manual selection"],
+            index=0,
+            help="Auto: Try pdflatex first, then xelatex if failed. Manual: Let you choose during compilation."
+        )
+        
+        # 编译优化选项
+        st.subheader("Compilation Optimization")
+        enable_flawed_compilation = st.checkbox(
+            "Enable 'Flawed' PDF Generation",
+            value=True,
+            help="Generate PDF even if compilation has errors (with _flawed suffix)"
+        )
+        
+        enable_distribution_switch = st.checkbox(
+            "Enable Distribution Switching",
+            value=True,
+            help="Automatically try other LaTeX distributions if current one fails"
+        )
+        
+        # 存储编译设置到session state
+        st.session_state['compilation_settings'] = {
+            'mode': compilation_mode,
+            'enable_flawed': enable_flawed_compilation,
+            'enable_switch': enable_distribution_switch
+        }
 
     update_config(target_lang, source_lang, arxiv_id, tex_sources_dir, output_dir, update_term, mode, temp_file_path, model_name, api_key, base_url)
 
@@ -426,45 +518,63 @@ with st.sidebar:
                             "model": config.get("llm_config",{}).get("model", ""),
                             "api_key": config.get("llm_config",{}).get("api_key", ""),
                             "base_url": config.get("llm_config",{}).get("base_url", ""),
-                            "tex_sources_dir": config.get("tex_sources_dir", ""),
-                            "output_dir": config.get("output_dir", "")
+                            "source_lang": config.get("source_language", "en"),
+                            "target_lang": config.get("target_language", "ch"),
+                            "arxiv_id": config.get("paper_list", [""])[0] if config.get("paper_list") else "",
+                            "tex_sources_dir": config.get("tex_sources_dir", "tex source"),
+                            "output_dir": config.get("output_dir", "outputs"),
+                            "update_term": config.get("update_term", "False"),
+                            "mode": config.get("mode", 2),
+                            "user_term": config.get("user_term", "")
                         }
                         
-                        # 使用 st.rerun() 重新加载页面以应用新配置
+                        # 更新当前显示的值
+                        st.session_state.model = st.session_state.default_config["model"]
+                        st.session_state.api_key = st.session_state.default_config["api_key"]
+                        st.session_state.base_url = st.session_state.default_config["base_url"]
+                        st.session_state.source_lang = st.session_state.default_config["source_lang"]
+                        st.session_state.target_lang = st.session_state.default_config["target_lang"]
+                        st.session_state.arxiv_id = st.session_state.default_config["arxiv_id"]
+                        st.session_state.tex_sources_dir = st.session_state.default_config["tex_sources_dir"]
+                        st.session_state.output_dir = st.session_state.default_config["output_dir"]
+                        st.session_state.update_term = st.session_state.default_config["update_term"]
+                        st.session_state.mode = st.session_state.default_config["mode"]
+                        st.session_state.user_term = st.session_state.default_config["user_term"]
+                        
+                        st.success(f"✅ Config loaded from {config_path}")
                         st.rerun()
                     except Exception as e:
-                        st.error(f"加载配置失败: {e}")
-                else:
-                    st.warning("请选择一个有效的配置文件")
+                        st.error(f"❌ Error loading config: {e}")
 
-        save_name = st.text_input("Config Name",
-                                    placeholder="Enter a name for your config",
-                                    help="Enter a name for your configuration file.")
-        if st.button("Save Config", use_container_width=True,
-                    help="Save your configuration settings to a file."):
+        # 保存配置
+        save_name = st.text_input("Save Config As", 
+                                  placeholder="Enter config name (without .toml extension)",
+                                  key="save_name")
+        
+        if st.button("Save Config", 
+                    use_container_width=True,
+                    help="Save current settings as a configuration file.",
+                    disabled=not save_name):
             try:
-                saved_path = save_config(config_file,source_lang, target_lang, model_name, api_key, base_url, tex_sources_dir, output_dir, save_name=save_name if save_name else None)
-                st.success(f"配置已保存到: {saved_path}")
-                # 更新默认配置
-                st.session_state.default_config = {
-                    "model": model_name,
-                    "api_key": api_key,
-                    "base_url": base_url,
-                    "tex_sources_dir": tex_sources_dir,
-                    "output_dir": output_dir
-                }
+                save_config(
+                    config_file=config_file if config_file else "config",
+                    source_lang=source_lang,
+                    target_lang=target_lang,
+                    Model_name=model_name,
+                    API_Key=api_key,
+                    Base_URL=base_url,
+                    tex_sources_dir=tex_sources_dir,
+                    output_dir=output_dir,
+                    save_name=save_name
+                )
+                st.success(f"✅ Config saved as {save_name}.toml")
             except Exception as e:
-                st.error(f"保存配置失败: {e}")
-    
-    
-
+                st.error(f"❌ Error saving config: {e}")
 
     # 翻译按钮
     if st.button("🔁 Translate Now", use_container_width=True):
         st.session_state['translating'] = True
-    else:
-        st.session_state['translating'] = False
-
+        st.rerun()
 
 lottie_ai = load_lottie_url("https://assets7.lottiefiles.com/packages/lf20_nnpnmv0b.json")
 
@@ -472,10 +582,23 @@ view_enable = True
 
 # ---------- 翻译按钮 ----------
 if st.session_state.get("translating", False):
+    # 执行前的检查
     if not arxiv_id:
-        st.warning("⚠️ Please enter a valid ArXiv ID!")
-    elif source_lang == target_lang:
+        st.error("❌ Please enter an arXiv ID.")
+        st.stop()
+    
+    if not model_name or not api_key:
+        st.error("❌ Please enter model name and API key.")
+        st.stop()
+    
+    # 检查LaTeX发行版是否已选择
+    if 'selected_latexmk_path' not in st.session_state:
+        st.error("❌ Please detect and select a LaTeX distribution first.")
+        st.stop()
+    
+    if source_lang == target_lang:
         st.warning("⚠️ Source and target language cannot be the same.")
+        st.stop()
     else:
         if lottie_ai:
             st_lottie(lottie_ai, height=200, key="thinking")
@@ -514,15 +637,64 @@ if st.session_state.get("translating", False):
                 st.error("❌ No projects found. Check 'tex_sources_dir' and 'paper_list' in config.")
 
         # 2.翻译 and 生成
-        for project_dir in projects:
+        # 获取LaTeX发行版路径
+        selected_latexmk_path = st.session_state.get('selected_latexmk_path')
+        if not selected_latexmk_path:
+            st.error("❌ No LaTeX distribution selected. Please detect and select a LaTeX distribution first.")
+            st.stop()
+        
+        # 获取编译设置，如果没有设置则使用默认值
+        compilation_settings = st.session_state.get('compilation_settings', {
+            'mode': 'Auto (Recommended)',
+            'enable_flawed': True,
+            'enable_switch': True
+        })
+        
+        # 显示编译设置信息
+        col1, col2 = st.columns(2)
+        with col1:
+            st.info(f"🛠️ LaTeX distribution: `{selected_latexmk_path}`")
+            st.info(f"📋 Compilation mode: {compilation_settings.get('mode', 'Auto (Recommended)')}")
+        with col2:
+            st.info(f"🔧 Flawed PDF: {'✅ Enabled' if compilation_settings.get('enable_flawed', True) else '❌ Disabled'}")
+            st.info(f"🔄 Distribution switch: {'✅ Enabled' if compilation_settings.get('enable_switch', True) else '❌ Disabled'}")
+        
+        # 创建进度条
+        progress_bar = st.progress(0)
+        status_text = st.empty()
+        
+        for i, project_dir in enumerate(projects):
             try:
+                st.info(f"🔄 Processing project {i+1}/{len(projects)}: {os.path.basename(project_dir)}")
+                
                 # init_prompts(source_lang=config["source_language"], target_lang=config["target_language"])
                 LaTexTrans = CoordinatorAgent(
                     config=config,
                     project_dir=project_dir,
-                    output_dir=output_dir
+                    output_dir=output_dir,
+                    latexmk_path=selected_latexmk_path  # 传递LaTeX发行版路径
                 )
-                LaTexTrans.workflow_latextrans()
+                
+                # 传递编译设置
+                LaTexTrans.compilation_settings = compilation_settings
+                
+                result = LaTexTrans.workflow_latextrans()
+                
+                if result:
+                    st.success(f"✅ Successfully processed project {os.path.basename(project_dir)}")
+                    # 如果成功生成了PDF，可以选择是否继续处理其他项目
+                    if len(projects) > 1:
+                        continue_processing = st.radio(
+                            f"Project {os.path.basename(project_dir)} completed successfully. Continue with remaining projects?",
+                            ["Yes", "No"],
+                            index=0
+                        )
+                        if continue_processing == "No":
+                            st.info("🛑 Stopping processing as requested by user.")
+                            break
+                else:
+                    st.warning(f"⚠️ Project {os.path.basename(project_dir)} completed with issues")
+                    
             except Exception as e:
                 st.error(f"❌ Error processing project {os.path.basename(project_dir)}: {e}")
                 continue

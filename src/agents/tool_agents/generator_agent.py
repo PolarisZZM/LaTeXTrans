@@ -23,7 +23,9 @@ class GeneratorAgent(BaseToolAgent):
         self.config = config
         self.project_dir = project_dir
         self.output_dir = output_dir
-        self.latexmk_path = latexmk_path 
+        self.latexmk_path = latexmk_path
+        # 从配置中获取目标语言
+        self.target_language = config.get("target_language", "ch") 
 
     def execute(self) -> Any:
         sys.stderr = open(os.devnull, 'w')
@@ -70,7 +72,10 @@ class GeneratorAgent(BaseToolAgent):
         self.status_text.text("📁 Creating translation project directory ..")
         sys.stderr = sys.__stderr__
 
-        transed_latex_dir = self._creat_transed_latex_folder(self.project_dir)
+        # 创建翻译后的LaTeX目录
+        base_name = os.path.basename(self.project_dir)
+        transed_latex_dir = os.path.join(self.output_dir, f"{self.target_language}_{base_name}")
+        transed_latex_dir = self._creat_transed_latex_folder(self.project_dir, transed_latex_dir)
 
         sys.stderr = open(os.devnull, 'w')
         self.progress_bar.progress(70)
@@ -96,25 +101,51 @@ class GeneratorAgent(BaseToolAgent):
         self.status_text.text("🛠️ Compiling PDF document...")
         sys.stderr = sys.__stderr__
 
-        latex_compiler = LaTexCompiler(output_latex_dir=transed_latex_dir)
+        # 获取编译设置（从GUI传入）
+        compilation_settings = getattr(self, 'compilation_settings', {})
+        
+        # 创建GUI状态回调函数
+        def gui_status_callback(message):
+            self.status_text.text(message)
+        
+        latex_compiler = LaTexCompiler(
+            output_latex_dir=transed_latex_dir, 
+            latexmk_path=self.latexmk_path,
+            compilation_settings=compilation_settings,
+            gui_status_callback=gui_status_callback
+        )
         pdf_file = latex_compiler.compile()
 
         sys.stderr = open(os.devnull, 'w')
         self.progress_bar.progress(90)
         sys.stderr = sys.__stderr__
         if pdf_file:
+            # 检查是否是瑕疵PDF
+            if pdf_file.endswith('_flawed.pdf'):
+                sys.stderr = open(os.devnull, 'w')
+                self.status_text.text("😔 Generated flawed PDF due to compilation errors.")
+                self.progress_bar.progress(100)
+                st.warning(f"😔 Generated flawed PDF for {os.path.basename(self.project_dir)} due to compilation errors.")
+                time.sleep(2)
+                self.process_b.empty()
+                self.status_text.empty()
+                sys.stderr = sys.__stderr__
 
-            sys.stderr = open(os.devnull, 'w')
-            self.status_text.text("✅ Successfully compiled PDF document.")
-            self.progress_bar.progress(100)
-            st.success(f"✅ Successfully generated for {os.path.basename(self.project_dir)}.")
-            time.sleep(2)
-            self.process_b.empty()
-            self.status_text.empty()
-            sys.stderr = sys.__stderr__
+                self.log(f"😔 Generated flawed PDF for {os.path.basename(self.project_dir)}.")
+                return pdf_file
+            else:
+                # 完美PDF
+                sys.stderr = open(os.devnull, 'w')
+                self.status_text.text("✅ Successfully compiled perfect PDF document.")
+                self.progress_bar.progress(100)
+                st.success(f"✅ Successfully generated perfect PDF for {os.path.basename(self.project_dir)}.")
+                time.sleep(2)
+                self.process_b.empty()
+                self.status_text.empty()
+                sys.stderr = sys.__stderr__
 
-            self.log(f"✅ Successfully generated for {os.path.basename(self.project_dir)}.")
-            return pdf_file
+                self.log(f"✅ Successfully generated perfect PDF for {os.path.basename(self.project_dir)}.")
+                return pdf_file
         else:
             sys.stderr = open(os.devnull, 'w')
             self.status_text.error("❌ Failed to compile PDF document.")

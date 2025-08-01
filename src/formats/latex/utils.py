@@ -15,10 +15,11 @@ import os
 import requests
 from bs4 import BeautifulSoup
 from tqdm import tqdm
-from typing import List
+from typing import List, Dict
 import time
 import streamlit as st
 import sys
+import platform
 
 options = r"\[[^\[\]]*?\]"
 spaces = r"[ \t]*"
@@ -1046,3 +1047,95 @@ def extract_arxiv_ids_V2(item):
 #     folder_path="D:\code\AutoLaTexTrans\data\cs",
 #     output_folder="D:\code\AutoLaTexTrans\cs_puretext"
 # )
+
+def detect_tex_distributions() -> Dict[str, str]:
+    """
+    检测系统中可用的LaTeX发行版。
+    
+    Returns:
+        Dict[str, str]: 发行版名称到latexmk路径的映射
+    """
+    distributions = {}
+    
+    try:
+        # 在Windows上使用where命令查找latexmk.exe
+        if platform.system() == "Windows":
+            result = subprocess.run(
+                ["where", "latexmk.exe"], 
+                capture_output=True, 
+                text=True, 
+                timeout=10
+            )
+            
+            if result.returncode == 0:
+                paths = result.stdout.strip().split('\n')
+                for path in paths:
+                    path = path.strip()
+                    if path and os.path.exists(path):
+                        # 根据路径判断发行版类型
+                        if 'texlive' in path.lower():
+                            distributions['TeX Live'] = path
+                        elif 'miktex' in path.lower():
+                            distributions['MiKTeX'] = path
+                        else:
+                            distributions['Unknown'] = path
+        else:
+            # 在Unix系统上使用which命令
+            result = subprocess.run(
+                ["which", "latexmk"], 
+                capture_output=True, 
+                text=True, 
+                timeout=10
+            )
+            
+            if result.returncode == 0:
+                path = result.stdout.strip()
+                if path and os.path.exists(path):
+                    distributions['TeX Live'] = path
+    
+    except subprocess.TimeoutExpired:
+        print("⚠️  Timeout while detecting LaTeX distributions")
+    except Exception as e:
+        print(f"⚠️  Error detecting LaTeX distributions: {e}")
+    
+    return distributions
+
+def select_tex_distribution(distributions: Dict[str, str]) -> str:
+    """
+    让用户从可用的LaTeX发行版中选择一个。
+    
+    Args:
+        distributions (Dict[str, str]): 发行版名称到路径的映射
+        
+    Returns:
+        str: 用户选择的latexmk路径，如果用户取消则返回None
+    """
+    if not distributions:
+        print("❌ No LaTeX distributions found on this system.")
+        return None
+    
+    print("\n📦 Available LaTeX distributions:")
+    for i, (name, path) in enumerate(distributions.items(), 1):
+        print(f"   {i}. {name}: {path}")
+    
+    while True:
+        try:
+            choice = input(f"\nPlease select a distribution (1-{len(distributions)}) or 'q' to quit: ").strip()
+            
+            if choice.lower() == 'q':
+                return None
+            
+            choice_num = int(choice)
+            if 1 <= choice_num <= len(distributions):
+                selected_name = list(distributions.keys())[choice_num - 1]
+                selected_path = distributions[selected_name]
+                print(f"✅ Selected: {selected_name}")
+                return selected_path
+            else:
+                print(f"❌ Invalid choice. Please enter a number between 1 and {len(distributions)}")
+                
+        except ValueError:
+            print("❌ Invalid input. Please enter a number or 'q' to quit.")
+        except KeyboardInterrupt:
+            print("\n❌ Selection cancelled by user.")
+            return None

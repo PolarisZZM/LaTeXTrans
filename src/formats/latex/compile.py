@@ -3,41 +3,60 @@ import re
 import os
 import subprocess
 import shutil
-import platform
 from functools import partial
 # 假设你的 utils.py 文件在同一目录下
 from .utils import find_main_tex_file, detect_tex_distributions, select_tex_distribution
 
 class LaTexCompiler:
-    # 修改构造函数以接收预选的 latexmk_path
-    def __init__(self, output_latex_dir: str, latexmk_path: str):
+    # 修改构造函数以接收预选的 latexmk_path 和编译设置
+    def __init__(self, output_latex_dir: str, latexmk_path: str, compilation_settings: dict = None, gui_status_callback=None):
         self.output_latex_dir = output_latex_dir
         # initial_latexmk_path 是在 main.py 中选择的默认路径，不会改变
         self.initial_latexmk_path = latexmk_path
         # latexmk_path 是当前编译任务使用的路径，可能会在重试时改变
         self.latexmk_path = latexmk_path
+        
+        # 编译设置
+        self.compilation_settings = compilation_settings or {}
+        self.enable_flawed = self.compilation_settings.get('enable_flawed', True)
+        self.enable_switch = self.compilation_settings.get('enable_switch', True)
+        self.compilation_mode = self.compilation_settings.get('mode', 'Auto (Recommended)')
+        
+        # GUI状态回调函数
+        self.gui_status_callback = gui_status_callback
 
-    def _ask_and_switch_distribution(self, remaining_distributions: Dict[str, str]) -> str:
-        """Asks the user to switch, lets them select a new distribution, and returns the new path."""
-        print("\nDo you want to try compiling with a different LaTeX distribution?")
-        while True:
-            switch_choice = input("Enter 'yes' to switch, 'no' to abort: ").lower().strip()
-            if switch_choice in ['yes', 'no']:
-                break
-            print("Invalid input. Please enter 'yes' or 'no'.")
-
-        if switch_choice == 'no':
+    def _auto_switch_distribution(self, remaining_distributions: Dict[str, str]) -> str:
+        """Automatically switches to another distribution based on GUI settings."""
+        if not self.enable_switch:
+            print("❌ Distribution switching is disabled.")
+            if self.gui_status_callback:
+                self.gui_status_callback("❌ Distribution switching is disabled.")
             return None
 
-        # 用户想要切换，从剩余发行版中选择
-        new_path = select_tex_distribution(remaining_distributions)
+        if not remaining_distributions:
+            print("❌ No other LaTeX distributions available.")
+            if self.gui_status_callback:
+                self.gui_status_callback("❌ No other LaTeX distributions available.")
+            return None
+
+        # 自动选择第一个可用的发行版
+        dist_name = list(remaining_distributions.keys())[0]
+        new_path = remaining_distributions[dist_name]
+        
+        print(f"🔄 Automatically switching to {dist_name}: {new_path}")
+        if self.gui_status_callback:
+            self.gui_status_callback(f"🔄 Automatically switching to {dist_name}...")
+        
         return new_path
 
     def compile(self):
         """
         Compile the LaTeX document using the pre-selected distribution.
-        If perfect compilation fails, it attempts to find the best-effort flawed PDF
-        by comparing logs from different engines.
+        Follows the exact logic described in compile.md:
+        1. Only consider compilation successful if log has no errors
+        2. If pdflatex has errors, try xelatex
+        3. If xelatex also has errors, ask to switch distribution
+        4. If switching, start over with pdflatex
         """
         self.latexmk_path = self.initial_latexmk_path
         
@@ -68,48 +87,166 @@ class LaTexCompiler:
             main_tex_base = os.path.splitext(os.path.basename(tex_file_to_compile))[0]
             flawed_results = {}
 
-            # Attempt 1: pdflatex
-            print(f"\nAttempting compilation with pdflatex using '{selected_dist_name}'...⏳")
-            return_code_pdflatex = self._compile_with_pdflatex(tex_file_to_compile, compile_out_dir_pdflatex, engine="pdflatex")
-            
-            source_pdf_path_pdflatex = os.path.join(compile_out_dir_pdflatex, f"{main_tex_base}.pdf")
-            if return_code_pdflatex == 0 and os.path.exists(source_pdf_path_pdflatex):
-                dest_dir = os.path.dirname(self.output_latex_dir)
-                dest_pdf_path = os.path.join(dest_dir, f"{os.path.basename(dest_dir)}.pdf")
-                print(f"✅ Successfully generated PDF with pdflatex!")
-                shutil.copy(source_pdf_path_pdflatex, dest_pdf_path)
-                return dest_pdf_path
-            elif os.path.exists(source_pdf_path_pdflatex):
-                print("⚠️  pdflatex compilation failed but a flawed PDF was generated.")
-                log_path = os.path.join(compile_out_dir_pdflatex, f"{main_tex_base}.log")
-                flawed_results['pdflatex'] = {'pdf_path': source_pdf_path_pdflatex, 'log_path': log_path}
+            # 根据编译模式选择引擎
+            if self.compilation_mode == "pdflatex only":
+                # 只尝试pdflatex
+                print(f"\nAttempting compilation with pdflatex using '{selected_dist_name}'...⏳")
+                return_code_pdflatex = self._compile_with_pdflatex(tex_file_to_compile, compile_out_dir_pdflatex, engine="pdflatex")
+                
+                source_pdf_path_pdflatex = os.path.join(compile_out_dir_pdflatex, f"{main_tex_base}.pdf")
+                log_path_pdflatex = os.path.join(compile_out_dir_pdflatex, f"{main_tex_base}.log")
+                
+                # 检查编译结果
+                error_count = self._count_log_errors(log_path_pdflatex)
+                
+                # 检查是否有PDF文件生成
+                if os.path.exists(source_pdf_path_pdflatex):
+                    if return_code_pdflatex == 0 and error_count == 0:
+                        # 完美成功：无错误
+                        dest_dir = os.path.dirname(self.output_latex_dir)
+                        dest_pdf_path = os.path.join(dest_dir, f"{os.path.basename(dest_dir)}.pdf")
+                        print(f"✅ Successfully generated PDF with pdflatex (no errors)!")
+                        if self.gui_status_callback:
+                            self.gui_status_callback("✅ Perfect PDF generated with pdflatex!")
+                        shutil.copy(source_pdf_path_pdflatex, dest_pdf_path)
+                        return dest_pdf_path
+                    else:
+                        # 有错误，生成有损PDF
+                        print(f"⚠️ pdflatex compilation has {error_count} errors but generated PDF.")
+                        if self.gui_status_callback:
+                            self.gui_status_callback(f"⚠️ PDF generated with {error_count} errors, continuing to try xelatex...")
+                        if self.enable_flawed:
+                            flawed_results['pdflatex'] = {'pdf_path': source_pdf_path_pdflatex, 'log_path': log_path_pdflatex}
+                else:
+                    # 没有生成PDF文件，编译完全失败
+                    print(f"❌ pdflatex compilation failed - no PDF generated. Error count: {error_count}")
+                    if self.gui_status_callback:
+                        self.gui_status_callback(f"❌ pdflatex compilation failed - no PDF generated")
+                    
+            elif self.compilation_mode == "xelatex only":
+                # 只尝试xelatex
+                print(f"\nAttempting compilation with xelatex using '{selected_dist_name}'...⏳")
+                return_code_xelatex = self._compile_with_xelatex(tex_file_to_compile, compile_out_dir_xelatex, engine="xelatex")
+                
+                source_pdf_path_xelatex = os.path.join(compile_out_dir_xelatex, f"{main_tex_base}.pdf")
+                log_path_xelatex = os.path.join(compile_out_dir_xelatex, f"{main_tex_base}.log")
+                
+                # 检查编译结果
+                error_count = self._count_log_errors(log_path_xelatex)
+                
+                # 检查是否有PDF文件生成
+                if os.path.exists(source_pdf_path_xelatex):
+                    if return_code_xelatex == 0 and error_count == 0:
+                        # 完美成功：无错误
+                        dest_dir = os.path.dirname(self.output_latex_dir)
+                        dest_pdf_path = os.path.join(dest_dir, f"{os.path.basename(dest_dir)}.pdf")
+                        print(f"✅ Successfully generated PDF with xelatex (no errors)!")
+                        if self.gui_status_callback:
+                            self.gui_status_callback("✅ Perfect PDF generated with xelatex!")
+                        shutil.copy(source_pdf_path_xelatex, dest_pdf_path)
+                        return dest_pdf_path
+                    else:
+                        # 有错误，生成有损PDF
+                        print(f"⚠️ xelatex compilation has {error_count} errors but generated PDF.")
+                        if self.gui_status_callback:
+                            self.gui_status_callback(f"⚠️ PDF generated with {error_count} errors, but this is the only engine available.")
+                        if self.enable_flawed:
+                            flawed_results['xelatex'] = {'pdf_path': source_pdf_path_xelatex, 'log_path': log_path_xelatex}
+                else:
+                    # 没有生成PDF文件，编译完全失败
+                    print(f"❌ xelatex compilation failed - no PDF generated. Error count: {error_count}")
+                    if self.gui_status_callback:
+                        self.gui_status_callback(f"❌ xelatex compilation failed - no PDF generated")
+                    
+            else:
+                # Auto模式或Manual模式：先尝试pdflatex，再尝试xelatex
+                # Attempt 1: pdflatex
+                print(f"\nAttempting compilation with pdflatex using '{selected_dist_name}'...⏳")
+                return_code_pdflatex = self._compile_with_pdflatex(tex_file_to_compile, compile_out_dir_pdflatex, engine="pdflatex")
+                
+                source_pdf_path_pdflatex = os.path.join(compile_out_dir_pdflatex, f"{main_tex_base}.pdf")
+                log_path_pdflatex = os.path.join(compile_out_dir_pdflatex, f"{main_tex_base}.log")
+                
+                # 检查pdflatex编译结果
+                error_count = self._count_log_errors(log_path_pdflatex)
+                
+                # 检查是否有PDF文件生成
+                if os.path.exists(source_pdf_path_pdflatex):
+                    if return_code_pdflatex == 0 and error_count == 0:
+                        # 完美成功：无错误
+                        dest_dir = os.path.dirname(self.output_latex_dir)
+                        dest_pdf_path = os.path.join(dest_dir, f"{os.path.basename(dest_dir)}.pdf")
+                        print(f"✅ Successfully generated PDF with pdflatex (no errors)!")
+                        if self.gui_status_callback:
+                            self.gui_status_callback("✅ Perfect PDF generated with pdflatex!")
+                        shutil.copy(source_pdf_path_pdflatex, dest_pdf_path)
+                        return dest_pdf_path
+                    else:
+                        # 有错误，记录为有损结果
+                        print(f"⚠️ pdflatex compilation has {error_count} errors but generated PDF.")
+                        if self.gui_status_callback:
+                            self.gui_status_callback(f"⚠️ PDF generated with {error_count} errors, continuing to try xelatex...")
+                        if self.enable_flawed:
+                            flawed_results['pdflatex'] = {'pdf_path': source_pdf_path_pdflatex, 'log_path': log_path_pdflatex}
+                else:
+                    # 没有生成PDF文件，编译完全失败
+                    print(f"❌ pdflatex compilation failed - no PDF generated. Error count: {error_count}")
+                    if self.gui_status_callback:
+                        self.gui_status_callback(f"❌ pdflatex compilation failed - no PDF generated")
 
-
-            # Attempt 2: xelatex
-            print(f"⚠️  Failed to generate a perfect PDF with pdflatex. Retrying with xelatex using '{selected_dist_name}'...⏳")
-            return_code_xelatex = self._compile_with_xelatex(tex_file_to_compile, compile_out_dir_xelatex, engine="xelatex")
-            
-            source_pdf_path_xelatex = os.path.join(compile_out_dir_xelatex, f"{main_tex_base}.pdf")
-            if return_code_xelatex == 0 and os.path.exists(source_pdf_path_xelatex):
-                dest_dir = os.path.dirname(self.output_latex_dir)
-                dest_pdf_path = os.path.join(dest_dir, f"{os.path.basename(dest_dir)}.pdf")
-                print(f"✅ Successfully generated PDF with xelatex!")
-                shutil.copy(source_pdf_path_xelatex, dest_pdf_path)
-                return dest_pdf_path
-            elif os.path.exists(source_pdf_path_xelatex):
-                print("⚠️  xelatex compilation failed but a flawed PDF was generated.")
-                log_path = os.path.join(compile_out_dir_xelatex, f"{main_tex_base}.log")
-                flawed_results['xelatex'] = {'pdf_path': source_pdf_path_xelatex, 'log_path': log_path}
-
+                # Attempt 2: xelatex (当pdflatex未完美成功时尝试)
+                if 'pdflatex' in flawed_results or not os.path.exists(source_pdf_path_pdflatex) or return_code_pdflatex != 0:
+                    print(f"⚠️ pdflatex was not perfectly successful. Retrying with xelatex using '{selected_dist_name}'...⏳")
+                    return_code_xelatex = self._compile_with_xelatex(tex_file_to_compile, compile_out_dir_xelatex, engine="xelatex")
+                    
+                    source_pdf_path_xelatex = os.path.join(compile_out_dir_xelatex, f"{main_tex_base}.pdf")
+                    log_path_xelatex = os.path.join(compile_out_dir_xelatex, f"{main_tex_base}.log")
+                    
+                    # 检查xelatex编译结果
+                    error_count = self._count_log_errors(log_path_xelatex)
+                    
+                    # 检查是否有PDF文件生成
+                    if os.path.exists(source_pdf_path_xelatex):
+                        if return_code_xelatex == 0 and error_count == 0:
+                            # 完美成功：无错误
+                            dest_dir = os.path.dirname(self.output_latex_dir)
+                            dest_pdf_path = os.path.join(dest_dir, f"{os.path.basename(dest_dir)}.pdf")
+                            print(f"✅ Successfully generated PDF with xelatex (no errors)!")
+                            if self.gui_status_callback:
+                                self.gui_status_callback("✅ Perfect PDF generated with xelatex!")
+                            shutil.copy(source_pdf_path_xelatex, dest_pdf_path)
+                            return dest_pdf_path
+                        else:
+                            # 有错误，记录为有损结果
+                            print(f"⚠️ xelatex compilation has {error_count} errors but generated PDF.")
+                            if self.gui_status_callback:
+                                self.gui_status_callback(f"⚠️ PDF generated with {error_count} errors, considering flawed PDF options...")
+                            if self.enable_flawed:
+                                flawed_results['xelatex'] = {'pdf_path': source_pdf_path_xelatex, 'log_path': log_path_xelatex}
+                    else:
+                        # 没有生成PDF文件，编译完全失败
+                        print(f"❌ xelatex compilation failed - no PDF generated. Error count: {error_count}")
+                        if self.gui_status_callback:
+                            self.gui_status_callback(f"❌ xelatex compilation failed - no PDF generated")
 
             # --- Decision Logic for Flawed PDFs ---
+            if not self.enable_flawed:
+                print("❌ Flawed PDF generation is disabled. Compilation failed.")
+                if self.gui_status_callback:
+                    self.gui_status_callback("❌ Compilation failed - flawed PDF generation is disabled.")
+                return None
+                
             best_flawed_result = None
             if len(flawed_results) == 1:
                 winner_engine = list(flawed_results.keys())[0]
                 best_flawed_result = flawed_results[winner_engine]
-                print(f"ℹ️  Only {winner_engine} produced a flawed PDF. Selecting it as the best available option.")
+                print(f"ℹ️ Only {winner_engine} produced a flawed PDF. Selecting it as the best available option.")
+                if self.gui_status_callback:
+                    self.gui_status_callback(f"ℹ️ Only {winner_engine} produced a flawed PDF. Selecting it as the best available option.")
             elif len(flawed_results) == 2:
-                print("ℹ️  Both pdflatex and xelatex produced flawed PDFs. Comparing logs to find the better one...")
+                print("ℹ️ Both pdflatex and xelatex produced flawed PDFs. Comparing logs to find the better one...")
+                if self.gui_status_callback:
+                    self.gui_status_callback("ℹ️ Both engines produced flawed PDFs. Comparing to find the better one...")
                 errors_pdflatex = self._count_log_errors(flawed_results['pdflatex']['log_path'])
                 errors_xelatex = self._count_log_errors(flawed_results['xelatex']['log_path'])
                 print(f"   - pdflatex errors: {errors_pdflatex if errors_pdflatex != float('inf') else 'Not Found'}")
@@ -118,27 +255,45 @@ class LaTexCompiler:
                 if errors_pdflatex <= errors_xelatex:
                     best_flawed_result = flawed_results['pdflatex']
                     print("   - Selecting pdflatex result as it has fewer or equal errors.")
+                    if self.gui_status_callback:
+                        self.gui_status_callback("   - Selecting pdflatex result as it has fewer or equal errors.")
                 else:
                     best_flawed_result = flawed_results['xelatex']
                     print("   - Selecting xelatex result as it has fewer errors.")
+                    if self.gui_status_callback:
+                        self.gui_status_callback("   - Selecting xelatex result as it has fewer errors.")
 
             if best_flawed_result:
                 dest_dir = os.path.dirname(self.output_latex_dir)
                 dest_pdf_path = os.path.join(dest_dir, f"{os.path.basename(dest_dir)}_flawed.pdf")
                 print(f"✅ Saving the best available flawed PDF to {dest_pdf_path}")
+                if self.gui_status_callback:
+                    self.gui_status_callback("😔 Unfortunately, only a flawed PDF could be generated. Saving as _flawed.pdf")
                 shutil.copy(best_flawed_result['pdf_path'], dest_pdf_path)
                 return dest_pdf_path
             
             # Both engines failed with the current distribution and produced no PDF
             print(f"❌ Compilation failed with both pdflatex and xelatex using '{selected_dist_name}', and no usable PDF was generated.")
 
+            if not self.enable_switch:
+                print("❌ Distribution switching is disabled. Compilation failed.")
+                if self.gui_status_callback:
+                    self.gui_status_callback("❌ Compilation failed - distribution switching is disabled.")
+                return None
+                
             if not distributions_to_try_next:
                 print("No other LaTeX distributions to try.")
+                if self.gui_status_callback:
+                    self.gui_status_callback("❌ No other LaTeX distributions available. Compilation failed.")
                 self.latexmk_path = None
             else:
-                self.latexmk_path = self._ask_and_switch_distribution(distributions_to_try_next)
+                if self.gui_status_callback:
+                    self.gui_status_callback("🔄 Switching to another LaTeX distribution...")
+                self.latexmk_path = self._auto_switch_distribution(distributions_to_try_next)
 
         print("\nCompilation failed. Please check the logs for more details.")
+        if self.gui_status_callback:
+            self.gui_status_callback("❌ Compilation failed. Please check the logs for more details.")
         return None
 
     def _count_log_errors(self, log_file_path: str) -> int:
@@ -152,11 +307,64 @@ class LaTexCompiler:
         try:
             with open(log_file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
-            # A simple but effective way to count errors.
-            # Most critical errors that halt compilation are prefixed with "!".
-            error_count = content.count("! LaTeX Error:")
-            # You can add more patterns here if needed, for example:
-            # error_count += content.count("Undefined control sequence")
+            
+            # Check for compilation failure indicators
+            if "Latexmk: Errors, so I did not complete making targets" in content:
+                error_count += 100  # Major failure indicator
+            if "command failed with exit code" in content:
+                error_count += 50   # Command failure
+            if "That makes" in content and "errors; please try again" in content:
+                # Extract the number of errors from "That makes X errors; please try again"
+                import re
+                match = re.search(r"That makes (\d+) errors; please try again", content)
+                if match:
+                    error_count += int(match.group(1))
+            
+            # A comprehensive way to count LaTeX errors
+            # Most critical errors that halt compilation are prefixed with "!"
+            error_count += content.count("! LaTeX Error:")
+            # Add other common error patterns
+            error_count += content.count("! Undefined control sequence")
+            error_count += content.count("! Missing $ inserted")
+            error_count += content.count("! Missing } inserted")
+            error_count += content.count("! Missing { inserted")
+            error_count += content.count("! Missing \endcsname inserted")
+            error_count += content.count("! Missing \end inserted")
+            error_count += content.count("! Missing \begin inserted")
+            error_count += content.count("! Missing \right inserted")
+            error_count += content.count("! Missing \left inserted")
+            error_count += content.count("! Missing delimiter")
+            error_count += content.count("! Missing number")
+            error_count += content.count("! Missing character")
+            error_count += content.count("! Missing argument")
+            error_count += content.count("! Missing \endcsname")
+            error_count += content.count("! Missing \end")
+            error_count += content.count("! Missing \begin")
+            error_count += content.count("! Missing \right")
+            error_count += content.count("! Missing \left")
+            error_count += content.count("! Missing delimiter")
+            error_count += content.count("! Missing number")
+            error_count += content.count("! Missing character")
+            error_count += content.count("! Missing argument")
+            error_count += content.count("! Package inputenc Error")
+            error_count += content.count("! Package fontspec Error")
+            error_count += content.count("! Package ctex Error")
+            error_count += content.count("! Package CJKutf8 Error")
+            
+            # Additional error patterns
+            error_count += content.count("! Misplaced alignment tab character")
+            error_count += content.count("! Missing $ inserted")
+            error_count += content.count("! Missing } inserted")
+            error_count += content.count("! Missing { inserted")
+            error_count += content.count("! Missing \endcsname inserted")
+            error_count += content.count("! Missing \end inserted")
+            error_count += content.count("! Missing \begin inserted")
+            error_count += content.count("! Missing \right inserted")
+            error_count += content.count("! Missing \left inserted")
+            error_count += content.count("! Missing delimiter")
+            error_count += content.count("! Missing number")
+            error_count += content.count("! Missing character")
+            error_count += content.count("! Missing argument")
             
         except Exception as e:
             print(f"⚠️  Could not read or parse log file {log_file_path}: {e}")
@@ -178,61 +386,6 @@ class LaTexCompiler:
         print("Function `_compile_with_lualatex` is not defined in the provided code.")
         return None
 
-    def compile_source(self, pdf_dir):
-        if pdf_dir is None:
-            pdf_dir = self.output_latex_dir
-        os.makedirs(pdf_dir, exist_ok=True)  # Ensure directory exists
-
-        tex_file_to_compile = find_main_tex_file(self.output_latex_dir)
-        if not tex_file_to_compile:
-            print("⚠️ Warning: No main .tex file found in directory.")
-            return None
-
-        print("Start compiling with pdflatex...⏳")
-        self._compile_with_pdflatex(
-            tex_file_to_compile,
-            out_dir=pdf_dir,  # Output directly to pdf_dir
-            engine="pdflatex"
-        )
-
-        pdf_files = [
-            f for f in os.listdir(pdf_dir)
-            if f.lower().endswith('.pdf') and not f.startswith('._')  # Skip macOS temp files
-        ]
-
-        if pdf_files:
-            pdf_path = os.path.join(pdf_dir, pdf_files[0])
-            print(f"✅ Successfully generated PDF at: {pdf_path}")
-            return pdf_path
-
-        # Fallback to xelatex if pdflatex failed
-        print("⚠️ pdflatex failed. Retrying with xelatex...⏳")
-        self._compile_with_xelatex(
-            tex_file_to_compile,
-            out_dir=pdf_dir,  # Output directly to pdf_dir
-            engine="xelatex"
-        )
-
-        pdf_files = [
-            f for f in os.listdir(pdf_dir)
-            if f.lower().endswith('.pdf') and not f.startswith('._')
-        ]
-
-        if pdf_files:
-            pdf_path = os.path.join(pdf_dir, pdf_files[0])
-            print(f"✅ Successfully generated PDF at: {pdf_path}")
-            return pdf_path
-
-        # If both compilers failed
-        print("⚠️ Failed to generate PDF with both compilers.")
-        log_files = [f for f in os.listdir(pdf_dir) if f.lower().endswith('.log')]
-        if log_files:
-            print("📄 Compilation logs:")
-            for log in log_files:
-                print(f"  - {os.path.join(pdf_dir, log)}")
-
-        return None
-
     def _compile_with_pdflatex(self,
                                tex_file: str, 
                                out_dir: str, 
@@ -249,7 +402,7 @@ class LaTexCompiler:
 
         # ==================== PDFLATEX 预处理开始 ====================
         # 为编译中文文档，需要移除的其他常见语言宏包
-        PACKAGES_TO_REMOVE = ['kotex', 'babel', 'inputenc', 'fontenc'] 
+        PACKAGES_TO_REMOVE = ['kotex', 'babel'] 
 
         print(f"ℹ️  正在为 `{engine}` 扫描并移除冲突的语言宏包...")
         try:
@@ -309,11 +462,7 @@ class LaTexCompiler:
         dist_bin_dir = os.path.dirname(self.latexmk_path)
         env['PATH'] = f"{dist_bin_dir}{os.pathsep}{env.get('PATH', '')}"
 
-        # CREATE_NO_WINDOW is only available on Windows
-        if platform.system() == "Windows":
-            result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env, creationflags=subprocess.CREATE_NO_WINDOW)
-        else:
-            result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env)
+        result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env, creationflags=subprocess.CREATE_NO_WINDOW)
 
         if result.returncode != 0:
             print(f"⚠️  `{engine}` process finished with non-zero exit code ({result.returncode}).")
@@ -352,8 +501,6 @@ class LaTexCompiler:
             'kotex',        # 韩文支持宏包
             'babel',        # 传统的、支持多种西文的宏包
             'polyglossia',  # 现代的（用于Xe/LuaLaTeX）多语言支持宏包，是 babel 的替代品
-            'inputenc',
-            'fontenc',
 
             # --- 日文支持包（非常容易与中文冲突） ---
             'luatexja',     # LuaLaTeX 下的日文宏包
@@ -429,7 +576,7 @@ class LaTexCompiler:
             print(f"❌ 未找到主 TeX 文件: {tex_file_in_build_dir}")
             return -1
 
-        xelatex_package = "\\usepackage[fontset=fandol,UTF8]{ctex}" 
+        xelatex_package = "\\usepackage{ctex}" 
         modified_content = main_content.replace("%%CHINESE_PACKAGE_PLACEHOLDER%%", xelatex_package)
         modified_content = modified_content.replace(r'\(s_{\max}}\)', r'\(s_{\max}\)')
 
@@ -449,11 +596,7 @@ class LaTexCompiler:
 
         try:
             print(f"🚀 开始使用 `{engine}` 进行编译...")
-            # CREATE_NO_WINDOW is only available on Windows
-            if platform.system() == "Windows":
-                result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env, creationflags=subprocess.CREATE_NO_WINDOW)
-            else:
-                result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env)
+            result = subprocess.run(cmd, capture_output=True, cwd=cwd, env=env, creationflags=subprocess.CREATE_NO_WINDOW)
         except Exception as e:
             print(f"❌ 编译过程中发生异常: {e}")
             return -1

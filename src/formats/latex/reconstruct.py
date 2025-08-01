@@ -167,41 +167,6 @@ class LatexConstructor:
                     break  # 一旦匹配并修改，就跳出内层循环
         
         return '\n'.join(lines)        
-
-    def _add_lualatex_option_to_documentclass_for_ja(self, tex):
-        """
-        在 \documentclass 命令中添加 lualatex 选项
-        
-        参数:
-            source_code (str): LaTeX 源码字符串
-            
-        返回:
-            str: 处理后的 LaTeX 源码
-        """
-        import re
-        
-        # 定义正则表达式匹配 \documentclass 命令
-        pattern = re.compile(r'\\documentclass(?:\[([^\]]*)\])?(\{.*?\})')
-        
-        def replacer(match):
-            options = match.group(1)
-            class_name = match.group(2)
-            
-            if options:
-                # 如果已有选项，检查是否已包含 lualatex
-                if 'lualatex' not in options:
-                    new_options = options + ', lualatex'
-                else:
-                    new_options = options
-                return f'\\documentclass[{new_options}]{class_name}'
-            else:
-                # 如果没有选项，直接添加 lualatex 选项
-                return f'\\documentclass[lualatex]{class_name}'
-        
-        # 替换所有匹配的 \documentclass 命令
-        modified_source = pattern.sub(replacer, tex)
-        
-        return modified_source
     
 
 

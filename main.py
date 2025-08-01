@@ -105,6 +105,28 @@ def main():
 
 
 
+    # 检测并选择LaTeX发行版
+    from src.formats.latex.utils import detect_tex_distributions, select_tex_distribution
+    
+    print("🔍 Detecting LaTeX distributions...")
+    distributions = detect_tex_distributions()
+    
+    if not distributions:
+        print("❌ No LaTeX distributions found. Please install TeX Live or MiKTeX.")
+        return 1
+    
+    selected_latexmk_path = None
+    if len(distributions) == 1:
+        # 只有一个发行版，自动选择
+        selected_latexmk_path = list(distributions.values())[0]
+        print(f"✅ Auto-selected: {list(distributions.keys())[0]}")
+    else:
+        # 多个发行版，让用户选择
+        selected_latexmk_path = select_tex_distribution(distributions)
+        if not selected_latexmk_path:
+            print("❌ No LaTeX distribution selected. Exiting.")
+            return 1
+
     for project_dir in tqdm(projects, desc="Processing projects", unit="project"):
 
         try:

@@ -37,6 +37,7 @@ class CoordinatorAgent:
         self.source_language = config.get("source_language", "en")
         self.project_dir = project_dir  # Project path for parsing
         self.output_dir = output_dir  # Output directory for parsed files
+        self.latexmk_path = latexmk_path  # 保存LaTeX发行版路径
         self.loop = asyncio.new_event_loop()  # 添加事件循环
         self.mode = config.get("mode", 0)
 
@@ -80,7 +81,12 @@ class CoordinatorAgent:
 
         generator_agent = GeneratorAgent(config=self.config,
                                          project_dir=self.project_dir,
-                                         output_dir=transed_project_dir)
+                                         output_dir=transed_project_dir,
+                                         latexmk_path=self.latexmk_path)
+        
+        # 传递编译设置（如果从GUI传入）
+        if hasattr(self, 'compilation_settings'):
+            generator_agent.compilation_settings = self.compilation_settings
         try:
         
             PDF_file_path = generator_agent.execute()
@@ -97,6 +103,7 @@ class CoordinatorAgent:
             return new_PDF_path
         else:
             print(f"🤖🚧 {self.name}: Failed to translated {os.path.basename(self.project_dir)}.")
+            return None
 
     # def workflow_latextrans(self) -> None:
     #     """
@@ -124,7 +131,8 @@ class CoordinatorAgent:
 
         try:
             # ---- 核心工作流执行 ----
-            self.loop.run_until_complete(self.workflow_latextrans_async())
+            result = self.loop.run_until_complete(self.workflow_latextrans_async())
+            return result
 
         finally:
             # ---- 安全关闭序列 ----
