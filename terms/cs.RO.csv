@@ -1,0 +1,355 @@
+Robotics,机器人学
+Autonomous Systems,自主系统
+Automation,自动化
+Mechatronics,机电一体化
+Actuator,执行器
+Sensor,传感器
+End-effector,末端执行器
+Degrees of Freedom,自由度
+DoF,DoF
+Kinematics,运动学
+Dynamics,动力学
+Control Theory,控制理论
+Feedback Control,反馈控制
+Real-time System,实时系统
+Industrial Robot,工业机器人
+Service Robot,服务机器人
+Mobile Robot,移动机器人
+Humanoid Robot,人形机器人
+Collaborative Robot,协作机器人
+Cobot,Cobot
+Autonomous Underwater Vehicle,自主水下机器人
+AUV,AUV
+Unmanned Aerial Vehicle,无人机
+UAV,UAV
+Automated Guided Vehicle,自动导引车
+AGV,AGV
+Soft Robot,软体机器人
+Swarm Robot,群体机器人
+Path Planning,路径规划
+Trajectory Tracking,轨迹跟踪
+PID,PID
+Proportional-Integral-Derivative Control,比例积分微分控制
+Inverse Kinematics,逆运动学
+Forward Kinematics,正运动学
+Motion Control,运动控制
+Force Control,力控制
+Impedance Control,阻抗控制
+Simultaneous Localization and Mapping,同步定位与建图
+SLAM,SLAM
+Odometry,里程计
+Dead Reckoning,航位推算
+Computer Vision,计算机视觉
+Light Detection and Ranging,激光雷达
+LiDAR,LiDAR
+RGB-D Camera,深度相机
+Stereo Vision,立体视觉
+Object Detection,目标检测
+Semantic Segmentation,语义分割
+Point Cloud,点云
+Feature Extraction,特征提取
+Iterative Closest Point,迭代最近点算法
+ICP,ICP
+Neural Network,神经网络
+Deep Reinforcement Learning,深度强化学习
+DRL,DRL
+Convolutional Neural Network,卷积神经网络
+CNN,CNN
+Recurrent Neural Network,循环神经网络
+RNN,RNN
+Genetic Algorithm,遗传算法
+Particle Swarm Optimization,粒子群优化
+PSO,PSO
+Kalman Filter,卡尔曼滤波器
+Extended Kalman Filter,扩展卡尔曼滤波器
+EKF,EKF
+Bayesian Network,贝叶斯网络
+Industrial Automation,工业自动化
+Precision Agriculture,精准农业
+Surgical Robot,手术机器人
+Warehouse Automation,仓储自动化
+Smart Manufacturing,智能制造
+Autonomous Driving,自动驾驶
+Human-Robot Interaction,人机交互
+HRI,HRI
+Teleoperation,远程操作
+Servo Motor,伺服电机
+Stepper Motor,步进电机
+Encoder,编码器
+Inertial Measurement Unit,惯性测量单元
+IMU,IMU
+Gripper,机械夹爪
+Manipulator,机械臂
+Robot Operating System,机器人操作系统
+ROS,ROS
+Field-Programmable Gate Array,现场可编程门阵列
+FPGA,FPGA
+Accuracy,精度
+Repeatability,重复精度
+Robustness,鲁棒性
+Latency,延迟
+Throughput,吞吐量
+Benchmarking,基准测试
+DOF,DOF
+Finite State Machine,有限状态机
+FSM,FSM
+HRI,HRI
+Programmable Logic Controller,可编程逻辑控制器
+PLC,PLC
+Internet of Things,物联网
+IoT,IoT
+Haptic Feedback,力觉反馈
+Exoskeleton,外骨骼
+Underactuated System,欠驱动系统
+Redundant Manipulator,冗余机械臂
+Motion Primitive,运动基元
+Behavioral Cloning,行为克隆
+Optical Flow,光流
+Time-of-Flight Camera,飞行时间相机
+ToF,ToF
+Structured Light,结构光
+Visual Odometry,视觉里程计
+Grasping Planning,抓取规划
+Compliant Control,柔顺控制
+Admittance Control,导纳控制
+Jacobian Matrix,雅可比矩阵
+Denavit-Hartenberg Parameters,D-H参数
+Parallel Robot,并联机器人
+Delta Robot,Delta机器人
+SCARA Robot,SCARA机器人
+Hexapod Robot,六足机器人
+Quadruped Robot,四足机器人
+Wheeled Mobile Robot,轮式移动机器人
+Legged Locomotion,足式运动
+Terrain Adaptation,地形适应
+Obstacle Avoidance,避障
+Multi-robot Coordination,多机器人协同
+Task Allocation,任务分配
+Formation Control,编队控制
+Consensus Algorithm,一致性算法
+Distributed Control,分布式控制
+Edge Computing,边缘计算
+Fog Computing,雾计算
+Digital Twin,数字孪生
+Cyber-Physical System,信息物理系统
+CPS,CPS
+Industrial IoT,工业物联网
+IIoT,IIoT
+Predictive Maintenance,预测性维护
+Anomaly Detection,异常检测
+Reinforcement Learning,强化学习
+RL,RL
+Imitation Learning,模仿学习
+Transfer Learning,迁移学习
+Meta-learning,元学习
+Self-supervised Learning,自监督学习
+Graph Neural Network,图神经网络
+GNN,GNN
+Transformer,Transformer模型
+Attention Mechanism,注意力机制
+You Only Look Once,YOLO目标检测算法
+YOLO,YOLO
+ResNet,残差网络
+Generative Adversarial Network,生成对抗网络
+GAN,GAN
+Autoencoder,自编码器
+PointNet,点云网络
+3D Convolution,三维卷积
+Sparse Coding,稀疏编码
+Active Learning,主动学习
+Federated Learning,联邦学习
+Explainable AI,可解释人工智能
+XAI,XAI
+Ethical AI,伦理人工智能
+Robot Ethics,机器人伦理
+Safety Critical System,安全关键系统
+Functional Safety,功能安全
+Risk Assessment,风险评估
+Fail-safe Mechanism,故障安全机制
+Human-in-the-loop,人在回路
+Cognitive Robotics,认知机器人
+Affective Computing,情感计算
+Intent Recognition,意图识别
+Gesture Recognition,手势识别
+Voice Command,语音指令
+Natural Language Understanding,自然语言理解
+NLU,NLU
+Dialogue System,对话系统
+Knowledge Graph,知识图谱
+Ontology,本体论
+Semantic Web,语义网
+Blockchain for Robotics,机器人区块链
+Smart Contract,智能合约
+Edge AI,边缘人工智能
+TinyML,微型机器学习
+Neuromorphic Computing,神经形态计算
+Quantum Computing,量子计算
+Bio-inspired Robotics,仿生机器人
+Swarm Intelligence,群体智能
+Ant Colony Optimization,蚁群优化
+ACO,ACO
+Artificial Potential Field,人工势场
+Rapidly-exploring Random Tree,快速随机探索树
+RRT,RRT
+Probabilistic Roadmap,概率路线图
+PRM,PRM
+A* Algorithm,A*算法
+Dijkstra's Algorithm,迪杰斯特拉算法
+Motion Capture,动作捕捉
+Inertial Navigation,惯性导航
+Global Positioning System,全球定位系统
+GPS,GPS
+Beacon-based Localization,信标定位
+Ultra-wideband,超宽带
+UWB,UWB
+RFID,射频识别
+Bluetooth Low Energy,低功耗蓝牙
+BLE,BLE
+Zigbee,Zigbee无线协议
+LoRa,远距离无线电
+5G for Robotics,5G机器人应用
+Cloud Robotics,云机器人
+Fog Robotics,雾机器人
+Multi-agent System,多智能体系统
+Game Theory,博弈论
+Auction-based Allocation,拍卖分配
+Market-based Mechanism,市场机制
+Robot Learning,机器人学习
+Curriculum Learning,课程学习
+Sim-to-Real Transfer,仿真到现实迁移
+Domain Randomization,域随机化
+Gazebo,Gazebo仿真器
+Unity for Robotics,Unity机器人仿真
+ROS 2,机器人操作系统2代
+Middleware,中间件
+Data Distribution Service,数据分发服务
+DDS,DDS
+Opc UA,开放平台通信统一架构
+Modular Robot,模块化机器人
+Self-reconfigurable Robot,自重构机器人
+Soft Gripper,软体夹爪
+Electroadhesion,电吸附
+Gecko-inspired Adhesion,仿壁虎粘附
+Magnetic Levitation,磁悬浮
+Pneumatic Actuator,气动执行器
+Hydraulic Actuator,液压执行器
+Shape Memory Alloy,形状记忆合金
+Dielectric Elastomer,介电弹性体
+Artificial Muscle,人工肌肉
+Tendon-driven Mechanism,腱驱动机构
+Underwater Manipulator,水下机械臂
+Space Robotics,太空机器人
+Planetary Rover,行星探测车
+Microgravity Experiment,微重力实验
+Hazardous Environment,危险环境
+Disaster Response,灾难响应
+Search and Rescue,搜索与救援
+SAR
+Medical Robotics,医疗机器人
+Rehabilitation Robot,康复机器人
+Prosthetic Limb,假肢
+Surgical Navigation,手术导航
+Minimally Invasive Surgery,微创手术
+Telesurgery,远程手术
+Robot-assisted Therapy,机器人辅助治疗
+Elderly Care Robot,老年护理机器人
+Social Robot,社交机器人
+Educational Robot,教育机器人
+Entertainment Robot,娱乐机器人
+Agricultural Robot,农业机器人
+Precision Farming,精准农业
+Autonomous Harvesting,自主收割
+Weed Detection,杂草检测
+Livestock Monitoring,牲畜监测
+Construction Robot,建筑机器人
+3D Printing in Construction,建筑3D打印
+Bricklaying Robot,砌砖机器人
+Demolition Robot,拆除机器人
+Inspection Robot,巡检机器人
+Pipeline Inspection,管道检测
+Wind Turbine Inspection,风力涡轮机检测
+Power Line Inspection,电力线检测
+Underwater Inspection,水下检测
+Cleaning Robot,清洁机器人
+Window Cleaning Robot,擦窗机器人
+Floor Cleaning Robot,地面清洁机器人
+Lawn Mowing Robot,草坪修剪机器人
+Pool Cleaning Robot,泳池清洁机器人
+Logistics Robot,物流机器人
+Order Picking Robot,订单拣选机器人
+Palletizing Robot,码垛机器人
+Sorting Robot,分拣机器人
+Last-mile Delivery,最后一公里配送
+Autonomous Forklift,自主叉车
+Warehouse Drone,仓储无人机
+Inventory Management,库存管理
+Supply Chain Automation,供应链自动化
+Retail Robot,零售机器人
+Customer Service Robot,客服机器人
+Guiding Robot,导引机器人
+Security Robot,安防机器人
+Patrol Robot,巡逻机器人
+Surveillance Robot,监控机器人
+Fire-fighting Robot,消防机器人
+Explosive Ordnance Disposal Robot,爆炸物处理机器人
+EOD,EOD
+Military Robot,军用机器人
+Unmanned Ground Vehicle,无人地面车辆
+UGV,UGV
+Autonomous Tank,自主坦克
+Combat Robot,战斗机器人
+Reconnaissance Robot,侦察机器人
+Border Patrol Robot,边境巡逻机器人
+Underwater Mine Detection,水下雷区探测
+Autonomous Sentry Gun,自主哨戒炮
+Quaternion,四元数
+Euler Angle,欧拉角
+Homogeneous Transformation,齐次变换
+Rotation Matrix,旋转矩阵
+Pose Estimation,姿态估计
+Rigid Body Transformation,刚体变换
+Lyapunov Stability,李雅普诺夫稳定性
+Sliding Mode Control,滑模控制
+Adaptive Control,自适应控制
+Robust Control,鲁棒控制
+Model Predictive Control,模型预测控制
+Fuzzy Logic Control,模糊逻辑控制
+Ultrasonic Sensor,超声波传感器
+Proximity Sensor,接近传感器
+Force/Torque Sensor,力/扭矩传感器
+Tactile Sensor,触觉传感器
+Photoelectric Sensor,光电传感器
+Magnetic Encoder,磁编码器
+Optical Encoder,光编码器
+Linkage,连杆
+Joint,关节
+Prismatic Joint,移动关节
+Revolute Joint,旋转关节
+Spherical Joint,球关节
+Universal Joint,万向关节
+Gear Ratio,齿轮比
+Backlash,间隙
+Compliance,柔顺性
+Configuration Space,配置空间
+Workspace,工作空间
+Reachable Workspace,可达工作空间
+Dexterous Workspace,灵巧工作空间
+Singularity,奇异点
+Collision Detection,碰撞检测
+Free Space,自由空间
+Voronoi Diagram,沃罗诺伊图
+Pick and Place,拾取和放置
+Bin Picking,料箱拾取
+Assembly Line,装配线
+Conveyor Belt,传送带
+Fixture,夹具
+Jig,治具
+Quality Control,质量控制
+Cycle Time,循环时间
+Safety Zone,安全区域
+Emergency Stop,紧急停止
+Light Curtain,光幕
+Safety Interlock,安全联锁
+ISO 10218,ISO 10218（工业机器人安全标准）
+CE Marking,CE标记
+Risk Analysis,风险分析

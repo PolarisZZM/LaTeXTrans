@@ -37,7 +37,6 @@ pip install -r requirements.txt
 
 如需编译LaTeX文件（例如生成PDF输出），需要安装 [TeXLive](https://www.tug.org/texlive/).
 
-
 ### 方式二：Docker部署（推荐）
 
 使用Docker可以避免复杂的环境配置，我们提供了两个版本的Docker镜像：
@@ -49,16 +48,14 @@ pip install -r requirements.txt
 | **基础版 (basic)** | ~800MB | 适合大多数标准LaTeX文档，包含中文支持 |
 | **完整版 (full)** | ~5GB | 适合复杂文档，包含所有TeXLive宏包 |
 
-
-
-#### 拉取预构建镜像
+#### 构建Docker镜像
 
 ```bash
-# 拉取基础版
-docker pull ymdxe/latextrans:basic-latest
+# 构建基础版（推荐）
+docker build -f Dockerfile.basic -t ymdxe/latextrans:v1.0.0-basic .
 
-# 拉取完整版
-docker pull ymdxe/latextrans:latest
+# 构建完整版（如果需要完整的TeXLive支持）
+docker build -t ymdxe/latextrans:v1.0.0 .
 ```
 
 #### 运行Docker容器
@@ -72,7 +69,7 @@ docker run `
   -e LLM_BASE_URL="your-base-url" `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
-  ymdxe/latextrans:latest 2505.15838
+  ymdxe/latextrans:v1.0.0 2505.15838
 
 # 使用本地TeX源文件
 docker run `
@@ -81,7 +78,7 @@ docker run `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
   -v "${PWD}\tex source:/app/tex source" `
-  ymdxe/latextrans:latest --source_dir "/app/tex source/2505.15838"
+  ymdxe/latextrans:v1.0.0 --source_dir "/app/tex source/2505.15838"
 ```
 
 **Linux/Mac Bash示例：**
@@ -93,7 +90,7 @@ docker run \
   -e LLM_BASE_URL="your-base-url" \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
-  ymdxe/latextrans:latest 2505.15838
+  ymdxe/latextrans:v1.0.0 2505.15838
 
 # 使用本地TeX源文件
 docker run \
@@ -102,7 +99,7 @@ docker run \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
   -v "${PWD}/tex source:/app/tex source" \
-  ymdxe/latextrans:latest --source_dir "/app/tex source/2505.15838"
+  ymdxe/latextrans:v1.0.0 --source_dir "/app/tex source/2505.15838"
 ```
 
 #### 使用构建脚本（Windows PowerShell）
@@ -114,8 +111,22 @@ docker run \
 # 构建完整版
 .\build-docker.ps1 -Version full
 
+# 构建所有版本
+.\build-docker.ps1 -Version all
 ```
 
+### 方式三：通过pip安装（推荐）
+
+我们提供封装好的pip包供你安装使用，免去繁琐的代码管理
+
+```pip
+pip intsall latextrans
+
+# 通过GUI访问
+latextrans -g
+```
+
+关于详细的使用参数，请参考下文使用CLI运行的相关参数。
 ---
 
 ## ⚙️ 配置说明
@@ -172,51 +183,66 @@ python main.py <paper_id> (i.e. 2501.12948)
 
 ```powershell
 # 基础版Docker
-docker pull ymdxe/latextrans:basic-latest
-
 docker run `
   -e LLM_API_KEY="your-api-key" `
   -e LLM_BASE_URL="your-base-url" `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
-  ymdxe/latextrans:basic-latest 2501.12948
+  ymdxe/latextrans:v1.0.0-basic 2501.12948
 
 # 完整版Docker（适合复杂文档）
-docker pull ymdxe/latextrans:latest
-
 docker run `
   -e LLM_API_KEY="your-api-key" `
   -e LLM_BASE_URL="your-base-url" `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
-  ymdxe/latextrans:latest 2501.12948
+  ymdxe/latextrans:v1.0.0 2501.12948
 ```
 
 **Linux/Mac Bash示例：**
 
 ```bash
-
 # 基础版Docker
-docker pull ymdxe/latextrans:basic-latest
-
 docker run \
   -e LLM_API_KEY="your-api-key" \
   -e LLM_BASE_URL="your-base-url" \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
-  ymdxe/latextrans:basic-latest 2501.12948
+  ymdxe/latextrans:v1.0.0-basic 2501.12948
 
 # 完整版Docker（适合复杂文档）
-docker pull ymdxe/latextrans:latest
-
 docker run \
   -e LLM_API_KEY="your-api-key" \
   -e LLM_BASE_URL="your-base-url" \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
-  ymdxe/latextrans:latest 2501.12948
+  ymdxe/latextrans:v1.0.0 2501.12948
 ```
 
+### 🔹 使用命令行运行
+
+选项                | 功能                                                                                                      | 使用示例                                        |
+| --------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| `--config`            | Path to the config TOML file                        | `python main.py --config Path/config.toml`                                    |
+| `--model`             | LLM for translating.                                | `python main.py --model deepseek-v3`                      |
+| `--url`               | Model url                                           | `python main.py --url your url`                    |
+| `--key`               | Model API key                                       | `python main.py --key your APIkey`                    |
+| `--Arxiv`             | Arxiv paper ID                                      | `python main.py --Arxiv 2307.07924`                  |
+| `--GUI`or`-g`         | Interact with GUI                                   | `python main.py -g`                      |
+| `--mode`              | Translate mode                                      | `python main.py --mode 2`                      |
+| `--update_term`       | Update term or not                                  | `python main.py --update_term Ture`                      |
+| `--tl`                | Target language                                     | `python main.py --tl ch`                      |
+| `--sl`                | Source language                                     | `python main.py --sl en`                      |
+| `--ut`                | User's term dict                                    | `python main.py --ut Path/Yourterm.csv`                      |
+| `--output`            | output directory                                    | `python main.py --output Path`                      |
+| `--source`            | tex source directory                                | `python main.py --sourse Path`                      |
+| `--save_config`       | Path to save config                                 | `python main.py --save_config savePath`                      |
+
+*对于输入的arxiv论文ID，可以是ID形式，也可以是任何可以打开的arxiv论文链接形式。
+
+*首次启动时，你可以通过直接修改config/default.toml来启动。
+
+*对于想简单上手的用户，推荐使用图形界面.
 ---
 
 ## 💬 演示视频

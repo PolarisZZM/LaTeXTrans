@@ -16,12 +16,9 @@ import requests
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 from typing import List
-import shutil
-import platform
-import subprocess
-import platform # 确保导入 platform
-import shutil # 确保导入 shutil
-from typing import Dict # 确保导入 Dict
+import time
+import streamlit as st
+import sys
 
 options = r"\[[^\[\]]*?\]"
 spaces = r"[ \t]*"
@@ -490,26 +487,26 @@ def get_texts_from_data(folder_path, output_folder):
             print(f"Error processing project {project}: {e}")
             continue  # 跳过出错的项目
 
-def if_has_appendix(folder_path):
-    """
-    检测 LaTeX 源码中是否包含 \\appendix。
-    
-    Args:
-        folder_path (str): LaTeX 源码所在文件夹的路径。
-    
-    Returns:
-        bool: 如果包含 \\appendix，则返回 True；否则返回 False。
-    """
-    projects = get_profect_dirs(folder_path)
-    project_app = []
-    for project in projects:
-        main_file_path = find_main_tex_file(project)
-        if main_file_path is None:
-            raise FileNotFoundError(f"File not found: {main_file_path}")
-        full_latex_code = merge_tex_from_inputs(main_file_path)
-        if has_appendix(full_latex_code):
-            project_app.append(project)
-    return project_app
+# def if_has_appendix(folder_path):
+#     """
+#     检测 LaTeX 源码中是否包含 \\appendix。
+#
+#     Args:
+#         folder_path (str): LaTeX 源码所在文件夹的路径。
+#
+#     Returns:
+#         bool: 如果包含 \\appendix，则返回 True；否则返回 False。
+#     """
+#     projects = get_profect_dirs(folder_path)
+#     project_app = []
+#     for project in projects:
+#         main_file_path = find_main_tex_file(project)
+#         if main_file_path is None:
+#             raise FileNotFoundError(f"File not found: {main_file_path}")
+#         full_latex_code = merge_tex_files(main_file_path)
+#         if has_appendix(full_latex_code):
+#             project_app.append(project)
+#     return project_app
 
 def extract_pure_tags(dir):
     main_file_path = find_main_tex_file(dir)
@@ -888,6 +885,12 @@ def download_tex(arxiv_id: str, tex_url: str, save_dir: str, headers: dict):
         with requests.get(tex_url, headers=headers, stream=True, timeout=20) as r:
             r.raise_for_status()
             total_size = int(r.headers.get("Content-Length", 0))
+
+            sys.stderr = open(os.devnull, 'w')
+            st_progress = st.progress(0)
+            status_text = st.empty()
+            sys.stderr = sys.__stderr__
+
             with open(file_path, "wb") as f, tqdm(
                 desc=f"Download: {arxiv_id}",
                 total=total_size,
@@ -899,10 +902,26 @@ def download_tex(arxiv_id: str, tex_url: str, save_dir: str, headers: dict):
                     if chunk:
                         f.write(chunk)
                         bar.update(len(chunk))
+
+                         # 更新Streamlit进度条
+                        if total_size > 0:
+                            sys.stderr = open(os.devnull, 'w')
+                            progress = bar.n / total_size
+                            st_progress.progress(progress)
+                            status_text.text(f"下载进度: {bar.n/1024/1024:.2f}MB / {total_size/1024/1024:.2f}MB")
+                            sys.stderr = sys.__stderr__
+            
+        sys.stderr = open(os.devnull, 'w')
+        st.success(f"[SUCCESS] {arxiv_id} successfully downloaded to {file_path}.")
+        sys.stderr = sys.__stderr__
+
         print(f"[SUCCESS] {arxiv_id} successfully downloaded to {file_path}.")    
         return os.path.join(save_dir, f"{arxiv_id}")
 
     except requests.RequestException as e:
+        sys.stderr = open(os.devnull, 'w')
+        st.error(f"[FAIL] {arxiv_id} download failed: {e}")
+        sys.stderr = sys.__stderr__
         print(f"[FAIL] {arxiv_id} download failed: {e}")
 
 def batch_download_arxiv_tex(arxiv_ids: List[str], save_dir: str = "./tex_sources"):
@@ -924,75 +943,103 @@ def batch_download_arxiv_tex(arxiv_ids: List[str], save_dir: str = "./tex_source
         else:
             print(f"[SKIP] No TeX source found for {arxiv_id}. Please check the arXiv ID or the availability of the source.")
 
+            # 下载PDF文件
+        pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"
+        pdf_path = os.path.join(save_dir, arxiv_id, f"{arxiv_id}.pdf")
+        os.makedirs(os.path.dirname(pdf_path), exist_ok=True)
+
+        try:
+            response = requests.get(pdf_url, headers=headers)
+            response.raise_for_status()
+            with open(pdf_path, 'wb') as f:
+                f.write(response.content)
+            sys.stderr = open(os.devnull, 'w')
+            st.success(f"[SUCCESS] Downloaded PDF for {arxiv_id}")
+            sys.stderr = sys.__stderr__
+            print(f"[SUCCESS] Downloaded PDF for {arxiv_id}")
+        except Exception as e:
+            sys.stderr = open(os.devnull, 'w')
+            st.success(f"[ERROR] Failed to download PDF for {arxiv_id}: {str(e)}")
+            sys.stderr = sys.__stderr__
+            print(f"[ERROR] Failed to download PDF for {arxiv_id}: {str(e)}")
+
     return source_dirs
 
-def select_tex_distribution(distributions: Dict[str, str]) -> str:
-    """Prompts the user to select a LaTeX distribution and returns the path to latexmk."""
-    print("\nPlease choose which one to use:")
-    
-    # Create a numbered list of distributions
-    dist_list = list(distributions.items())
-    for i, (name, path) in enumerate(dist_list):
-        print(f"  [{i+1}] {name} ({path})")
-    
-    choice = -1
-    while choice < 1 or choice > len(dist_list):
+
+def get_arxiv_category(arxiv_ids: List[str]) -> dict:
+    results = {}
+    headers = {"User-Agent": "Mozilla/5.0"}
+    for arxiv_id in arxiv_ids:
+        abs_url = f"https://arxiv.org/abs/{arxiv_id}"
+        categories = []
+
         try:
-            raw_choice = input(f"Enter your choice (1-{len(dist_list)}): ")
-            choice = int(raw_choice)
-            if not (1 <= choice <= len(dist_list)):
-                print("Invalid choice. Please try again.")
-        except (ValueError, EOFError):
-            print("Invalid input. Please enter a number.")
-    
-    # Return the full path of the selected latexmk
-    return dist_list[choice-1][1]
+            resp = requests.get(abs_url, headers=headers, timeout=10)
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, "html.parser")
 
-def detect_tex_distributions():
-    """
-    Detects available LaTeX distributions (TeX Live and MiKTeX) on a Windows system.
-    Returns:
-        A dictionary mapping the distribution name to the full path of its latexmk executable.
-    """
-    distributions = {}
-    if platform.system() != "Windows":
-        # Check for latexmk in PATH on non-Windows systems
-        path = shutil.which("latexmk")
-        if path:
-            # Simple check, can be improved to differentiate linux distros
-            distributions["Default"] = path
-        return distributions
-
-    try:
-        # On Windows, 'where' command can find all executables in PATH.
-        # CREATE_NO_WINDOW is only available on Windows
-        if platform.system() == "Windows":
-            result = subprocess.run(['where', 'latexmk.exe'], capture_output=True, text=True, check=True, creationflags=subprocess.CREATE_NO_WINDOW)
-        else:
-            result = subprocess.run(['which', 'latexmk'], capture_output=True, text=True, check=True)
-        paths = result.stdout.strip().split('\n')
-        
-        for path in paths:
-            path = path.strip()
-            if not path:
-                continue
-            
-            lower_path = path.lower()
-            # Identify distribution by common path components
-            if 'texlive' in lower_path:
-                distributions['TeX Live'] = path
-            elif 'miktex' in lower_path:
-                distributions['MiKTeX'] = path
+            subjects_div = soup.find("div", class_="subjects")
+            if subjects_div:
+                matches = re.findall(r"\(([a-z]+\.[A-Z]+)\)", subjects_div.text)
+                categories.extend(matches)
             else:
-                # Fallback for unusually named paths
-                if 'TeX Live' not in distributions and 'MiKTeX' not in distributions:
-                     distributions['Unknown'] = path
+                td_subjects = soup.find("td", class_="tablecell subjects")
+                if td_subjects:
+                    matches = re.findall(r'\(([a-z]+\.[A-Z]+)\)', td_subjects.text)
+                    categories.extend(matches)
 
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        # 'where' command not found or returned an error (e.g., no latexmk.exe found)
-        pass
-        
-    return distributions
+            if not categories:
+                print(f"[WARNING] No categories found for {arxiv_id}")
+
+        except requests.RequestException as e:
+            print(f"[ERROR] Failed to fetch {arxiv_id}: {e}")
+            categories = []
+
+        results[arxiv_id] = (categories)
+        time.sleep(1)  # 防止请求过快
+
+    return results
+
+def is_valid_arxiv_id(id_str):
+    """检查字符串是否是合法的arXiv ID"""
+    # 现代格式：YYYY.NNNNN 或 YYYY.NNNNNNN
+    if re.match(r'^\d{4}\.\d{5,7}$', id_str):
+        return True
+    # 旧格式：学科分类/YYMMNNN（如 hep-th/9901001）
+    if re.match(r'^[\w\-]+/\d{7}$', id_str):
+        return True
+    return False
+
+def extract_arxiv_ids(arxiv_list):
+    # 正则表达式匹配arxiv ID
+    ids = []
+    for item in arxiv_list:
+        # 如果是纯ID，直接加入
+        if is_valid_arxiv_id(item):
+            ids.append(item)
+            continue
+
+        # 否则尝试从URL中提取
+        url_pattern = r'(?:arxiv\.org/)(?:abs|pdf|e-print)/([\w\-]+/\d{7}|\d{4}\.\d{5,7})(?:\.pdf)?'
+        match = re.search(url_pattern, item)
+        if match:
+            ids.append(match.group(1))
+    return ids
+
+def extract_arxiv_ids_V2(item):
+
+    ids = ""
+    # 如果是纯ID，直接加入
+    if is_valid_arxiv_id(item):
+        ids = item
+
+    else:
+        # 否则尝试从URL中提取
+        url_pattern = r'(?:arxiv\.org/)(?:abs|pdf|e-print)/([\w\-]+/\d{7}|\d{4}\.\d{5,7})(?:\.pdf)?'
+        match = re.search(url_pattern, item)
+        if match:
+            ids = match.group(1)
+    return ids
 
 
 # get_texts_from_data(

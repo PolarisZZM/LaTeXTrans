@@ -1,6 +1,6 @@
 from typing import Dict, Any
 from src.agents.tool_agents.base_tool_agent import BaseToolAgent
-from src.formats.latex.prompts import *
+import src.formats.latex.prompts as pm
 from pathlib import Path
 import sys
 import os
@@ -26,7 +26,7 @@ class ParserAgent(BaseToolAgent):
         self.API_KEY = config["llm_config"].get("api_key", None)
 
     def execute(self) -> Any:
-
+        pm.init_prompts(self.config["source_language"], self.config["target_language"])
         self.log(f"🤖💬 Starting parsing for project...⏳: {os.path.basename(self.project_dir)}.")
 
         from src.formats.latex.parser import LatexParser
@@ -51,13 +51,9 @@ class ParserAgent(BaseToolAgent):
                 i = placeholder_to_index.get(env["placeholder"])
                 if i is not None:
                     latex_parser.envs_json[i]["need_trans"] = self._request_llm_for_judge(
-                                                                    set_need_trans_for_envs_system_prompt,
+                                                                    pm.set_need_trans_for_envs_system_prompt,
                                                                     env["content"]
                                                                     )
-                    # print(self._request_llm_for_judge(set_need_trans_for_envs_system_prompt,env["content"]))
-                    # print(latex_parser.envs_json[i]["need_trans"])
-
-                    
 
         self.save_file(Path(self.output_dir, "inputs_map.json"), "json", latex_parser.inputs_json)
         self.save_file(Path(self.output_dir, "envs_map.json"), "json", latex_parser.envs_json)

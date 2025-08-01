@@ -1,6 +1,10 @@
 from typing import Any, Dict, Optional
 from .utils import *
 import tiktoken
+import sys
+
+import streamlit as st
+
 
 class LatexParser:
     def __init__(self, dir: str, output_dir: str):
@@ -18,19 +22,34 @@ class LatexParser:
         """
         Parse the LaTeX document and return the parsed content.
         """
+        sys.stderr = open(os.devnull, 'w')
+        process_b = st.empty()
+        with process_b:
+            process_bar = st.progress(0, text="Parsing LaTeX document...")
+        sys.stderr = sys.__stderr__
+
         main_tex_file = find_main_tex_file(self.dir) 
         if not main_tex_file:
             print("⚠️ Warning: There is no main tex file to compile in this directory.")
             return None
+
+        sys.stderr = open(os.devnull, 'w')
+        process_bar.progress(10, text="Finding main tex file...")
+        sys.stderr = sys.__stderr__
+
         main_tex = read_tex_file(main_tex_file)
         if not main_tex:
             print("⚠️ Warning: The main tex file is empty.")
             return None
         
+        sys.stderr = open(os.devnull, 'w')
+        process_bar.progress(20,text="Reading main tex file...")
+        sys.stderr = sys.__stderr__
+
         main_tex = remove_comments(main_tex)
         full_tex = self._merge_inputs(main_tex)
         full_tex = self._extract_newcommands(full_tex)
-        full_tex = compress_newlines(full_tex)
+        # full_tex = compress_newlines(full_tex)
         self._split_to_sections(full_tex)
         
         # 先处理长章节
@@ -38,7 +57,18 @@ class LatexParser:
         # 再合并短章节
         self._merge_short_sections(min_tokens=50)  # Merge short sections to avoid too many sections
 
+        total_sections = len(self.sections_json)
+        sys.stderr = open(os.devnull, 'w')
+        process_bar.progress(80)
+        sys.stderr = sys.__stderr__
+
         for i,section in enumerate(self.sections_json):
+
+            sys.stderr = open(os.devnull, 'w')
+            process_text = f"Processing chapter：{i+1}/{total_sections}"
+            process_bar.progress(80 + int(15 * (i/total_sections)), text=process_text)
+            sys.stderr = sys.__stderr__
+
             if section["section"] == "0" or section["section"] == "-1":
                 section_content = self._extract_captions(section["content"])
                 self.sections_json[i]["trans_content"] = self._extract_envs(section_content)
@@ -46,6 +76,12 @@ class LatexParser:
             else:
                 section_content = self._extract_captions(section["content"])
                 self.sections_json[i]["content"] = self._extract_envs(section_content)
+
+        sys.stderr = open(os.devnull, 'w')
+        process_bar.progress(100, text="Finish Parse Sections")
+        st.success("Finish Parse Sections")
+        process_b.empty()
+        sys.stderr = sys.__stderr__
 
     def parse_no_env_cap_ph(self):
         """

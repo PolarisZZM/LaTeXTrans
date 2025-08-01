@@ -178,6 +178,61 @@ class LaTexCompiler:
         print("Function `_compile_with_lualatex` is not defined in the provided code.")
         return None
 
+    def compile_source(self, pdf_dir):
+        if pdf_dir is None:
+            pdf_dir = self.output_latex_dir
+        os.makedirs(pdf_dir, exist_ok=True)  # Ensure directory exists
+
+        tex_file_to_compile = find_main_tex_file(self.output_latex_dir)
+        if not tex_file_to_compile:
+            print("⚠️ Warning: No main .tex file found in directory.")
+            return None
+
+        print("Start compiling with pdflatex...⏳")
+        self._compile_with_pdflatex(
+            tex_file_to_compile,
+            out_dir=pdf_dir,  # Output directly to pdf_dir
+            engine="pdflatex"
+        )
+
+        pdf_files = [
+            f for f in os.listdir(pdf_dir)
+            if f.lower().endswith('.pdf') and not f.startswith('._')  # Skip macOS temp files
+        ]
+
+        if pdf_files:
+            pdf_path = os.path.join(pdf_dir, pdf_files[0])
+            print(f"✅ Successfully generated PDF at: {pdf_path}")
+            return pdf_path
+
+        # Fallback to xelatex if pdflatex failed
+        print("⚠️ pdflatex failed. Retrying with xelatex...⏳")
+        self._compile_with_xelatex(
+            tex_file_to_compile,
+            out_dir=pdf_dir,  # Output directly to pdf_dir
+            engine="xelatex"
+        )
+
+        pdf_files = [
+            f for f in os.listdir(pdf_dir)
+            if f.lower().endswith('.pdf') and not f.startswith('._')
+        ]
+
+        if pdf_files:
+            pdf_path = os.path.join(pdf_dir, pdf_files[0])
+            print(f"✅ Successfully generated PDF at: {pdf_path}")
+            return pdf_path
+
+        # If both compilers failed
+        print("⚠️ Failed to generate PDF with both compilers.")
+        log_files = [f for f in os.listdir(pdf_dir) if f.lower().endswith('.log')]
+        if log_files:
+            print("📄 Compilation logs:")
+            for log in log_files:
+                print(f"  - {os.path.join(pdf_dir, log)}")
+
+        return None
+
     def _compile_with_pdflatex(self,
                                tex_file: str, 
                                out_dir: str, 

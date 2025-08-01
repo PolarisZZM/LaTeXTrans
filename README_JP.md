@@ -37,8 +37,6 @@ pip install -r requirements.txt
 
 LaTeXファイルのコンパイル（PDF出力など）が必要な場合は、[TeXLive](https://www.tug.org/texlive/)をインストールしてください。
 
-
-
 ### 方法2：Dockerデプロイ（推奨）
 
 Dockerを使用することで複雑な環境構成を回避できます。2つのバージョンのDockerイメージを提供しています：
@@ -54,25 +52,10 @@ Dockerを使用することで複雑な環境構成を回避できます。2つ�
 
 ```bash
 # 基本版のビルド（推奨）
-docker build -f Dockerfile.basic -t ymdxe/latextrans:basic-latest .
+docker build -f Dockerfile.basic -t ymdxe/latextrans:v1.0.0-basic .
 
 # 完全版のビルド（完全なTeXLiveサポートが必要な場合）
-docker build -t ymdxe/latextrans:latest .
-
-# 特定のバージョンに同時にタグ付けする場合
-docker build -f Dockerfile.basic -t ymdxe/latextrans:basic-latest -t ymdxe/latextrans:basic-v1.0.0 .
-docker build -t ymdxe/latextrans:latest -t ymdxe/latextrans:v1.0.0 .
-```
-
-#### 事前ビルドイメージの取得（Docker Hubに公開されている場合）
-
-```bash
-# 基本版の取得
-docker pull ymdxe/latextrans:basic-latest
-
-# 完全版の取得
-docker pull ymdxe/latextrans:latest
-
+docker build -t ymdxe/latextrans:v1.0.0 .
 ```
 
 #### Dockerコンテナの実行
@@ -86,7 +69,7 @@ docker run `
   -e LLM_BASE_URL="your-base-url" `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
-  ymdxe/latextrans:latest 2505.15838
+  ymdxe/latextrans:v1.0.0 2505.15838
 
 # ローカルTeXソースファイルの使用
 docker run `
@@ -95,8 +78,7 @@ docker run `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
   -v "${PWD}\tex source:/app/tex source" `
-  ymdxe/latextrans:latest --source_dir "/app/tex source/2505.15838"
-
+  ymdxe/latextrans:v1.0.0 --source_dir "/app/tex source/2505.15838"
 ```
 
 **Linux/Mac Bashの例：**
@@ -108,7 +90,7 @@ docker run \
   -e LLM_BASE_URL="your-base-url" \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
-  ymdxe/latextrans:latest 2505.15838
+  ymdxe/latextrans:v1.0.0 2505.15838
 
 # ローカルTeXソースファイルの使用
 docker run \
@@ -117,7 +99,7 @@ docker run \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
   -v "${PWD}/tex source:/app/tex source" \
-  ymdxe/latextrans:latest --source_dir "/app/tex source/2505.15838"
+  ymdxe/latextrans:v1.0.0 --source_dir "/app/tex source/2505.15838"
 ```
 
 #### ビルドスクリプトの使用（Windows PowerShell）
@@ -133,6 +115,18 @@ docker run \
 .\build-docker.ps1 -Version all
 ```
 
+### pipによるインストール（推奨）
+
+当パッケージはpipで簡単にインストールできるようになっており、面倒なコード管理が不要です。
+
+```pip
+pip intsall latextrans
+
+# GUI起動
+latextrans -g
+```
+
+詳細な使用パラメータについては、後述の「CLIでの実行方法」で説明しているパラメータを参照してください。
 ---
 
 ## ⚙️ 設定説明
@@ -189,51 +183,66 @@ python main.py <paper_id> (例：2501.12948)
 
 ```powershell
 # 基本版Docker
-docker pull ymdxe/latextrans:basic-latest
-
 docker run `
   -e LLM_API_KEY="your-api-key" `
   -e LLM_BASE_URL="your-base-url" `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
-  ymdxe/latextrans:basic-latest 2501.12948
+  ymdxe/latextrans:v1.0.0-basic 2501.12948
 
 # 完全版Docker（複雑な文書に適用）
-docker pull ymdxe/latextrans:latest
-
 docker run `
   -e LLM_API_KEY="your-api-key" `
   -e LLM_BASE_URL="your-base-url" `
   -e LLM_MODEL="deepseek-v3" `
   -v "${PWD}\outputs:/app/outputs" `
-  ymdxe/latextrans:latest 2501.12948
+  ymdxe/latextrans:v1.0.0 2501.12948
 ```
 
 **Linux/Mac Bashの例：**
 
 ```bash
-
 # 基本版Docker
-docker pull ymdxe/latextrans:basic-latest
-
 docker run \
   -e LLM_API_KEY="your-api-key" \
   -e LLM_BASE_URL="your-base-url" \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
-  ymdxe/latextrans:basic-latest 2501.12948
+  ymdxe/latextrans:v1.0.0-basic 2501.12948
 
 # 完全版Docker（複雑な文書に適用）
-docker pull ymdxe/latextrans:latest
-
 docker run \
   -e LLM_API_KEY="your-api-key" \
   -e LLM_BASE_URL="your-base-url" \
   -e LLM_MODEL="deepseek-v3" \
   -v "${PWD}/outputs:/app/outputs" \
-  ymdxe/latextrans:latest 2501.12948
+  ymdxe/latextrans:v1.0.0 2501.12948
 ```
 
+### 🔹 CLIでの実行方法
+
+| オプション               | 機能                                                                                                      | 例                                        |
+| --------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| `--config`            | Path to the config TOML file                        | `python main.py --config Path/config.toml`                                    |
+| `--model`             | LLM for translating.                                | `python main.py --model deepseek-v3`                      |
+| `--url`               | Model url                                           | `python main.py --url your url`                    |
+| `--key`               | Model API key                                       | `python main.py --key your APIkey`                    |
+| `--Arxiv`             | Arxiv paper ID                                      | `python main.py --Arxiv 2307.07924`                  |
+| `--GUI`or`-g`         | Interact with GUI                                   | `python main.py -g`                      |
+| `--mode`              | Translate mode                                      | `python main.py --mode 2`                      |
+| `--update_term`       | Update term or not                                  | `python main.py --update_term Ture`                      |
+| `--tl`                | Target language                                     | `python main.py --tl ch`                      |
+| `--sl`                | Source language                                     | `python main.py --sl en`                      |
+| `--ut`                | User's term dict                                    | `python main.py --ut Path/Yourterm.csv`                      |
+| `--output`            | output directory                                    | `python main.py --output Path`                      |
+| `--source`            | tex source directory                                | `python main.py --sourse Path`                      |
+| `--save_config`       | Path to save config                                 | `python main.py --save_config savePath`                      |
+
+*arXiv論文IDは、純粋なID形式（例：2103.12345）でも、有効なarXiv論文URL形式でも入力可能です。
+
+*初回起動時には、config/default.tomlファイルを直接編集することでシステムを起動できます。
+
+*操作性を重視するユーザーには、グラフィカルユーザーインターフェース（GUI）の利用を推奨します。
 ---
 
 ## 💬 デモ動画

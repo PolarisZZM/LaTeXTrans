@@ -1,0 +1,159 @@
+Edge Detection,边缘检测
+Canny,Canny
+Sobel,Sobel
+Prewitt,Prewitt
+Laplacian,拉普拉斯
+Gaussian filter,高斯滤波
+Median filter,中值滤波
+Mean filter,均值滤波
+Bilateral filter,双边滤波
+Gaussian Blur,高斯模糊
+Bilateral Blur,双边模糊
+Sharpening,锐化
+Unsharp Masking,反锐化掩模
+Image Smoothing,图像平滑
+Image Enhancement,图像增强
+Image Restoration,图像复原
+Image Segmentation,图像分割
+Image Morphology,图像形态学
+Image Thresholding,图像阈值化
+Hough Transform,霍夫变换
+affine Transformations,仿射变换
+affine warp,仿射变形
+GAN,GAN
+Generative Adversarial Network,生成对抗网络
+CNN,CNN
+Convolutional Neural Network,卷积神经网络
+boundary matching,边界匹配
+feature extraction,特征提取
+interpretation tree search,解释树搜索
+image classification,图像分类
+RAG,RAG
+region adjacency graph,区域邻接图
+angular fielf of view,角度视场
+AR,AR
+augmented reality,增强现实
+VR,VR
+virtual reality,虚拟现实
+ANNs,ANNs
+Artificial Neural Networks,人工神经网络
+backtracking,回溯法
+Bayesian networks,贝叶斯网络
+decision trees,决策树
+binary decision trees,二叉决策树
+binary image,二值图像
+dilation,膨胀
+erosion,腐蚀
+Difussion,扩散
+Forward Diffusion,正向扩散
+Reverse Diffusion,反向扩散
+box filter,盒式滤波
+calibration,标定
+Canny edge detection, Canny边缘检测算子
+Cauchy-Schwarts inequality,柯西-施瓦茨不等式
+convolution,卷积
+chain code,链码
+iterative,迭代
+JPEG,JPeg
+K-means,K均值聚类
+similarity measures,相似度度量
+confussion matrix,混淆矩阵
+VISPROG,VISPROG
+ViT,ViT
+vision transformer,视觉transformer
+inductive bias,归纳偏置
+translation equivariance,平移等变性
+CV,CV
+computer vision,计算机视觉
+MCL,MCL
+Multiview Contrastive Learning,多视角对比学习
+GNNs,GNNs
+Graph Neural Networks,图神经网络
+VLMs,VLMs
+Vision Language Models,视觉语言模型
+DFT,DFT
+discrete Fourier Transform,离散傅里叶变换
+dynamic Thresholding,动态阈值化
+LOG filter,LOG滤波器
+8-neighbors,8邻域
+4-neighbors,4邻域
+EPS,EPS
+FFT,FFT
+fast Fourier Transform,快速傅里叶变换
+FOV,FOv
+Field of View,视场
+Fourier,傅里叶
+hamming distance,汉明距离
+hash function,哈希函数
+hash table,散列表
+HSI,HSI
+hue-saturation-intensity,色调-饱和度-强度
+RGB,RGB
+nearest-neighbors,最近邻
+neighborshoods,邻域
+non-accidental alignment,非偶然对齐
+nonlinear,非线性
+IoU,IoU
+intersection over union,交并比
+Autoencoders,自编码器
+Image Classification,图像分类
+Instance Segmentation,实例分割
+Pose Estimation,姿态估计
+Action Recognition,行为识别
+Visual Tracking,视觉跟踪
+Image Captioning,图像描述生成
+Medical Image Analysis,医学影像分析
+Autonomous Driving,自动驾驶
+Robotic Vision,机器人视觉
+pixel,像素
+primitives,基元
+SD,SD
+Stable Diffusion,稳定扩散
+LCM,LCM
+latent consistency model,潜在一致性模型
+DPO,DPO
+direct preference optimization,直接偏好优化
+SSD,SSD
+single-shot detector,单次检测器
+NMS,NMS
+Non-Maximum Suppression,非最大抑制
+Anchor Boxes,锚框
+YOLO,YOLO
+Semantic Segmentation,语义分割
+Instance Segmentation,实例分割
+Object Detection,目标检测
+FCN,FCN
+Fully Convolutional Network,全卷积网络
+CRF,CRF
+conditional Random Field,条件随机场
+Dice Coefficient,Dice系数
+point cloud,点云
+volumetric rendering,体积渲染
+MVS,MVS
+Multi-view Stereo,多视角立体视觉
+Zero-shot Learning,零样本学习
+VAE,VAE
+Variational Autoencoder,变分自编码器
+Style transfer,风格迁移
+CT,CT
+MRI,MRI
+Few-shot Learning,少样本学习
+Self-supervised Learning,自监督学习
+ctrl-adapter,Ctrl-Adapter
+CLIP,CLIP
+contrastive Language-Image Pretraining,对比语言-图像预训练
+SLIP,SLIP
+Self-supervision meets Language-Image Pre-training,SLIP
+HQ-Edit,HQ-Edit
+3DGS,3DGS
+3D Gaussian Splatting,3D高斯点云渲染
+Receptive Field,感受野
+FFTG,FFTG
+face forgery text generator,面部伪造文本生成器
+mAP,mAP
+mean average precision,平均准确率
+superpixels,超像素
+AGI,AGI
+Artificial General Intelligence,通用人工智能
+SKNet,SKNet
+selective Kernel Networks,选择性核网络

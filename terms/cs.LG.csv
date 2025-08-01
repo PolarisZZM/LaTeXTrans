@@ -1,0 +1,357 @@
+Abstractive Summarization,生成式摘要
+Accuracy,准确率
+Activation Function,激活函数
+Active Learning,主动学习
+Adversarial Attack,对抗性攻击
+Adversarial Training,对抗性训练
+ALBERT,ALBERT
+Alignment,对齐
+Annotation,标注
+Answer Span,答案区间
+Argument Mining,论元挖掘
+Arity,元数
+Aspect-Based Sentiment Analysis,方面级情感分析
+Attention Mechanism,注意力机制
+Autocorrection,自动校正
+Autoregressive Model,自回归模型
+Average Precision,平均精度
+Backpropagation,反向传播
+Backpropagation Through Time,随时间反向传播
+Bag-of-Words,词袋模型
+BART,BART
+Beam Search,波束搜索
+Bi-directional Encoder Representations from Transformers,BERT
+Bidirectional LSTM,双向长短期记忆网络
+Bilingual Evaluation Understudy,BLEU分数
+Byte Pair Encoding,字节对编码
+Candidate Generation,候选生成
+Canonicalization,规范化
+Case Folding,大小写转换
+Categorical Variable,分类变量
+Causality,因果关系
+Causal Language Modeling,因果语言模型
+Character,字符
+Character Embedding,字符嵌入
+Chatbot,聊天机器人
+Chunking,分块
+Classification,分类
+Classifier,分类器
+Cloze Test,完形填空
+Clustering,聚类
+Co-occurrence,共现
+Code Switching,代码转换
+Coherence,连贯性
+Collection,集合
+Commonsense Reasoning,常识推理
+Compiler,编译器
+Compositionality,组合性
+Compound,复合词
+Computational Linguistics,计算语言学
+Computational Phenotyping,计算表型分析
+Concept,概念
+Conditional Random Field,条件随机场
+Confidence Score,置信度得分
+Constituency Parsing,成分句法分析
+Content Word,实词
+Context,上下文
+Contextual Embedding,上下文嵌入
+Contextualized Word Embedding,语境化词嵌入
+Continuous Bag-of-Words,连续词袋模型
+Conversational AI,对话式人工智能
+Coreference Resolution,共指消解
+Corpus,语料库
+Cosine Similarity,余弦相似度
+Cost Function,成本函数
+Cross-Entropy,交叉熵
+Cross-lingual,跨语言
+Cross-Validation,交叉验证
+Curriculum Learning,课程学习
+Data Augmentation,数据增强
+Data Curation,数据整理
+Data Mining,数据挖掘
+De-identification,去识别化
+Decoder,解码器
+Deep Learning,深度学习
+Dependency Parsing,依存句法分析
+Determinant,行列式
+Dictionary,词典
+Distant Supervision,远程监督
+DistilBERT,DistilBERT
+Distributional Hypothesis,分布假说
+Distributional Semantics,分布语义学
+Document,文档
+Document Classification,文档分类
+Document Retrieval,文档检索
+Document-Term Matrix,文档-术语矩阵
+Domain Adaptation,领域自适应
+Down-sampling,下采样
+Downstream Task,下游任务
+Dynamic Programming,动态规划
+ELECTRA,ELECTRA
+ELMo,ELMo
+Embed from Language Models,ELMo
+Embedding,嵌入
+Embedding Layer,嵌入层
+Encoder,编码器
+Encoder-Decoder Architecture,编码器-解码器架构
+End-to-End,端到端
+Entity,实体
+Entity Linking,实体链接
+Entity Recognition,实体识别
+ERNIE,ERNIE
+Evaluation Metric,评估指标
+Extractive Summarization,抽取式摘要
+F1-Score,F1分数
+Fact Checking,事实核查
+False Negative,假阴性
+False Positive,假阳性
+FastText,FastText
+Feature,特征
+Feature Engineering,特征工程
+Feedforward Neural Network,前馈神经网络
+Few-Shot Learning,少样本学习
+Filler Word,填充词
+Fine-tuning,微调
+Finite-State Machine,有限状态机
+Finite-State Transducer,有限状态转换器
+FLAIR,FLAIR
+FlauBERT,FlauBERT
+Function Word,功能词
+Gated Recurrent Unit,门控循环单元
+Gazetteer,地名录
+General Language Understanding Evaluation,通用语言理解评估
+Generative Adversarial Network,生成对抗网络
+Generative Pre-trained Transformer,生成式预训练Transformer
+GloVe,GloVe
+Gradient,梯度
+Gradient Clipping,梯度裁剪
+Gradient Descent,梯度下降
+Graph Neural Network,图神经网络
+Hallucination,幻觉
+Hand-labeling,人工标注
+Hard Attention,硬注意力
+Hate Speech Detection,仇恨言论检测
+Hidden Layer,隐藏层
+Hidden Markov Model,隐马尔可夫模型
+Hierarchical Attention,分层注意力
+Hierarchical Softmax,分层Softmax
+Hypernym,上义词
+Hyperparameter,超参数
+Hyponym,下义词
+Image Captioning,图像描述
+Implicit,内隐的
+In-Context Learning,情境学习
+In-domain,领域内
+Inductive Bias,归纳偏置
+Inference,推理
+Information Extraction,信息抽取
+Information Retrieval,信息检索
+Intent,意图
+Intent Classification,意图分类
+Intent Recognition,意图识别
+Inter-Annotator Agreement,标注者间一致性
+Inverse Document Frequency,逆文档频率
+Knowledge Base,知识库
+Knowledge Distillation,知识蒸馏
+Knowledge Graph,知识图谱
+Language Bias,语言偏见
+Language Generation,语言生成
+Language Model,语言模型
+Learning Rate,学习率
+Lemmatization,词元化
+Lexical,词汇的
+Lexical Semantics,词汇语义学
+Lexicon,词典
+Linear Regression,线性回归
+Linguistic,语言学的
+Logistic Regression,逻辑回归
+Long Short-Term Memory,长短期记忆网络
+Loss Function,损失函数
+Machine Comprehension,机器理解
+Machine Learning,机器学习
+Machine Translation,机器翻译
+MarianMT,MarianMT
+Masked Language Model,掩码语言模型
+Matrix,矩阵
+Matrix Factorization,矩阵分解
+Maximum Likelihood Estimation,最大似然估计
+Mean Average Precision,平均精度均值
+Mean Reciprocal Rank,平均倒数排名
+Memorization,记忆
+Memory Network,记忆网络
+Meta-learning,元学习
+Metric,指标
+Mixture of Experts,混合专家模型
+MobileBERT,MobileBERT
+Modality,模态
+Model,模型
+Morpheme,语素
+Morphology,形态学
+Multi-head Attention,多头注意力
+Multi-label Classification,多标签分类
+Multi-task Learning,多任务学习
+Multilingual,多语言
+Multimodal,多模态
+N-gram,N元语法
+Naive Bayes,朴素贝叶斯
+Named Entity,命名实体
+Named Entity Recognition,命名实体识别
+Natural Language Generation,自然语言生成
+Natural Language Inference,自然语言推断
+Natural Language Processing,自然语言处理
+Natural Language Toolkit,自然语言工具包
+Natural Language Understanding,自然语言理解
+Negation,否定
+Negative Sampling,负采样
+Neural Machine Translation,神经机器翻译
+Neural Network,神经网络
+Neural Turing Machine,神经图灵机
+Neuron,神经元
+Next Sentence Prediction,下一句预测
+Normalization,归一化
+Objective Function,目标函数
+Offensive Language Detection,攻击性语言检测
+One-hot Encoding,独热编码
+Ontology,本体
+Open-Domain,开放领域
+Operator,运算符
+Optical Character Recognition,光学字符识别
+Out-of-vocabulary,词汇表外
+Over-sampling,过采样
+Overfitting,过拟合
+PaLM,PaLM
+Parser,解析器
+Parsing,句法分析
+Part-of-Speech Tagging,词性标注
+Perplexity,困惑度
+Phoneme,音素
+Pipeline,流水线
+Polysemy,多义性
+Positional Encoding,位置编码
+Pragmatics,语用学
+Precision,精确率
+Pre-training,预训练
+Preprocessing,预处理
+Principal Component Analysis,主成分分析
+Prompt,提示
+Prompt Engineering,提示工程
+Pruning,剪枝
+PyTorch,PyTorch
+Random Forest,随机森林
+Recall,召回率
+Recurrent Neural Network,循环神经网络
+RNN,RNN
+Recursion,递归
+Regular Expression,正则表达式
+Regularization,正则化
+Reinforcement Learning,强化学习
+Relation Extraction,关系抽取
+Relevance,相关性
+Residual Connection,残差连接
+Retrieval-Augmented Generation,检索增强生成
+RoBERTa,RoBERTa
+Robustness,鲁棒性
+Root Mean Square Error,均方根误差
+ROUGE,ROUGE
+Rule-based,基于规则的
+Sarcasm Detection,讽刺检测
+Scalar,标量
+Scaling Law,缩放定律
+Self-Attention,自注意力
+Self-Supervised Learning,自监督学习
+Semantic,语义的
+Semantic Analysis,语义分析
+Semantic Role Labeling,语义角色标注
+Semantic Search,语义搜索
+Semantics,语义学
+Semi-supervised Learning,半监督学习
+Sense,词义
+Sense Disambiguation,词义消歧
+Sentence Boundary Detection,句子边界检测
+Sentence Embedding,句子嵌入
+Sentence Segmentation,分句
+Sentiment Analysis,情感分析
+Sequence,序列
+Sequence-to-Sequence,Seq2Seq
+Shallow Parsing,浅层句法分析
+Siamese Network,孪生网络
+Singular Value Decomposition,奇异值分解
+Skip-gram,跳字模型
+Slot,槽位
+Slot Filling,槽位填充
+Soft Attention,软注意力
+Softmax,Softmax
+Spacy,Spacy
+Spam Detection,垃圾邮件检测
+Sparse,稀疏
+Speech Recognition,语音识别
+Speech Synthesis,语音合成
+Speech-to-Text,语音转文本
+Stemming,词干提取
+Stop Word,停用词
+String,字符串
+Structural,结构的
+Style Transfer,风格迁移
+Subword,子词
+Summarization,摘要
+Supervised Learning,监督学习
+Support Vector Machine,支持向量机
+Syllable,音节
+Synonym,同义词
+Syntactic,句法的
+Syntax,句法学
+Syntax Tree,句法树
+T5,T5
+Template,模板
+Tensor,张量
+TensorFlow,TensorFlow
+Term Frequency,词频
+Term Frequency-Inverse Document Frequency,词频-逆文档频率
+Test Set,测试集
+Text Classification,文本分类
+Text Generation,文本生成
+Text Mining,文本挖掘
+Text Normalization,文本归一化
+Text-to-Speech,文本转语音
+Token,token
+Tokenization,分词
+Topic Modeling,主题建模
+Training,训练
+Training Data,训练数据
+Training Set,训练集
+Transcribe,转录
+Transducer,转换器
+Transfer Learning,迁移学习
+Transformer,Transformer
+Transliteration,音译
+Treebank,树库
+Trigger Word,触发词
+Trigram,三元语法
+True Negative,真阴性
+True Positive,真阳性
+Truncation,截断
+Tuning,调优
+Turn,轮次
+ULMFiT,ULMFiT
+Underfitting,欠拟合
+Unigram,一元语法
+Unsupervised Learning,无监督学习
+Up-sampling,上采样
+Validation Set,验证集
+Vanishing Gradient Problem,梯度消失问题
+Variational Autoencoder,变分自编码器
+Vector,向量
+Vector Space Model,向量空间模型
+Vocabulary,词汇表
+Weight,权重
+Word,词
+Word Alignment,词对齐
+Word Count,词数
+Word Embedding,词嵌入
+Word Sense Disambiguation,词义消歧
+Word2Vec,Word2Vec
+WordNet,WordNet
+XLNet,XLNet
+XLM,XLM
+XLM-RoBERTa,XLM-RoBERTa
+Zero-Shot Learning,零样本学习

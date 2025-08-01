@@ -1,0 +1,212 @@
+Knowledge Representation,知识表示
+Ontology,本体
+Semantic Network,语义网络
+Frame,框架
+Description Logic,描述逻辑
+Conceptual Graph,概念图
+Taxonomy,分类法
+Terminology,术语学
+Meta-Knowledge,元知识
+Knowledge Base,知识库
+Inference Engine,推理机
+Rule-Based System,基于规则的系统
+Production Rule,产生式规则
+Fact,事实
+Rule,规则
+Logic Programming,逻辑编程
+Propositional Logic,命题逻辑
+First-Order Logic,一阶逻辑
+Predicate Logic,谓词逻辑
+Resolution,消解原理
+Unification,归一化
+Satisfiability,可满足性
+Constraint Satisfaction Problem,约束满足问题
+CSP,CSP
+SAT Solver,SAT 求解器
+Inference,推理
+Forward Chaining,正向链
+Backward Chaining,逆向链
+Logic Inference,逻辑推理
+Truth Maintenance System,真值维护系统
+Belief Revision,信念修正
+Frame Semantics,框架语义
+Semantic Web,语义网
+RDF,RDF
+OWL,OWL
+Case Grammar,案例语法
+Conceptual Dependency,概念依存
+Default Reasoning,默认推理
+Nonmonotonic Reasoning,非单调推理
+Abductive Reasoning,溯因推理
+Dempster-Shafer Theory,邓普斯特-谢弗理论
+Bayesian Network,贝叶斯网络
+Probabilistic Graphical Model,概率图模型
+Markov Random Field,马尔可夫随机场
+Fuzzy Logic,模糊逻辑
+Belief Propagation,置信度传播
+Bayesian Inference,贝叶斯推断
+Uncertainty Reasoning,不确定性推理
+Automated Planning,自动规划
+State Space,状态空间
+State Space Planning,状态空间规划
+STRIPS,STRIPS
+PDDL,PDDL
+Planning Graph,规划图
+Partial-Order Planning,部分有序规划
+Hierarchical Task Network,分层任务网络
+HTN,HTN
+Heuristic Search,启发式搜索
+A* Search,A* 搜索
+Depth-First Search,深度优先搜索
+Breadth-First Search,广度优先搜索
+Means-Ends Analysis,手段-目标分析
+Goal Regression,目标回归
+Plan Recognition,计划识别
+Replanning,重规划
+Temporal Planning,时序规划
+Resource Allocation Planning,资源分配规划
+Search Algorithm,搜索算法
+Expert System,专家系统
+Shell,外壳
+Knowledge Acquisition,知识获取
+Explanation Facility,解释设施
+Conflict Resolution,冲突解决
+MYCIN,MYCIN
+DENDRAL,DENDRAL
+CLIPS,CLIPS
+Natural Language Understanding,自然语言理解
+Syntactic Parsing,句法分析
+Parse Tree,解析树
+Constituency Parsing,成分句法分析
+Dependency Parsing,依存句法分析
+Semantic Parsing,语义解析
+Semantic Role Labeling,语义角色标注
+Thematic Role,论元角色
+Lexical Semantics,词汇语义
+Pragmatics,语用学
+Discourse Analysis,话语分析
+Context-Free Grammar,上下文无关文法
+Unification Grammar,合一文法
+Feature Structure,特征结构
+Multi-Agent System,多智能体系统
+Agent,智能体
+Autonomous Agent,自主智能体
+BDI Architecture,BDI 架构
+Belief-Desire-Intention,信念-愿望-意图
+Coordination,协调
+Cooperation,合作
+Negotiation,谈判
+Agent Communication Language,智能体通信语言
+FIPA-ACL,FIPA-ACL
+Distributed Planning,分布式规划
+Distributed Constraint Satisfaction,分布式约束满足
+Game Theory,博弈论
+Mechanism Design,机制设计
+Turing Test,图灵测试
+Knowledge Graph,知识图谱
+Modal Logic,模态逻辑
+Default Logic,默认逻辑
+Circumscription,限定推理
+Situation Calculus,情境演算
+Event Calculus,事件演算
+Temporal Logic,时序逻辑
+Description Logic ALC,ALC 描述逻辑
+Description Logic SHOIN,SHOIN 描述逻辑
+Tableau Method,表格法
+Theorem Proving,定理证明
+Resolution Refutation,消解驳斥
+Model Checking,模型检查
+Knowledge Compilation,知识编译
+Blackboard Architecture,Blackboard 架构
+SOAR,SOAR
+ACT-R,ACT-R
+Frame Problem,框架问题
+Closed World Assumption,封闭世界假设
+Open World Assumption,开放世界假设
+Ontology Alignment,本体对齐
+Ontology Mapping,本体映射
+Semantic Interoperability,语义互操作
+Semantic Heterogeneity,语义异构
+Conceptual Blending,概念融合
+Knowledge Fusion,知识融合
+Rule Induction,规则归纳
+Meta-Interpretation,元解释
+Meta-Reasoning,元推理
+Knowledge Revision,知识修正
+Belief Merging,信念合并
+Truth Maintenance Network,真值维护网络
+Justification-Based TMS,基于证明的真值维护系统
+Assumption-Based Truth Maintenance System,基于假设的真值维护系统
+Abductive Logic Programming,溯因逻辑编程
+Inductive Logic Programming,归纳逻辑编程
+Semantic Entailment,语义蕴含
+Logical Entailment,逻辑蕴含
+Knowledge-Based System,知识库系统
+Expert System Shell,专家系统外壳
+Inference Control,推理控制
+Backward Reasoning,回溯推理
+Forward Reasoning,前向推理
+Heuristic Function,启发函数
+Admissible Heuristic,可接受启发
+Consistent Heuristic,一致启发
+Recursive Best-First Search,递归最佳优先搜索
+IDA*,IDA*
+Bidirectional Search,双向搜索
+Graphplan,Graphplan
+Nonlinear Planning,非线性规划
+Constraint-Based Planning,基于约束的规划
+Plan Execution Monitoring,计划执行监控
+Execution Failure Recovery,执行失败恢复
+Plan Repair,计划修复
+Knowledge-Level Plan,知识层计划
+Plan Library,计划库
+Reactive Planning,反应式规划
+Belief-Desire-Intention Agent,BDI 智能体
+Agent Architecture,智能体架构
+Agent Deliberation Cycle,智能体审议循环
+Coordination Protocol,协调协议
+Contract Net Protocol,合同网协议
+Distributed Problem Solving,分布式问题求解
+Multi-Agent Coordination,多智能体协调
+Multi-Agent Negotiation,多智能体谈判
+Social Choice Theory,社会选择理论
+Coalition Formation,联盟形成
+Normative System,规范系统
+Commitment Protocol,承诺协议
+Argumentation Framework,论证框架
+Dung’s Framework,Dung 框架
+Argumentation Semantics,论证语义
+Dialectical Reasoning,辩证推理
+Consensus Reaching,共识达成
+Plan Recognition Grammar,计划识别文法
+Semantic Drift,语义漂移
+Truth Discovery,真相发现
+Knowledge Distillation,知识提炼
+Contextual Reasoning,上下文推理
+Local Closed-World Assumption,局部封闭世界假设
+Metaheuristic Search,元启发式搜索
+Knowledge-Driven Architectures,知识驱动架构
+Symbolic Regression,符号回归
+Logical Abduction,逻辑溯因
+Cognitive Map,认知地图
+Semantic Memory,语义记忆
+Working Memory,工作记忆
+Knowledge-Level Modeling,知识层建模
+Scenario-Based Reasoning,基于场景的推理
+Goal-Oriented Behavior,面向目标行为
+Plan Recognition Algorithm,计划识别算法
+TMS Justification,TMS 证明机制
+Frame-Based Representation,基于框架的表示
+Script Theory,脚本理论
+Qualitative Reasoning,定性推理
+Spatial Reasoning,空间推理
+Common Sense Reasoning,常识推理
+Utility Theory,效用理论
+Decision Theory,决策理论
+Belief Function Theory,信念函数理论
+Metaknowledge Representation,元知识表示
+Situation Assessment,情境评估
+Behavioral Planning,行为规划
+Interaction Protocol,交互协议
+Autonomous Decision Making,自主决策
+Agent Learning,智能体学习

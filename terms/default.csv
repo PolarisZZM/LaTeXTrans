@@ -1,0 +1,405 @@
+Artificial General Intelligence,通用人工智能
+AGI,AGI
+Artificial Intelligence,人工智能
+AI,AI
+Association analysis,关联分析
+Attention mechanism,注意力机制
+Attribute conditional independence assumption,属性条件独立性假设
+Attribute space,属性空间
+Attribute value,属性值
+Autoencoder,自编码器
+Automatic speech recognition,自动语音识别
+Automatic summarization,自动摘要
+Average gradient,平均梯度
+Average-Pooling,平均池化
+Accumulated error backpropagation,累积误差逆传播
+Activation Function,激活函数
+Adaptive Resonance Theory,自适应谐振理论
+ART,ART
+Addictive model,加性学习
+Adversarial Networks,对抗网络
+Affine Layer,仿射层
+Affinity matrix,亲和矩阵
+Agent,智能体
+Algorithm,算法
+Alpha-beta pruning,α-β剪枝
+Anomaly detection,异常检测
+Approximation,近似
+Area Under ROC Curve,ROC曲线下面积
+AUC,AUC
+Backpropagation,反向传播
+BP,BP
+Base learner,基学习器
+Base learning algorithm,基学习算法
+Batch Normalization,批量归一化
+BN,BN
+Bayes decision rule,贝叶斯判定准则
+Bayes Model Averaging,贝叶斯模型平均
+BMA,BMA
+Bayes classifier,贝叶斯分类器
+Bayes optimal classifier,贝叶斯最优分类器
+Bayesian decision theory,贝叶斯决策论
+Bayesian network,贝叶斯网络
+Bert,BERT
+Between-class scatter matrix,类间散度矩阵
+Bias,偏置
+Bias-variance decomposition,偏差-方差分解
+Bias-Variance Dilemma,偏差–方差困境
+Bi-directional Long-Short Term Memory,双向长短期记忆
+Bi-LSTM,Bi-LSTM
+Binary classification,二分类
+Binomial test,二项检验
+Bi-partition,二分法
+Boltzmann machine,玻尔兹曼机
+Bootstrap sampling,可重复采样
+Bootstrapping,自助法
+Break-Event Point,平衡点
+BEP,BEP
+Calibration,校准
+Cascade-Correlation,级联相关
+Categorical attribute,离散属性
+Class-conditional probability,类条件概率
+Classification and regression tree,分类与回归树
+CART,CART
+Classifier,分类器
+Class-imbalance,类别不平衡
+Closed-form,闭式
+Cluster,簇
+Clustering,聚类
+Clustering ensemble,聚类集成
+Co-adapting,共适应
+Coding matrix,编码矩阵
+COLT,国际学习理论会议
+Competitive learning,竞争型学习
+Component learner,组件学习器
+Comprehensibility,可解释性
+Computation Cost,计算成本
+Computational Linguistics,计算语言学
+Computer vision,计算机视觉
+Conditional entropy,条件熵
+Conditional mutual information,条件互信息
+Conditional Probability Table,条件概率表
+CPT,CPT
+Conditional random field/CRF,条件随机场
+Conditional risk,条件风险
+Confidence,置信度
+Confusion matrix,混淆矩阵
+Connection weight,连接权
+Connectionism,连结主义
+Consistency,一致性
+Contingency table,列联表
+Continuous attribute,连续属性
+Convergence,收敛
+Conversational agent,会话智能体
+Convexity,凸性
+Convolutional neural network,卷积神经网络
+CNN,CNN
+Co-occurrence,共现
+Correlation coefficient,相关系数
+Cosine similarity,余弦相似度
+Cost curve,成本曲线
+Cost Function,成本函数
+Cost matrix,成本矩阵
+Cost-sensitive,成本敏感
+Cross entropy,交叉熵
+Cross validation,交叉验证
+Crowdsourcing,众包
+Curse of dimensionality,维数灾难
+Cut point,截断点
+Cutting plane algorithm,割平面法
+Decoder,解码器
+Decision Boundary,决策边界
+Decision stump,决策树桩
+Decision tree,决策树
+Deep Belief Network,深度信念网络
+Deep Convolutional Generative Adversarial Network,深度卷积生成对抗网络
+DCGAN,DCGAN
+Deep learning,深度学习
+Deep neural network,深度神经网络
+DNN,DNN
+Q-Learning,深度Q-Learning
+Deep Q-Network,深度Q-network
+Density estimation,密度估计
+Density-based clustering,密度聚类
+Differentiable neural computer,可微分神经计算机
+Discriminator,判别器
+Distribution,分布
+Divergence,散度
+Diversity measure,多样性度量
+Domain adaption,领域自适应
+Downsampling,下采样
+Dynamic programming,动态规划
+Eigenvalue decomposition,特征值分解
+Embedding,嵌入
+Empirical conditional entropy,经验条件熵
+Empirical entropy,经验熵
+Empirical error,经验误差 
+Encoder,编码器
+End-to-End,端到端  
+Euclidean distance,欧氏距离  
+Expectation-Maximization,期望最大化  
+Expected loss,期望损失  
+Exploding Gradient Problem,梯度爆炸问题  
+Exponential loss function,指数损失函数  
+Extreme Learning Machine,超限学习机
+ELM,ELM
+Factorization,因子分解  
+False negative,假负类  
+False positive,假正类  
+Feature engineering,特征工程  
+Feature selection,特征选择  
+Feature vector,特征向量  
+Featured Learning,特征学习  
+Feedforward Neural Networks,前馈神经网络  
+FNN,FNN
+Fine-tuning,微调  
+Full-rank matrix,满秩矩阵  
+Functional neuron,功能神经元
+Gain ratio,增益率  
+Game theory,博弈论  
+Gaussian,高斯
+Gaussian kernel function,高斯核函数  
+Gaussian Mixture Model,高斯混合模型  
+Generalization,泛化  
+Generalization error,泛化误差  
+Generalization error bound,泛化误差上界  
+Generalized Lagrange function,广义拉格朗日函数  
+Generalized linear model,广义线性模型  
+Generative Adversarial Networks,生成对抗网络  
+GAN,GAN
+Generative Model,生成模型  
+Generator,生成器  
+Genetic Algorithm,遗传算法
+GA,GA  
+Gibbs sampling,吉布斯采样  
+Gini index,基尼指数  
+Global minimum,全局最小  
+Global Optimization,全局优化  
+Gradient boosting,梯度提升  
+Gradient Descent,梯度下降  
+Harmonic mean,调和平均  
+Hesse matrix,Hesse矩阵  
+Hidden dynamic model,隐动态模型  
+Hidden layer,隐藏层  
+Hidden Markov Model,隐马尔可夫模型
+HMM,HMM
+Hierarchical clustering,层次聚类  
+Hilbert space,希尔伯特空间   
+Homogeneous,同质  
+Hyperparameter,超参数  
+Hypothesis,假设  
+Hypothesis test,假设验证
+ICML,国际机器学习会议 
+Indicator function,指示函数  
+Individual learner,个体学习器  
+Induction,归纳  
+Inductive bias,归纳偏好  
+Inductive learning,归纳学习  
+Information entropy,信息熵  
+Information gain,信息增益  
+Input layer,输入层  
+Insensitive loss,不敏感损失  
+Inter-cluster similarity,簇间相似度   
+Intrinsic value,固有值  
+Isometric Mapping,等度量映射  
+Isomap,Isomap
+Isotonic regression,等分回归  
+Iterative Dichotomiser,迭代二分器
+Kernel method,核方法  
+Kernel trick,核技巧  
+K-fold cross validation,k倍交叉验证  
+K-Means Clustering,K – 均值聚类
+K-Nearest Neighbours Algorithm,K近邻算法  
+KNN,KNN
+Knowledge base,知识库  
+Knowledge Representation,知识表征
+Label space,标记空间  
+Lagrange duality,拉格朗日对偶性  
+Lagrange multiplier,拉格朗日乘子  
+Laplace smoothing,拉普拉斯平滑  
+Laplacian correction,拉普拉斯修正  
+Latent Dirichlet Allocation,隐狄利克雷分布  
+Latent semantic analysis,潜在语义分析  
+Latent variable,隐变量  
+Learner,学习器  
+Learning by analogy,类比学习  
+Learning rate,学习率   
+Least squares regression tree,最小二乘回归树  
+Leave-One-Out,留一法  
+LOO,LOO
+linear chain conditional random field,线性链条件随机场  
+Linear Discriminant Analysis,线性判别分析 
+LDA,LDA 
+Linear model,线性模型  
+Linear Regression,线性回归  
+Link function,联系函数  
+Local Markov property,局部马尔可夫性  
+Local minimum,局部最小  
+Log likelihood,对数似然   
+Logistic Regression,Logistic 回归  
+Log-likelihood,对数似然  
+Log-linear regression,对数线性回归  
+Long-Short Term Memory,长短期记忆 
+LSTM,LSTM 
+Loss function,损失函数
+Machine translation,机器翻译  
+MT,MT
+Marginal distribution,边际分布  
+Marginal independence,边际独立性  
+Marginalization,边际化  
+Markov Chain Monte Carlo,马尔可夫链蒙特卡罗方法  
+MCMC,MCMC
+Markov Random Field,马尔可夫随机场  
+Maximal clique,最大团  
+Maximum Likelihood Estimation,极大似然估计
+MLE,MLE
+Maximum margin,最大间隔  
+Max-Pooling,最大池化  
+Mean squared error,均方误差  
+Meta-learner,元学习器  
+Metric learning,度量学习  
+Micro-P,微查准率  
+Micro-R,微查全率   
+Minimax game,极小极大博弈  
+Misclassification cost,误分类成本  
+Mixture of experts,混合专家  
+Momentum,动量  
+Moral graph,道德图／端正图  
+Multi-class classification,多分类  
+Multi-document summarization,多文档摘要  
+Multi-layer feedforward neural networks,多层前馈神经网络  
+Multilayer Perceptron,多层感知器 
+MLP,MLP 
+Multimodal learning,多模态学习  
+Multiple Dimensional Scaling,多维缩放  
+Multiple linear regression,多元线性回归  
+Naive bayes,朴素贝叶斯  
+Naive Bayes Classifier,朴素贝叶斯分类器  
+Nash equilibrium,纳什均衡  
+Natural language generation,自然语言生成  
+NLG,NLG
+Natural language processing,自然语言处理  
+NLP,NLP
+Negative class,负类  
+Negative correlation,负相关法  
+Negative Log Likelihood,负对数似然  
+Neighbourhood Component Analysis,近邻成分分析
+NCA,NCA  
+Neural Machine Translation,神经机器翻译  
+Neural Turing Machine,神经图灵机  
+Newton method,牛顿法  
+NIPS,国际神经信息处理系统会议  
+No Free Lunch Theorem,没有免费的午餐定理
+NFL,NFL 
+Noise-contrastive estimation,噪音对比估计  
+Nominal attribute,列名属性  
+Non-convex optimization,非凸优化  
+Nonlinear model,非线性模型  
+Non-metric distance,非度量距离   
+Norm,范数  
+Normalization,归一化  
+Nuclear norm,核范数  
+Numerical attribute,数值属性
+Objective function,目标函数  
+Oblique decision tree,斜决策树  
+Occam’s razor,奥卡姆剃刀  
+Odds,几率  
+Off-Policy,离策略  
+One shot learning,一次性学习  
+One-Dependent Estimator,独依赖估计  
+ODE,ODE
+Output layer,输出层  
+Overfitting,过拟合 
+Oversampling,过采样
+Parameter,参数
+Parameter estimation,参数估计
+Parameter tuning,调参
+Parse tree,解析树
+Particle Swarm Optimization,粒子群优化算法
+PSO,PSO
+Part-of-speech tagging,词性标注
+Perceptron,感知机  
+Pooling,池化  
+Positive class,正类  
+Positive definite matrix,正定矩阵  
+Post-hoc test,后续检验  
+Post-pruning,后剪枝  
+Potential function,势函数  
+Precision,准确率  
+Principal component analysis,主成分分析 
+PCA,PCA 
+Prior,先验   
+Pruning,剪枝  
+Recall,召回率  
+Rectified Linear Unit,线性修正单元 
+ReLU,ReLU 
+Recurrent Neural Network,循环神经网络  
+RNN,RNN
+Reference model,参考模型  
+Regression,回归  
+Regularization,正则化  
+Reinforcement learning,强化学习  
+RL,RL
+Representation learning,表征学习  
+Re-sampling,重采样法  
+Residual Mapping,残差映射  
+Residual Network,残差网络  
+Restricted Boltzmann Machine,受限玻尔兹曼机 
+RBM,RBM 
+Re-weighting,重赋权法  
+Robustness,鲁棒性  
+Root node,根结点  
+Rule Engine,规则引擎  
+Sample space,样本空间  
+Sampling,采样  
+Score function,评分函数  
+Self-Organizing Map,自组织映射 
+Sobel,Sobel
+SOM,SOM 
+Semi-naive Bayes classifiers,半朴素贝叶斯分类器  
+Semi-Supervised Learning,半监督学习  
+semi-Supervised Support Vector Machine,半监督支持向量机  
+Sentiment analysis,情感分析  
+Separating hyperplane,分离超平面  
+Sigmoid function,Sigmoid 函数  
+Similarity measure,相似度度量  
+Simulated annealing,模拟退火   
+Singular Value Decomposition,奇异值分解   
+Smoothing,平滑  
+Sparsity,稀疏性  
+Specialization,特化  
+Statistical learning,统计学习  
+Status feature function,状态特征函数  
+Stochastic gradient descent,随机梯度下降  
+Stratified sampling,分层采样  
+Structural risk,结构风险  
+Supervised learning,监督学习
+Support Vector Machine,支持向量机
+SVM,SVM  
+Surrogat loss,替代损失  
+Tensor,张量  
+The least square method,最小二乘法  
+Threshold,阈值  
+Threshold logic unit,阈值逻辑单元   
+Tokenization,标记化  
+Training error,训练误差  
+Transfer learning,迁移学习 
+Transformer,Transformer 
+Turing Machine,图灵机  
+Twice-learning,二次学习
+Underfitting,欠拟合 
+Undersampling,欠采样  
+Understandability,可理解性  
+Unequal cost,非均等代价  
+Unsupervised learning,无监督学习  
+Upsampling,上采样
+Vanishing Gradient Problem,梯度消失问题   
+Von Neumann architecture,冯 · 诺伊曼架构  
+Weak learner,弱学习器  
+Weight,权重  
+Weight sharing,权共享  
+Weighted voting,加权投票法  
+Within-class scatter matrix,类内散度矩阵  
+Word embedding,词嵌入  
+Zero-data learning,零数据学习  
+Zero-shot learning,零次学习 
